@@ -19,20 +19,20 @@ Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成
 
 ## 支付方式
 
-您可以通过信用卡方式支付 Tapdata Cloud 费用，您也对公转账的方式支付。
+您可以通过信用卡方式支付 Tapdata Cloud 费用。
 
 ## 产品定价
 
-请根据数据量和任务数量选择合适的 Agent 规格进行订阅，各规格定价如下，单位为人民币（元）：
+请根据数据量和任务数量选择合适的 Agent 规格进行订阅，各规格定价如下，单位为美元（$）：
 
 <table>
 <thead>
   <tr>
     <th>规格</th>
     <th>包月</th>
-    <th>连续包月 </th>
-    <th>包年 </th>
-    <th>连续包年 </th>
+    <th>连续包月</th>
+    <th>包年</th>
+    <th>连续包年</th>
   </tr>
 </thead>
 <tbody>
@@ -41,46 +41,46 @@ Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，完成
     <td colspan="4">免费（1 个 Agent 实例）</td>
   </tr>
   <tr>
-    <td>LARGE </td>
-    <td>800 </td>
-    <td>760 </td>
-    <td>8,640 </td>
-    <td>8,640 </td>
+    <td>LARGE</td>
+    <td>116</td>
+    <td>110</td>
+    <td>1254</td>
+    <td>1254</td>
   </tr>
   <tr>
-    <td>XLARGE </td>
-    <td>1600 </td>
-    <td>1,520 </td>
-    <td>17,280 </td>
-    <td>17,280 </td>
+    <td>XLARGE</td>
+    <td>232</td>
+    <td>220</td>
+    <td>2508</td>
+    <td>2508</td>
   </tr>
   <tr>
-    <td>2XLARGE </td>
-    <td>3,200 </td>
-    <td>2,280 </td>
-    <td>34,560 </td>
-    <td>34,560 </td>
+    <td>2XLARGE</td>
+    <td>464</td>
+    <td>441</td>
+    <td>5016</td>
+    <td>5016</td>
   </tr>
   <tr>
-    <td>3XLARGE </td>
-    <td>4,800 </td>
-    <td>3,040 </td>
-    <td>51,840 </td>
-    <td>51,840 </td>
+    <td>3XLARGE</td>
+    <td>696</td>
+    <td>661</td>
+    <td>7524</td>
+    <td>7524</td>
   </tr>
   <tr>
-    <td>4XLARGE </td>
-    <td>6,400 </td>
-    <td>6,080 </td>
-    <td>69,120 </td>
-    <td>69,120 </td>
+    <td>4XLARGE</td>
+    <td>928</td>
+    <td>882</td>
+    <td>10032</td>
+    <td>10032</td>
   </tr>
   <tr>
-    <td>8XLARGE </td>
-    <td>12,800 </td>
-    <td>12,160</td>
-    <td>138,240 </td>
-    <td>138,240 </td>
+    <td>8XLARGE</td>
+    <td>1857</td>
+    <td>1764</td>
+    <td>20065</td>
+    <td>20065</td>
   </tr>
 </tbody>
 </table>
