@@ -45,7 +45,7 @@ No worries, with Tapdata Cloud's intuitive graphic interface, you can start quic
 
 * [Deploy Tapdata Agent](cloud/quick-start/install-agent)
 * [Connect Database](quick-start/connect-database.md)
-* [Start Data Synchronization](cloud/quick-start/create-task)
+* [Start Data Synchronization](/cloud/quick-start/create-task)
 
 
 
