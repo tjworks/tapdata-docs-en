@@ -271,7 +271,7 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>N/A</td>
+    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
   </tr>
   <tr>
     <td>Microsoft Excel</td>
@@ -280,7 +280,7 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>XLS/XLSX Format</td>
+    <td>XLS/XLSX Format, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
   </tr>
   <tr>
     <td>Lark-IM</td>
@@ -311,6 +311,7 @@ The beta version of the data sources is in public preview and has passed the bas
   </tr>
 </tbody>
 </table>
+
 </TabItem>
 </Tabs>
 
@@ -676,7 +677,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>N/A</td>
+    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
   </tr>
   <tr>
     <td>Vika</td>
@@ -694,9 +695,10 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>N/A</td>
+    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
   </tr>
 </tbody>
 </table>
+
    </TabItem>
   </Tabs>
