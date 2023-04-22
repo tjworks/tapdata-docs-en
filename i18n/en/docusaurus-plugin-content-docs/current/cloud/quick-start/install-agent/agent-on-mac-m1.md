@@ -44,9 +44,9 @@ Tapdata Agent (short for Agent) obtains data from the source, processes and tran
 
 5. Log in to [Tapdata Cloud](https://cloud.tapdata.net/console/v3/) to get Agent-initiated configuration information.
 
-   1. Click **Agent** in the left navigation panel, and then click **Create Agent** on the right.
+   1. [Create an Agent](../../billing/purchase.md) according to business requirements.
 
-   2. On the redirected deployment page, select **Linux (64 bit)** and copy the configuration command (start copying from**./tapdata**), as shown in the example.
+   2. After completing the subscription, select **Linux(64 bit)** on the **deployment page** that you are redirected to, and then copy the installation command(start copying from**./tapdata**), as shown in the example.
 
       ![Copy the installation command](../../images/agent_on_macm1.png)
 

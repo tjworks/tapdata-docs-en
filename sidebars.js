@@ -58,7 +58,6 @@ const sidebars = {
                     'cloud/quick-start/install-agent/agent-on-windows',
                     'cloud/quick-start/install-agent/agent-on-docker',
                     'cloud/quick-start/install-agent/agent-on-mac-m1',
-                    'cloud/quick-start/install-agent/agent-on-compute-nest',
              ]
             },
             'cloud/quick-start/connect-database',

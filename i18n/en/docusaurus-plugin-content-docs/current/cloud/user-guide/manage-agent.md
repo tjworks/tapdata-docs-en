@@ -72,31 +72,6 @@ import TabItem from '@theme/TabItem';
     </li>
     </ol>
    </TabItem>
-   <TabItem value="computenest" label="Compute Nest">
-    <ol>
-    <li>Log in to Alibaba Cloud and enter the <a href="https://computenest.console.aliyun.com/">Computing Nest console</a>.
-    </li>
-    <p></p>
-    <li>Find your Compute Nest instance and click on its ID to go to the Overview page.
-    </li>
-    <p></p>
-    <li>On the <b>Resources</b > tab, locate the ECS instance that the Agent installed (the name contains <b>tapdata</b>), and click the <b>remote connect</b>. <p></p>
-    <img src='https://docs.tapdata.io/img/login_compute_nest_en.png'></img>
-    </li>
-    <p></p>
-    <li>In the command window, execute <code>cd/data/tapdata</code> to enter the Agent installation directory, and choose to execute the following command: <ul>
-    <li>View command help: <code>./tapdata help</code>
- </li>
-    <li>Check the status of the Agent: <code>./tapdata status</code>
- </li>
-    <li>Start Agent: <code>./tapdata start</code>
- </li>
-    <li>Stop Agent: <code>./tapdata stop</code>
- </li>
-    </ul>
-    </li>
-    </ol>
-   </TabItem>
   </Tabs>
 
 ### Agent Directory Description

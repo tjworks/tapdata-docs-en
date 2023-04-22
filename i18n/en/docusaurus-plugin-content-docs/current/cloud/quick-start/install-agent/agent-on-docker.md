@@ -19,9 +19,9 @@ To simplify the installation process, Tapdata provides you with a Docker image w
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.net/console/v3/).
 
-2. Click **Agent** in the left navigation panel, and then click **Create Agent** on the right.
+2. [Create an Agent](../../billing/purchase.md) according to business requirements.
 
-3. On the Agent download and installation page, select **Docker** and copy the installation command.
+3. After completing the subscription, select **Docker** on the **deployment page** that you are redirected to, and then copy the installation command.
 
    ![Copy the installation command](../../images/agent_on_docker.png)
 

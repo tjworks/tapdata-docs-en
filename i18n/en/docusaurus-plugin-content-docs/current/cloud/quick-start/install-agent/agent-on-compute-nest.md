@@ -12,9 +12,9 @@ Register Alibaba Cloud [account](https://help.aliyun.com/knowledge_detail/37195.
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.net/console/v3/).
 
-2. Click **Agent** in the left navigation panel, and then click **Create Agent** on the right.
+2. [Create an Agent](../../billing/purchase.md) according to business requirements.
 
-3. On the **Agent download and installation page** , select Alibaba Cloud Computing Nest, and then select the paid method to create the ECS:
+3. After completing the subscription, on the **Agent download and installation page** , select **Alibaba Cloud Computing Nest**, and then select the paid method to create the ECS:
 
    ![](../../images/select_computing_nest.png)
 

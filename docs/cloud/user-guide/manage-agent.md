@@ -79,33 +79,6 @@ import TabItem from '@theme/TabItem';
     </li>
     </ol>
    </TabItem>
-   <TabItem value="computenest" label="阿里云计算巢">
-    <ol>
-    <li>登录阿里云并进入<a href="https://computenest.console.aliyun.com/">计算巢控制台</a>。
-    </li>
-    <p></p>
-    <li>找到您的计算巢实例并单击其 ID，进入概览页面。
-    </li>
-    <p></p>
-    <li>单击<b>资源</b >页签，找到 Agent 安装到的 ECS 示例（名称包含 <b>tapdata</b>），单击其右侧的<b>远程连接</b>。
-    <p></p>
-    <img src='https://docs.tapdata.io/img/login_compute_nest_cn.png'></img>
-    </li>
-    <p></p>
-    <li>在跳转到的命令窗口中，执行 <code>cd /data/tapdata</code> 进入 Agent 安装目录，然后选择执行下述命令：
-    <ul>
-    <li>查看命令帮助：<code>./tapdata help</code>
-    </li>
-    <li>查看 Agent 状态：<code>./tapdata status</code>
-    </li>
-    <li>启动 Agent：<code>./tapdata start</code>
-    </li>
-    <li>停止 Agent：<code>./tapdata stop</code>
-    </li>
-    </ul>
-    </li>
-    </ol>
-   </TabItem>
   </Tabs>
 
 ### Agent 目录说明
