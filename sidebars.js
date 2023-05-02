@@ -32,6 +32,18 @@ const sidebars = {
             'cloud/introduction/terms',
      ]
     },
+{
+     type: 'category',
+     label: '产品计费',
+     link: {type: 'doc', id: 'cloud/billing/README'},
+     items: [
+            'cloud/billing/billing-overview',
+            'cloud/billing/purchase',
+            'cloud/billing/renew-subscribe',
+            'cloud/billing/expiration',
+            'cloud/billing/refund',
+     ]
+    },
     {
      type: 'category',
      label: '快速入门',
@@ -46,7 +58,6 @@ const sidebars = {
                     'cloud/quick-start/install-agent/agent-on-windows',
                     'cloud/quick-start/install-agent/agent-on-docker',
                     'cloud/quick-start/install-agent/agent-on-mac-m1',
-                    'cloud/quick-start/install-agent/agent-on-compute-nest',
              ]
             },
             'cloud/quick-start/connect-database',

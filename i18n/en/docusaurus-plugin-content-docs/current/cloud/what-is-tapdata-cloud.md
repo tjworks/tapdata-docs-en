@@ -33,9 +33,9 @@ Compared with traditional data migration/synchronization tools, Tapdata Cloud ca
 
 ## Product Pricing
 
-Tapdata Cloud offers basic (free to use), standard, and premium editions, and you can scale horizontally by data link or node.
+Tapdata Cloud charges based on the specifications and quantity of subscribed Agent instances, and you can create one SMALL specification Agent instance for free.
 
-For more information, see [Pricing](https://tapdata.net/pricing.html).
+For more information, see [Billing Overview](billing/billing-overview.md).
 
 
 
@@ -45,7 +45,7 @@ No worries, with Tapdata Cloud's intuitive graphic interface, you can start quic
 
 * [Deploy Tapdata Agent](cloud/quick-start/install-agent)
 * [Connect Database](quick-start/connect-database.md)
-* [Start Data Synchronization](cloud/quick-start/create-task)
+* [Start Data Synchronization](/cloud/quick-start/create-task)
 
 
 
