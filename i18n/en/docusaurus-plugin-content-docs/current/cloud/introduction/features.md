@@ -1,18 +1,32 @@
 # Features
 
+This article introduces the features of Tapdata Cloud to help you quickly understand its core capabilities.
+
 ## Data Replication
 
-Tapdata Cloud supports full data synchronization and real-time incremental data synchronization. To meet different needs, you can combine both modes in different scenarios. 
+Tapdata Cloud data replication includes full synchronization and real-time incremental synchronization, which can help you to quickly achieve real-time synchronization between the same/heterogeneous data sources, which is suitable for data migration/synchronization, data disaster recovery, reading performance expansion, and other [business scenarios](use-cases.md).
+
+![Data Replication Workflow](../images/features_data_copy.png)
+
 
 
 ## Data Development
 
-Tapdata Cloud allow you to add processing nodes between source and target data nodes, which can help you quickly accomplish data processing tasks like merging multiple tables, splitting data, and adding and removing fields. This article describes the process of creating data development tasks.
+Aiming at complex data processing needs, Tapdata Cloud supports a variety of [processing nodes](../user-guide/data-development/process-node.md) between data sources based on data replication capabilities. These nodes provide advanced data processing capabilities such as data splitting, data splitting, field addition, and deletion, and shared mining.
 
-## Supported Data Sources
+![Data Development Workflow](../images/features_data_dev.png)
 
-See [Supported Data Sources](supported-databases.md).
 
-## Preparations
 
-To use the data synchronization feature successfully, you need to deploy and plan your network access and set up access rights, for more information, see [Preparation](../prerequisites/README.md).
+## Data as a Service (DaaS)
+
+With Tapdata Cloud's [Data Service Platform Model](../user-guide/data-console/daas-mode/enable-daas-mode.md), you can synchronize data scattered in different business systems to a unified platform cache layer, which can provide basic data for subsequent data processing and business, avoid the performance impact of directly reading/manipulating the source database. This helps create a consistent, real-time data platform and connects disparate data silos.
+
+![Data Service Platform Architecture](../images/ldp_architecture.png)
+
+
+
+## Supported sources and targets
+
+Tapdata Cloud supports rich data sources, as detailed in [Supported Data Sources](supported-databases.md).
+
