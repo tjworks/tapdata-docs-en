@@ -28,7 +28,7 @@ Display basic information and key monitoring indicators of the task, including s
 
 * Task checksumming: will be displayed only if the task has checksumming enabled. Click to view checksumming details if any anomalies are found.
 * QPS: The average number of input events and output events processed per second by the task.
-* Incremental delay: The delay from the time the event is generated from the source library to the time it is completed by the task processing to write the target. When there are multiple targets, only the maximum incremental delay time is counted, in milliseconds.
+* Incremental delay: The delay from the time the event is generated from the source database to the time it is completed by the task processing to write the target. When there are multiple targets, only the maximum incremental delay time is counted, in milliseconds.
 * Task event statistics: Statistics of all cumulative events after the operation of the task, the statistical precautions are as follows:
    * Update: The insertion event becomes the update event if the target database already exists when the target database is inserted, and the write policy sets the update to occur when the target already exists.
    * DDL

@@ -1,6 +1,8 @@
 # Data Service Platform Dashboard
 
-After turning on the data service platform mode, the page will be categorized based on [the hierarchy](enable-daas-mode.md) we mentioned earlier. You can simply drag the table to the next level to automatically complete the creation of data replication tasks and easily complete the flow of data. This article explains how to use the Data Service Platform Mode interface to help you quickly understand the various functional modules.
+After turning on the data service platform mode, the page will be categorized based on [the hierarchy](enable-daas-mode.md) we mentioned earlier. You can simply drag the table to the next level to automatically complete the creation of data replication tasks and easily complete the flow of data. 
+
+This article explains how to use the Data Service Platform Mode interface to help you quickly understand the various functional modules.
 
 ## Procedure
 
@@ -8,7 +10,7 @@ After turning on the data service platform mode, the page will be categorized ba
 
 2. In the left navigation panel, click **Data Console**.
 
-3. You can easily view your entered data source information on this page, and we'll cover the specific roles of each module next.
+3. You can easily view your entered data source information on this page, and we'll cover the functions of each button next.
 
    ![Data Integration Mode Interface](../../../images/daas_dashboard.png)
 
@@ -22,7 +24,7 @@ import TabItem from '@theme/TabItem';
    <img src='/img/data_category_view_en.png'></img>
    <p></p>
    </TabItem>
-    <TabItem value="1" label="② Add data sources">
+    <TabItem value="1" label="② Add Data Sources">
     <p>Click the <img src='/img/add_icon.png'></img> icon, in the pop-up dialog, we can add a data source, select a data source will jump to the connection configuration page. For more information, see <a href="../../connect-database/">Connect Data Sources</a>. </p>
    </TabItem>
    <TabItem value="2" label="③ Search Tables">

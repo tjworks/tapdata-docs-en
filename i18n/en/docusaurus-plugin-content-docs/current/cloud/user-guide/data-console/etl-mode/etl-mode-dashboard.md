@@ -1,6 +1,8 @@
 # Data Integration Dashboard
 
-The data console function is by default a Data Integration Mode, which is suitable for data replication/synchronization, migrate data to cloud or building ETL pipelines. You can simply drag the source table to the target to automatically complete the creation of data replication tasks. This article explains how to use the Data Integration Mode interface to help you quickly understand the various functional modules.
+Tapdata Cloud's data console is set to Data Integration Mode by default, which is suitable for data replication/synchronization, migrate data to cloud or building ETL pipelines. You can simply drag the source table to the target to automatically complete the creation of data replication tasks. 
+
+This article explains how to use the Data Integration Mode dashboard to help you quickly understand the various functional modules.
 
 :::tip
 
@@ -14,7 +16,7 @@ With the increase in the tasks carried by the source databases, in order to mini
 
 2. In the left navigation panel, click **Data Console**.
 
-3. You can easily view your entered data source information on this page, and we'll cover the specific roles of each module next.
+3. You can easily view your entered data source information on this page, and we'll cover the functions of each button next.
 
    ![Data Integration Mode Interface](../../../images/etl_dashboard.png)
 
@@ -30,7 +32,7 @@ import TabItem from '@theme/TabItem';
    <img src='/img/data_category_view_en.png'></img>
    <p></p>
    </TabItem>
-   <TabItem value="1" label="② Add data sources">
+   <TabItem value="1" label="② Add Data Sources">
     <p>Click the <img src='/img/add_icon.png'></img> icon, in the pop-up dialog, we can add a data source, select a data source will jump to the connection configuration page. For more information, see <a href="../../connect-database">Connect Data Sources</a>. </p>
    </TabItem>
    <TabItem value="2" label="③ Search Tables">

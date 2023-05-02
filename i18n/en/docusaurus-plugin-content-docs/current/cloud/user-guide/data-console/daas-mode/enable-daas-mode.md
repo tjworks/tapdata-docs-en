@@ -8,7 +8,7 @@ With Tapdata Cloud's Data Service Platform Model, you can synchronize data scatt
 
 ## Data Service Platform Introduction
 
-With the increase in the tasks carried by the source database, in order to minimize the impact of data extraction on the source database and conform to the organization's concept of data hierarchical governance, Tapdata stratifies the data service platform according to the data flow order as follows:
+With the increase in the tasks carried by the source database, in order to minimize the impact of data extraction on the source database and conform to the organization's concept of data hierarchical governance, Tapdata Cloud stratifies the data service platform according to the data flow order as follows:
 
 ![Data Service Platform Architecture](../../../images/ldp_architecture.png)
 
@@ -23,7 +23,7 @@ With the increase in the tasks carried by the source database, in order to minim
 
 ## Preparations
 
-In the Data Service Platform Mode, we need to prepare a self-constructed MongoDB database as a data repository for the Data Cache Layer and Data Processing Layer:
+In the Data Service Platform Mode, we need to prepare a self-hosted MongoDB database as a data repository for the Data Cache Layer and Data Processing Layer:
 
 1. Prepare a MongoDB database (4.0 and above), and see the [MongoDB official website](https://www.mongodb.com/docs/manual/administration/install-on-linux/) for information on deployment.
 
@@ -51,7 +51,7 @@ Tapdata Cloud is in [Data Integration Mode](../etl-mode/README.md) by default, a
 
    :::tip
 
-   The storage engine currently only supports self-built MongoDB database, and once selected and saved, cannot be modified later.
+   The storage engine currently only supports self-hosted MongoDB database, and once selected and saved, cannot be modified later.
 
    :::
 
