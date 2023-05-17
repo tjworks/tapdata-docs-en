@@ -4,7 +4,7 @@ This article introduces common terms used in Tapdata Cloud to help you quickly u
 
 ## Full data synchronization
 
-In other words, database migration/database cloning, in the data flow task, the full migration of data between various library-level data sources is suitable for business scenarios such as instance data migration, data up and down cloud migration, database split and expansion.
+In other words, database migration/database cloning, in the data flow task, the full migration of data between various database-level data sources is suitable for business scenarios such as instance data migration, data up and down cloud migration, database split and expansion.
 
 ## Incremental data synchronization
 

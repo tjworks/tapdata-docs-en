@@ -13,21 +13,27 @@ Tapdata Cloud is a real-time data platform provided by Tapdata that integrates d
 
 Compared with traditional data migration/synchronization tools, Tapdata Cloud can provide a rich, easy-to-use, secure, and reliable data flow service to improve data development efficiency.
 
-* Out of the Box
 
-   Simply sign up for an account, deploy Tapdata Agent according to the platform with one click, and start data synchronization right away.
 
-* Rich database support
+* **Out of the Box**
 
-   Support for mainstream databases, including commercial databases, open source databases, SaaS platform data sources, and custom data sources. See [Supported Data Sources](introduction/supported-databases.md) for more details.
+  Simply [sign up for an account](https://cloud.tapdata.net/console/v3/#/), deploy Tapdata Agent according to the platform with one click, and start data synchronization right away.
 
-* Reliable data consistency
+* **[Rich database support](introduction/supported-databases.md)**
 
-   Tapdata Cloud ensures high consistency between the target and source databases through a variety of self-developed technologies, supports multiple verification methods, and ensures the strict requirements of the production environment.
+  Support for mainstream databases, including commercial databases, open source databases, cloud databases, SaaS platform data sources, file data sources, and custom data sources.
 
-- Visual operation without coding
+* **Reliable Data Consistency**
 
-   Say goodbye to SQL and code, you can quickly complete the conversion rules such as renaming the table with a simple mouse drag and drop, and also support the UDF (User Defined Function) based on Javascript.
+  Tapdata Cloud ensures high consistency between the target and source databases through a variety of self-developed technologies, supports multiple verification methods, and ensures the strict requirements of the production environment.
+
+* **[Unified Data Service Platform](user-guide/data-console/daas-mode/enable-daas-mode.md)**
+
+  Based on the concept of data hierarchical governance, data scattered in different business systems can be synchronized to a unified platform cache layer, which minimizes the impact of data extraction on business and provides basic data for subsequent data processing and business, thus building a consistent, real-time data platform and connecting data silos.
+
+* **[Visual Operation without Coding](user-guide/workshop.md)**
+
+  Say goodbye to SQL and code, you can quickly complete the conversion rules such as renaming the table with a simple mouse drag and drop, and also support the UDF (User Defined Function) based on Javascript.
 
 
 

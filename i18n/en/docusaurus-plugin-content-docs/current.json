@@ -141,6 +141,18 @@
     "message": "Data Development（Beta）",
     "description": "The label for category 数据开发（Beta） in sidebar cloud"
   },
+  "sidebar.cloud.category.数据面板（Beta）": {
+    "message": "Data Console (Beta)",
+    "description": "The label for category 数据面板 in sidebar cloud"
+  },
+  "sidebar.cloud.category.数据集成平台模式": {
+    "message": "Data Integration Mode",
+    "description": "The label for category 数据集成平台模式 in sidebar cloud"
+  },
+  "sidebar.cloud.category.数据服务平台模式": {
+    "message": "Data Service Platform Model",
+    "description": "The label for category 数据服务平台模式 in sidebar cloud"
+  },
   "sidebar.cloud.category.排查连接失败问题": {
     "message": "Connection Troubleshooting",
     "description": "The label for category 排查连接失败问题 in sidebar cloud"
