@@ -4,16 +4,18 @@ This article introduces billing information such as billing items, billing metho
 
 ## Billing method
 
-Tapdata Cloud charges according to the **specifications** and **number** of Agent instances you subscribe to, you can get 1 Agent instance by completing account registration, and you can also choose to purchase more Agent instances by monthly, annual, consecutive monthly, and consecutive annual subscriptions to meet business needs:
+Tapdata Cloud charges based on the **specifications** and **number** of Agent instances you want to subscribe. You will get 1 Agent instance upon completing account registration, and you have the option to purchase additional Agent instances through monthly, annual, consecutive monthly, or consecutive annual subscriptions to meet your business requirements.
 
-- **One Month Only**: One-time purchase of one-month service, the subscription will not automatically renew after the expiration, and can be renewed manually.
-- **One Year Only**: One-time purchase of one-year service, the subscription will not automatically renew after the expiration, and can be renewed manually.
-- **Monthly**: Pay the monthly subscription fee, and automatically deduct the subscription fee for the next month before the due.
-- **Annually**: Pay the subscription fee annually, and automatically deduct the subscription fee for the next year before the due.
+There are several subscription options available for Tapdata Cloud:
+
+- **One Month Only**: This is a one-time purchase of a one-month service. The subscription will not automatically renew after the expiration and can be manually renewed if desired.
+- **One Year Only**: This option allows for a one-time purchase of a one-year service. The subscription will not automatically renew after the expiration and can be manually renewed when needed.
+- **Monthly**: With the monthly subscription option, you pay a monthly fee. The subscription fee for the next month will be automatically deducted before the due date, ensuring uninterrupted service.
+- **Annually**: The annual subscription option requires paying the subscription fee once a year. Similar to the monthly option, the subscription fee for the next year will be automatically deducted before the due date, providing convenience and continuity.
 
 :::tip
 
-When choosing the recurring monthly/annual billing method, Tapdata Cloud automatically deducts the subscription fee for the next cycle on the expiration date of each period, and you can check the details of the charge in the user center.
+When you select the recurring monthly or annual billing method, Tapdata Cloud will automatically deduct the subscription fee for the next billing cycle on the expiration date of each period. You can conveniently review the charge details in the **user center**, allowing you to stay informed about the payment information and have a clear understanding of the billing process for your Tapdata Cloud subscription.
 
 :::
 
@@ -88,9 +90,9 @@ Please select the appropriate Agent specifications according to the amount of da
 
 
 
-## Description of the Specification
+## Agent Specifications and Descriptions
 
-Since the data flow is usually affected by various factors such as the load performance of the Agent's machine, network transmission delay, network bandwidth, and source/target database workload, the performance of the following tables is only for reference.
+Please note that the performance of the following tables is provided for reference purposes only, as the data flow can be influenced by various factors such as the load performance of the Agent's machine, network transmission delay, network bandwidth, and the workload of the source and target databases.
 
 <table>
 <thead>

@@ -4,7 +4,7 @@ This article introduces the features of Tapdata Cloud to help you quickly unders
 
 ## Data Replication
 
-Tapdata Cloud data replication includes full synchronization and real-time incremental synchronization, which can help you to quickly achieve real-time synchronization between the same/heterogeneous data sources, which is suitable for data migration/synchronization, data disaster recovery, reading performance expansion, and other [business scenarios](use-cases.md).
+Tapdata Cloud offers support for both full data synchronization and real-time incremental data synchronization. Tapdata Cloud can help you to quickly achieve real-time synchronization between the same/heterogeneous data sources, which is suitable for data migration/synchronization, data disaster recovery, reading performance expansion, and other [business scenarios](use-cases.md).
 
 ![Data Replication Workflow](../images/features_data_copy.png)
 
