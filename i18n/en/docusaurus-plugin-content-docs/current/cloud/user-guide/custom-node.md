@@ -84,7 +84,7 @@ For information security, we want to desensitize some of the mobile phone number
 
    ![Phone number desensitization](../images/masking_mobile_en.png)
 
-8. Start the task. The phone number will be desensitized on the target node, and the result is as follows:
+8. Start the task. The phone number will be masked on the target node, and the result is as follows:
 
    ![Desensitization result](../images/desensitization_result_en.png)
 

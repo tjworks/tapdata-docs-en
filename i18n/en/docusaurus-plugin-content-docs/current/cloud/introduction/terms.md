@@ -4,15 +4,15 @@ This article introduces common terms used in Tapdata Cloud to help you quickly u
 
 ## Full data synchronization
 
-In other words, database migration/database cloning, in the data flow task, the full migration of data between various database-level data sources is suitable for business scenarios such as instance data migration, data up and down cloud migration, database split and expansion.
+Database migration or cloning, within the data flow task, is ideal for business scenarios involving complete data migration between different library-level data sources. This includes instances where data needs to be migrated, moved up or down the cloud, or when databases need to be split and expanded.
 
 ## Incremental data synchronization
 
-In the data flow task, the real-time synchronization of data through a specific association relationship or processing between multiple data sources is suitable for meeting the scenarios of user analysis, processing, disaster recovery and so on without affecting user business.
+In the data flow task, the real-time synchronization of data among multiple data sources through specific association relationships or processing is suitable for meeting user scenarios such as data analysis, processing, and disaster recovery without impacting user business operations.
 
 ## Data source
 
-Sources of data connected externally to the Tapdata system. Currently supported sources mainly refer to databases, followed by File, GridFS, RestAPI, Dummy, Custom, UDP, Cache and other types.
+The data sources that can be connected to the Tapdata system from external sources include databases, and in the future, there are plans to gradually expand the support for other types such as files, GridFS, RestAPI, Dummy, Custom, UDP, Cache, and more.
 
 ## Source Connection
 
@@ -28,4 +28,4 @@ Refers to the execution program that runs the synchronization task, and is respo
 
 ## TCM Management Side
 
-The Tapdata Cloud management console allows users to define their own orchestration synchronization tasks and issue synchronization tasks to synchronization instances.
+The Tapdata Cloud management console enables users to define custom orchestration synchronization tasks and deploy these tasks to synchronization instances for execution.

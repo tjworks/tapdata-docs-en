@@ -1,6 +1,6 @@
 # Subscription Instance
 
-After registering Tapdata Cloud, you can create one Agent instance for free, and if you want to create more agents or higher transfer performance, you can follow the flow of this article to complete the subscription of the instance.
+After registering with Tapdata Cloud, you will receive the benefit of creating one free Agent instance. If you require additional agents or desire higher transfer performance, you can refer to the instructions in this article to complete the subscription process for the desired instance.
 
 ## Procedure
 
@@ -8,7 +8,7 @@ After registering Tapdata Cloud, you can create one Agent instance for free, and
 
 2. In the left navigation panel, click **Agent Management**.
 
-   We've created a free Agent instance, and now we need to subscribe to more Agent instances to meet the performance needs of the business.
+   After successfully creating a free Agent instance, if you find that your business requires additional Agent instances to meet performance needs, you can proceed with subscribing to more instances. This will allow you to scale up the capabilities of Tapdata Cloud to accommodate your business requirements effectively.
 
    ![Agent Example](../images/agent_free.png)
 
@@ -18,7 +18,7 @@ After registering Tapdata Cloud, you can create one Agent instance for free, and
 
    :::tip
 
-   In **Semi Managed Mode**, you can [deploy Agent](../quick-start/install-agent/README.md) on an existing device, making full use of the existing hardware resources to get lower prices while further improving security. In addition, you can also purchase/try Tapdata Cloud through [Alibaba Cloud Marketplace](https://market.aliyun.com/products/56024006/cmgj00061912.html), and after obtaining an authorization code in Alibaba Cloud Marketplace, enter it at the bottom of this page to complete the binding.
+   In **Semi Managed Mode**, you have the flexibility to [deploy the Agent](../quick-start/install-agent/README.md) on an existing device, leveraging the available hardware resources. This approach offers cost savings while enhancing security. Additionally, you can explore the option of purchasing or trying Tapdata Cloud through [Alibaba Cloud Marketplace](https://market.aliyun.com/products/56024006/cmgj00061912.html). Once you obtain an authorization code from the marketplace, you can enter it at the bottom of the page to complete the binding process. This allows for a seamless integration between Tapdata Cloud and Alibaba Cloud Marketplace.
 
    :::
 
@@ -30,9 +30,11 @@ After registering Tapdata Cloud, you can create one Agent instance for free, and
    * **Subscription method**: Select the required subscription method, in order to avoid the expiration of the instance affecting the execution of the task, it is recommended to choose the Annually (**10% off**) or Monthly (**5% off**).
    * **Select currency**: Currently supports CNY or USD.
 
-6. Click **Next**, confirm the specifications to be purchased, the billing method, confirm the email address where you received the bill, and then click **OK**.
+6. Click **Next**, on the following page, carefully review and confirm the specifications you wish to purchase. Ensure that the selected billing method aligns with your preferences. Additionally, verify that the email address provided is accurate and where you would like to receive the bill. 
 
-7. On the payment page that you are redirected to, follow the instructions on the page to complete the payment process, and you can download the payment credentials after completing the payment.
+   Once you have double-checked all the information, click on the **OK** button to proceed with the purchase.
+
+7. You will redirected to payment page. Please follow the instructions on the payment page to complete the payment process. After completing the payment, you will be able to download the payment credentials.
 
 8. After the payment is successful, return to the Tapdata Cloud platform to see that the Agent instance you purchased is **To be deployed**.
 

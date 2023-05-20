@@ -1,6 +1,6 @@
 # Install on Docker
 
-Tapdata Agent (short for Agent) obtains data from the source, processes and transmits it to the target, and supports multi-platform installation. This article describes how to install Agent on the Docker platform.
+Tapdata Agent (abbreviated as Agent) retrieves data from the source, processes it, and transmits it to the target. It also supports installation on multiple platforms. This article provides instructions on installing Agent on the Docker platform.
 
 ## Requirements
 
@@ -21,13 +21,15 @@ To simplify the installation process, Tapdata provides you with a Docker image w
 
 2. [Create an Agent](../../billing/purchase.md) according to business requirements.
 
-3. After completing the subscription, select **Docker** on the **deployment page** that you are redirected to, and then copy the installation command.
+3. After completing subscription, on the **deployment** page that you are redirected to, select **Docker** and copy the installation command.
 
    ![Copy the installation command](../../images/agent_on_docker.png)
 
-4. Log in to the device where the Agent will be deployed (without root privileges), create a folder first (e.g., tapdata) and enter it for easier management of the Agent.
+4. To log in to the device where the Agent will be deployed (without root privileges), create a folder first, such as **tapdata**. Enter the created folder to facilitate easier management of the Agent.
 
-5. Paste and execute the installation command you copied in step 3, which contains the process of downloading, deploying, and launching the Agent, and print the container ID after the launch is successful, as shown in the figure below.
+5. Paste and execute the installation command that you copied in step 3, which includes the steps of downloading, deploying, and launching the Agent. 
+
+   After a successful launch, you can retrieve the container ID, as you can see in below picture.
 
    ![Agent Started Successfully](../../images/agent_started_on_docker.png)
 

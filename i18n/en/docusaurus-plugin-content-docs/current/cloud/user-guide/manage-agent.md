@@ -1,6 +1,6 @@
 # Manage Agent
 
-Tapdata Cloud supports visual management and maintenance of Agents. You can manage installed Agents via the page or by executing commands.
+Tapdata Cloud provides visual management and maintenance capabilities for Agents. You can manage installed Agents through the dedicated page or by executing commands.
 
 
 

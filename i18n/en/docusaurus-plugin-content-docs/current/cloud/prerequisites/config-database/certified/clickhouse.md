@@ -28,10 +28,10 @@ If binary-related fields are included, you need to remove them via field mapping
    CREATE USER username HOST 'host' IDENTIFIED WITH protection BY 'password';
    ```
 
-   * **username**: The user name.
+   * **username**: Enter user name.
    * **host**: Which host can be accessed by the account, **any** means to allow all host.
    * **protection**: Password protection.
-   * **password**: The password.
+   * **password**: Enter password.
 
    Example: Create an account named **tapdata** , using the sha256_password protection mechanism, allowing it to log in from any host.
 
@@ -39,14 +39,14 @@ If binary-related fields are included, you need to remove them via field mapping
    CREATE USER tapdata HOST ANY IDENTIFIED WITH sha256_password BY 'Tap@123456';
    ```
 
-3. Grant permissions to the account that we just created, we recommend setting more granular permissions control based on business needs. For more information, see [authorization syntax](https://clickhouse.com/docs/zh/sql-reference/statements/grant/).
+3. To grant permissions to the account you have just created, it is advisable to implement more granular permission controls based on your business needs. For detailed instructions on authorization syntax and further information, see [authorization syntax](https://clickhouse.com/docs/zh/sql-reference/statements/grant).
 
    ```sql
    GRANT ALL ON database_name.table_name TO 'username' WITH GRANT OPTION;
    ```
 
-   * **database_name.table_name**: The databases and tables to grant permissions, separate with periods (.) between names. Such as demodata.customer.
-   * **usernmae**: The user name.
+   * **database_name.table_name**: To grant permissions to specific databases and tables, you can specify them by separating the names with periods (.) as follows, such as demodata.customer.
+   * **usernmae**: Enter user name.
 
 ## Next step
 

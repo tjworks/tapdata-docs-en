@@ -1,6 +1,6 @@
 # Install on Linux
 
-Tapdata Agent (short for Agent) obtains data from the source, processes and transmits it to the target, and supports multi-platform installation. This article describes how to install Agent on the Linux platform.
+Tapdata Agent (abbreviated as Agent) retrieves data from the source, processes it, and transmits it to the target. It also supports installation on multiple platforms. This article provides instructions on installing Agent on the Linux platform.
 
 ## Requirements
 
@@ -11,7 +11,7 @@ Tapdata Agent (short for Agent) obtains data from the source, processes and tran
 
 :::tip
 
-You can view the Java version by executing the `java-version` command on your device. If you do not install it, you need to install the Java environment manually. For example, execute the command: `yum -y install java-1.8.0-openjdk`.
+To view the Java version on your device, you can execute the `java-version` command. If Java is not already installed, you will need to manually install the Java environment. For instance, you can execute the command: `yum -y install java-1.8.0-openjdk`.
 
 :::
 
@@ -21,7 +21,7 @@ You can view the Java version by executing the `java-version` command on your de
 
 2. [Create an Agent](../../billing/purchase.md) according to business requirements.
 
-3. After completing the subscription, select **Linux(64 bit)** on the **deployment page** that you are redirected to, and then copy the installation command.
+3. After completing subscription, on the **deployment** page that you are redirected to, select **Linux(64 bit)** as the target operating system, and then copy the installation command.
 
    ![Copy the installation command](../../images/agent_on_linux.png)
 

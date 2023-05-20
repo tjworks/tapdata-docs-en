@@ -2,19 +2,18 @@
 
 Tapdata Cloud components include Tapdata cloud manager and Tapdata agent:
 
-* **Tapdata Cloud Manager** (TCM): responsible for installing and configuring agents, and monitoring task status.
-
-* **Tapdata Agent:** obtaining task information from TCM, processing and converting data to send to the target, and reporting task status to TCM during task execution.
+* **Tapdata Cloud Manager** (TCM): Responsible for installing and configuring agents, as well as monitoring the status of tasks.
+* **Tapdata Agent:** Obtain task information from the Task Control Manager (TCM), processing and converting the data to be sent to the target, and reporting the task status back to the TCM during the execution of the task.
 
 ![](../images/architecture.png)
 
 
 
-Tapdata Cloud utilizes various cybersecurity measures to safeguard user data and information:
+Tapdata Cloud employs a range of cyber-security measures to ensure the protection and security of user data and information.
 
-* **One-way connection**: The Tapdata Agent instance does not actively expose network information, and only connects to the TCM management service to obtain task information and report status information.
-* **HTTPS protocol**: Tapdata agent instances communicate with TCM using HTTPS protocol to prevent information theft and tampering.
-* **Trusted environment**: In self-built mode, all data is transferred inside the user's server and networking environment, so there is no data leakage.
+* **One-way Connection**: The Tapdata Agent instance does not actively expose network information, and only connects to the TCM management service to obtain task information and report status information.
+* **HTTPS Protocol**: Tapdata Agent instances establish communication with TCM using the HTTPS protocol, ensuring protection against information theft and tampering.
+* **Trusted Environment**: In self-built mode, all data is transmitted exclusively within the user's server and networking environment, ensuring that there is no risk of data leakage.
 
 
 

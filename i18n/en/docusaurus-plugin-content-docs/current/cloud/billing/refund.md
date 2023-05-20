@@ -10,13 +10,13 @@ If you no longer need to use the Agent instance, you can follow the process to u
 
 3. Ensure that the Agent is not associated with a running task.
 
-   1. Locate the target Agent example to see if the task association is running, skip this step if the unassociated task.
+   1. Locate the target Agent to see if any running task is associated, skip this step if the there is not running task associated.
 
    2. As shown in the figure below, this Agent instance associates 1 running instance, then clicks the task number.
 
       ![Associated Task(s)](../images/agent_related_tasks.png)
 
-   3. On the Task List page that you are redirected to, stop the related task.
+   3. Once redirected to the Task List page, please locate the related task to stop it.
 
 4. Back to the **Agent Management** page, locate the target Agent and click **Stop** on the right.
 
@@ -39,7 +39,7 @@ When you initiate the unsubscribe operation, Tapdata Cloud will execute the refu
 
 :::tip
 
-You can click on your username in the upper right corner of the page, select **User Center**, and scroll down to the bottom of the page to view the start and end dates of the subscribed cycle.
+To view the start and end dates of your subscribed cycle, click on your username located in the upper right corner of the page, then select **Subscription Center**.
 
 :::
 

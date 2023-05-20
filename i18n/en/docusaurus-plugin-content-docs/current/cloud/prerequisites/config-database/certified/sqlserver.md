@@ -1,6 +1,10 @@
 # SQL Server
 
-Once you have installed the Agent, you need to connect the Agent to the SQL Server database through Tapdata Cloud, and you can use the data source in a data replication/development task once the connection has been established. This article describes the preparations before establishing a connection (such as authorizing an account, etc.).
+After installing the Agent, the next step is to establish a connection between the Agent and SQL Server through Tapdata Cloud. This connection is crucial as it allows you to utilize the SQL Server data source for various data replication or development tasks.
+
+Before establishing the connection, it is essential to complete the necessary preparations outlined in the provided article. These preparations may include authorizing an account and performing other relevant steps to ensure a smooth and secure connection.
+
+
 
 ## Supported Versions
 
@@ -88,7 +92,7 @@ go</pre>
    exec sys.sp_cdc_help_change_data_capture
    @source_schema = N'[Schema]',
    @source_name = N'[Table]';
-
+   
    --Enable the CDC for table
    use [DB-Name]
    go
@@ -180,14 +184,14 @@ go</pre>
    -- Replace INSURANCE with your schema name
    USE TAPDATA
    GO
-
+   
    declare @table_name varchar(100)
    declare @database_name varchar(100)
    declare @schema_name varchar(100)
-
+   
    set @database_name = 'TAPDATA'
    set @schema_name = 'INSURANCE'
-
+   
    declare my_cursor cursor for SELECT TABLE_NAME
                                 FROM TAPDATA.INFORMATION_SCHEMA.TABLES
                                 where TABLE_CATALOG = @database_name
@@ -205,14 +209,13 @@ go</pre>
            begin catch
                print ('[ERROR] ' + @table_name)
            end catch
-
+   
            fetch next from my_cursor into @table_name
        end
    close my_cursor
    deallocate my_cursor
-
+   
    EXEC sys.sp_cdc_disable_db
    GO
    ```
-
 

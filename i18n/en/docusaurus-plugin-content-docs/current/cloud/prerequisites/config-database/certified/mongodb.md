@@ -1,8 +1,8 @@
 # MongoDB
 
-Once you have installed the Agent, you need to connect the Agent to MongoDB through Tapdata Cloud, and you can use the data source in a data replication/development task once the connection has been established. 
+After installing the Agent, the next step is to establish a connection between the Agent and MongoDB through Tapdata Cloud. This connection is crucial as it allows you to utilize the MongoDB data source for various data replication or development tasks.
 
-This article describes the preparations before establishing a connection (such as authorizing an account, etc.).
+Before establishing the connection, it is essential to complete the necessary preparations outlined in the provided article. These preparations may include authorizing an account and performing other relevant steps to ensure a smooth and secure connection.
 
 ## Supported Versions
 
@@ -19,14 +19,13 @@ You should use 4.0 or higher versions of the source and target databases since t
 1. Make sure that the schema of the source database is a replica set or a sharding cluster. If it is standalone, you can configure it as a single-member replica set to open Oplog.
    For more information, see [Convert a Standalone to a Replica Set](https://docs.mongodb.com/manual/tutorial/convert-standalone-to-replica-set/).
 
-2. Configure enough Oplog storage space to accommodate at least 24 hours of Oplog.
-   For more information, see [Change the Size of the Oplog](https://docs.mongodb.com/manual/tutorial/change-oplog-size/).
+2. To ensure sufficient storage space for the Oplog, it is important to configure it to accommodate at least 24 hours' worth of data. For detailed instructions, see [Change the Size of the Oplog](https://docs.mongodb.com/manual/tutorial/change-oplog-size/).
 
-3. Select the steps below to create an account and grant permissions according to permission management requirements.
+3. To create an account and grant permissions according to permission management requirements, follow the necessary steps.
 
    :::tip
 
-   In shard cluster architectures, the shard server cannot obtain user permissions from the config database, so you need create corresponding users and grant permissions on the master nodes of each shard.
+   In shard cluster architectures, the shard server is unable to retrieve user permissions from the config database. Therefore, it is necessary to create corresponding users and grant permissions on the master nodes of each shard.
 
    :::
 
@@ -60,7 +59,7 @@ You should use 4.0 or higher versions of the source and target databases since t
 
       :::tip
 
-      Only when MongoDB is version 3.2, you need to grant read role to the local database.
+      Only when using MongoDB version 3.2, it is necessary to grant the **read** role to the local database.
 
       :::
 
@@ -84,7 +83,7 @@ You should use 4.0 or higher versions of the source and target databases since t
       }
       ```
 
-4. When setting the MongoDB URI, it is recommended to set the write concern to the majority, that is, `w=majority`, otherwise, a primary node downtime may result in data loss.
+4. When configuring the MongoDB URI, it is advisable to set the write concern to **majority** (`w=majority`) to mitigate the risk of data loss in the event of a primary node downtime.
 
 5. When the source database is a cluster, in order to improve data synchronization performance, Tapdata Cloud will create a thread for each shard and read the data. Before configuring data synchronization/development tasks, you also need to perform the following operations.
 
@@ -121,7 +120,7 @@ db.createUser({
 
 :::tip
 
-Only when MongoDB is version 3.2, you need to grant read role to the local database.
+Only when using MongoDB version 3.2, it is necessary to grant the read role to the local database.
 
 :::
 

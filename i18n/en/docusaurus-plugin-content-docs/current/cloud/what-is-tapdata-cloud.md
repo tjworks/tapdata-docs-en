@@ -13,8 +13,6 @@ Tapdata Cloud is a real-time data platform provided by Tapdata that integrates d
 
 Compared with traditional data migration/synchronization tools, Tapdata Cloud can provide a rich, easy-to-use, secure, and reliable data flow service to improve data development efficiency.
 
-
-
 * **Out of the Box**
 
   Simply [sign up for an account](https://cloud.tapdata.net/console/v3/#/), deploy Tapdata Agent according to the platform with one click, and start data synchronization right away.
@@ -33,7 +31,7 @@ Compared with traditional data migration/synchronization tools, Tapdata Cloud ca
 
 * **[Visual Operation without Coding](user-guide/workshop.md)**
 
-  Say goodbye to SQL and code, you can quickly complete the conversion rules such as renaming the table with a simple mouse drag and drop, and also support the UDF (User Defined Function) based on Javascript.
+  Say goodbye to SQL, you can quickly complete the conversion rules such as renaming the table with a simple mouse drag and drop, and also support the UDF (User Defined Function) based on Javascript.
 
 
 

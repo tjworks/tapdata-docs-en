@@ -1,6 +1,6 @@
 # Renew Instance
 
-For annual/monthly instances, Tapdata Cloud will remind you to renew in time one month before the expiration. In order to avoid affecting your business, please renew in time before the expiration of the instance or choose the **continuous annual**/**monthly** billing method at the time of purchase.
+For annual and monthly instances, Tapdata Cloud will send you a reminder one month before the expiration date to ensure timely renewal. To prevent any disruption to your business operations, it is important to renew your instance before it expires. Alternatively, you can choose the continuous annual or monthly billing method during the initial purchase, which will automatically renew your subscription without the need for manual intervention. This helps ensure seamless continuity of your Tapdata Cloud services.
 
 
 
@@ -8,7 +8,7 @@ For annual/monthly instances, Tapdata Cloud will remind you to renew in time one
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.net/console/v3/).
 
-2. In the top-right corner of the page, click your username and select **User Center**.
+2. In the top-right corner of the page, click your username and select **Subscription Center**.
 
    ![User Center](../images/user_center.png)
 
@@ -18,5 +18,5 @@ For annual/monthly instances, Tapdata Cloud will remind you to renew in time one
 
    ![Renew Instance](../images/renew_subscribe.png)
 
-5. On the payment page that you are redirected to, follow the instructions on the page to complete the payment process.
+5. Follow the instructions on the payment page to complete the payment process.
 
