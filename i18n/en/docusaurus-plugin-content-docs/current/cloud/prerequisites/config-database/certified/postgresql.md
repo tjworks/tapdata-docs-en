@@ -1,8 +1,8 @@
 # PostgreSQL
 
-Once you have installed the Agent, you need to connect the Agent to the PostgreSQL database through Tapdata Cloud, then you can use the data source in a data replication/development task. 
+After installing the Agent, the next step is to establish a connection between the Agent and PostgreSQL through Tapdata Cloud. This connection is crucial as it allows you to utilize the PostgreSQL data source for various data replication or development tasks.
 
-This article describes the preparations before establishing a connection (such as authorizing an account, etc.).
+Before establishing the connection, it is essential to complete the necessary preparations outlined in the provided article. These preparations may include authorizing an account and performing other relevant steps to ensure a smooth and secure connection.
 
 
 
@@ -14,12 +14,12 @@ PostgreSQL 9.4, 9.5, 9.6, 10.x, 11.x, 12
 
 ## Incremental Data Sync Principle
 
-By PostgreSQL's logical decoding function, Tapdata Cloud can extract the changes made to the transaction log and handle the changes in a user-friendly manner. Supported Change Data Capture (CDC) is as follows:
+PostgreSQL's logical decoding function enables Tapdata Cloud to extract and process changes made to the transaction log, ensuring a user-friendly approach. The supported Change Data Capture (CDC) mechanisms include:
 
-- Logical Decoding: Used to parse logical change events from Wal logs.
-- Replication Protocol: Provides a mechanism for consumers to subscribe the database changes in real time.
-- Export snapshot: Allow export of consistent snapshots of the database (pg_export_snapshot)
-- Replication Slot: Used to save consumer offsets and track subscriber progress.
+- **Logical Decoding**: Parses logical change events from Wal logs.
+- **Replication Protocol**: Offers a real-time subscription mechanism for consumers to receive database changes.
+- **Export snapshot**: Allows exporting consistent snapshots of the database using the pg_export_snapshot function.
+- **Replication Slot**: Enables saving consumer offsets and tracking subscriber progress for efficient replication.
 
 
 
@@ -27,7 +27,7 @@ By PostgreSQL's logical decoding function, Tapdata Cloud can extract the changes
 
 1. Log in to the PostgreSQL database as an administrator.
 
-2. Modify the replication identity to **FULL**(using the entire row as the identifier), which determines the field for logging when UPDATE/DELET occurs.
+2. To ensure that the entire row is used as the identifier for logging during UPDATE/DELETE operations, modify the replication identity to **FULL**. This setting determines the field used for logging when changes occur.
 
    ```sql
    ALTER TABLE '[schema]'.'[table name]' REPLICA IDENTITY FULL;   
@@ -43,7 +43,7 @@ By PostgreSQL's logical decoding function, Tapdata Cloud can extract the changes
 
    - [Pgoutput](https://www.postgresql.org/docs/15/sql-createsubscription.html)(PostgreSQL 10.0 and above)
 
-   For **Wal2json** as an example, the installation steps are as follows:
+   To install **Wal2json**, follow the steps below:
 
    1. Make sure the environment variable path contains `/bin`.
 
@@ -64,7 +64,7 @@ By PostgreSQL's logical decoding function, Tapdata Cloud can extract the changes
 
       :::tip
 
-      If you get an error when executing the make command: "fatal error: [xxx].h: No such file or directory", you can try installing postgresql-server-dev to solve it. Installation command reference for Debian system: `apt-get install -y postgresql-server-dev-<version>`.
+      If you encounter an error while executing the make command, such as "fatal error: [xxx].h: No such file or directory," you can resolve it by installing the postgresql-server-dev package. For Debian-based systems, you can use the following command as a reference to install the required package: `apt-get install -y postgresql-server-dev-<version>`.
 
       :::
 
@@ -187,7 +187,7 @@ By PostgreSQL's logical decoding function, Tapdata Cloud can extract the changes
 
 ##  Exceptions Resolution
 
-If the CDC is stopped abruptly, the connection to the PostgreSQL master node may not be properly terminated, which can prevent the Slot from being removed. In this situation, you need to manually log in to the master node and delete the Slot to prevent it from taking up resources.
+If the Change Data Capture (CDC) process is abruptly stopped, the connection to the PostgreSQL master node may not be terminated correctly, leading to the persistence of the Slot. To prevent the Slot from occupying system resources, it becomes necessary to manually log in to the master node and delete the Slot.
 
 ```sql
 // Check if there is any information with slot_name=tapdata

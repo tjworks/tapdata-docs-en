@@ -1,6 +1,6 @@
 # Install on Mac (M1 Chip)
 
-Tapdata Agent (short for Agent) obtains data from the source, processes and transmits it to the target, and supports multi-platform installation. This article describes how to install Agent on the Mac platform (M1 chip).
+Tapdata Agent (abbreviated as Agent) retrieves data from the source, processes it, and transmits it to the target. It also supports installation on multiple platforms. This article provides instructions on installing Agent on the Mac platform (M1 chip).
 
 ## Requirements
 
@@ -46,11 +46,13 @@ Tapdata Agent (short for Agent) obtains data from the source, processes and tran
 
    1. [Create an Agent](../../billing/purchase.md) according to business requirements.
 
-   2. After completing the subscription, select **Linux(64 bit)** on the **deployment page** that you are redirected to, and then copy the installation command(start copying from**./tapdata**), as shown in the example.
+   2. After completing subscription, on the **deployment** page that you are redirected to, select **Linux(64 bit)** as the target operating system. Next, copy the installation command, starting from **./tapdata**, as illustrated in the provided example.
 
       ![Copy the installation command](../../images/agent_on_macm1.png)
 
-6. Return to the container command line, paste the command you just copied and execute it, and the startup is successful as shown in the figure below.
+6. Paste the previously copied command in the container command line and execute it. 
+
+   The startup is successful, you can refer to the below figure.
 
    ![](../../images/agent_started_on_macm1.png)
 

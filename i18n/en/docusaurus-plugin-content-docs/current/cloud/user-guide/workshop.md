@@ -1,12 +1,12 @@
 # Dashboard
 
-Through the dashboard, you can quickly learn how the product works and create agents, connections, and tasks.
+The dashboard provides a convenient platform to swiftly understand the product's functionality and effortlessly perform tasks like creating agents, establishing connections, and setting up tasks.
 
 ![](../images/workshop.png)
 
 ## Quick Start
 
-Three simple steps to experience Tapdata Cloud's powerful data transfer capabilities:
+To experience the powerful data transfer capabilities of Tapdata Cloud, follow these three simple steps:
 
 | Page Button | Description | Related Doc |
 | ------------- | ------------------------------------------------------------ | ---------------------------------------------------- |
@@ -16,30 +16,18 @@ Three simple steps to experience Tapdata Cloud's powerful data transfer capabili
 
 
 
-## Explore Use Cases
-
-Displays best practices for Tapdata Cloud in different scenarios, such as data into the lake warehouse.
-
-
-
-## Announcements
-
-Display the latest announcement information, including upgrade change reminder, version new feature introduction, etc. Click the announcement title to view the details.
-
-
-
 ## Overview
 
-Displays Agent, Connection, Number of Pipelines, and Status information in Tapdata Cloud.
+You can view the information related to Agents, Connections, Number of Pipelines, and their respective statuses.
 
 
 
 ## Task Data Volume Statistics
 
-Displays the amount of task data per day, which is the total number of inserted, updated, deleted, and DDLs.
+Provides a summary of the daily task data, including the total number of inserted, updated, deleted, and DDLs (Data Definition Language) operations.
 
 
 
 ## System Notification
 
-Hover your mouse over **Notification** in the upper right corner to quickly get the latest system notifications and alerts (such as Agent status notifications), and you can also click **View all notifications** to go to the **System notification** page and set how Agent notifications (such as Mail/SMS, etc.) work.
+To conveniently access the most recent system notifications and alerts, including Agent status updates, simply hover your mouse over the **Notification** icon located in the upper right corner. Moreover, by clicking on **View all notifications**, you can navigate to the **System notification** page and configure the settings for Agent notifications, such as Mail/SMS notifications, and more.

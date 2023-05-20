@@ -1,21 +1,21 @@
 # Oracle
 
-Once you have installed the Agent, you need to connect the Agent to the Oracle database through Tapdata Cloud, and you can use the data source in a data replication/development task once the connection has been established.
+After installing the Agent, the next step is to establish a connection between the Agent and Oracle through Tapdata Cloud. This connection is crucial as it allows you to utilize the Oracle data source for various data replication or development tasks.
 
-This article describes the preparations before establishing a connection (such as authorizing an account, etc.).
+Before establishing the connection, it is essential to complete the necessary preparations outlined in the provided article. These preparations may include authorizing an account and performing other relevant steps to ensure a smooth and secure connection.
 
 ## Supported Versions
 
 Oracle 9i, 10g, 11g, 12c, 19c
 
 ## Precautions
-* If the connect_time (automatically disconnect the timeout session) is set, it may cause a real-time synchronization exception, and the setting of this parameter can be checked by the following command.
+* To check the setting of the connect_time parameter, which automatically disconnects timeout sessions and may lead to real-time synchronization exceptions, you can use the following command.
 
    ```sql
    select resource_name, limit from dba_profiles where profile=( select profile from dba_users where username = '<username>');
    ```
 
-* You need to reserve enough storage space for archive logs to avoid overcrowding affecting database operation.
+* To ensure smooth database operation, it is important to allocate sufficient storage space for archive logs and prevent overcrowding.
 ## As a Source Database
 
 1. Log in to the Oracle database as a user with DBA privileges.
@@ -24,11 +24,11 @@ Oracle 9i, 10g, 11g, 12c, 19c
 
    :::tip
 
-   You can also execute the `select log_mode from v$database;` command to see if the feature is turned on, returning the result as **ARCHIVELOG** to indicate that it is turned on, skipping this step.
+   You can verify if the feature is enabled by executing the `SELECT log_mode FROM v$database` command. If the result returned is `ARCHIVELOG`, it indicates that the feature is turned on, and you can skip this step.
 
    :::
 
-   1. Execute the following command to close the database. Operate during off-peak times to avoid affecting data writing and reading.
+   1. Execute the following command to close the database.It is advisable to perform this operation during off-peak times to minimize any impact on data reading and writing.
 
       ```sql
       shutdown immediate;
@@ -142,9 +142,9 @@ GRANT create session, alter session, select any dictionary, select any transacti
 ## As a Target Database
 1. Log in to the Oracle database as a user with DBA privileges.
 
-2. Create an account for data synchronization/development tasks with schema owner privileges.
+2. To facilitate data  synchronization and development tasks, create an account with schema owner privileges.
 
-   For more information, See [CREATE USER](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_8003.htm) and [GRANT](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_9013.htm).
+   For more information, see [CREATE USER](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_8003.htm) and [GRANT](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_9013.htm).
 
 
 

@@ -1,6 +1,8 @@
 # MySQL
 
-Once you have installed the Agent, you need to connect the Agent to the MySQL database through Tapdata Cloud, then you can use the data source in a data replication/development task. This article describes the preparations before establishing a connection (such as authorizing an account, etc.).
+After installing the Agent, the next step involves connecting it to the MySQL database via Tapdata Cloud. This connection enables you to utilize the data source for various data replication or development tasks. 
+
+Prior to establishing the connection, it is important to complete the necessary preparations outlined in the provided article, which may include authorizing an account and performing other relevant steps. These preparations ensure a seamless and secure connection between the Agent and the MySQL database, enabling efficient data handling and processing.
 
 ## Supported Versions
 
@@ -24,9 +26,9 @@ import TabItem from '@theme/TabItem';
    </TabItem>
   </Tabs>
 
-* **username**: The user name.
-* **password**: The password.
-* **host**: Which host can be accessed by the account, percent (%) means to allow all host.
+* **username**: Enter user name.
+* **password**: Enter password.
+* **host**: Enter the host that can be accessed by the account, percent (%) means to allow all host.
 
 Example: Create an account named tapdata.
 
@@ -47,9 +49,9 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
    </TabItem>
   </Tabs>
 
-* **database_name.table_name**: The databases and tables to grant permissions, separate with periods (.) between names. Such as demodata.customer.
-* **username**: The user name.
-* **password**: The password.
+* **database_name.table_name**: To grant permissions to specific databases and tables, you can specify them by separating the names with periods (.) as follows, such as `demodata.custome`.
+* **username**: Enter user name.
+* **password**: Enter password.
 
 3. To ensure that the incremental data of the MySQL database can be read, you need to follow the steps below to turn on Binlog.
 
@@ -107,9 +109,9 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
    </TabItem>
   </Tabs>
 
-* **username**: The user name.
-* **password**: The password.
-* **host**: Which host can be accessed by the account, percent (%) means to allow all host.
+* **username**: Enter user name.
+* **password**: Enter password.
+* **host**: Enter the host that can be accessed by the account, percent (%) means to allow all host.
 
 Example: Create an account named tapdata.
 
@@ -130,9 +132,9 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
    </TabItem>
   </Tabs>
 
-* **database_name.table_name**: The databases and tables to grant permissions, separate with periods (.) between names. Such as demodata.customer.
-* **username**: The user name.
-* **password**: The password.
+* **database_name.table_name**: To grant permissions to specific databases and tables, you can specify them by separating the names with periods (.) as follows, such as `demodata.custome`.
+* **username**: Enter user name.
+* **password**: Enter password.
 
 
 
@@ -154,7 +156,7 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 
 * Q: "Unknown error 1044" appears in the dialog after the connection test.
 
-   A: If the correct permissions have been granted, they can be checked and fixed by:
+   A: If the correct permissions have been granted, can be checked and fixed by:
 
    ```sql
    SELECT host,user,Grant_priv,Super_priv FROM mysql.user where user='username';

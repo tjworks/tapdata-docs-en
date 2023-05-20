@@ -14,11 +14,13 @@ Before connecting to the data sources, you also need to ensure that the network 
 
 2. In the left navigation panel, click **Connections**.
 
-3. Click **Create connection** on the right side of the page, and in the dialog that pops up, select the data source you want to connect to.
+3. On the right side of the page, click on **Create**. A dialog box will appear, where you can select the desired data source to establish a connection with.
 
    ![](../images/connect_database_demo.png)
 
-4. In the pop-up dialog, fill in the data source connection information, and the right panel will prompt for connection configuration help information.
+4. After being redirected to the connection configuration page, proceed to fill in the required data source connection information. 
+
+   On the right panel of the page, you will find helpful information and guidance regarding the configuration of the connection.
 
    :::tip
 
@@ -28,17 +30,17 @@ Before connecting to the data sources, you also need to ensure that the network 
 
    ![Connection configuration example](../images/mysql_connection_demo.png)
 
-   * **Connection name**: Fill in a unique name that has business significance.
+   * **Connection name**: Enter a unique name that holds business significance.
    * **Connection type**: Select Source, Target, or Source&Target.
    * **Host**: The database connection address.
    * **Port**: The service port of database.
    * **Database**: database name, a connection corresponding to a database, if there are multiple databases, you need to create multiple connections.
-   * **username**: The database account.
+   * **username**: Enter database server username.
    * **Password**: The database password.
    * **Connection Parameter String**: Additional connection parameters, default empty.
    * **timezone**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
-   * **Contain table**: Defaults to **all**, you can also choose to custom and fill in the included tables, separated by commas (,) between multiple tables.
-   * **Exclude tables**: After turning on the switch, you can set the tables to be excluded, separated by commas (,) between multiple tables.
+   * **Contain table**: The default option is **All**, but you also have the choice to select **Custom** and specify the included tables. If there are multiple tables, separate them by commas (,) when filling in the table names.
+   * **Exclude tables**: Once you have enabled the switch, you can configure the tables to be excluded by specifying their names, separated by commas (,) if there are multiple tables.
    * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
 
 5. Click **Connection Test** at the bottom of the page, and when passed the check, click **Save**.

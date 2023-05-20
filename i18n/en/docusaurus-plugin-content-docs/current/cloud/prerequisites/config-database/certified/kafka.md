@@ -1,8 +1,8 @@
 # Kafka
 
-Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration , and mission-critical applications. 
+Apache Kafka is an open-source distributed event streaming platform that is utilized by numerous companies for a variety of purposes, including high-performance data pipelines, streaming analytics, data integration, and crucial applications.
 
-Before you can create a Kafka connection, you need to complete the preparation following this article, and you can create a connection and use the data source in a data replication/development task.
+In order to establish a Kafka connection and effectively utilize the data source for tasks related to data replication or development, it is necessary to complete the preparation outlined in the following article. Once the necessary preparations have been completed, you can proceed to create a connection and seamlessly utilize the data source for your intended purposes.
 
 ## Supported Versions
 
@@ -19,7 +19,7 @@ Kafka 2.3.x
 
 ## Preparations
 
-1. Log in to Kafka's server, and complete the creation of the topic. For more information, see [Kafka Quick Start](https://kafka.apache.org/23/documentation.html#quickstart).
+1. Login to Kafka's server and complete the process of creation of topic. For more information, see [Kafka Quick Start](https://kafka.apache.org/23/documentation.html#quickstart).
 2. Confirm the encryption method, if the kerberos authentication is enabled, you also need to prepare the key, configuration and other files.
 
 
