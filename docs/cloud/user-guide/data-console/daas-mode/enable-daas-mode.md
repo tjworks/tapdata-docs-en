@@ -1,61 +1,61 @@
-# 开启数据服务平台模式
+# Enable Data Service Platform Mode
 
-随着数字化转型的持续深入，数据孤岛问题已逐渐成为主要的阻碍，同时业务对数据需求日益增多，传统的数据交付因其周期长、资源投入大而成为交付瓶颈，如何快速打通数据流转通道，发掘数据价值，已成为企业竞争力的关键因素。
+Due to digital transformation, data islands have become the main obstacle, and business demand for data is increasing. Traditional data delivery has become a bottleneck due to its long cycle and large resource investment. How to quickly open up data flow pipeline and explore data value has become a key factor for enterprise competitiveness.
 
-借助 Tapdata Cloud 的数据服务平台模式，您可以将分散在不同业务系统的数据同步至统一的平台缓存层，可为后续的数据加工和业务提供基础数据，从而构建一致、实时的数据平台，连通数据孤岛。
+With Tapdata Cloud's Data Service Platform Model, you can synchronize data scattered in different business systems to a unified platform cache layer, which can provide basic data for subsequent data processing and business, thus building a consistent, real-time data platform and connecting data silos.
 
 
 
-## 数据服务平台介绍
+## Data Service Platform Introduction
 
-随着源库承载的任务增多，为最大限度地降低数据提取对源库的影响，同时契合组织对数据分层治理的理念，Tapdata 根据数据流转顺序，将数据服务平台分层如下：
+With the increase in the tasks carried by the source database, in order to minimize the impact of data extraction on the source database and conform to the organization's concept of data hierarchical governance, Tapdata Cloud stratifies the data service platform according to the data flow order as follows:
 
-![数据服务平台架构](../../../images/ldp_architecture.png)
+![Data Service Platform Architecture](../../../images/ldp_architecture.png)
 
-| 分层                 | 说明                                                         |
+| Hierarchy | Description |
 | -------------------- | ------------------------------------------------------------ |
-| **源数据层**         | Tapdata Cloud 将来自不同业务系统的数据源，抽象为统一的数据源层，它是打通数据孤岛的第一步。更多介绍，见[连接数据源](../../connect-database/README.md)。 |
-| **平台缓存层**       | 通过将源库的表数据提前同步到的平台缓存层，后续可直接通过平台缓存层直接给业务提供数据，避免在数据加工时直接读取/操作源库的数据（如合并表），可极大降低对源库所属业务的影响。 |
-| **平台加工层**       | 如需对数据进行深度定制化的加工/运算（如生成宽表），您可以将平台缓存层的数据表拖动至平台加工层来操作，从而生成最终业务要用的模型数据。 |
-| **数据目标和服务层** | Tapdata Cloud 将支持作为目标的数据源集中展示在数据目标和服务层，您可以将加工后的数据提供给业务使用，从而为企业构建统一的数据服务平台。 |
+| **Source Data Layer** | Tapdata Cloud abstracts data sources from different business systems into a unified data source layer, which is the first step to connect data silos. For more information, see [Connect Data Sources](../../connect-database/README.md).  |
+| **Data Cache Layer** | By synchronizing the table of the source database to the Data Cache Layer in advance, the data can be directly provided to the business directly through the Foundation Data Layer, which avoids directly reading/manipulating the data of the source database (such as union tables) during data processing, which can greatly reduce the impact on the business of the source database.  |
+| **Data Processing Layer** | If you need to deeply customize the data processing/operation (such as generating a wide table), you can drag the data table of the Data Cache Layer to the Data Processing Layer to operate, so as to generate the model data for the final business.  |
+| **Data Targets and Service Layer** | Tapdata Cloud aggregates and presents data sources that support being used as targets, so that you can provide the processed data to the business, so as to build a unified data service platform for the enterprise.  |
 
 
 
-## 准备工作
+## Preparations
 
-在数据服务平台模式下，我们需要准备一个自建的 MongoDB 数据库，将其作为平台缓存层/平台加工层的数据存储库：
+In the Data Service Platform Mode, we need to prepare a self-hosted MongoDB database as a data repository for the Data Cache Layer and Data Processing Layer:
 
-1. 准备一个 MongoDB 数据库（4.0 及以上），相关部署介绍，见 [MongoDB 官网](https://www.mongodb.com/docs/manual/administration/install-on-linux/)。
-
-   :::tip
-
-   为保障业务高可用性，推荐 MongoDB 采用副本集/分片集群架构，同时需基于源数据层的数据规模预留足够的存储空间。
-
-   :::
-
-2. [连接 MongoDB 数据库](../../connect-database/certified/connect-mongodb.md)。
-
-## 操作步骤
-
-Tapdata Cloud 默认处于[数据集成平台模式](../etl-mode/README.md)，接下来，我们将介绍如何开启数据服务平台模式。
-
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
-
-2. 在左侧导航栏，单击**数据面板**。
-
-3. 在页面右侧，单击![setting_icon](../../../images/setting_icon.png)图标。
-
-4. 选择**作为数据服务平台使用**，然后设置平台缓存层/平台加工层所用的存储引擎，即我们在准备工作中设置的 MongoDB 数据源。
-
-   ![开启数据服务平台模式](../../../images/enable_daas_mode.png)
+1. Prepare a MongoDB database (4.0 and above), and see the [MongoDB official website](https://www.mongodb.com/docs/manual/administration/install-on-linux/) for information on deployment.
 
    :::tip
 
-   存储引擎目前仅支持自建的 MongoDB 数据库，且一旦选定保存，后续无法修改，请谨慎操作。
+   In order to ensure high service availability, MongoDB is recommended to use replica/cluster architecture, and to reserve enough storage space based on the data size of the Source Data Layer.
 
    :::
 
-5. 单击**保存**，页面将基于我们前面介绍的层级进行[分类展示](daas-mode-dashboard.md)。
+2. [Connect to MongoDB Database](../../connect-database/certified/connect-mongodb.md)
 
-   
+## Procedure
+
+Tapdata Cloud is in [Data Integration Mode](../etl-mode/README.md) by default, and next we'll introduce how to enable Data Service Platform Mode.
+
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+
+2. In the left navigation panel, click **Data Console**.
+
+3. On the right side of the page, click the ![setting_icon](../../../images/setting_icon.png) icon.
+
+4. Choose **Data Service Platform**, and then set up the storage engine used by the Data Cache Layer/Data Processing Layer, that is, the MongoDB data source we set up in the preparatory work.
+
+   ![Enable Data Service Platform Mode](../../../images/enable_daas_mode.png)
+
+   :::tip
+
+   The storage engine currently only supports self-hosted MongoDB database, and once selected and saved, cannot be modified later.
+
+   :::
+
+5. By clicking **Save**, the page will be categorized based on the [hierarchy](daas-mode-dashboard.md) we covered earlier.
+
+
 

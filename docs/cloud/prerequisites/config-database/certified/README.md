@@ -1,6 +1,6 @@
-# 认证数据源
+# Certified Data Source
 
-认证数据源是指已通过 Tapdata 认证测试流程，运行稳定。
+**GA data source** refers to data sources that has passed Tapdata's certification testing process and has stable performance.
 
 import DocCardList from '@theme/DocCardList';
 

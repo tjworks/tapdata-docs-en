@@ -1,17 +1,20 @@
-# 步骤一：安装 Agent
+# Step 1: Install Agent
 
-Tapdata Agent 是数据同步、数据异构、数据开发场景中的关键程序。由于数据流转通常对时效性有较高的要求，因此，推荐将 Tapdata Agent 部署在数据库所属的本地网络中，从而极大降低数据延迟。
+The Tapdata Agent is an essential component for data synchronization, data heterogeneity, and data pipeline scenarios. While it is recommended to install the Tapdata Agent within the local network where the database is located for real-time processing, an alternative option is available. You can also install the Tapdata Agent on the Tapdata Cloud server, eliminating the need for setting up a machine locally. This provides flexibility and convenience for managing your data flow.
 
-Tapdata Cloud 按照订阅 Agent 实例的**规格**和**数量**收费，您可以免费创建 1 个 SMALL 规格的 Agent 实例，此外，您还可以[购买更多的 Agent 实例](../../billing/billing-overview.md)，来满足业务需求。
+
+
+Tapdata Cloud offers pricing based on the specifications and quantity of subscribed Agent instances. You have the option to create one free instance of the **SMALL** specification Agent, and if required, you can [purchase additional Agent instances](../../billing/billing-overview.md) to align with your specific business requirements.
+
+
 
 :::tip
 
-* Tapdata agent 通过流式技术从源端获取数据、处理转换数据并发送到目标端，数据不会流经 Tapdata Cloud，也不会上传和留存您的数据。
-* 为保障最大程度地保障数据流转性能，推荐 Agent 所部署的机器拥有足够的计算、存储和带宽等资源，例如部署 Small 规格的 Agent 实例，其所属机器为 2 核 4 GB 内存，部署 Medium 规格的 Agent 时，其所属机器为 4 核 8 GB 内存，以此类推。
+Tapdata Agent plays a critical role in the data flow process. It retrieves data from the source, performs necessary processing and transformations, and subsequently transfers it to the designated target. It is important to note that the data being handled by the Tapdata Agent is not uploaded or stored in Tapdata Cloud. The agent acts as a facilitator, ensuring efficient and secure data transfer without retaining any data in the cloud environment.
 
 :::
 
-接下来，根据您的平台选择下述教程：
+Select the following tutorials according to your platform:
 
 import DocCardList from '@theme/DocCardList';
 

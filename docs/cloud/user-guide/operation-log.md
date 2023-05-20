@@ -1,15 +1,15 @@
-# 操作日志
+# Operation Log
 
-操作日志主要是记录用户在 Tapdata Cloud 所执行的操作，您可以查看到近期的操作日志，还可以使用过滤条件对操作日志进行筛选。
+Tapdata Cloud uses the operation log to record user actions while using the system. You can view the recent activity log and filter the action log by applying the filter.
 
 
 
-## 操作步骤
+## Procedure
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 在左侧导航栏栏，单击**操作日志**。
+2. In the left navigation panel, click **Operation log**.
 
-   在该页面，您可以看到各操作的发起人、时间、对象、类型和描述信息，您还可以在列表上方根据业务需求进行筛选，以便更快定位到相关操作日志。
+   On this page, you can see the username, operation time, operation object, operation type, and description of each action. You can filter the list to quickly locate the related action log.
 
-   ![](../images/operation_log.png)
+   ![](../images/operation_log_en.png)

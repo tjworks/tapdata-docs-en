@@ -1,14 +1,14 @@
-# 步骤三：创建数据/开发任务
+# Step 3: Create a Data Pipeline
 
-通过 Tapdata，您不仅可以实现不同数据源之间的数据同步，还可以在数据流转的过程中完成数据的处理。您可以根据业务需求，选择创建下述不同的任务：
+Tapdata allows you to synchronize data from various sources and process it during the data flow. Based on your business needs, you can create different tasks such as:
 
-| 任务类型                                                     | 适用场景                                                     |
+| Task Type | Applicable scenario |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [创建数据复制任务](../user-guide/copy-data/create-task.md)   | 简单几步即可实现同/异构数据源间的实时同步，适用于数据迁移/同步、数据灾备、读性能扩展等多种业务场景。 |
-| [创建数据开发任务](../user-guide/data-development/create-task.md)（Beta） | 通过在源/目标数据源间增加多种处理节点，快速实现多表合并、数据拆分、字段增减、共享挖掘等高级数据处理需求。 |
+| [Create a data replication task](../user-guide/copy-data/create-task.md) | Real-time synchronization between similar or heterogeneous data sources can be achieved easily in a few simple steps. This capability is well-suited for various business scenarios such as data migration/synchronization, data disaster recovery, and improving reading performance. |
+| [Create a data pipeline](../user-guide/data-development/create-task.md) (Beta)  | A variety of processing nodes can be added between source/target data sources. These nodes provide advanced data processing capabilities such as data splitting, merging, field addition, and deletion, and shared mining.  |
 
-## 扩展阅读
+## See also
 
-* [开启数据服务平台模式](../user-guide/data-console/daas-mode/enable-daas-mode.md)
-* [支持的数据源](../introduction/supported-databases.md)
-* [最佳实践文档](../best-practice/README.md)
+* [Enable Data Service Platform](../user-guide/data-console/daas-mode/enable-daas-mode.md)
+* [Supported Data Sources](../introduction/supported-databases.md)
+* [Best Practices](../best-practice/README.md)

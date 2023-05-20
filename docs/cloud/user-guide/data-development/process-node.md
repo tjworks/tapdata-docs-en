@@ -1,113 +1,113 @@
-# 添加处理节点
+# Add Processing Node
 
-Tapdata Cloud 支持在数据复制/开发任务中添加处理节点，满足对数据进行过滤、字段调整等需求。
+Tapdata Cloud supports the addition of processing nodes to data replication/pipeline tasks, which meets the needs of data filtering, field adjustment, and so on.
 
-## 行过滤器
+## Row Filter
 
-主要用来对表数据进行过滤，可以设置过滤条件和执行动作。
+It is mainly used to filter table data, and filtering conditions and execution actions can be set.
 
-* **执行动作**：可选择保留或丢弃匹配的数据
+* **Execute action**: retain or discard matching data
 
-* **条件表达式**：设置过滤条件的表达式
-* **表达式示例**：筛选出50岁以上的男性或者收入一万以下的30岁以上的人，`( record.gender == 0&& record.age > 50) || ( record.age >= 30&& record.salary <= 10000)`
+* **Conditional expression**: An expressionthat sets a filter condition
+* **Example expression**: Filter out men over 50 years old or people under 30 years old with incomes of 10,000 years old, `( record.gender == 0&& record.age > 50) || ( record.age >= 30&& record.salary <= 10000)`.
 
-![](../../images/process_node_1.png)
-
-
-
-## 增删字段
-
-可用来增加新的字段或者删除已有字段，将**增删字段**节点添加到画布，将该节点与数据节点按照处理顺序连接起来，随后可配置该节点参数。如果删除了某个字段，该不会传递到下个节点。
-
-![](../../images/process_node_2.png)
+![](../../images/data_dev_row_filter_setting_en.png)
 
 
 
-## 字段改名
+## Add and delete fields
 
-可用来对字段执行重命名或转换大小写操作，将**字段改名**节点添加到画布，将该节点与数据节点按照处理顺序连接起来，随后可配置该节点参数。
+Add and delete fields node can be used to add new fields or delete existing fields. **The node** can be added to the canvas, configure the node parameters after connecting the node to the data node in order of processing. If a field is deleted, it is not passed to the next node.
 
-![](../../images/process_node_4.png)
-
-
-
-## 字段计算
-
-可通过字段间的计算为字段赋值，将**字段计算**节点添加到画布，将该节点与数据节点按照处理顺序连接起来，随后找到要计算的字段，配置计算规则（支持 JS）。
-
-![](../../images/process_node_5.png)
+![](../../images/add_and_delete_fields.png)
 
 
 
-## 类型修改
+## Field rename
 
-类型修改节点可以用来调整字段的数据类型。
+Use to rename or convert the field case, add the **field rename** node to the canvas, connect the node to the data node in order of processing and then configure the node parameters.
 
-![](../../images/process_node_6.png)
-
-
+![](../../images/rename_fields.png)
 
 
 
-## <span id="union-node">追加合并</span>
+## Field calculation
 
-通过**追加合并**节点，您可以将多个结构相同/相似的表，合并输出至一个表中，Tapdata 会将字段名一致的数据进行合并，详细规则如下：
+Assign the value to the field through the calculation between fields, add the **Field calculation** node to the canvas, connect the node to the data node in order of processing, then find the field to be calculated, and configure the calculation rules (support JS).
 
-- 如果推演出的类型长度和精度不同，则选择最大长度精度。
-- 如果推演出的类型不同，则将其转换为一个通用类型。
-- 当所有源表的主键字段一致时，则保留主键，否则移除该主键。
-- 当所有源表的相同字段都有非空限制时，则保留非空限制，否则移除非空限制。
-- 源表的唯一索引不会同步到目标表。
+![](../../images/field_calculation_en.png)
 
 
 
-**场景示例：**
+## Type modification
 
-希望对 2 个表结构相同的 **student1** 和 **student2** 表执行追加合并操作（Union），然后将结果存在 **student_merge** 表中，表结构及数据如下：
+The Type modification node can be used to adjust the data type of the field.
 
-![追加合并数据示例](../../images/table_union_demo.png)
+![](../../images/data_dev_column_type_setting.png)
 
 
 
-**操作流程**：
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
 
-2. 在左侧导航栏，单击**数据开发**。
+## <span id="union-node">Union</span>
 
-3. 单击页面右侧的**创建**。
+By **Union** node, you can merge multiple tables with the same/similar structure into one table, and Tapdata Cloud will merge the data with the same field name. The detailed rules are as follows:
 
-4. 在页面左侧依次拖入要执行追加合并的数据源至右侧画布，然后从页面左下角拖入**追加合并**节点，最后将它们连接起来。
+- Select the maximum length precision if the type length and precision of the deduction are different.
+- If the column type of the deduction is different, convert it to a generic type.
+- When the primary key fields of all source tables are consistent, the primary key is retained, otherwise the primary key is removed.
+- When the same fields of all source tables have non-empty restrictions, non-empty restrictions are retained, otherwise non-empty restrictions are removed.
+- The unique index of the source table is not synchronized to the target table.
 
-   ![添加追加合并节点](../../images/add_union_node.png)
 
-5. 依次单击要执行追加合并的数据源，在页面右侧的面板中选择待合并的表（**student1** / **student2**）。
 
-6. （可选）单击**追加合并**节点，单击**模型**页签查看追加合并后的表结构信息。
+**Example scenario:**
 
-7. 从页面左侧拖入一个数据源用于存放追加合并后的表，然后将**追加合并**节点连接至该数据源。
+Assume that we want to merge(Union) **student1** and **student2** tables with the same table structure into one table, and then store the result in the **student_merge** table. The tables structure and data are as follows:
 
-8. 单击用于存放追加合并表的数据源，在页面右侧的面板中选择目标表（**student_merge**）及高级设置。
+![Append merge data sample](../../images/table_union_demo.png)
+
+
+
+**Operation**:
+
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+
+2. In the left navigation bar, click **Data Pipelines**.
+
+3. On the right side of the page, click **Create** to configure the task.
+
+4. On the left side of the page, drag the data source you want to perform the append merge to the right canvas, then drag the **Union** node from the bottom left corner of the page and finally connect them.
+
+   ![Add Union Node](../../images/add_union_node_en.png)
+
+5. Click the data source you want to perform the append merge, and in the panel on the right side of the page, select the table to be merged (**student1** / **student2**).
+
+6. (Optional) Click the **Union** node and click the **Model** tab to view the table structure information after the append merge.
+
+7. From the left side of the page, drag a data source to store the merged table, and then connect the **Union** node to the data source.
+
+8. Click the data source where the appended merged table is stored, and in the panel on the right side of the page, select the target table (**student_merge**) and advanced settings.
 
    :::tip
 
-   如希望由 Tapdata 自动创建表结构，可提前在目标库中创建一个名为 **student_merge** 的空表（表结构不限），然后在此处的**高级设置**中，将**已有数据处理**选择为**清除目标端原有表结构和数据**。
+   If you want Tapdata Cloud to automatically create a table structure, you can create an empty table named **student_merge** in the target database in advance (the table structure is unlimited), and then in the **advanced settings**, select **Existing data processing** as **Clear the original table structure and data on the target side**.
 
    :::
 
-   ![追加合并示例](../../images/union_table_demo.png)
+   ![Union example](../../images/union_table_demo_en.png)
 
-9. 确认配置无误后，单击**启动**。
+9. After confirming the configuration is correct, click **Start**.
 
-   操作完成后，您可以在当前页面观察任务的执行情况，如 QPS、延迟、任务时间统计等信息，示例如下：
+   After the operation is completed, you can observe the performance of the task on the current page, such as QPS, delay, task time statistics, etc.
 
-   ![union_table_result](../../images/union_table_result.png)
+   ![union_table_result](../../images/union_table_result_en.png)
 
 
 
-**结果验证**：
+**Result verification**
 
-查询 **student_merge** 表，结果如下：
+Query the **student_merge** table, and the result is as follows:
 
 ```sql
 mysql> select * from student_merge;
@@ -124,66 +124,66 @@ mysql> select * from student_merge;
 6 rows in set (0.00 sec)
 ```
 
-## <span id="js-process">JS 处理</span>
+## <span id="js-process">JS Processing</span>
 
-支持通过 JavaScript 脚本或者 Java 代码对数据进行处理，编写代码时需先检测是否与源节点及目标节点相连，若未相连则无法编辑代码。  
+Supports data processing through JavaScript or Java code. When writing code, it is necessary to check whether it is connected to the source node and the target node.
 
-![](../../images/process_node_12.png)
+![](../../images/js_nodes_en.png)
 
-### 模型声明
+### Model Declarations
 
-针对 JS 节点，Tapdata Cloud 会通过采样数据试运行的方式来推演节点的模型信息。如果发现推演出的模型不准确或字段数量发生变化，可通过模型声明显式的来定义模型里的字段信息。
+For JS nodes, Tapdata Cloud deduces the model information of the node by sampling data trial run. If the deduced model is found to be inaccurate or the number of fields changes, the field information in the model can be defined explicitly by the model declaration.
 
-![](../../images/process_node_13.png)
+![](../../images/model_declarations_en.png)
 
-在开发任务中，模型声明支持的方法如下所示：
+In the development task, the method that the model declares support is as follows:
 
 ```javascript
-// 增加一个字段，如果字段已存在则不操作
+// Add a field when the field does not exists
 TapModelDeclare.addField(tapTable, 'fieldName', 'TapString')
-// 移除一个已存在字段
+// Remove an existing field
 TapModelDeclare.removeField(tapTable, 'fieldName')
-// 更新一个已存在的字段
+// Update an existing field
 TapModelDeclare.updateField(tapTable, 'fieldName', 'TapString')
-// 更新字段，如果不存在则新增
+// Update a field, and add it if it doesn't exist
 TapModelDeclare.upsertField(tapTable, 'fieldName', 'TapString')
-// 设置字段为主键
+// Setting a field as primary key
 TapModelDeclare.setPk(tapTable, 'fieldName')
-// 取消主键
+// Undo setting primary key
 TapModelDeclare.unsetPk(tapTable, 'fieldName')
-// 增加索引
+// Add an index
 TapModelDeclare.addIndex(tapTable, 'indexName', [{'filedName':'fieldName1', 'order': 'asc'}])
-// 移除索引
+// Remove an index
 TapModelDeclare.removeIndex(tapTable, 'indexName')
 ```
 
-参数说明：
+Parameter Description
 
-- `tapTable`：开发任务时的固定参数，JS 节点的返回值
-- `fieldName`：要新增或者操作的字段名
-- `indexName`：要新增或者操作的索引名
-- `TapType`：要新增的字段类型或者要将已有字段的类型修改为的目标类型。目前仅支持使用内置的 `TapType`，支持：
-  - `TapBoolean`：布尔类型，使用 boolean 来存储布尔值
-  - `TapDate`：日期类型，使用自定义的 DateTime 存储日期值
-  - `TapArray`：数组类型，使用 Array 存储 Array 值
-  - `TapNumber`：数值类型，使用 Java 的 Double存 储数字值
-  - `TapBinary`：二进制类型，使用 byte[] 存储字节数组
-  - `TapTime`：时间类型，使用 DateTime 存储时间值
-  - `TapMap`：Map类型，使用 Map 存储 Map 值
-  - `TapString`：字符串类型，使用 Java 的 String 存储字符串
-  - `TapDateTime`：日期时间类型，使用自定义的 DateTime 存储日期和时间值
-  - `TapYear`：年份，使用 DateTime 存储时间值
+- `tapTable`: Fixed parameter, return value of JS node
+- `fieldName`: The name of the field to be added or manipulated
+- `indexName`: The name of the index to be added or manipulated
+- `TapType`: The type of field to be added or the type of the existing field to be modified to the target type. Currently only supports the built-in `TapType`, support:
+   - `TapBoolean`: Boolean type, use boolean to store boolean values
+   - `TapDate`: Date type, use custom DateTime to store date values
+   - `TapArray`: Array type, use Array to store Array values
+   - `TapNumber`: Numeric type, use Java's Double to store numeric values
+   - `TapBinary`: Binary type, use byte to[] store byte arrays
+   - `TapTime`: Time type, use DateTime to store time values
+   - `TapMap`: Map type, use Map to store Map values
+   - `TapString`: String type, use Java's String to store strings
+   - `TapDateTime`: Datetime type, use custom DateTime to store date and time values
+   - `TapYear`: Year, use DateTime to store time values
 
 
-### 应用场景
+### Use cases
 
-1. 在JS节点中对数据记录进行加工处理
-2. 在JS节点中调用自定义函数实现对数据的处理
-3. 在JS节点中调用缓存
-4. 其他需要使用JS节点自定义处理逻辑的场景
+1. Processing data records in a JS node
+2. Calling a custom function in a JS node to process data
+3. Caching calls in a JS node
+4. Other scenarios that require custom processing logic using JS nodes
 
-### JS 内置函数说明
+### JS Built-in Function Description
 
-* [标准 JS 内置函数](../../appendix/standard-js.md)：可对数据记录进行处理与运算，如将日期字符串转换为 Date 类型。
-* [增强 JS 内置函数（Beta）](../../appendix/enhanced-js.md)：支持标准 JS 内置函数的基础上，可实现外部调用（如网络、数据库等）。
+* [Standard JS](../../appendix/standard-js.md): Supports process and operate on data records, such as converting date strings to Date types.
+* [Enhanced JS (Beta)](../../appendix/enhanced-js.md): Supports external calls (such as network, database, etc.) on the basis of standard JS Built-in Function.
 

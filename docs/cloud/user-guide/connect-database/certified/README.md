@@ -1,8 +1,8 @@
-# 认证数据源
+# GA data sources
 
-认证数据源是指已通过 Tapdata Cloud 认证测试流程，运行稳定。
+GA data source means that it has gone through the Tapdata Cloud certification testing process and is running stably.
 
-请根据数据库类型选择查阅下述文档，完成数据库的连接：
+Please refer to the following documents based on your database type to complete the database connection:
 
 import DocCardList from '@theme/DocCardList';
 

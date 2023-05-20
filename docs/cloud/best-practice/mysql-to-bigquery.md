@@ -1,107 +1,107 @@
-# MySQL 实时同步至 BigQuery
+# MySQL to BigQuery Real-Time Sync
 
-[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) 是 Google Cloud 的全代管式 PB 级经济实惠的分析数据仓库，可让您近乎实时地分析大量数据。通过 Tapdata Cloud 可以将多种数据源实时同步至 BigQuery，轻松实现数据的流转，更好满足业务数据架构变化或大数据分析场景。
+[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) is a completely serverless and cost-effective enterprise data warehouse that works across clouds and scales with your data, with BI, machine learning and AI built in. With Tapdata Cloud, multiple data sources can be synchronized to BigQuery in real time, making it easy to achieve data flow and better meet data architecture changes or big data analysis scenarios.
 
-本文以 MySQL 为源数据为例，演示如何将其数据同步至 BigQuery，其他数据的配置方法与本文流程类似。
+Taking MySQL as the source data as an example, this article shows how to synchronize its data to BigQuery, and other data source is configured similarly to the flow of this article.
 
-## 准备工作
+## Preparations
 
-在创建同步任务前，请确保您已经配置好了相关数据源：
+Before you create a replication task, make sure you have configured the relevant data source:
 
-1. [配置 MySQL 连接](../user-guide/connect-database/certified/connect-mysql.md)
-2. [配置 BigQuery 连接](../user-guide/connect-database/beta/connect-bigquery.md)
+1. [Configure MySQL Connection](../user-guide/connect-database/certified/connect-mysql.md)
+2. [Configure BigQuery Connection](../user-guide/connect-database/beta/connect-bigquery.md)
 
-同时还请注意参考[数据类型支持说明](../user-guide/no-supported-data-type.md)。
+Also note the reference [data type support](../user-guide/no-supported-data-type.md).
 
-## 配置任务
+## Configure Task
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 在左侧导航栏，单击**数据复制**。
+2. In the left navigation panel, click **Data Replications**.
 
-3. 单击页面右侧的**创建**。
+3. On the right side of the page, click **Create** to configure the task.
 
-4. 在页面左侧，将 MySQL 和 BigQuery 数据源拖拽至右侧画布中，然后将其连接起来。
+4. On the left side of the page, drag the MySQL and BigQuery data sources into the right canvas and connect them.
 
-5. 单击 MySQL 数据源，根据下述说明完成右侧面板的参数配置。
+5. Click the MySQL data source to complete the parameter configuration of the right panel according to the following instructions.
 
-   ![选择要同步的表](../images/mysql_to_bigquery_source.png)
+   ![Select a table to synchronize](../images/mysql_to_bigquery_source_en.png)
 
-   - **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
-   - **DDL 事件采集**：BigQuery 暂不支持 DDL 写入，无需配置此参数。
-   - **动态新增表**：打开该开关后，Tapdata Cloud 会自动将源库新增/删除的表同步到目标库，仅在选择了全部表时生效。
-   - **选择表**：可选择**全部**或**自定义**，如选择为**自定义**，您还需要在下方选择要同步的表。
-   - **批量读取条数**：全量同步时，每批次读取的记录条数，默认为 **100**。
+   - **Node name**: Defaults to connection name, you can also set a name that has business significance.
+   - **DDL event collection**: BigQuery does not support DDL writing, so you do not need to configure this parameter.
+   - **Dynamic new tables**: After turning on the switch, Tapdata Cloud automatically synchronizes the source database's new/deleted tables to the target database, only when all tables are selected.
+   - **Select a table**: you can select **All** or **Custom**. If you choose **Custom**, you also need to select a table to synchronize below.
+   - **Batch read number**: The number of records read in each batch during full data synchronization, the default is **100**.
 
-6. 单击 BigQuery 数据源，预览数据结构并设置高级选项。
+6. Click the BigQuery data source to preview the data structure and set advanced options.
 
-   1. 在推演结果区域框，可预览同步后的数据结构。![预览数据结构](../images/mysql_to_bigquery_target.png)
+   1. In the Derivation Result area, preview the post-synchronization data structure. ![Preview Data Structure](../images/mysql_to_bigquery_target_en.png)
 
       :::tip
 
-      如需调整字段类型，单击目标字段类型中的![](../images/down_arrow.png)图标，然后在弹出的对话框中完成设置。
+      To adjust the field type, click the ![](../images/down_arrow.png) icon in the target field type, and in the dialog that pops up, complete the setup.
 
       :::
 
-   2. 下翻至**高级设置**区域框，完成高级设置。
+   2. Scroll down to the **Advanced Settings** area to complete the advanced setup.
 
-      ![高级设置](../images/mysql_to_bigquery_settings.png)
+      ![Advanced Settings](../images/mysql_to_bigquery_settings_en.png)
 
-      - **重复处理策略**、**数据写入策略**：根据业务需求选择，也可保持默认。
-      
-      - **全量写入线程数**：全量数据写入的并发线程数，默认为 **8**，可基于目标端写性能适当调整。
-      
-      - **增量写入线程数**：增量数据写入的并发线程数，默认未启用，可基于目标端写性能适当调整。
-      
-      - **临时表前缀**：源表执行的 INSERT 操作会被直接同步至目标表，而当源表执行了 UPDATE/DELETE 操作后，该记录将被同步至目标数据集的临时表，此处配置临时表的名称前缀。
-      
-        :::tip
-      
-        更多临时表的原理介绍，见[常见问题](#faq)。
-      
-      - **数据合并时间**：Tapdata Cloud 会间隔指定的时间，将临时表的数据合并至目标表，合并时间越短，目标表的数据越新，首次合并时间为全量结束后的 1 小时进行。
+      - **Duplicate processing strategy**, **Data write mode**: Choose how duplication data should be handled.
 
-7. 确认无误后，单击**启动**。
+      - **Full multi-threaded write**: The number of concurrent threads with full data written, the default is **8**, which can be appropriately adjusted based on the write performance of the target database.
 
-   操作完成后，您可以在当前页面观察任务的执行情况，如 QPS、延迟、任务时间统计等信息，示例如下：
+      - **Incremental multi-threaded write**: The number of concurrent threads with incremental data written, which is disabled by default, can be appropriately adjusted based on the write performance of the target database.
 
-   ![查看任务运行详情](../images/mysql_to_bigquery_monitor_cn.png)
+      - **Cursor schema name prefix**: An INSERT operation performed by the source table will be directly synchronized to the target table, and an UPDATE/DELETE operation by the source table will be synchronized to the temporary table of the target dataset, which has the specified name prefix.
 
-## 任务管理
+         :::tip
 
-在任务列表页面，您还可以对任务进行启动/停止、监控、编辑、复制、重置、删除等操作。
+         For more information about temporary tables, see [FAQ](#faq).
 
-具体操作，见[管理任务](https://tapdata.netlify.app/cloud/user-guide/copy-data/manage-task)。
+      - **Data merge delay time**: Tapdata Cloud will merge the data of the temporary table into the target table at the specified time interval. Shorter merge times mean newer data in the target table, and the first merge time is 1 hour after the full data synchronization is completed.
+
+7. After confirming the configuration is correct, click **Start**.
+
+   After the operation is completed, you can observe the performance of the task on the current page, such as QPS, delay, task time statistics, etc.
+
+   ![View Task Run Details](../images/mysql_to_bigquery_monitor_en.png)
+
+## Task Management
+
+On the Task List page, you can also start, stop, monitor, edit, copy, reset, and delete tasks.
+
+For more information, See [Management Tasks](../user-guide/copy-data/manage-task.md).
 
 
 
-## <span id="faq"> 常见问题 </span>
+## <span id="faq"> FAQ</span>
 
-* 问：为什么 Agent 所属的机器要能访问谷歌云服务？
+* Q: Why does Agent's machine require access to Google Cloud Services?
 
-  答：Agent 通过流式技术从源端获取数据、处理转换数据并发送到目标端，因此需要访问到谷歌云的 BigQuery 服务，以保障数据可写入至 BigQuery 中。
+   A: The Agent obtains data from the source, processes and transmits it to the target, so it needs to access Google Cloud's BigQuery service to ensure that data can be written to BigQuery.
 
-* 问：临时表的工作原理是什么？
+* Q: How does the temporary table work?
 
-  答：为提升数据写入 BigQuery 的性能，降低数据延迟，Tapdata Cloud 基于 BigQuery 数据特征，组合使用 Stream API 与 Merge API，其过程如下：
+   A: In order to improve the performance of data write and reduce data latency, Tapdata Cloud uses the Stream API and Merge API in combination based on BigQuery data characteristics. The process is as follows:
 
-  1. 在全量写入阶段，使用 Stream API 进行数据导入。
+   1. During the full data synchronization stage, use the Stream API for data import.
 
-  2. 在增量写入阶段，先将增量事件写入至 BigQuery 的临时表，周期性地将临时表的数据合入至主表，完成 UPDATE 和 DELETE 操作的同步。
+   2. In the incremental data synchronization stage, incremental events are first written to BigQuery's temporary table, which is then merged into the target table periodically.
 
-     :::tip
+      :::tip
 
-     为避免触发 Stream API 写入的数据无法被更新的限制，首次数据合并时间为全量结束后的 1 小时进行。
+      To avoid not updating data written by the Stream API, the first merge takes place 1 hour after full synchronization data is completed.
 
-     :::
+      :::
 
-* 问：临时表的结构是什么样的？
+* Q: What are the fields in the temporary table?
 
-  答：下图以临时表中一条数据为例展示其结构和数据，其中 **merge_data_before** 和 **merge_data_after** 分别存储了该条记录变更前后的数据，数据类型为 [Record](https://cloud.google.com/bigquery/docs/nested-repeated?hl=zh-cn)，由于此条记录的 **merge_type** 为 **D**（DELETE 的缩写），即删除数据，则 **merge_data_after** 的内容为空。
+   A: The following figure shows the structure and data of a data item in the temporary table. The **merge_data_before** and **merge_data_after** store the data before and after the record change, and the data type is [Record](https://cloud.google.com/bigquery/docs/nested-repeated). Since the **merge_type** of this record is **D** (abbreviation of delete), that is, the data is deleted, the content of **merge_data_after** is empty.
 
-  ![临时表示例](../images/temp_table_demo.png)
+   ![Provisional example](../images/temp_table_demo.png)
 
-* 问：为什么在 BigQuery 查询到的数据不是最新的？
+* Q: Why is the data queried in BigQuery not up to date?
 
-  答：您可以在任务的管理界面查看增量延迟信息，排除网络延迟因素后，可能因临时表尚未合并至目标 BigQuery 表引起，您可以等待其自动合并后再查询。
+   A: You can view the incremental delay in the management interface of the task. After excluding the network delay factor, the temporary table may not be merged into the target BigQuery table. You can wait for it to automatically merge before querying.
 

@@ -1,47 +1,33 @@
-# 工作台介绍
+# Dashboard
 
-工作台主要帮助用户快速了解和熟悉产品，并可以通过快速创建入口创建 Agent、连接和任务。
+The dashboard provides a convenient platform to swiftly understand the product's functionality and effortlessly perform tasks like creating agents, establishing connections, and setting up tasks.
 
 ![](../images/workshop.png)
 
-## 快速开始
+## Quick Start
 
-只需简单 3 步，即可体验 Tapdata 强大、便捷的数据流转能力：
+To experience the powerful data transfer capabilities of Tapdata Cloud, follow these three simple steps:
 
-| 页面按钮      | 说明                                                         | 相关文档                                             |
+| Page Button | Description | Related Doc |
 | ------------- | ------------------------------------------------------------ | ---------------------------------------------------- |
-| ①  Agent 管理 | 一键进入 Agent 部署页面，根据页面引导和本地环境部署 Agent。  | [安装 Agent](../quick-start/install-agent/README.md) |
-| ② 连接管理    | 一键进入创建连接页面，根据页面引导为 Agent 和数据库建立连接。 | [连接数据库](../quick-start/connect-database.md)     |
-| ③ 任务管理    | 一键进入任务创建页面，创建数据同步任务。                     | [创建复制/开发任务](../quick-start/create-task.md)   |
+| ① Agent | Deploy the Agent by following the prompts on the Agent deployment page.  | [Install Agent](../quick-start/install-agent/README.md) |
+| ② Connections | Establish a connection between the Agent and the database according to the page prompts.  | [Connect Database](../quick-start/connect-database.md) |
+| ③ Pipelines | Create a task that can synchronize data from various data sources to the target database and perform data processing during the synchronization process, such as ETL. | [Create a Data Pipeline](../quick-start/create-task.md) |
 
 
 
-## 探索示例
+## Overview
 
-展示 Tapdata Cloud 在不同场景下的最佳实践，例如数据入湖仓等。
-
-
-
-## 公告通知
-
-展示最新的公告信息，包括升级变更提醒、版本新特性介绍等内容，点击公告标题可以查看公告详细内容。
+You can view the information related to Agents, Connections, Number of Pipelines, and their respective statuses.
 
 
 
-## 概览
+## Task Data Volume Statistics
 
-展示 Tapdata Cloud 中 Agent、连接、任务的数量和状态信息。
-
-
-
-## 任务数据量统计
-
-展示近期每天的任务数据量，即插入、更新、删除和 DDL 的总条数。
+Provides a summary of the daily task data, including the total number of inserted, updated, deleted, and DDLs (Data Definition Language) operations.
 
 
 
-## 系统通知
+## System Notification
 
-将鼠标悬浮在右上角的**通知**，可快速获取最近的系统通知和告警信息（例如 Agent 状态通知），此外，您还可以单击**通知**，进入**通知列表**页面设置 Agent 通知的方式（如邮件/短信等）。
-
-![system_notice](../images/system_notice.png)
+To conveniently access the most recent system notifications and alerts, including Agent status updates, simply hover your mouse over the **Notification** icon located in the upper right corner. Moreover, by clicking on **View all notifications**, you can navigate to the **System notification** page and configure the settings for Agent notifications, such as Mail/SMS notifications, and more.

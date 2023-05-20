@@ -1,56 +1,56 @@
-# 连接 Oracle
+# Connect to Oracle
 
-Oracle Database（简称 Oracle）是甲骨文公司的一款关系数据库管理系统。Tapdata Cloud 支持将 Oracle 作为源和目标数据库构建数据管道，本文介绍如何在 Tapdata Cloud 中添加 Oracle 数据源。
+Oracle Database is a multi-model database management system produced and marketed by Oracle Corporation. Tapdata Cloud supports building data pipelines with Oracle as the source and target database, and this article describes how to add Oracle database to Tapdata Cloud.
 
-## 准备工作
+## Preparations
 
-[Oracle 数据源准备工作](../../../prerequisites/config-database/certified/oracle)
+[Preparations for Oracle](../../../prerequisites/config-database/certified/oracle)
 
-## 操作步骤
+## Procedure
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 在左侧导航栏，单击**连接管理**。
+2. In the left navigation panel, click **Connections**.
 
-3. 单击页面右侧的**创建连接**。
+3. On the right side of the page, click **Create connection**.
 
-4. 在弹出的对话框中，单击**认证数据源**，然后选择 **Oracle**。
+4. In the pop-up dialog, click **GA data source**, and select **Oracle**.
 
-5. 在跳转到的页面，根据下述说明填写 Oracle 的连接信息。
+5. On the page that you are redirected to, follow the instructions below to fill in the connection information for Oracle.
 
-   ![Oracle 连接示例](../../../images/oracle_connection_cn.png)
+   ![Oracle Connection Example](../../../images/oracle_connection.png)
 
-   * 连接信息设置
-     * **连接名称**：填写具有业务意义的独有名称。
-     * **连接类型**：支持将 Oracle 作为源或目标库。
-     * **连接方式**：可选择通过 SID 或 Service Name 连接。
-     * **数据库地址**：数据库连接地址。
-     * **端口**：数据库的服务端口。
-     * **SID**/**Service Name**：填写 SID 或 Service Name 信息。
-     * **Schema**：Schema 名称，即一个连接对应一个 Schema，如需连接多个 Schema 则需创建多个数据连接。
-     * **其他连接串参数**：额外的连接参数，默认为空。
-     * **账号**：数据库的账号。
-     * **密码**：数据库账号对应的密码。
-     * **多租户模式**：如 Oracle 为多租户模式，需打开该开关并填写 PDB 信息。
+   * Connection Information Settings
+      * **Connection name**: Fill in a unique name that has business significance.
+      * **Connection type**: Supports Oracle as a source or target database.
+      * **Connection mode**: Choose to connect through SID or Service Name.
+      * **DB Address**: The database connection address.
+      * **Port**: The service port of database.
+      * **SID**/**Service name**: Fill in the SID or Service Name information.
+      * **Schema**: Schema name, a connection corresponding to a Schema, if you need to connect multiple Schema, you need to create multiple connections.
+      * **Connection Parameter String**: additional connection parameters, default empty.
+      * **User**: The database account.
+      * **Password**: The database password.
+      * **Multi-tenant**: If Oracle is a multi-tenant mode, you need to turn on the switch and fill in the PDB information.
 
-   * 高级设置
-     * **日志插件**：保持默认（**logMiner**）。
-     * **时间类型的时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。
-     * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
-     * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
-     * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
-     * **模型加载频率**：数据源中模型数量大于 1 万时，Tapdata Cloud 将按照设置的时间定期刷新模型。
+   * Advanced settings
+      * **Log plugin name**: Keep default (**logMiner**).
+      * **Timezone for datetime**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
+      * **Contain table**: defaults to **all**, you can also choose to custom and fill in the included tables, separated by commas (,) between multiple tables.
+      * **Exclude tables**: After turning on the switch, you can set the tables to be excluded, separated by commas (,) between multiple tables.
+      * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
+      * **Model loading frequency**: When the number of models in the data source is greater than 10,000, Tapdata Cloud will periodically refresh the model according to the set time.
 
-6. 单击**连接测试**，测试通过后单击**保存**。
+6. Click **Connection Test**, and when passed, click **Save**.
 
    :::tip
 
-   如提示连接测试失败，请根据页面提示进行修复。
+   If the connection test fails, follow the prompts on the page to fix it.
 
    :::
 
 
 
-## 相关文档
+## Related Topics
 
-[Oracle 实时同步至 Tablestore](../../../best-practice/oracle-to-tablestore.md)
+[Oracle to Tablestore Real-Time Sync](../../../best-practice/oracle-to-tablestore.md)

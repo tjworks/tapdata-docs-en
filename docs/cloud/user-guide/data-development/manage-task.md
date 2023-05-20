@@ -1,15 +1,15 @@
-# 管理数据开发任务
+# Manage Data Dev Task
 
-任务创建完成后，您可以在任务列表中对任务进行监控和管理操作。
+After the replication task is created, you can monitor and manage the task in the task list.
 
-![](../../images/manage_copy_dev_task.png)
+![](../../images/manage_copy_dev_task_en.png)
 
-| 操作              | 说明                                                         |
+| Operation | Description |
 | ----------------- | ------------------------------------------------------------ |
-| **设置分类**      | 选中目标任务，将任务以业务的视角分类，方便后续管理。         |
-| **启动**/**停止** | 停止任务后，下次启动将基于上次停止的增量时间点继续复制数据。 |
-| **编辑**          | 调整任务的配置，例如调整节点设置、同步的表、任务启动计划等信息，任务运行时不可调整。 |
-| **监控**          | 查看任务的运行进度、运行日志、连接、历史运行记录、同步内容等信息。更多介绍，见[监控数据复制任务](monitor-task.md)。 |
-| **复制**          | 快速克隆一个配置完全相同的任务，基于复制后的任务微调即可完成配置，简化配置流程。 |
-| **重置**          | 清除任务的数据同步进度，下次启动将重新执行数据同步任务。     |
-| **删除**          | 任务删除后将无法恢复，请谨慎操作。                           |
+| **Set category** | Choose the target task and categorize it based on the business perspective.  |
+| **Start**/**Stop** | After stopping the task, the next start will continue to replicate the data based on the last stop incremental point in time.  |
+| **Edit** | Configure the task, such as node settings, synchronized tables, task start schedule and other information, and the task cannot be altered during execution.  |
+| **Monitor** | View running progress, running logs, connections, history, synchronized content, and more. For more information, see [monitor data replication task](monitor-task.md).  |
+| **Copy** | Clone a task with the exact same configuration, and complete the configuration based on the replicated task fine-tuning.  |
+| **Reset** | Clear the data synchronization progress of the task, and the next start will restart the data synchronization task.  |
+| **Delete** | Task will not recover after deletion, please be careful.  |

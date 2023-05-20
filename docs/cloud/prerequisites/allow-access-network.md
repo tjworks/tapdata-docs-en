@@ -1,19 +1,15 @@
-# 调试服务端网络环境
+# Configure Network Access
 
-在部署 Agent 前，您需要参考本文的要求调整相关防火墙保障其通信正常，Agent 工作流程如下所示：
+Before deploying the Agent, you need to refer to the requirements in this document and adjust the relevant firewall to ensure its communication ability. The workflow of the Agent is shown below:
 
 ![](../images/architecture.png)
 
 
 
-| 要求                               | 说明                                                         |
+| Requirements | Description |
 | ---------------------------------- | ------------------------------------------------------------ |
-| Agent 可连接至源数据库的服务端口   | 确保 Agent 可从源数据库读取到数据。                          |
-| Agent 可连接至目标数据库的服务端口 | 确保 Agent 可向目标库写入数据。                              |
-| Agent 可连接至外网                 | 确保 Agent 可向 Tapdata Cloud 上报任务状态、获取配置和执行任务等操作。 |
+| Agent can connect to source database's port. | Ensure that the Agent can read data from the source database.  |
+| Agent can connect to target database's port. | Ensure that the Agent can write data to the target database.  |
+| Agent can connect to extranet. | Ensure the Agent can report task status, retrieve configuration, and execute tasks to/from Tapdata Cloud.  |
 
-:::tip
 
-如您的网络环境不支持访问外网，可选择在本地部署 [Tapdata](https://tapdata.net/tapdata-enterprise.html)，更多介绍，见[版本对比](https://tapdata.net/pricing.html)。
-
-:::

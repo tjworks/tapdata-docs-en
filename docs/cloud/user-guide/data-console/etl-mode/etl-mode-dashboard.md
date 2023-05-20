@@ -1,50 +1,60 @@
-# 数据集成界面介绍
+# Data Integration Dashboard
 
-数据面板功能默认为数据集成模式，该模式适用于数据复制/同步、数据上云或构建 ETL 管道，您只需要简单地拖动源表至目标即可自动完成数据复制任务的创建，可帮助您简化任务配置流程。本文介绍如何使用数据集成模式的界面，帮助您快速了解各功能模块。
+Tapdata Cloud's data console is set to Data Integration Mode by default, which is suitable for data replication/synchronization, migrate data to cloud or building ETL pipelines. You can simply drag the source table to the target to automatically complete the creation of data replication tasks. 
+
+This article explains how to use the Data Integration Mode dashboard to help you quickly understand the various functional modules.
 
 :::tip
 
-随着源库承载的任务增多，为最大限度地降低数据提取对源库的影响，同时契合您组织的数据分层治理的理念，您可以[开启数据服务平台模式（Beta）](../daas-mode/enable-daas-mode.md)，将数据实时同步至平台缓存层。
+With the increase in the tasks carried by the source databases, in order to minimize the impact of data extraction on the source database and conform to the concept of data hierarchical governance in your organization, you can switch to the [Data Service Platform Model](../daas-mode/enable-daas-mode.md) and synchronize the data in real-time to the Data Cache Layer.
 
 :::
 
-## 操作步骤
+## Procedure
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 在左侧导航栏，单击**数据面板**。
+2. In the left navigation panel, click **Data Console**.
 
-3. 在本页面，您可以直观地看到您已录入的数据源信息，接下来，我们将介绍各模块的具体作用。
+3. You can easily view your entered data source information on this page, and we'll cover the functions of each button next.
 
-   ![数据集成模式界面](../../../images/etl_dashboard.png)
+   ![Data Integration Mode Interface](../../../images/etl_dashboard.png)
 
-   
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs className="unique-tabs">
-    <TabItem value="5" label="① 切换视图" default>
-   <p>单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/switch_icon.png'></img>图标，以目录结构的形式展现数据源信息（再次单击可切换回 Console 视图），选中具体的表，也可以查看该表关联的任务和表的基本信息，包含表大小、行数、列信息、样本数据、Scheme（如主键/外键) 等。</p>
-   <img src='https://deploy-preview-67--tapdata.netlify.app/img/data_category_view.png'></img>
+    <TabItem value="5" label="① Switch View Model" default>
+
+   <p>Click the <img src='/img/switch_icon.png'></img> icon to display the data source information in the form of a directory structure (click again to switch back to the Console view). Select the specific table, or view the tasks associated with the table and the basic information of the table, including table size, number of rows, column information, sample data, Scheme (such as primary key/foreign key), etc. </p>
+   <img src='/img/data_category_view_en.png'></img>
    <p></p>
    </TabItem>
-    <TabItem value="1" label="② 添加数据源">
-    <p>单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/add_icon.png'></img>图标，在弹出的对话框，我们可以添加数据源，选中某个数据源后将跳转至连接配置页面，具体配置方法，见<a href="https://docs.tapdata.io/enterprise/user-guide/connect-database/">连接数据源</a>。</p>
+   <TabItem value="1" label="② Add Data Sources">
+    <p>Click the <img src='/img/add_icon.png'></img> icon, in the pop-up dialog, we can add a data source, select a data source will jump to the connection configuration page. For more information, see <a href="../../connect-database">Connect Data Sources</a>. </p>
    </TabItem>
-   <TabItem value="2" label="③ 搜索表">
-   <p>单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/search_icon.png'></img>图标，输入表名的关键词，可帮助您快速定位到具体的表，该操作在其他层级的模块中也可使用。</p>
-   <img src='https://deploy-preview-67--tapdata.netlify.app/img/search_table.png'></img>
+   <TabItem value="2" label="③ Search Tables">
+
+   <p>Click the <img src='/img/search_icon.png'></img> icon to enter a keyword for the table name to help you quickly navigate to the specific table, which is also supported at other Layers. </p>
+
+   <img src='/img/search_table_en.png'></img>
    </TabItem>
-   <TabItem value="3" label="④ 数据源详情">
-   <p>在数据连接的右侧，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/detail_icon.png'></img>图标，页面右侧将展示该数据源的连接信息和关联的任务。</p>
-   <img src='https://deploy-preview-67--tapdata.netlify.app/img/data_source_detail.png'></img>
+   <TabItem value="3" label="④ Data Source Details">
+
+   <p>On the right side of the data connection, click the <img src='/img/detail_icon.png'></img> icon, and the right side of the page will display the connection information and associated tasks of the data source. </p>
+   <img src='/img/data_source_detail_en.png'></img>
    </TabItem>
-   <TabItem value="4" label="⑤ 表详情">
-   <p>在表名的右侧，单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/detail_icon.png'></img>图标，页面右侧将展示该表关联的任务和表的基本信息，包含表大小、行数、列信息、样本数据、Scheme（如主键/外键） 等。</p>
-   <img src='https://deploy-preview-67--tapdata.netlify.app/img/table_detail.png'></img>
+   <TabItem value="4" label="⑤ Table Details">
+
+   <p>On the right side of the table name, click the <img src='/img/detail_icon.png'></img> icon. On the right side of the page, the basic information of the tasks and tables associated with the table will be displayed, including table size, number of rows, column information, sample data, Scheme (such as primary key/foreign key), etc. </p>
+
+   <img src='/img/table_detail_en.png'></img>
    </TabItem>
-   <TabItem value="6" label="⑥ 切换模式">
-   <p>单击<img src='https://deploy-preview-67--tapdata.netlify.app/img/setting_icon.png'></img>图标，在弹出的对话框中，可选择<a href="https://deploy-preview-67--tapdata.netlify.app/enterprise/user-guide/data-console/daas-mode/enable-daas-mode">开启数据服务平台模式（Beta）</a>，将数据实时同步至平台缓存层。</p>
+   <TabItem value="6" label="⑥ Switch Model">
+
+   <p>Click the <img src='/img/setting_icon.png'></img>icon, in the pop-up dialog, you can turn on the <a href="../daas-mode/enable-daas-mode">Data Service Platform Model</a> to synchronize data in real-time to the Data Cache Layer. </p>
+
 </TabItem>
 </Tabs>

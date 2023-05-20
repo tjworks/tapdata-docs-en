@@ -1,56 +1,58 @@
-# 步骤二：连接数据库
+# Step 2: Connect Data Sources
 
-[安装 Agent ](install-agent)后，您需要在 Tapdata Cloud 平台为 Agent 和数据库建立连接，完成操作后即可创建数据复制任务。
+Once you have [installed the Agent](install-agent), you need to connect the Agent to the data sources through Tapdata Cloud, and you can create a data pipeline once the connection has been established.
 
 :::tip
 
-在连接数据库前，您还需要确保网络环境访问正常并完成数据库账号的授权，更多介绍，见[准备工作](../prerequisites)。
+Before connecting to the data sources, you also need to ensure that the network environment is accessed properly and complete the authorization of the database account. For more information, see [Preparation](../prerequisites/README.md).
 
 :::
 
-## 操作步骤
+## Procedure
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 在左侧导航栏栏，单击**连接管理**。
+2. In the left navigation panel, click **Connections**.
 
-3. 单击页面右侧的**创建连接**，然后在弹出的对话框中选择要连接的数据源。
+3. On the right side of the page, click on **Create**. A dialog box will appear, where you can select the desired data source to establish a connection with.
 
    ![](../images/connect_database_demo.png)
 
-4. 在弹出的对话框中填写数据源连接信息，同时右侧面板会提示连接配置的帮助信息。
+4. After being redirected to the connection configuration page, proceed to fill in the required data source connection information. 
+
+   On the right panel of the page, you will find helpful information and guidance regarding the configuration of the connection.
 
    :::tip
 
-   下文以 MySQL 数据源为例演示操作流程，其他数据源见[连接各类数据库](../user-guide/connect-database)。
+   The operation process will be demonstrated using MySQL as an example. For more examples, see [Connect Data Sources](../user-guide/connect-database/README.md).
 
    :::
 
-   ![连接配置示例](../images/mysql_connection_demo.png)
+   ![Connection configuration example](../images/mysql_connection_demo.png)
 
-   * **连接名称**：填写具有业务意义的独有名称。
-   * **连接类型**：固定为**目标**。
-   * **地址**：数据库连接地址。
-   * **端口**：数据库的服务端口。
-   * **数据库**：数据库名称，即一个连接对应一个数据库，如有多个数据库则需创建多个数据连接。
-   * **账号**：数据库的账号。
-   * **密码**：数据库账号对应的密码。
-   * **连接参数**：额外的连接参数，默认为空。
-   * **时区**：默认为数据库所用的时区，您也可以根据业务需求手动指定。
-   * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
-   * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
-   * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
+   * **Connection name**: Enter a unique name that holds business significance.
+   * **Connection type**: Select Source, Target, or Source&Target.
+   * **Host**: The database connection address.
+   * **Port**: The service port of database.
+   * **Database**: database name, a connection corresponding to a database, if there are multiple databases, you need to create multiple connections.
+   * **username**: Enter database server username.
+   * **Password**: The database password.
+   * **Connection Parameter String**: Additional connection parameters, default empty.
+   * **timezone**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
+   * **Contain table**: The default option is **All**, but you also have the choice to select **Custom** and specify the included tables. If there are multiple tables, separate them by commas (,) when filling in the table names.
+   * **Exclude tables**: Once you have enabled the switch, you can configure the tables to be excluded by specifying their names, separated by commas (,) if there are multiple tables.
+   * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
 
-5. 单击页面下方的**连接测试**，提示通过后单击**保存**。
+5. Click **Connection Test** at the bottom of the page, and when passed the check, click **Save**.
 
    :::tip
 
-   如提示连接测试失败，请根据页面提示进行修复。
+   If the connection test fails, follow the prompts on the page to fix it.
 
    :::
 
 
 
-## 下一步
+## Next step
 
-[开始数据同步](create-task)
+[Create a Data Pipeline](create-task)

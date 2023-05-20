@@ -1,45 +1,45 @@
-# 退订实例
+# Unsubscribe Instance
 
-如果您不再需要使用 Agent 实例，可以在确保其关联任务不影响您业务的情况下，跟随本文流程退订实例。
+If you no longer need to use the Agent instance, you can follow the process to unsubscribe from the instance in this article while ensuring that its associated tasks do not affect your business.
 
-## 操作步骤
+## Procedure
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 在左侧导航栏，单击 **Agent 管理**。
+2. In the left navigation panel, click **Agent Management**.
 
-3. 确认 Agent 没有关联运行中的任务。
+3. Ensure that the Agent is not associated with a running task.
 
-   1. 找到目标  Agent 实例，查看是否有任务关联在运行，如无关联任务可跳过本步骤，如有关联任务请继续执行下述步骤。
+   1. Locate the target Agent to see if any running task is associated, skip this step if the there is not running task associated.
 
-   2. 如下图所示，该 Agent 实例关联了 1 个运行中的任务，单击任务数字。
+   2. As shown in the figure below, this Agent instance associates 1 running instance, then clicks the task number.
 
-      ![关联任务](../images/agent_related_tasks.png)
+      ![Associated Task(s)](../images/agent_related_tasks.png)
 
-   3. 在跳转到的任务列表页面，停止相关任务。
+   3. Once redirected to the Task List page, please locate the related task to stop it.
 
-4. 返回至 **Agent 管理**页面，找到目标 Agent，单击其右侧的**停止**。
+4. Back to the **Agent Management** page, locate the target Agent and click **Stop** on the right.
 
-5. 等待 Agent 停止后，单击**退订**。
+5. After the Agent stopped, click **Unsubscribe**.
 
-6. 在弹出的对话框中，确认退款金额并选择退款原因，单击退订。
+6. In the pop-up dialog, confirm the refund amount and select the reason for unsubscribing, click Unsubscribe.
 
    :::tip
 
-   本操作不可逆，为避免影响业务，请谨慎评估后操作。
+   This operation is irreversible, in order to avoid affecting the business, please carefully evaluate the operation.
 
    :::
 
 
-## 退款说明
+## Refund Policy
 
-当您发起了退订操作后，Tapdata Cloud 将按照使用时间执行退款，例如一次性订购 1 个月的实例，在使用了 10 天后发起退订，则默认在原有支付金额上退还剩余 20 天的费用，计算公式如下：
+When you initiate the unsubscribe operation, Tapdata Cloud will execute the refund according to the use of time. For example, if you order for 1 month of the instance, after 10 days of use to initiate the unsubscription, the default refund on the original payment amount of the remaining 20 days, the calculation formula is as follows:
 
-（订阅周期结束日期 − 退订日期）**/** （订阅周期结束日期 **−** 订阅周期开始日期） **×** 实际支付金额（不含优惠金额）
+(Subscribed cycle end date **－**Unsubscribe date) **/** (Subscribed cycle end date **－** Subscribed cycle start date) **x** Actual payment amount (excluding coupon amount)
 
 :::tip
 
-您可以单击页面右上角的用户名，选择**用户中心**，下翻至页面底部查看订阅周期的起止时间。
+To view the start and end dates of your subscribed cycle, click on your username located in the upper right corner of the page, then select **Subscription Center**.
 
 :::
 

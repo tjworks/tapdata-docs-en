@@ -1,10 +1,11 @@
-# 数据面板（Beta）
+# Data Console(Beta)
 
-数据面板功能支持两种模式，可满足不同的数据治理需求。
+Data Console supports two models to meet the data governance demand:
 
-[数据集成平台模式](etl-mode)（默认）：适用于数据复制/同步、数据上云或构建 ETL 管道，您只需要简单地拖动源表至目标即可自动完成数据复制任务的创建。
+* [Data Integration Mode](etl-mode)（default）：Suitable for data replication/synchronization, migrate data to cloud or building ETL pipelines. You can simply drag the source table to the target to automatically complete the creation of data replication tasks.
+* [Data Service Platform](daas-mode)：Based on the concept of data hierarchical governance, Tapdata Cloud collects data sources scattered across different business systems through the **Data Cache Layer**, which minimizes the impact of data extraction on business and provides basic data for subsequent data processing and business, thus building a consistent, real-time data platform and connecting data silos.
 
-[数据服务平台模式](daas-mode)：基于数据分层治理的理念，采用该模式可将分散在不同业务系统的数据同步至统一的平台缓存层，最大限度地降低数据提取对业务的影响，可为后续的数据加工和业务提供基础数据，从而构建一致、实时的数据平台，连通数据孤岛。
+
 
 import DocCardList from '@theme/DocCardList';
 

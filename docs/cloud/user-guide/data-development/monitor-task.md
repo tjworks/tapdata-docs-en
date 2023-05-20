@@ -1,10 +1,10 @@
-# 监控数据开发任务
+# Monitor Data Pipeline Task
 
-数据开发任务启动后，页面将自动跳转至任务监控页面，通过该页面可观察任务运行细节，包括 Agent 状态、数据同步状态、任务进度、告警设置等信息。
+After the data pipeline task is started, the page will automatically jump to the task monitoring page, through which you can observe the task operation details, including Agent status, data synchronization status, task progress, alarm settings and other information.
 
 :::tip
 
-您也可以在任务列表页面，单击对应任务的**监控**来进入监控页面。
+By clicking the **monitor** button on the task list page, you can access the monitoring page as well.
 
 :::
 
@@ -12,59 +12,59 @@
 
 
 
-## ① 顶部控制栏
+## ① Top control bar
 
-可重命名任务名称，查看任务启动时间和 Agent 状态，其中 Agent 状态包括：
+You can rename a task name, view the task start time, and see the Agent status, which includes the following information:
 
-* CPU 使用率：引擎进程使用的CPU占系统总CPU的占比
-* 内存使用率：已使用堆的内存数/堆内存最大值
-* GC 吞吐量：（引擎累计运行时间-GC的耗时）/引擎累计运行时间*100%
-
-
-
-## ② 任务关键指标展示栏
-
-展示任务的基本信息和关键监控指标，包含同步信息、任务校验信息、性能指标和任务时间统计信息，其中：
-
-* 任务校验：仅当任务开启了校验才会展示，如发现有异常可单击查看校验详情。
-* QPS：任务平均每秒处理的输入事件数和输出事件数。
-* 增量延迟：事件从源库生成到经任务处理完成写入目标的延迟时间，当有多个目标时只统计最大的增量延迟时间，单位为毫秒。
-* 任务统计事件：统计任务运行后所有的累计事件，统计注意事项如下：
-  * 更新：如果输出到目标的插入事件在插入目标库时发现已存在，然后写入策略又设置了当目标存在时更新，则插入事件会变为更新事件。
-  * DDL
-    * 由于 Tapdata 根据推演结果直接在目标建表，所以在源端并不会统计到 DDL 事件的输出，但在目标节点可以统计到建表的 DDL 事件。
-    * 如果目标是无需建表的数据库类型（如 MongoDB），则不会统计到目标的建表事件。
-    - 如果目标的重复处理策略选择了清除目标结构和数据，则会统计到 DROP TABLE 和 CREATE TABLE 两次 DDL 事件
+* CPU usage: the proportion of CPU used by the engine process to the total CPU of the system
+* Memory usage: Used / Memory Max
+* GC Throughput: (Engine Cumulative Run Time - GC Time)/Engine Cumulative Run Time * 100%
 
 
 
-## ③ 节点信息展示区
+## ② Task indicators display bar
 
-将鼠标指针悬浮至节点，可展示对应节点的关键指标信息，单击节点右下角的![](../../images/node_more_icon.png)图标可查看更多细节。
+Display basic information and key monitoring indicators of the task, including synchronization information, task verification information, performance indicators and task time statistics, including:
 
-- 全量进度：全量时展示即该节点的全量进度。
-- 增量时间点：增量时展示采集增量日志的时间点。此处以（当前引擎的时间-该节点的增量时间点） 的相对时间来表达，具体的增量时间点信息，鼠标移入时会在浮窗里展示。
-- 写入耗时：数据写到目标端的耗时。
-- QPS：即该节点的 QPS。
-- 累计输入事件：即从上一个节点或源库输入到该节点的事件数。
-- 累计输出事件：即从该节点输出到下一个节点或目标库的事件数。
-- 处理耗时：该节点处理数据的耗时。
-
-
-
-## ④ 任务日志展示区
-
-单击页面顶部的![](../../images/view_log_icon.png)图标，可展示任务日志展示区，在该区域，您可以查看任务运行的进度、日志、运行记录、告警列表和关联任务信息。而在**日志**标签中，您可以根据关键词、周期、等级来过滤日志，也可以下载日志在本地分析。
+* Task checksumming: will be displayed only if the task has checksumming enabled. Click to view checksumming details if any anomalies are found.
+* QPS: The average number of input events and output events processed per second by the task.
+* Incremental delay: The delay from the time the event is generated from the source database to the time it is completed by the task processing to write the target. When there are multiple targets, only the maximum incremental delay time is counted, in milliseconds.
+* Task event statistics: Statistics of all cumulative events after the operation of the task, the statistical precautions are as follows:
+   * Update: The insertion event becomes the update event if the target database already exists when the target database is inserted, and the write policy sets the update to occur when the target already exists.
+   * DDL
+      * Tapdata builds a table directly on the target based on deduction results, so DDL events of the table cannot be counted at the source.
+      * If the target is a database type that does not require table building (such as MongoDB), the target's table building events are not counted.
+      - DDL events are counted for drop table and create table if the target duplicate processing policy selects clear target structure and data.
 
 
 
-## ⑤ 任务/告警设置区
+## ③ Node information display area
 
-单击页面顶部的![](../../images/task_setting_icon.png)图标，可展示任务设置（不可修改)和告警设置，您可以设置告警规则：
+Hover your mouse pointer over a node to display key metrics for that node, and click the ![](../../images/node_more_icon.png) icon in the bottom right corner of the node to see more details.
 
-* 任务运行出错告警
-* 任务全量完成通知
-* 任务增量开始通知
-* 任务停止告知
-* 任务增量延迟告警
+- Full sync progress: The progress report on the full data synchronization.
+- incremental data synchronization: The time point at which incremental logs are collected. By moving the mouse in the floating window, it is expressed as the relative time of (the engine time - the incremental time point of the node).
+- Writing time: The time it takes for data to be written to the target.
+- QPS: The QPS of the node.
+- Cumulative input events: The number of events entered into the node from the previous node or source database.
+- Cumulative output events: The number of events output from the node to the next node or target database.
+- Processing time: The time it takes for the node to process data.
+
+
+
+## ④ Task log display area
+
+Click the ![](../../images/view_log_icon.png) icon at the top of the page, then you can view the progress, logs, alarm list, and associated task information for a task run. You can filter the logs using keywords, periods, and levels, or download them for local analysis on the **Log** tab.
+
+
+
+## ⑤ Task/alarm setting area
+
+Click the ![](../../images/task_setting_icon.png) icon at the top of the page, which displays the task settings (not modifiable) and alarm settings, you can set the alarm rules:
+
+* Task running error alarm
+* Notice of full completion of tasks
+* Task increment start notification
+* Task stop alarm
+* Task increment delay alarm
 

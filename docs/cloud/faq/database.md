@@ -1,44 +1,42 @@
-# 数据源/目标
+# Data Source/Target
 
-### Tapdata Cloud 支持哪些数据源？
+### What data sources does Tapdata Cloud support?
 
-Tapdata Cloud 支持丰富的数据库，包括常见关系型、非关系型以及队列型数据源，详情见[支持的数据库](../introduction/supported-databases.md)。 
+Tapdata Cloud supports rich databases, including common relational, non-relational, and queue-type data sources, as detailed in [Supported Data Sources](../introduction/supported-databases.md).
 
-### 连接测试失败怎么办？
+### What if the connection test fails?
 
-连接测试的前提是要启动 agent ，请先检查 agent 状态。
+The premise of the connection test is to start the agent, please check the agent status first.
 
-创建数据连接时，需要参照页面右侧连接配置帮助，按指南完成相关参数的设定。
+When creating a data connection, you can complete setting relevant parameters according to the connection configuration help.
 
-![](../images/check_error.png)
+### what does topic expression in kafka mean?
 
-### kafka中的主题表达式什么意思
+A topic expression is a regular expression that matches the name of the message queue, and users can define a regular expression to match one or more message queue consumption messages.
 
-主题表达式是用来匹配消息队列名称的正则表达式，用户可以根据需求定义一个正则表达式来匹配订阅一个或者多个消息队列消费消息。
+### When testing the MySQL connection, prompt: "The server time zone value is unrecognized."
 
-### 当测试 MySQL 连接时，提示：The server time zone value ' 'is unrecognized
+When this problem occurs, you can add parameters to the connection string of your MySQL connection: **serverTimezone=Asia/Shanghai**.
 
-出现该问题时，可以在您的 MySQL 连接的连接串里添加参数：**serverTimezone=Asia/Shanghai**。
+![](../images/modify_connection_setting_en.png)
 
-![](../images/modify_connection_setting.png)
+### Is the Select permission sufficient for Oracle to synchronize with SQL Server?
 
-### Oracle 同步到 SQL Server，Select 权限是否足够？
-
-Oracle 需要一些额外的权限来做 CDC，具体配置与授权，见 [Oracle 准备工作](../prerequisites/config-database/certified/oracle.md)。
+Oracle needs some additional permissions to do CDC, the specific configuration and authorization, see [Oracle preparations](../prerequisites/config-database/certified/oracle.md).
 
 
 
-### 数据库有白名单机制，如何设置？
+### If the database has a whitelist, how to set up?
 
-需要在白名单中添加部署 agent 的机器。
+The machine on which the agent is deployed needs to be added to the whitelist.
 
 
 
-### 为 Oracle 建立连接时，如何填写 Schema？
+### How do I fill out a Schema when connecting to Oracle?
 
-按照建库时设定的 Schema 填写，注意区分大小写。 
+Fill in according to the schema set when building the database, and pay attention to case-sensitivity.
 
-在 Oracle 中，Schema（模式）是数据的逻辑结构或模式对象的集合。架构由数据库用户拥有，并与该用户具有相同的名称。每个用户都拥有一个模式，更多介绍，见 [Oracle 官方文档](https://docs.oracle.com/cd/B19306_01/server.102/b14220/schema.htm)。
+In Oracle, Schema is a collection of logical structures or pattern objects of data. The schema is owned by a database user and has the same name as that user. For more information, see [Oracle's official documentation](https://docs.oracle.com/cd/B19306_01/server.102/b14220/schema.htm).
 
 
 

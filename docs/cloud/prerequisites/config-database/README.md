@@ -1,4 +1,4 @@
-# 通用数据库
+# Configure Database and Grant Access
 
 import DocCardList from '@theme/DocCardList';
 

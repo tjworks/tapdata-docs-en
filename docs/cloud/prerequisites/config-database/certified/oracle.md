@@ -1,50 +1,53 @@
 # Oracle
 
-安装 Agent 后，您需要在 Tapdata Cloud 平台为 Agent 和 Oracle 数据库建立连接，完成操作后即可在数据复制/开发任务中使用该数据源。本文介绍建立连接前的准备工作（如授权账号等）。
+After installing the Agent, the next step is to establish a connection between the Agent and Oracle through Tapdata Cloud. This connection is crucial as it allows you to utilize the Oracle data source for various data replication or development tasks.
 
-## 支持版本 
+Before establishing the connection, it is essential to complete the necessary preparations outlined in the provided article. These preparations may include authorizing an account and performing other relevant steps to ensure a smooth and secure connection.
 
-Oracle 9i、10g、11g、12c、19c
+## Supported Versions
 
-## 注意事项
-* 如设置了 connect_time（自动断开超时会话），可能导致实时同步异常，可通过下述命令检查该参数的设置。
+Oracle 9i, 10g, 11g, 12c, 19c
 
-  ```sql
-  select resource_name, limit from dba_profiles where profile=( select profile from dba_users where username = '<username>');
-  ```
+## Precautions
+* To check the setting of the connect_time parameter, which automatically disconnects timeout sessions and may lead to real-time synchronization exceptions, you can use the following command.
 
-* 您需要为归档日志预留足够的存储空间，避免存储占满影响数据库运行。
-## 作为源库
+   ```sql
+   select resource_name, limit from dba_profiles where profile=( select profile from dba_users where username = '<username>');
+   ```
 
-1. 以具有 DBA 权限的用户身份登录 Oracle 数据库。
+* To ensure smooth database operation, it is important to allocate sufficient storage space for archive logs and prevent overcrowding.
+## As a Source Database
 
-2. 开启数据库归档模式（ARCHIVELOG）。
+1. Log in to the Oracle database as a user with DBA privileges.
+
+2. Turn on database archive mode (ARCHIVELOG).
 
    :::tip
 
-   您也可以执行 `select log_mode from v$database;` 命令来查看是否已开启该功能，返回结果为 **ARCHIVELOG** 表示已开启，可跳过本步骤。
+   You can verify if the feature is enabled by executing the `SELECT log_mode FROM v$database` command. If the result returned is `ARCHIVELOG`, it indicates that the feature is turned on, and you can skip this step.
 
    :::
 
-   1. 执行下述命令，关闭数据库，请务必在业务低峰期操作，以免影响业务运行。
+   1. Execute the following command to close the database.It is advisable to perform this operation during off-peak times to minimize any impact on data reading and writing.
 
       ```sql
       shutdown immediate;
       ```
 
-   2. 执行下述命令，启动并挂载数据库。
+   2. Execute the following command to start and mount the database.
 
       ```sql
       startup mount;
       ```
 
-   3. 执行下述命令，开启存档并打开数据。
+   3. Execute the following command to open archive and database.
 
       ```sql
       alter database archivelog;
       alter database open;
 
-3. 开启补充日志（Supplemental Logging）。
+
+3. Turn on Supplemental Logging.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -59,93 +62,95 @@ ALTER system switch logfile;<br />
 ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;</pre>
    </TabItem>
    <TabItem value="12c" label="Oracle 12c">
-    <pre>/* 执行下述命令，确认 supplemental logging 是否开启 */<br />
+    <pre>/* Execute the following command to confirm whether supplemental logging is enabled */<br />
     SELECT supplemental_log_data_min, supplemental_log_data_pk, supplemental_log_data_all FROM v$database;
 </pre>
-<p>如果返回的前两列是 Yes 或 Implicit ，则表示只开启了 identification key logging（标识键日志），还需要开启 full supplemental logging（全补充日志）。 </p>
+<p>If the first two columns returned are Yes or Implicit, only identification key logging is enabled, and full supplemental logging is required. </p>
    </TabItem>
   </Tabs>
 
-4. 开启标识键日志（identification key）。
+4. Turn on the identification key log.
 
    :::tip
 
-   当使用 12c 的 PDB 时，推荐为容器的表开启日志，您可以执行先执行命令 `ALTER SESSION SET CONTAINER=<pdb>;`，将更改应用于容器。
+   When using the 12c PDB, it is recommended to open the log for the container's table, and you can execute the command `ALTER SESSION SET CONTAINER=;<pdb>;` to apply the changes to the container.
 
    :::
 
-   * **为单个表开启**
+   * **Turn on for single table**
 
-     ```sql
-     ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;
-     ALTER TABLE <schema name>.<table name> ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
-     ```
+      ```sql
+      ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;
+      ALTER TABLE <schema name>.<table name> ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
+      ```
 
-   * **为所有表开启**
+   * **Turn on for all tables**
 
-     ```sql
-     ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
-     ```
+      ```sql
+      ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
+      ```
 
-5. 开启全补充日志（full supplemental logging）。
+5. Turn on full supplemental logging.
 
-   * **为单个表开启**
+   * **Turn on for single table**
 
-     ```sql
-     ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;
-     ALTER TABLE <schema name>.<table name> ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
-     ```
+      ```sql
+      ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;
+      ALTER TABLE <schema name>.<table name> ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
+      ```
 
-   * **为所有表开启**
+   * **Turn on for all tables**
 
-     ```sql
-     ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
-     ```
+      ```sql
+      ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
+      ```
 
-6. 提交更改。
+6. Submit changes.
 
    ```sql
    ALTER SYSTEM SWITCH LOGFILE;
    ```
 
-7. 创建用于数据同步/开发任务的账号。
+7. Create an account for data synchronization/development tasks.
 
 <Tabs className="unique-tabs">
-    <TabItem value="account10g11g" label="Oracle 10g、11g" default>
+    <TabItem value="account10g11g" label="Oracle 10g&#12289;11g" default>
     <pre>CREATE USER username IDENTIFIED BY password;<br />
 GRANT create session, alter session, execute_catalog_role, select any dictionary, select any transaction, select any table, create any table, create any index, unlimited tablespace to user name;</pre>
    </TabItem>
-   <TabItem value="account12c-m" label="Oracle 12c（多租户模式）">
-    <pre>/* 在 Oracle 12c 的多租户环境下创建用户，必须在 cdb 中创建，并且命名格式约定为 c##name */<br />
+   <TabItem value="account12c-m" label="Oracle 12c（Multi-tenant Mode）">
+    <pre>/* Create user in Oracle 12c multi-tenant environment, must be created in cdb, and the naming convention is c##name */<br />
     ALTER SESSION SET CONTAINER=cdb$root;<br />
 CREATE USER username IDENTIFIED BY password CONTAINER=all;<br />
 GRANT create session, alter session, set container, select any dictionary, select any transaction, logmining, execute_catalog_role, create any table, create any index, unlimited tablespace TO username CONTAINER=all;<br />
 ALTER SESSION SET CONTAINER=pdb;</pre>
-    <p>根据您对表的权限需求，重复执行最后一个命令来赋予 select 权限。当您配置的是源库连接时，请使用此用户来通过 JDBC 的身份验证。 注意必须使用整个用户名（包含 c ##）作为JDBC连接的用户名。</p>
+    <p>Repeat the last command to grant the SELECT permission, depending on your permission needs for the table. When you are configuring a source database connection, use this user to authenticate with JDBC. Note that the entire username (including c ##) must be used as the username for the JDBC connection. </p>
    </TabItem>
-   <TabItem value="account12c-s" label="Oracle 12c（标准模式）">
-    <pre>/* 执行下述命令，确认 supplemental logging 是否开启 */<br />
+   <TabItem value="account12c-s" label="Oracle 12c（Standard Mode）">
+    <pre>/* Execute the following command to confirm whether supplemental logging is enabled */
+<br />
     CREATE USER username IDENTIFIED BY password;<br />
 GRANT create session, alter session, select any dictionary, select any transaction, logmining, execute_catalog_role, create any table, create any index, unlimited tablespace TO username;
 </pre>
-<p>根据您对表的权限需求，重复执行最后一个命令来赋予 select 权限。 </p>
+
+<p>Repeat the last command to grant the SELECT permission, depending on your permission needs for the table. </p>
    </TabItem>
   </Tabs>
 
 
 
-## 作为目标库
-1. 以具有 DBA 权限的用户身份登录 Oracle 数据库。
+## As a Target Database
+1. Log in to the Oracle database as a user with DBA privileges.
 
-2. 创建用于数据同步/开发任务的账号，该账号拥有 schema 的 owner权限。
+2. To facilitate data  synchronization and development tasks, create an account with schema owner privileges.
 
-   具体操作，见 [CREATE USER](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_8003.htm) 和 [GRANT](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_9013.htm)。
+   For more information, see [CREATE USER](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_8003.htm) and [GRANT](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_9013.htm).
 
 
 
-## 下一步
+## Next step
 
-[连接 Oracle 数据库](../../../user-guide/connect-database/certified/connect-oracle)
+[Connect to Oracle](../../../user-guide/connect-database/certified/connect-oracle)
 
 
 

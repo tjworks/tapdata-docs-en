@@ -1,16 +1,18 @@
 # MySQL
 
-安装 Agent 后，您需要在 Tapdata Cloud 平台为 Agent 和 MySQL 数据库建立连接，完成操作后即可在数据复制/开发任务中使用该数据源。本文介绍建立连接前的准备工作（如授权账号等）。
+After installing the Agent, the next step involves connecting it to the MySQL database via Tapdata Cloud. This connection enables you to utilize the data source for various data replication or development tasks. 
 
-## 支持版本 
+Prior to establishing the connection, it is important to complete the necessary preparations outlined in the provided article, which may include authorizing an account and performing other relevant steps. These preparations ensure a seamless and secure connection between the Agent and the MySQL database, enabling efficient data handling and processing.
 
-MySQL 5.0、5.1、5.5、5.6、5.7、8.x
+## Supported Versions
 
-## 作为源库
+MySQL 5.0, 5.1, 5.5, 5.6, 5.7, 8.x
 
-保障任务的顺利执行，您需要为 MySQL 数据库开启 Binlog（可实现增量数据同步），然后为数据复制/开发任务创建一个数据库账号。
+## As a Source Database
 
-1. 登录 MySQL 数据库，执行下述格式的命令，创建用于数据同步/开发任务的账号。
+To ensure the smooth execution of the task, you need to turn on Binlog for MySQL database (incremental data synchronization can be achieved), and then create a database account for data replication/development tasks.
+
+1. Log in to the MySQL database and execute the following commands to create an account.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -24,11 +26,11 @@ import TabItem from '@theme/TabItem';
    </TabItem>
   </Tabs>
 
-  * **username**：用户名。
-  * **password**：密码。
-  * **host**：允许该账号登录的主机，百分号（%）表示允许任意主机。
+* **username**: Enter user name.
+* **password**: Enter password.
+* **host**: Enter the host that can be accessed by the account, percent (%) means to allow all host.
 
-示例：创建一个名为 tapdata 的账号。
+Example: Create an account named tapdata.
 
 ```sql
 CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
@@ -36,24 +38,24 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 
 
 
-2. 为刚创建的账号授予权限，简易示例如下，推荐基于业务需求设置更精细化的权限控制。
+2. Grant permissions to the account that we just created, we recommend setting more granular permissions control based on business needs.
 
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase" label="授予指定库 SELECT 权限" default>
+    <TabItem value="onedatabase" label="Grant SELECT to Specified DB" default>
     <pre>GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON database_name.table_name TO 'username' IDENTIFIED BY 'password';</pre>
    </TabItem>
-   <TabItem value="all" label="授予全局权限">
+   <TabItem value="all" label="Grant Global Privileges">
     <pre>GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
    </TabItem>
   </Tabs>
 
-* **database_name.table_name**：要授予权限的库和表，名称间用英文句号（.）分隔，例如 demodata.customer。
-* **username**：用户名。
-* **password**：密码。
+* **database_name.table_name**: To grant permissions to specific databases and tables, you can specify them by separating the names with periods (.) as follows, such as `demodata.custome`.
+* **username**: Enter user name.
+* **password**: Enter password.
 
-3. 为保障读取 MySQL 数据库的增量数据，您需要跟随下述步骤开启 Binlog。
+3. To ensure that the incremental data of the MySQL database can be read, you need to follow the steps below to turn on Binlog.
 
-   1. 使用 `vim` 命令，修改 `$MYSQL_HOME/mysql.cnf` 中的配置，例如：
+   1. Use the `vim` command to modify the configuration in `$MYSQL_HOME/mysql.cnf`, for example:
 
       ```
       server_id         = 223344
@@ -63,25 +65,25 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
       binlog_row_image  = full
       ```
 
-      - **server_id**：对于 MySQL 中的每个服务器和复制客户端必须是唯一的，设置为大于 0 的整数
-      - **log_bin**：Binlog 序列文件的基本名称
-      - **expire_logs_days**：二进制日志文件保留的天数，到期自动删除
-      - **binlog_format**：设置为 row
-      - **binlog_row_image**：设置为 full
+      - **server_id**: Set to an integer greater than 0, this value must be unique per server and replication client.
+      - **log_bin**: The base name of the Binlog file.
+      - **expire_logs_days**: The number of days to keep the binary log file, automatically deleted when it expires.
+      - **binlog_format**: Set to row.
+      - **binlog_row_image**: Set to full.
 
-   2. 修改完成后，执行下述命令重启 MySQL 进程。
+   2. After the modification is completed, execute the following command to restart the MySQL server.
 
       ```bash
       /etc/inint.d/mysqld restart
       ```
 
-   3. （可选）登录 MySQL 数据库，执行下述命令确认配置已生效，即输出的结果中，**format** 的值为 **ROW**。
+   3. (Optional) Log in to the MySQL database and execute the following command to confirm that the configuration has taken effect, that is, in the output result, the value of the **binlog_format** is **ROW**.
 
       ```sql
       SHOW VARIABLES LIKE 'binlog_format';
       ```
 
-      输出示例如下：
+      The output is as follows:
 
       ```sql
       +---------------+-------+
@@ -92,11 +94,11 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
       1 row in set (0.00 sec)
       ```
 
-      
 
-## 作为目标库
 
-1. 登录 MySQL 数据库，执行下述格式的命令，创建用于数据同步/开发任务的账号。
+## As a Target Database
+
+1. Log in to the MySQL database and execute the following commands to create an account.
 
 <Tabs className="unique-tabs">
     <TabItem value="mysql5" label="MySQL 5.x" default>
@@ -107,11 +109,11 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
    </TabItem>
   </Tabs>
 
-  * **username**：用户名。
-  * **password**：密码。
-  * **host**：允许该账号登录的主机，百分号（%）表示允许任意主机。
+* **username**: Enter user name.
+* **password**: Enter password.
+* **host**: Enter the host that can be accessed by the account, percent (%) means to allow all host.
 
-示例：创建一个名为 tapdata 的账号。
+Example: Create an account named tapdata.
 
 ```sql
 CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
@@ -119,54 +121,53 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 
 
 
-2. 为刚创建的账号授予权限。
+2. Grant permissions to the account that we just created, we recommend setting more granular permissions control based on business needs.
 
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase" label="授予指定库 SELECT 权限" default>
+    <TabItem value="onedatabase" label="Grant SELECT to Specified DB" default>
     <pre>GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON database_name.table_name TO 'username' IDENTIFIED BY 'password';</pre>
    </TabItem>
-   <TabItem value="all" label="授予全局权限">
+   <TabItem value="all" label="Grant Global Privileges">
     <pre>GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
    </TabItem>
   </Tabs>
 
-* **database_name.table_name**：要授予权限的库和表，名称间用英文句号（.）分隔，例如 demodata.customer。
-* **username**：用户名。
-* **password**：密码。
+* **database_name.table_name**: To grant permissions to specific databases and tables, you can specify them by separating the names with periods (.) as follows, such as `demodata.custome`.
+* **username**: Enter user name.
+* **password**: Enter password.
 
 
 
-## 常见问题
+## FAQ
 
-* 问：可以使用从库作为源进行数据同步吗？
+* Q: Can I synchronze data from MySQL replicas?
 
-  答：可以，除在从库上开启以上设置外，还需要：
+   A: Yes, in addition to implementing the above settings for MySQL replicas, you also need to:
 
-  1. 执行下述命令，检查 MySQL 库的参数配置，确保 **log_slave_updates** 的值为 1。
+   1. Execute the following command to check the parameter configuration of the MySQL replicas and ensure that the value of **log_slave_updates** is 1.
 
-     ```sql
-     Select @@log_slave_updates
-     ```
+      ```sql
+      Select @@log_slave_updates
+      ```
 
-  2. 检查主从库是否一致，不一致时可查看从节点状态：`SHOW SLAVE STATUS`，
+   2. Execute the command `SHOW SLAVE STATUS` or `SHOW REPLICA STATUS` to check the delay information of the replica.
 
-     根据具体报错修复后，再执行数据同步。
+      Perform data synchronization after repairing according to specific error reporting.
 
-* 问：Tapdata Cloud 连接测试时，提示错误：“Unknown error 1044”
+* Q: "Unknown error 1044" appears in the dialog after the connection test.
 
-  答：如果已经授予了正确的权限，可以通过下述方法检查并修复：
+   A: If the correct permissions have been granted, can be checked and fixed by:
 
-  ```sql
-  SELECT host,user,Grant_priv,Super_priv FROM mysql.user where user='username';
-  //查看Grant_priv字段的值是否为Y
-  //如果不是，则执行以下命令
-  UPDATE mysql.user SET Grant_priv='Y' WHERE user='username';
-  FLUSH PRIVILEGES;
-  ```
+   ```sql
+   SELECT host,user,Grant_priv,Super_priv FROM mysql.user where user='username';
+   // Check if the value of Grant_priv field is Y, if not, execute the following command.
+   UPDATE mysql.user SET Grant_priv='Y' WHERE user='username';
+   FLUSH PRIVILEGES;
+   ```
 
-  
 
-## 下一步
 
-[连接 MySQL 数据库](../../../user-guide/connect-database/certified/connect-mysql.md)
+## Next step
+
+[Connect to MySQL](../../../user-guide/connect-database/certified/connect-mysql.md)
 

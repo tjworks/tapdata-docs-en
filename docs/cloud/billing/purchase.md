@@ -1,41 +1,43 @@
-# 订阅实例
+# Subscription Instance
 
-注册 Tapdata Cloud 后，您可以免费创建一个 Agent 实例，如需创建更多的 Agent 或更高的传输性能，您可以跟随本文流程，完成实例的订阅。
+After registering with Tapdata Cloud, you will receive the benefit of creating one free Agent instance. If you require additional agents or desire higher transfer performance, you can refer to the instructions in this article to complete the subscription process for the desired instance.
 
-## 操作步骤
+## Procedure
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 在左侧导航栏，单击 **Agent 管理**。
+2. In the left navigation panel, click **Agent Management**.
 
-   当前我们已经创建了一个免费的 Agent 实例，现在我们需要订阅更多的 Agent 实例以满足业务对性能需求。
+   After successfully creating a free Agent instance, if you find that your business requires additional Agent instances to meet performance needs, you can proceed with subscribing to more instances. This will allow you to scale up the capabilities of Tapdata Cloud to accommodate your business requirements effectively.
 
-   ![Agent 示例](../images/agent_free.png)
+   ![Agent Example](../images/agent_free.png)
 
-3. 单击页面右侧的**创建 Agent**。
+3. On the right side of the page, click **Create Agent**.
 
-4. 在弹出的对话框中，选择**半托管模式**并单击**下一步**。
+4. In the pop-up dialog, select **Semi Managed Mode** and click **Next**.
 
    :::tip
 
-   **半托管模式**下，您可以在已有设备上[部署 Agent](../quick-start/install-agent/README.md)，可充分利用现有硬件资源，获得更低的价格的同时，进一步提升安全性。此外，您还可以通过[阿里云市场](https://market.aliyun.com/products/56024006/cmgj00061912.html)采购/试用 Tapdata Cloud，在阿里云市场获得授权码后，在本页面下方输入以完成绑定。
-   
+   In **Semi Managed Mode**, you have the flexibility to [deploy the Agent](../quick-start/install-agent/README.md) on an existing device, leveraging the available hardware resources. This approach offers cost savings while enhancing security. Additionally, you can explore the option of purchasing or trying Tapdata Cloud through [Alibaba Cloud Marketplace](https://market.aliyun.com/products/56024006/cmgj00061912.html). Once you obtain an authorization code from the marketplace, you can enter it at the bottom of the page to complete the binding process. This allows for a seamless integration between Tapdata Cloud and Alibaba Cloud Marketplace.
+
    :::
-   
-5. 在**选择实例规格**页签中，选择 Agent 规格和计费方式等信息。
 
-   ![选择 Agent 规格](../images/select_agent_spec.png)
+5. In the **Configure Deployment Spec** tab, select information such as Agent specification and subscription method.
 
-   * **产品规格**：基于评估所需的任务数和性能需求，选择产品规格，可免费创建一个 **SMALL** 规格的实例，关于产品定价及规格的详细说明，见[计费概述](billing-overview.md)。
-   * **订阅方式**：选择需要的订阅方式，为避免实例到期影响任务的执行，推荐选择连续包月服务（**95 折**优惠）。
-   * **选择币种**：当前支持人民币或美元。
+   ![Select Agent Specification](../images/select_agent_spec.png)
 
-6. 单击页面右下角的**下一步**，确认待购买的规格、计费方式，确认接收账单的邮箱，然后单击**确定**。
+   * **Product specifications**: Select product specifications based on the number of tasks and performance requirements required for evaluation. You can create an example of **SMALL** specifications for free. For detailed descriptions of product pricing and specifications, see [Billing Overview](billing-overview.md).
+   * **Subscription method**: Select the required subscription method, in order to avoid the expiration of the instance affecting the execution of the task, it is recommended to choose the Annually (**10% off**) or Monthly (**5% off**).
+   * **Select currency**: Currently supports CNY or USD.
 
-7. 在跳转到的支付页面，根据页面指引完成支付流程，完成支付后您可以下载支付凭证信息。
+6. Click **Next**, on the following page, carefully review and confirm the specifications you wish to purchase. Ensure that the selected billing method aligns with your preferences. Additionally, verify that the email address provided is accurate and where you would like to receive the bill. 
 
-8. 支付成功后，返回至 Tapdata Cloud 平台，可查看到您购买的 Agent 实例处于**待部署**状态。
+   Once you have double-checked all the information, click on the **OK** button to proceed with the purchase.
 
-   接下来，您可以将 Agent 部署在您的服务器上，部署方法，见[部署 Agent](../quick-start/install-agent/README.md)。
+7. You will redirected to payment page. Please follow the instructions on the payment page to complete the payment process. After completing the payment, you will be able to download the payment credentials.
 
-   ![订阅成功](../images/purchase_success.png)
+8. After the payment is successful, return to the Tapdata Cloud platform to see that the Agent instance you purchased is **To be deployed**.
+
+   Next, you can deploy the Agent on your server. For more information, see [Install Agent](../quick-start/install-agent/README.md).
+
+   ![Subscription is successful](../images/purchase_success.png)
