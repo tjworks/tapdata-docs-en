@@ -1,5 +1,3 @@
-[中文项目介绍](README-CN.md)
-
 # Tapdata Cloud Documentation
 
 <p align="left">
@@ -16,7 +14,7 @@ If you find documentation issues, feel free to [create an Issue](https://github.
 
 [Tapdata](https://tapdata.io/) is a live data platform designed to connect data silos and provide fresh data to the downstream operational applications & operational analytics.
 
-🎮 [Try it for free](https://cloud.tapdata.net/console/v3/#/workbench)
+🎮 [Try it for free](https://cloud.tapdata.io/)
 
 ![](https://20778419.s21i.faiusr.com/3/2/ABUIABADGAAgtLr-lgYotInUhwYwgA84uAg.gif)
 

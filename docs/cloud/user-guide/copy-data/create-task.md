@@ -1,82 +1,83 @@
-# 创建数据复制任务
+# Create a Data Replication Task
 
-数据复制功能可以帮助您实现同/异构数据源间的实时同步，适用于数据迁移/同步、数据灾备、读性能扩展等多种[业务场景](../../introduction/use-cases.md)。本文介绍数据复制功能的具体使用流程，帮助您快速掌握如何创建、监控和管理数据复制任务。
+The data replication function can help you to achieve real-time synchronization between the same/heterogeneous data sources, which is suitable for data migration/synchronization, data disaster recovery, reading performance expansion, and other [business scenarios](../../introduction/use-cases.md). 
 
-## 前提条件
+This article explains the specific data replication process to help you quickly become familiar with creating, monitoring, and managing data replication tasks.
 
-在创建数据复制任务前，您需要执行下述准备工作：
+## Prerequisites
 
-* [安装 Tapdata Agent](../../quick-start/install-agent)
-* [连接数据源](../../quick-start/connect-database.md)
+Before you create a data replication task, you need to perform the following preparations:
 
-## 操作步骤
+* [Install Tapdata Agent](../../quick-start/install-agent)
+* [Connect to a Data Source](../../quick-start/connect-database.md)
 
-本文以 MySQL 实时同步至 MongoDB 为例，为您演示数据复制任务的创建流程，其他数据源也可参考此流程。
+## Procedure
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+As an example of creating a data replication task, the article uses the real-time replication of MySQL to MongoDB, but other data sources can also be used.
 
-2. 在左侧导航栏，单击**数据复制**。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-3. 单击页面右侧的**创建**，跳转到任务配置页面。
+2. In the left navigation panel, click **Data Replications**.
 
-4. 在页面左侧，分别拖拽作为源和目标的数据连接至右侧画布中，然后将二者连接。
+3. On the right side of the page, click **Create** to configure the task.
 
-   ![拖拽数据源至画布](../../images/drag_database_cn.gif)
+4. On the left side of the page, drag and drop the source and destination data into the right canvas, and then connect them.
+
+   ![Drag Data Source to Canvas](../../images/drag_database.png)
 
    :::tip
 
-   除添加数据源节点外，您还可以添加处理节点以完成更复杂的任务，如过滤数据、增减字段等，更多介绍，见[处理节点](../data-development/process-node.md)。
+   In addition to adding data nodes, you can also add processing nodes to complete more complex tasks, such as filtering data, adding or subtracting fields, etc. For more information, see [processing nodes](../data-development/process-node.md).
 
    :::
 
-5. 单击源端节点（本例为 MySQL），根据下述说明完成右侧面板的参数配置。
+5. Click the source node (MySQL in this example) to complete the parameter configuration of the right panel according to the following instructions.
 
-   ![源端设置](../../images/data_source_settings_cn.png)
+   ![Source Settings](../../images/data_source_settings.png)
 
-   * **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
-   * **DDL 事件采集**：打开该开关后，Tapdata Cloud会自动采集所选的源端 DDL 事件（如新增字段），如果目标端支持 DDL 写入即可实现 DDL 语句的同步。
-   * **选择表**：根据业务需求选择。
-     * **按表名选择**：在待复制表区域框选中表，然后单击向右箭头完成设置。
-     * **按正则表达式匹配**：填写表名的正则表达式即可，此外，当源库新增的表满足表达式时，该表也会被自动同步至目标库。
-   * **批量读取条数**：全量同步时，每批次读取的记录条数，默认为 **100**。
+   * **Node name**: Defaults to connection name, you can also set a name that has business significance.
+   * **DDL event collection**: After turning on the switch, Tapdata Cloud automatically collects the selected source DDL events (such as new fields), if the target database supports DDL writing, it can achieve DDL statement synchronization.
+   * **Select table**: Choose which tables you want to sync.
+      * **Select by table name**: Select the table on the left, and then click the right arrow to complete the setup.
+      * **Match regular expressions**: Fill in the regular expression of the table name, in addition, when the table added by the source database meets the expression, the table will also be automatically synchronized to the target database.
+   * **Batch read number**: The number of records read in each batch during full data synchronization, the default is **100**.
 
-6. 单击目标端节点（本例为 MongoDB），根据下述说明完成右侧面板的参数配置。
+6. Click the target node (MongoDB in this example) to complete the parameter configuration of the right panel according to the following instructions.
 
-   1. 完成节点基础设置。
+   1. Set up the node's basic settings.
 
-      ![节点基础设置](../../images/data_copy_normal_setting.png)
+      ![Basic settings](../../images/data_copy_normal_setting.png)
 
-      * **节点名称**：默认为连接名称，您也可以设置一个具有业务意义的名称。
-      * **批量写入条数**：全量同步时，每批次写入的条目数。
-      * **写入每批最大等待时间**：根据目标库的性能和网络延迟评估，设置最大等待时间，单位为毫秒。
-      * **推演结果**：展示 Tapdata 将写入目标端的表结构信息，该信息基于源端节点设置所推演。
+      * **Node name**: Defaults to connection name, you can also set a name that has business significance.
+      * **Number of batch writes**: The number of entries written in each batch during full data synchronization.
+      * **Write the maximum waiting time for each batch**: Set the maximum wait time in milliseconds, based on the performance of the target database and the network delay evaluation.
+      * **Deduction result**: According to the settings of the source node, Tapdata will write table structure information to the target.
 
-   2. 下翻至**高级设置**区域框，完成高级设置。
+   2. Scroll down to the **Advanced Settings** area to complete the advanced setup.
 
-      ![节点高级设置](../../images/data_copy_advance_setting.png)
+      ![Advanced settings](../../images/data_copy_advance_setting.png)
 
-      - **重复处理策略**：根据业务需求选择，也可保持默认。
-      - **数据写入模式**：根据业务需求选择。
-        - **按事件类型处理**：选择插入、更新、删除事件的数据写入策略。
-        - **统计追加写入**：只处理插入事件，丢弃更新和删除事件。
-      - **全量多线程写入**：全量数据写入的并发线程数，默认为 **8**，可基于目标端写性能适当调整。
-      - **增量多线程写入**：增量数据写入的并发线程数，默认未启用，启用后可基于目标端写性能适当调整。
+      - **Duplicate processing strategy**: Choose how duplicate data should be handled.
+      - **Data write mode**: Keep the default, or select according to business needs.
+         - **Process by event type**: Select the data write policy for inserts, updates, and deletes events.
+         - **Statistics additional write**: Handles only insert events, discards updates, and deletes events.
+      - **Full multi-threaded write**: The number of concurrent threads with full data written, the default is **8**, which can be appropriately adjusted based on the write performance of the target database.
+      - **Incremental multi-threaded write**: The number of concurrent threads with incremental data written, which is disabled by default, can be appropriately adjusted based on the write performance of the target database.
 
-7. （可选）单击上方的 ![setting](../../images/setting.png) 图标，配置任务属性。
+7. (Optional) Click the ![setting](../../images/setting.png) icon above to configure the task properties.
 
-   * **任务名称**：填写具有业务意义的名称。
-   * **同步类型**：可选择**全量+增量**，也可单独选择**全量**或**增量**。
-     全量表示将源端的存量数据复制到目标端，增量表示将源端实时产生的新数据或数据变更复制到目标端，二者结合可用于实时数据同步场景。
-   * **任务描述**：填写任务的描述信息。
-   * **高级设置**：设置任务开始的时间、增量数据处理模式、处理器线程数、Agent 等。
+   * **Task name**: Fill in a name that has business significance.
+   * **Sync type**: **Full + incrementtal synchronization** can be selected, or **Initial sync**and **CDC** can be selected separately.In real-time data synchronization scenarios, the combination of full and incremental data copying can be used to copy existing data from the source database to the target database.
+   * **Task description**: Fill in the description information for the task.
+   * **Advanced settings**: set the start time of the task, incremental data processing mode, number of processor threads, agent, etc.
 
-8. 单击**启动**，操作完成后，您可以在当前页面查看到任务的执行情况，如 QPS、延迟、任务事件统计等信息。
+8. Click **Start**, and you can view the performance of the task on the current page, such as QPS, delay, task event statistics, and other information.
 
-   ![任务执行情况](../../images/copy_data_monitor_cn.png)
-
+   ![Task implementation](../../images/copy_data_monitor_en.png)
 
 
-## 推荐阅读
 
-[监控或管理任务](manage-task.md)
+## See also
+
+[Monitor or Manage Tasks](manage-task.md)
 

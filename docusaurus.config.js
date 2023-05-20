@@ -19,10 +19,6 @@ const config = {
   organizationName: 'tapdata', // Usually your GitHub org/user name.
   projectName: 'docs-en', // Usually your repo name.
 
-  i18n: {
-      defaultLocale: 'en',
-      locales: ['zh-cn', 'en'],
-    },
 
   presets: [
     [
@@ -32,19 +28,6 @@ const config = {
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
-          // Configuring versioning behavior and label
-          /*lastVersion: 'current',
-          versions: {
-                  current: {
-                    label: '3.x',
-                  },
-                  '2.0': {
-                         label: '2.x',
-                         path: '2.0',
-                         },
-                  },*/
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/tapdata/docs-en/tree/main',
         },
@@ -52,9 +35,9 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         // Google Analytics
-        // gtag: {
-        //  trackingID: 'G-PVNR6DP305', // Measurement ID, which can be find in Data streams page on Google Analytics platform.
-        // },
+         gtag: {
+          trackingID: 'G-PVNR6DP305', // Measurement ID, which can be find in Data streams page on Google Analytics platform.
+         },
         blog: false, // Disable the blog plugin
       }),
     ],
@@ -66,7 +49,7 @@ const config = {
       "@easyops-cn/docusaurus-search-local",
       {
         hashed: true,
-        language: ["en", "zh"],
+        language: ["en"],
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
         docsRouteBasePath: "/",
@@ -92,41 +75,25 @@ const config = {
     // Website announcement
     announcementBar: {
             id: 'announcementBar-1',
-            content: `🎉️ More stable and user-friendly, with the addition of data dev (Beta). Free trial with <a target="_blank" rel="noopener noreferrer" href="https://tapdata.net/tapdata-cloud/closed-beta-version.html">Tapdata Cloud 3.0</a> ! `,
+            content: `🎉️ More stable and user-friendly, build your real-time data platform with one click. Free trial with <a target="_blank" rel="noopener noreferrer" href="https://cloud.tapdata.io/">Tapdata Cloud</a> ! `,
             backgroundColor: '#1d4378',
             textColor: '#ffffff',
             },
     // SEO Configuration, this would become <meta name="keywords" content="cooking, blog"> in the generated HTML
-      metadata: [{name: 'keywords', content: '一站式实时数据平台, Tapdata'}],
+      metadata: [{name: 'keywords', content: 'DaaS platform, data replication, data development,Tapdata'}],
       navbar: {
-        //title: '首页',
         logo: {
           alt: 'Tapdata',
           src: 'img/logo.png',
           href: 'https://tapdata.io/',
         },
         items: [
-          /*{
-            type: 'doc',
-            docId: 'enterprise/what-is-tapdata-enterprise',
-            position: 'left',
-            label: 'Tapdata',
-            },*/
-          {
-            type: 'localeDropdown',
-            position: 'right',
-            },
           {
             type: 'doc',
             docId: 'cloud/what-is-tapdata-cloud',
             position: 'left',
             label: 'Tapdata Cloud',
           },
-          /*{
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-           },*/
           {
             href: 'https://github.com/tapdata/docs',
             label: 'GitHub',

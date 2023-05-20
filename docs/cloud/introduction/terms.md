@@ -1,31 +1,31 @@
-# 名词解释
+# Terminology
 
-本文介绍 Tapdata Cloud 常见的术语，帮助您快速理解产品和功能概念。
+This article introduces common terms used in Tapdata Cloud to help you quickly understand product and feature concepts.
 
-## 全量数据同步
+## Full data synchronization
 
-即数据库迁移/数据库克隆，在数据流任务中，各种库级别数据源之间的数据全量迁移，适用于实例数据迁移、数据上下云迁移、数据库拆分扩容等业务场景。
+Database migration or cloning, within the data flow task, is ideal for business scenarios involving complete data migration between different library-level data sources. This includes instances where data needs to be migrated, moved up or down the cloud, or when databases need to be split and expanded.
 
-## 增量数据同步
+## Incremental data synchronization
 
-在数据流任务中，多个数据源之间通过特定的关联关系或处理的数据实时同步，适用于在不影响用户业务的情况下，满足用户对数据的分析、处理、灾备等方面的场景。
+In the data flow task, the real-time synchronization of data among multiple data sources through specific association relationships or processing is suitable for meeting user scenarios such as data analysis, processing, and disaster recovery without impacting user business operations.
 
-## 数据源
+## Data source
 
-从外部连接到Tapdata系统的数据来源。当前支持的数据源主要指数据库（Database），后续将逐步增加File、GridFS、RestAPI、Dummy、Custom、UDP、Cache等类型。
+The data sources that can be connected to the Tapdata system from external sources include databases, and in the future, there are plans to gradually expand the support for other types such as files, GridFS, RestAPI, Dummy, Custom, UDP, Cache, and more.
 
-## 源端连接
+## Source Connection
 
-是指在数据同步任务中，能够访问源数据对象并能够查询数据的连接配置。
+Refers to the connection configuration that can access the source data object and query the data in the data synchronization task.
 
-## 目标端连接
+## Destination Connection
 
-是指在数据同步任务中，能够访问目标数据对象并能够操作数据的连接配置。
+Refers to the connection configuration that can access the target data object and operate the data in the data synchronization task.
 
 ## Tapdata Agent
 
-是指运行同步任务的执行程序，负责从管理端获取任务、连接源数据源、执行数据转换、输出到目标数据源。
+Refers to the execution program that runs the synchronization task, and is responsible for obtaining the task from the management side, connecting the source data source, performing data conversion, and outputting to the target data source.
 
-## TCM 管理端
+## TCM Management Side
 
-Tapdata Cloud 理控制台，让用户可以自主定义编排同步任务，并下发同步任务给到同步实例。
+The Tapdata Cloud management console enables users to define custom orchestration synchronization tasks and deploy these tasks to synchronization instances for execution.

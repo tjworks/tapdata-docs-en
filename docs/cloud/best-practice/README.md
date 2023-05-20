@@ -1,4 +1,4 @@
-# 最佳实践
+# Best Practices
 
 import DocCardList from '@theme/DocCardList';
 

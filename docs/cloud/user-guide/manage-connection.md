@@ -1,23 +1,23 @@
-# 管理连接
+# Manage Connection
 
-Tapdata Cloud 通过连接保存了各数据库的连接信息，方便您在创建数据复制/开发任务时直接引用，无需重复配置，提升运维便利性。本文介绍连接的常见运维操作。
+Tapdata Cloud saves the connection information of each database through connection, so that you can reference directly when creating data replication/development tasks, without repeated configuration, and improve the convenience of operation and maintenance. This article describes the common O&M operations of the connection.
 
-## 操作步骤
+## Procedure
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 在左侧导航栏，单击**连接管理**。
+2. In the left navigation panel, click **Connections**.
 
-3. 根据业务需求，选择要执行的操作。
+3. Select the actions you want to perform.
 
    ![](../images/manage_connections.png)
 
-   * **筛选连接**：可基于状态、连接类型、数据类型进行快速筛选，也可以通过连接名称搜索。
-   * **连接测试**：测试该连接是否有效，如发现异常可根据对话框提示进行排查。
-   * **加载 Schema**：手动加载数据源中的模型信息。
-   * **编辑**：可对连接的名称和配置信息进行修改。
-   * **复制**：快速基于指定的连接复制一个配置相同的连接。
-   * **删除**：对于不再需要的连接，可执行删除操作，执行该操作后不可恢复，请谨慎操作。
+   * **Filter connections**: Quickly filter based on status, connection type, database type, or search by connection name.
+   * **Connection test**: Test whether the connection is valid. You can troubleshoot according to the prompts in the dialog box if abnormalities are found.
+   * **Load Schema**: Manually loads database schema information.
+   * **Edit**: Mmodify the name and configuration information of the connection.
+   * **Copy**: Quickly clone a connection with the same configuration based on the specified connection.
+   * **Delete**: If you no longer need a connection, you can delete it, but keep in mind that it cannot be recovered.
 
 
 

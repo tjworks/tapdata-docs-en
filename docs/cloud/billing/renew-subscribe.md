@@ -1,22 +1,22 @@
-# 续订实例
+# Renew Instance
 
-对于包年/包月实例，在到期前一个月 Tapdata 会提醒您及时续费，为避免影响您的业务，请在实例到期前及时续费或者在购买时选择**连续包年**/**包月**计费方式。
+For annual and monthly instances, Tapdata Cloud will send you a reminder one month before the expiration date to ensure timely renewal. To prevent any disruption to your business operations, it is important to renew your instance before it expires. Alternatively, you can choose the continuous annual or monthly billing method during the initial purchase, which will automatically renew your subscription without the need for manual intervention. This helps ensure seamless continuity of your Tapdata Cloud services.
 
 
 
-## 操作步骤
+## Procedure
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 在页面右上角，单击您的用户名，选择**用户中心**。
+2. In the top-right corner of the page, click your username and select **Subscription Center**.
 
-   ![用户中心](../images/user_center.png)
+   ![User Center](../images/user_center.png)
 
-3. 下翻至页面底部的，在**服务订阅信息**区域，可查看到您当前的订阅信息。
+3. Scroll down to the bottom of the page, and in the **Service Subscription Information** area, you can see your current subscription information.
 
-4. 找到目标实例，单击**续订**，如您是连续包年/包月，无需执行本操作。
+4. Locate the target Agent instance and click **Renew**. If your instance is on a continuous annual/monthly subscription, there is no need to perform this operation.
 
-   ![续订实例](../images/renew_subscribe.png)
+   ![Renew Instance](../images/renew_subscribe.png)
 
-5. 在跳转到的支付页面，根据页面指引完成支付流程。
+5. Follow the instructions on the payment page to complete the payment process.
 

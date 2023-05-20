@@ -1,23 +1,23 @@
-# 支持的数据源
+# Supported Data Sources
 
-Tapdata Cloud 支持丰富的数据源，具体如下：
+Tapdata Cloud supports rich data sources as follows:
 
-### 认证数据源
+### GA Data Sources
 
 <table>
 <thead>
   <tr>
-    <th rowspan="2">类型</th>
-    <th colspan="3">作为来源</th>
-    <th colspan="2">作为目标</th>
-    <th rowspan="2">版本</th>
+    <th rowspan="2">Type</th>
+    <th colspan="3">As a source</th>
+    <th colspan="2">As a target</th>
+    <th rowspan="2">Versions</th>
   </tr>
   <tr>
-    <th>全量</th>
-    <th>增量</th>
-    <th>DDL 采集</th>
-    <th>数据写入</th>
-    <th>DDL 应用</th>
+    <th>Full data synchronization</th>
+    <th>Incremental data synchronization</th>
+    <th>DDL event collection</th>
+    <th>Data write</th>
+    <th>DDL event apply</th>
   </tr>
 </thead>
 <tbody>
@@ -37,7 +37,7 @@ Tapdata Cloud 支持丰富的数据源，具体如下：
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>2.3.x、0.x、1.x</td>
+    <td>2.3.x, 0.x, 1.x</td>
   </tr>
   <tr>
     <td>MongoDB</td>
@@ -46,7 +46,7 @@ Tapdata Cloud 支持丰富的数据源，具体如下：
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>3.2、3.4、3.6、4.0+</td>
+    <td>3.2, 3.4, 3.6, 4.0+</td>
   </tr>
   <tr>
     <td>MySQL</td>
@@ -55,7 +55,7 @@ Tapdata Cloud 支持丰富的数据源，具体如下：
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>5.0、5.1、5.5、5.6、5.7、8.x</td>
+    <td>5.0, 5.1, 5.5, 5.6, 5.7, 8.x</td>
   </tr>
   <tr>
     <td>Oracle</td>
@@ -64,7 +64,7 @@ Tapdata Cloud 支持丰富的数据源，具体如下：
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>9i、10g、11g、12c、19c</td>
+    <td>9i, 10g, 11g, 12c, 19c</td>
   </tr>
   <tr>
     <td>PostgreSQL</td>
@@ -82,37 +82,37 @@ Tapdata Cloud 支持丰富的数据源，具体如下：
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>2005、2008、2012、2014、2016、2017</td>
+    <td>2005, 2008, 2012, 2014, 2016, 2017</td>
   </tr>
 </tbody>
 </table>
 
 
-## Beta 数据源
+## Beta Data Sources
 
 :::tip
 
-Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测试用例，但尚未通过 Tapdata 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
+The beta version of the data sources is in public preview and has passed the basic test cases and integration test cases, but has not yet passed the Tapdata certification test process. If you have any questions during use, please[contact us](mailto:team@tapdata.io).
 
 :::
 
 <Tabs className="unique-tabs">
-    <TabItem value="normal-beta" label="常见数据库" default>
+    <TabItem value="normal-beta" label="Common Databases" default>
 
 <table>
 <thead>
   <tr>
-    <th rowspan="2">类型</th>
-    <th colspan="3">作为来源</th>
-    <th colspan="2">作为目标</th>
-    <th rowspan="2">版本</th>
+    <th rowspan="2">Type</th>
+    <th colspan="3">As a source</th>
+    <th colspan="2">As a target</th>
+    <th rowspan="2">Versions</th>
   </tr>
   <tr>
-    <th>全量</th>
-    <th>增量</th>
-    <th>DDL 采集</th>
-    <th>数据写入</th>
-    <th>DDL 应用</th>
+    <th>Full data synchronization</th>
+    <th>Incremental data synchronization</th>
+    <th>DDL event collection</th>
+    <th>Data write</th>
+    <th>DDL event apply</th>
   </tr>
 </thead>
 <tbody>
@@ -123,7 +123,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>不涉及</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Custom Connection</td>
@@ -132,7 +132,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>不涉及</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Dameng</td>
@@ -141,7 +141,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>7.x、8.x</td>
+    <td>7.x, 8.x</td>
   </tr>
   <tr>
     <td>Databend</td>
@@ -150,10 +150,10 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>0.9 及以上</td>
+    <td>0.9 and above</td>
   </tr>
   <tr>
-    <td>IBM DB2</td>
+    <td>IBM Db2</td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
@@ -236,22 +236,22 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 </tbody>
 </table>
 </TabItem>
-    <TabItem value="file-and-saas" label="文件及 SaaS" default>
+    <TabItem value="file-and-saas" label="File and SaaS" default>
 
 <table>
 <thead>
   <tr>
-    <th rowspan="2">类型</th>
-    <th colspan="3">作为来源</th>
-    <th colspan="2">作为目标</th>
-    <th rowspan="2">版本</th>
+    <th rowspan="2">Type</th>
+    <th colspan="3">As a source</th>
+    <th colspan="2">As a target</th>
+    <th rowspan="2">Versions</th>
   </tr>
   <tr>
-    <th>全量</th>
-    <th>增量</th>
-    <th>DDL 采集</th>
-    <th>数据写入</th>
-    <th>DDL 应用</th>
+    <th>Full data synchronization</th>
+    <th>Incremental data synchronization</th>
+    <th>DDL event collection</th>
+    <th>Data write</th>
+    <th>DDL event apply</th>
   </tr>
 </thead>
 <tbody>
@@ -262,7 +262,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>不涉及</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>CSV</td>
@@ -271,16 +271,16 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>不涉及，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
+    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
   </tr>
   <tr>
-    <td>Excel</td>
+    <td>Microsoft Excel</td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>XLS/XLSX 格式，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
+    <td>XLS/XLSX Format, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
   </tr>
   <tr>
     <td>Lark-IM</td>
@@ -289,7 +289,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>不涉及</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>LarkTask</td>
@@ -298,7 +298,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>不涉及</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Zoho-CRM</td>
@@ -307,7 +307,7 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>不涉及</td>
+    <td>N/A</td>
   </tr>
 </tbody>
 </table>
@@ -319,11 +319,11 @@ Beta 版本数据源处于公测阶段，已通过基础测试用例和集成测
 
 
 
-## Alpha 数据源
+## Alpha Data Sources
 
 :::tip
 
-Alpha 版本数据源处于公测阶段，已通过基础测试用例，但尚未通过集成测试用例和 Tapdata 认证测试流程，如在使用过程中有疑问，欢迎[联系我们](mailto:team@tapdata.io)。
+The Alpha version of the data sources is in public preview and has passed the basic test cases, but has not yet passed the integration test cases and the Tapdata certification test process. If you have any questions during use, please [contact us](mailto:team@tapdata.io).
 
 :::
 
@@ -331,33 +331,33 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs className="unique-tabs">
-    <TabItem value="normal" label="常见数据库" default>
+    <TabItem value="normal" label="Common Databases" default>
 
 <table>
 <thead>
   <tr>
-    <th rowspan="2">类型</th>
-    <th colspan="3">作为来源</th>
-    <th colspan="2">作为目标</th>
-    <th rowspan="2">版本</th>
+    <th rowspan="2">Type</th>
+    <th colspan="3">As a source</th>
+    <th colspan="2">As a target</th>
+    <th rowspan="2">Versions</th>
   </tr>
   <tr>
-    <th>全量</th>
-    <th>增量</th>
-    <th>DDL 采集</th>
-    <th>数据写入</th>
-    <th>DDL 应用</th>
+    <th>Full data synchronization</th>
+    <th>Incremental data synchronization</th>
+    <th>DDL event collection</th>
+    <th>Data write</th>
+    <th>DDL event apply</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>Elasticsearch</td>
+    <td>ElasticSearch</td>
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>5.x、6.x、7.x</td>
+    <td>5.x, 6.x, 7.x</td>
   </tr>
   <tr>
     <td>Gbase 8a</td>
@@ -396,7 +396,7 @@ import TabItem from '@theme/TabItem';
     <td>V8R3</td>
   </tr>
   <tr>
-    <td>OceanBase（MySQL模式）</td>
+    <td>OceanBase (MySQL mode) </td>
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
@@ -411,7 +411,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>
-    <td>3.0.0 及以上</td>
+    <td>3.0.0 and above</td>
   </tr>
   <tr>
     <td>MySQL PXC</td>
@@ -420,7 +420,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>5.0、5.1、5.5、5.6、5.7、8.x</td>
+    <td>5.0, 5.1, 5.5, 5.6, 5.7, 8.x</td>
   </tr>
   <tr>
     <td>QuickAPI</td>
@@ -429,29 +429,29 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>不涉及</td>
+    <td>N/A</td>
   </tr>
 </tbody>
 </table>
 
-   </TabItem>
+</TabItem>
 
-   <TabItem value="cloud" label="云数据库">
+<TabItem value="cloud" label="Cloud Databases">
 
 <table>
 <thead>
   <tr>
-    <th rowspan="2">类型</th>
-    <th colspan="3">作为来源</th>
-    <th colspan="2">作为目标</th>
-    <th rowspan="2">版本</th>
+    <th rowspan="2">Type</th>
+    <th colspan="3">As a source</th>
+    <th colspan="2">As a target</th>
+    <th rowspan="2">Versions</th>
   </tr>
   <tr>
-    <th>全量</th>
-    <th>增量</th>
-    <th>DDL 采集</th>
-    <th>数据写入</th>
-    <th>DDL 应用</th>
+    <th>Full data synchronization</th>
+    <th>Incremental data synchronization</th>
+    <th>DDL event collection</th>
+    <th>Data write</th>
+    <th>DDL event apply</th>
   </tr>
 </thead>
 <tbody>
@@ -462,7 +462,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>MySQL 5.0、5.1、5.5、5.6、5.7、8.x</td>
+    <td>5.0, 5.1, 5.5, 5.6, 5.7, 8.x</td>
   </tr>
   <tr>
     <td>Aliyun Tablestore</td>
@@ -480,7 +480,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>5.0、5.1、5.5、5.6、5.7、8.x</td>
+    <td>5.0, 5.1, 5.5, 5.6, 5.7, 8.x</td>
   </tr>
   <tr>
     <td>Aliyun AnalyticDB PostgreSQL</td>
@@ -489,7 +489,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>9.4、9.5、9.6、10.x、11.x、12</td>
+    <td>9.4, 9.5, 9.6, 10.x, 11.x, 12</td>
   </tr>
   <tr>
     <td>Aliyun RDS MySQL</td>
@@ -498,7 +498,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>5.0、5.1、5.5、5.6、5.7、8.x</td>
+    <td>5.0, 5.1, 5.5, 5.6, 5.7, 8.x</td>
   </tr>
   <tr>
     <td>Aliyun RDS MariaDB</td>
@@ -516,7 +516,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>3.2、3.4、3.6、4.0、4.2</td>
+    <td>MongoDB 3.2, 3.4, 3.6, 4.0, 4.2</td>
   </tr>
   <tr>
     <td>Aliyun RDS PostgreSQL</td>
@@ -525,7 +525,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>9.4、9.5、9.6、10.x、11.x、12</td>
+    <td>9.4, 9.5, 9.6, 10.x, 11.x, 12</td>
   </tr>
   <tr>
     <td>Aliyun RDS SQL Server</td>
@@ -534,7 +534,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>2008 R2、2012、2014、2016、2017、2019</td>
+    <td>2008 R2, 2012, 2014, 2016, 2017, 2019</td>
   </tr>
   <tr>
     <td>PolarDB MySQL</td>
@@ -543,7 +543,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>5.6、5.7、8.0</td>
+    <td>5.6, 5.7, 8.0</td>
   </tr>
   <tr>
     <td>PolarDB PostgreSQL</td>
@@ -561,7 +561,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>MariaDB 10.1.9、Percona 5.7.17、MySQL 8.0.18</td>
+    <td>MariaDB 10.1.9, Percona 5.7.17, MySQL 8.0.18</td>
   </tr>
   <tr>
     <td>TencentDB MongoDB</td>
@@ -570,7 +570,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>3.2、3.4、3.6、4.0、4.2</td>
+    <td>MongoDB 3.2, 3.4, 3.6, 4.0, 4.2</td>
   </tr>
   <tr>
     <td>TencentDB MySQL</td>
@@ -579,7 +579,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>5.5、5.6、5.7、8.x</td>
+    <td>5.5, 5.6, 5.7, 8.x</td>
   </tr>
   <tr>
     <td>TencentDB PostgreSQL</td>
@@ -588,7 +588,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>9.4、9.5、9.6、10.x、11.x、12</td>
+    <td>9.4, 9.5, 9.6, 10.x, 11.x, 12</td>
   </tr>
   <tr>
     <td>TencentDB SQL Server</td>
@@ -597,28 +597,27 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>2008 R2、2012、2016、2017、2019</td>
+    <td>2008 R2, 2012, 2016, 2017, 2019</td>
   </tr>
 </tbody>
 </table>
-
-   </TabItem>
-   <TabItem value="stream" label="消息队列">
+</TabItem>
+   <TabItem value="stream" label="Message Queue">
 
 <table>
 <thead>
   <tr>
-    <th rowspan="2">类型</th>
-    <th colspan="3">作为来源</th>
-    <th colspan="2">作为目标</th>
-    <th rowspan="2">版本</th>
+    <th rowspan="2">Type</th>
+    <th colspan="3">As a source</th>
+    <th colspan="2">As a target</th>
+    <th rowspan="2">Versions</th>
   </tr>
   <tr>
-    <th>全量</th>
-    <th>增量</th>
-    <th>DDL 采集</th>
-    <th>数据写入</th>
-    <th>DDL 应用</th>
+    <th>Full data synchronization</th>
+    <th>Incremental data synchronization</th>
+    <th>DDL event collection</th>
+    <th>Data write</th>
+    <th>DDL event apply</th>
   </tr>
 </thead>
 <tbody>
@@ -652,22 +651,22 @@ import TabItem from '@theme/TabItem';
 </tbody>
 </table>
    </TabItem>
-   <TabItem value="file-and-saas-alpha" label="文件及 SaaS">
+   <TabItem value="file-and-saas-alpha" label="File and SaaS">
 
 <table>
 <thead>
   <tr>
-    <th rowspan="2">类型</th>
-    <th colspan="3">作为来源</th>
-    <th colspan="2">作为目标</th>
-    <th rowspan="2">版本</th>
+    <th rowspan="2">Type</th>
+    <th colspan="3">As a source</th>
+    <th colspan="2">As a target</th>
+    <th rowspan="2">Versions</th>
   </tr>
   <tr>
-    <th>全量</th>
-    <th>增量</th>
-    <th>DDL 采集</th>
-    <th>数据写入</th>
-    <th>DDL 应用</th>
+    <th>Full data synchronization</th>
+    <th>Incremental data synchronization</th>
+    <th>DDL event collection</th>
+    <th>Data write</th>
+    <th>DDL event apply</th>
   </tr>
 </thead>
 <tbody>
@@ -678,7 +677,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>不涉及，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
+    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
   </tr>
   <tr>
     <td>Vika</td>
@@ -696,9 +695,10 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>不涉及，文件位置支持本地、FTP、SFTP、SMB、S3FS、OSS</td>
+    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
   </tr>
 </tbody>
 </table>
+
    </TabItem>
   </Tabs>

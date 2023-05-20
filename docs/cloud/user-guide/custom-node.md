@@ -1,97 +1,90 @@
-# 自定义节点（Beta）
+# Custom Node (Beta)
 
-通过自定义节点功能，您可以将通用的 JS 脚本整理成可复用的处理节点，创建完成后可在数据开发任务重直接引用该节点，无需为重复编写脚本，极大地降低了开发工作量。本文介绍自定义节点的用法并提供相关案例供您参考。
-
-
-
-## 创建自定义节点
-
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
-
-2. 在左侧导航栏，单击**自定义节点**。
-
-3. 在页面右侧，单击**新增**。
-
-4. 在跳转到的页面，根据下述说明完成设置。
-
-   1. 处理节点设置所需的表单组件。
-
-      ![](../images/create_custom_node_2.png)
-
-      * 左侧为组件区域，可拖拽各种需要的组件至操作区并进行配置
-      * 中间为操作区域，可调整各组件的位置或选中后进行配置
-      * 右侧为配置区域，可设置该组件的各项配置（如标题、描述、默认值等）
-
-   2. 单击页面上方的![](../images/json_icon.png)图标，显示该处理节点表单项的JSON模型，您可直接在该界面编辑表单信息。
-
-      ![](../images/create_custom_node_3.png)
-
-   3. 单击页面上方的![](../images/code_icon.png)图标，可编辑该处理节点的数据处理逻辑，可将表单中的字段标识进行引用。
-
-      ![](../images/create_custom_node_4.png)
-
-   4. 单击页面上方的![](../images/preview_icon.png)图标，可预览该节点的展示效果。
-
-5. 单击页面右上角的**保存**，完成设置。
+By customizing the node function, you can organize the general JS script into reusable processing nodes, and after creation, you can reference the node directly in the data development task, without rewriting the script, which greatly reduces the development workload. In this article, we describe how to use custom nodes and provide use cases for your reference.
 
 
 
-## 使用处理节点
+## Create Custom Node
 
-在开发任务中可使用已经创建好的自定义处理节点，将需要节点拖拽至DAG画布中即可正常使用.
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-![](../images/create_custom_node_5.png)
+2. In the left navigation bar, click **Custom Nodes**.
+
+3. On the right side of the page, click **New**.
+
+4. On the page that you are redirected to, follow the instructions below to complete the setup.
+
+   1. Add form component to process node.
+
+      ![](../images/add_form_component_en.png)
+
+      * On the left is the component area, which can be dragged to the operation area and configured.
+      * The middle is the operation area, and the position of each component can be adjusted or configured after selection.
+      * On the right is the property settings area, you can set the configurations of the component (such as title, description, default value, etc.)
+
+   2. Click the ![](../images/json_icon.png) icon at the top of the page to display the JSON model for the processing node form item, where you can edit the form information directly.
+
+      ![](../images/json_schema_view_en.png)
+
+   3. Click the ![](../images/code_icon.png) icon at the top of the page to edit the data processing logic of the processing node, and the field identification in the form can be referenced.
+
+      ![](../images/code_view_en.png)
+
+   4. Click the ![](../images/preview_icon.png) icon at the top of the page to preview the performance of the node.
+
+5. Click **Save** in the top-right corner of the page.
 
 
 
-## 使用示例：自定义脱密规则
+## Use Custom Node
 
-出于信息安全考虑，希望对 MySQL 表中的一部分手机号进行脱敏，我们可以创建一个自定义节点，填写相应配置和逻辑后，再创建开发任务并应用该节点。
+In the development task, you can use the custom processing node that has been created. You can use it by dragging the node into the DAG canvas.
 
-**具体流程：**
 
-1. 登录 Tapdata 平台。
 
-2. 在左侧导航栏，单击**自定义节点**。
+## Example: Custom Decryption Rule
 
-3. 在页面右侧，单击**新增**。
+For information security, we want to desensitize some of the mobile phone numbers in the MySQL table, we can create a custom node, and then create a development task and apply the node.
 
-4. 在跳转到的页面，根据下述说明完成设置。
+**Procedure:**
 
-   * 节点名称：在页面左上角，填写节点名称，例如手机号脱敏。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-   * 操作：从左侧输入控件区域拖拽一个单行输入框到中间的操作区域。
+2. In the left navigation bar, click **Custom Nodes**.
 
-   * 字段标识：填写字段标识，例如 masking_field_name。
+3. On the right side of the page, click **New**.
 
-   * 标题：可任意填写，例如手机号字段名。
+4. On the page that you are redirected to, follow the instructions below to complete the setup.
 
-     其他为非必填项
+   * Node name: In the upper left corner of the page, fill in the node name, such as phone number desensitization.
 
-5. 单击页面上方的![](../images/code_icon.png)图标，打开代码编辑界面编写节点逻辑。
+   * Action: Drag and drop a Input form from the left component area to the middle action area.
+
+   * Name: Fill in the field name, such as masking_field_name.
+
+   * Title: Optional, such as phone number field name.
+
+      Other is not required
+
+5. Click the ![](../images/code_icon.png) icon at the top of the page to open the code editing interface.
 
    ```java
-   // 代码逻辑：将手机号中的“1234”进行脱敏
+   // Code logic: Mask the "1234" in the phone number
    function process(record, form){
    var str="18912341234"
    var pat=/(\d{3})\d*(\d{4})/*
    *var b=str.replace(pat,'$1****$2');
    console.log(b)
-    record[form.masking_field_name] = record[form.masking_field_name].replace("1234","****"); 
+    record[form.masking_field_name] = record[form.masking_field_name].replace("1234","****");
    ```
 
-6. 点击右上角**保存**按钮。
+6. Click the **Save** in the top right corner.
 
-7. [创建数据开发任务](data-development/create-task.md)，在源头和目标节点间，增加我们刚刚创建的手机号脱敏节点，并填写手机号对应的字段，本案例为 mobile。
+7. [Create a data development task](data-development/create-task.md), between the source and the target node, add the phone number desensitization node we just created, and fill in the field corresponding to the mobile number, in this case, mobile.
 
-   ![手机号脱敏](../images/masking_mobile_cn.png)
+   ![Phone number desensitization](../images/masking_mobile_en.png)
 
-8. 启动数据开发任务，即可将源表中的手机号进行脱敏，结果如下：
+8. Start the task. The phone number will be masked on the target node, and the result is as follows:
 
-   * 源端的表数据：
-
-     ![](../images/masking_demo1.png)
-
-   * 经过脱敏后，目标端的表数据：![](../images/masking_demo2.png)
-
+   ![Desensitization result](../images/desensitization_result_en.png)
 

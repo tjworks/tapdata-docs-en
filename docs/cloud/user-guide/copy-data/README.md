@@ -1,6 +1,8 @@
-# 数据复制
+# Data Replication
 
-数据复制功能主要用来创建数据复制任务，实现数据从源到目标的1:1复制，也可以实现数据增量复制。
+Data replication creates a task to copy data from source to target with 1:1 or incremental replication.
+
+
 
 import DocCardList from '@theme/DocCardList';
 

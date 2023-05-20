@@ -1,6 +1,6 @@
-# 数据开发
+# Data Development
 
-通过在源/目标数据源间增加多种处理节点，在不影响用户业务的情况下，快速实现多表合并、数据拆分、字段增减、共享挖掘等高级数据处理需求，可实现数据的分析、处理、灾备等多种场景。
+Configure data development tasks by adding processing nodes, enabling advanced data processing requirements like table merging, data splitting, field adding/deleting, and data sharing without impacting user business, enabling data processing, disaster recovery, and analysis scenarios.
 
 import DocCardList from '@theme/DocCardList';
 

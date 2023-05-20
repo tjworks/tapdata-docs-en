@@ -1,44 +1,46 @@
-# 连接 MongoDB
+# Connect to MongoDB
 
-MongoDB 是一个流行的、开源 NoSQL 数据库，以灵活/可扩展的方式存储和检索数据。Tapdata Cloud 支持将 MongoDB 作为源和目标数据库构建数据管道，本文介绍如何在 Tapdata Cloud 中添加 MongoDB 数据源。
+MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need. Tapdata Cloud supports building data pipelines with MongoDB as the source and target database, and this article describes how to add MongoDB to Tapdata Cloud.
 
-## 准备工作
+## Preparations
 
-[MongoDB 数据源准备工作](../../../prerequisites/config-database/certified/mongodb.md)
+[Preparations for MongoDB](../../../prerequisites/config-database/certified/mongodb.md)
 
-## 操作步骤
+## Procedure
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 在左侧导航栏，单击**连接管理**。
+2. In the left navigation panel, click **Connections**.
 
-3. 单击页面右侧的**创建连接**。
+3. On the right side of the page, click **Create connection**.
 
-4. 在弹出的对话框中，单击**认证数据源**，然后选择 **MongoDB**。
+4. In the pop-up dialog, click **GA data source**, and select **MongoDB**.
 
-5. 在跳转到的页面，根据下述说明填写 MongoDB 的连接信息。
+5. On the page that you are redirected to, follow the instructions below to fill in the connection information for MongoDB.
 
-   ![MongoDB 连接示例](../../../images/mongodb_connection_cn.png)
+   ![MongoDB Connection Example](../../../images/mongodb_connection.png)
 
-   * 连接信息设置
-     * **连接名称**：填写具有业务意义的独有名称。
-     * **连接类型**：支持将 MongoDB 作为源或目标库。
-     * **连接方式**：根据业务需求选择：
-       * **URI 模式**：选择该模式后，您需要填写数据库 URI 连接信息，用户名和密码需拼接在连接串中，例如：` mongodb://admin:password@192.168.0.100:27017/mydb?replicaSet=xxx&authSource=admin`
-       * **标准模式**：选择该模式后，您需要填写数据库地址、名称、账号、密码和其他连接串参数。
-     * **使用 TLS/SSL 连接**：根据业务需求选择：
-       * TSL/SSL 连接：Tapdata Cloud 将连接网络中的单独服务器，该服务器提供到数据库的 TSL/SSL 通道。如果您的数据库位于不可访问的子网中，则可尝试使用此方法。
-       * 直接连接：Tapdata Cloud 将直接连接到数据库，您需要设置安全规则以允许访问。
-   * 高级设置
-     * **包含表**：默认为**全部**，您也可以选择自定义并填写包含的表，多个表之间用英文逗号（,）分隔。
-     * **排除表**：打开该开关后，可以设定要排除的表，多个表之间用英文逗号（,）分隔。
-     * **Agent 设置**：默认为**平台自动分配**，您也可以手动指定 Agent。
-     * **模型加载频率**：数据源中模型数量大于 1 万时，Tapdata Cloud 将按照设置的时间定期刷新模型。
+   * Connection Information Settings
 
-6. 单击**连接测试**，测试通过后单击**保存**。
+      * **Connection name**: Fill in a unique name that has business significance.
+      * **Connection type**: Supports MongoDB as a source or target database.
+      * **Connection method**: Choose how you want to connect:
+         * **URI mode**: After selecting this mode, you need to fill in the database URI connection information, and the user name and password need to be spliced in the connection string, for example` mongodb://admin:password@192.168.0.100:27017/mydb?replicaSet=xxx&authSource=admin`
+         * **Standard mode**: After selecting this mode, you need to fill in the database address, name, account number, password and other connection string parameters.
+      * **Connect using TLS/SSL**: Choose how you want to connect:
+         * **TSL/SSL connection:** Tapdata Cloud will connect to a separate server in the network that provides a TSL/SSL channel to the database. If your database is in an inaccessible subnet, you can try this method.
+         * **Direct connection**: Tapdata Cloud will connect directly to the database and you need to set up security rules to allow access.
+   * Advanced settings
+
+      * **Contain table**: Defaults to **all**, you can also choose to custom and fill in the included tables, separated by commas (,) between multiple tables.
+      * **Exclude tables**: After turning on the switch, you can set the tables to be excluded, separated by commas (,) between multiple tables.
+      * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
+      * **Model loading frequency**: When the number of models in the data source is greater than 10,000, Tapdata Cloud will periodically refresh the model according to the set time.
+
+6. Click **Connection Test**, and when passed, click **Save**.
 
    :::tip
 
-   如提示连接测试失败，请根据页面提示进行修复。
+   If the connection test fails, follow the prompts on the page to fix it.
 
    :::

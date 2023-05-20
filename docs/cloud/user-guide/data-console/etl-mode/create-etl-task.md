@@ -1,27 +1,26 @@
-# 一键生成数据管道
+# Generate Data Pipeline with One Click
 
-在数据集成模式下，您只需要简单地拖动源表至目标库，即可一键生成数据管道，极大简化任务配置流程，实现源目数据的实时同步。本文介绍如何生成数据管道。
+In the Data Integration Mode, you can simply drag the source table to the target database to generate a data pipeline with one click, greatly simplifying the task configuration process and real-time synchronization of source data. This article introduce how to generate a data pipeline.
 
-## 操作步骤
+## Procedure
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 在左侧导航栏，单击**数据面板**。
+2. In the left navigation panel, click **Data Console**.
 
-3. 在本页面，您可以直观地看到您已录入的数据源信息，Tapdata Cloud 将其以源和目标的形式分为左右两列。
+3. You can easily view your entered data source information on this page, divided by Tapdata Cloud into two columns labeled "Source Data" and "Target Data".
 
-   ![数据集成模式页面](../../../images/view_etl_dashboard.png)
+   ![Data Integration Mode Page](../../../images/view_etl_dashboard.png)
 
-4. （可选）单击🔍图标，找到您需要同步的源表，将其拖动至右侧目标数据源。
+4. (Optional) Click the 🔍 icon to find the source table you want to synchronize and drag it to the right target data source.
 
-5. 在弹出的对话框中，填写具有业务意义的任务名称并选择是否运行任务。
+5. In the pop-up dialog, fill in the name of the task that has business significance and select whether to run the task.
 
-   ![创建任务](../../../images/create_etl_task.gif)
+   ![Create Task](../../../images/create_etl_task.gif)
 
-   - **仅保存**：仅保存任务链路，此时，您可以单击目标库卡片中的任务名称，对该任务链路进行个性化定制，例如在跳转的任务配置页面[添加处理节点](http://localhost:3000/cloud/user-guide/data-development/process-node)，实现表结构调整（如增加字段）、合并表、构建宽表等需求，完成设置后单击页面右上角的**启动**。
+   - **Only Save**: Only save the task. At this time, you can click the task name in the target data card to customize the task, such as adding a [processing node](http://localhost:3000/cloud/user-guide/data-development/process-node) on the redirected task configuration page, realizing the requirements of table structure adjustment (such as adding fields), merging tables, building wide tables, etc. After completing the setup, click **Start** in the upper right corner of the page.
 
-   - **保存并运行**：无需执行额外的操作，由 Tapdata Cloud 自动创建一个数据开发任务并运行，将您的源表实时同步到选定的目标库中。在本案例中，Tapdata Cloud 会将源 MySQL 中的 **customer** 表实时同步到 MongoDB 中。
+   - **Save and Run**: No additional action is required, and Tapdata Cloud automatically creates a data development task and runs it to synchronize your source tables in real-time to the selected target data source. In this case, Tapdata Cloud will synchronize the **customer** table in the source MySQL to MongoDB in real-time.
 
-     您也可以单击目标库卡片中的任务名称，进入任务监控页面查看详细的运行状态，更多介绍，见[监控任务](../../data-development/monitor-task.md)。
+      You can also click the task name in the target data card to enter the task monitoring page to see the detailed operation status. For more information, see [Monitoring Tasks](../../data-development/monitor-task.md).
 
-   

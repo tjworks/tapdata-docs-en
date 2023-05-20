@@ -1,4 +1,4 @@
-# 附录
+# Appendix
 
 import DocCardList from '@theme/DocCardList';
 

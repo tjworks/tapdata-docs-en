@@ -1,42 +1,42 @@
-# 应用场景
+# Use cases
 
-### 数据库现代化
+### Database Modernization
 
-数据库技术的发展，从集中式到分布式，从 SQL 到 NoSQL，支持了更复杂业务处理。通过 Tapdata Cloud 实时同步及融合技术，您可以轻松完成数据库现代化改造，让您的应用更加安全可靠、更具可伸缩性且更易于管理。Tapdata Cloud 能降低复杂性、提高敏捷性，让您可以专注于业务创新。
+As database technology advances, modern databases have evolved from centralized to distributed architectures and shifted from SQL to NoSQL databases to support complex business processing. With Tapdata Cloud's real-time synchronization and convergence technology, database modernization becomes effortless, resulting in more secure, reliable, scalable, and manageable applications. Tapdata Cloud simplifies complexity, enhances agility, and enables you to concentrate on business innovation.
 
-### 加速数据全文搜索
+### Accelerate Full-text Searching
 
-传统的关系型数据库通过索引方式实现数据检索的加速，却无法支持用户环境下对于数据全文检索的需求。Tapdata Cloud 可以实现数据从关系型数据库到 ElasticSearch 的数据同步，帮助用户轻松实现数据的全文检索。
+Traditional relational databases accelerate data retrieval by indexing, but cannot support the need for full-text data retrieval. Tapdata Cloud offers a solution by enabling seamless data synchronization from relational databases to Elastic-Search, empowering users to effortlessly retrieve data using full-text search capabilities.
 
+### No-dev Cache Update Method
 
-### 无需开发的缓存更新方式
+To enhance business efficiency and optimize user experience, it is a common practice to introduce a cache layer in the business architecture, improving access speed and read concurrency. However, as cache data cannot be permanently stored, abnormal cache exits can result in data loss, impacting business stability and reliability. Tapdata Cloud's data synchronization function addresses this challenge by enabling real-time synchronization from the business database to the cached database. This facilitates a lightweight cache update strategy, simplifies the application architecture, and ensures both simplicity and safety.
 
-为提高业务访问速度，提升业务读并发，通常的做法是在业务架构中引入缓存层，让业务所有读请求全部路由到缓存层，通过缓存的内存读取机制来提升业务读取性能。由于缓存中的数据不能持久化 ，一旦缓存异常退出，那么内存中的数据将会丢失。Tapdata Cloud 提供的数据同步功能，可以帮助您实现从业务数据库到缓存数据库的实时同步，实现轻量级的缓存更新策略，让应用架构更加简单安全可靠。
+### Seamless Database Migration with Zero Downtime
 
+Traditional migration methods often require stopping data writing to the source database, resulting in downtime during the migration process to ensure data consistency. This downtime can last for hours or even days, significantly impacting business operations.
 
-### 不停机迁移数据库
+Tapdata Cloud offers a downtime-free migration solution that minimizes the impact on your business. The downtime only occurs when switching from the source instance to the target instance, and the rest of the time your business can continue to operate normally, with downtime reduced to the minute level. The migration process consists of two stages: full data synchronization and incremental data synchronization. During the incremental data synchronization stage, data from the source instance is continuously synchronized to the target instance in real-time. You can validate your business in the target database and once verified, smoothly switch your operations to the target database for a seamless migration.
 
-为保障数据的一致性，传统迁移方式要求在数据迁移期间，停止向源数据库写入数据，即需要停机迁移。根据数据量和网络的情况，迁移所耗费的时间可能会持续数小时甚至数天，对业务影响较大。
+### Accelerating Access with Read/Write Separation
 
-Tapdata Cloud 为您提供不停机迁移的解决方案，只有当业务从源实例切换到目标实例期间会影响业务，其他时间业务均能正常提供服务，将停机时间降低到分钟级别。整个迁移过程包含全量数据同步及增量数据同步迁移两个阶段。当进入增量数据同步阶段时，源实例的数据将实时同步至目标实例。您可以在目标数据库进行业务验证，当验证通过后，即可将业务切换到目标数据库，从而实现平滑迁移。
+In cross-regional/cross-border businesses, relying on a single-region deployment in traditional architectures leads to significant access delays and poor user experiences when users access services from different regions. To address this, Tapdata Cloud optimizes the deployment architecture and adjusts access logic. All write requests from users across regions are directed to the main business center, while real-time synchronization via Tapdata Cloud ensures that the data is replicated to the respective sub-business centers. Furthermore, read requests from users in various regions are routed to the nearest sub-business center, eliminating remote access and greatly enhancing the speed of business access.
 
-### 读写分离，加速业务访问速度
+### Empowering Reading Capacity with Horizontal Scaling
 
-对于跨区域/跨境业务，如果按照传统架构只在单个地区部署业务，那么跨境访问的用户访问服务时，访问延迟非常大，用户体验较差。通过业务部署架构和访问逻辑调整，将所有地区用户的写请求全部路由回主业务中心，通过 Tapdata Cloud 将主业务中心的数据实时同步至次业务中心，各个地区的用户的读请求，则路由至就近的次业务中心，从而避免远距离访问，加速了业务访问速度。
+In scenarios with a high volume of read requests, a single database instance may not be able to handle the entire read load effectively. To address this, you can utilize the real-time synchronization feature of DFS (Distributed File System) to establish read-only instances. By redirecting read requests to these read-only instances, you can achieve elastic scalability of the read capacity while reducing the load on the primary database instance.
 
-### 横向扩展读能力
+### Offsite Data Disaster Recovery
 
-对于有大量读请求的应用场景，单个数据库实例可能无法承担全部的读取压力。您可以借助 DFS 的实时同步功能构建只读实例，将读请求分流至这些只读实例中，实现读能力的弹性扩展，分担主数据库实例的压力。
+In order to mitigate the risk of business unavailability resulting from service disruptions, many enterprises are adopting a multi-region or multi-cloud deployment strategy. By spreading their business across different regions or public clouds, they can minimize the impact of any single point of failure. To further enhance service availability and mitigate risks at the Availability Zone level, establishing off-site Disaster Recovery Centers is a recommended approach. These centers serve as backup locations and are equipped to quickly restore service in the event of a failure at the primary business center. Real-time data synchronization through DFS ensures data consistency between the disaster recovery center and the primary business center.
 
-### 数据异地灾备
+You can seamlessly redirect the business traffic to the Disaster Recovery Center, enabling a swift restoration of services. This proactive measure helps minimize downtime and ensures uninterrupted service delivery.
 
-出于业务可用性的考量，为了避免出现业务单点的可能性，越来越多的企业将业务部署在不同区域/公有云上。为避免可用区级别的故障导致服务不可用，您可以构建异地灾备中心以提高服务可用性。灾备中心和业务中心的数据通过DFS实现实时同步，用以保障数据一致性。当业务中心故障时，您可以直接将业务流量切换至灾备中心，快速恢复服务。
+### Geo-redundancy
 
-### 异地多活
+With the rapid development of the business and the growth of the number of users, if the business is deployed in a single region, it may face the following problems:
 
-随着业务的快速发展和用户数量的增长，如果业务部署在单个地域中，可能会面临如下问题：
+- The user is widely distributed in the geographical location, and the user access delay is higher in the geographical distance, which affects the user experience.
+- The capacity of the infrastructure of a single geography limits business expansion, such as power supply capacity, network bandwidth building capacity, and so on.
 
-- 用户在地理位置上分布较广，地理位置较远的用户访问延迟较高，影响用户体验。
-- 单个地域底层基础设施的能力限制了业务扩展，例如供电能力，网络带宽建设能力等。
-
-为解决上述问题，您可以通过 Tapdata Cloud 将在同城/异地构建的多个业务单元间实现数据的实时同步，保障全局数据的一致性。当任何一个单元出现故障时，只需将流量自动切换至其他可用单元即可，有效地保障了服务的高可用性。
+To solve the above problems, you can use Tapdata Cloud to synchronize data in real time between multiple business units built in the same city/off-site to ensure global data consistency. When any unit fails, just switch the traffic to other available units automatically, effectively guaranteeing the high availability of the service.

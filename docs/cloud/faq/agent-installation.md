@@ -1,162 +1,161 @@
-# 部署与管理 Agent
+# Deploy and Manage Agent
 
-本文列举 Tapdata Agent 在部署和运行遇到的常见问题。
+This article lists common problems encountered by Tapdata Agent in deployment and operation.
 
-## 部署 Agent
+## Deploy Agent
 
-### Agent 有什么作用？
+### What is the role of the agent?
 
-Agent 是数据同步、数据异构、数据开发场景中的关键程序，负责通过流式技术从源系统获取数据、处理转换数据并发送到目标系统，由云上的管理端统一管理，工作流程如下：
+Agent is a key program in data synchronization, data heterogeneity, and data development scenarios. It is responsible for obtaining data from the source system, processing and transmitting it to the target system, and is unifiedly managed by Tapdata cloud. The workflow is as follows:
 
-![Agent 架构](../images/agent_introduction.png)
-
-:::tip
-
-Agent 通过流式技术从源端获取数据、处理转换数据并发送到目标端，数据不会流经 Tapdata Cloud，也不会上传和留存您的数据。
-
-:::
-
-### 推荐将 Agent 部署在哪里？
-
-通常数据流转应用场景对时效性有较高的要求，因此，推荐将 Agent 部署在数据库所属的本地网络中，可最大程度降低网络延迟。
-
-更多介绍，见[部署 Tapdata Agent](../quick-start/install-agent)。
-
-### 需要部署多少个 Agent？
-
-只需部署一个 Agent，需确保该 Agent 可和数据的来源/目标端可正常通信。
-
-### 是否可以部署多个 Agent？
-
-可以，需要确保这些 Agent 可和数据的来源/目标端可正常通信。
+![Agent Architecture](../images/architecture.png)
 
 :::tip
 
-一个任务只会在一个 Agent 上运行，在任务比较多时，可部署多个 Agent 来解决单点负载问题。
+Tapdata Agent obtains data from the source, processes and transforms it, then sends it to its target. The data is not uploaded or stored in Tapdata Cloud.
 
 :::
 
-### 部署了多个 Agent，某任务的 Agent 发生异常如何处理？
+### Where is the Agent deployed?
 
-您可以编辑对应的任务，然后为其手动指定一个正常运行的 Agent，再对异常的 Agent 进行排查，设置方法如下：
+The Tapdata Agent should be installed in the local network where the database is located since data flow is usually time-sensitive.
 
-![指定 Agent](../images/specify_agent_cn.png)
+See [Deploying Tapdata Agent](../quick-start/install-agent) for more information.
 
-### 如果 Oracle 是 rac 模式，aix 的两节点 rac，如何部署 Agent？
+### How many agents need to be deployed?
 
-只要可以连接到 rac 即可，即 Agent 能连到 rac 的 scan/vip，无需和 Oracle 部署在同一设备。 
+Just deploy an agent and make sure that the agent can communicate with the source/destination of the database.
 
-### 安装了DockerWindows (64 bit)，无法通过检测？
+### Can multiple agents be deployed?
 
-推荐直接使用 [Docker 方式部署 Agent](../quick-start/install-agent/agent-on-docker.md)。
+Yes, you need to make sure that these agents can communicate with the source/destination of the database.
 
-### 如何再次获取部署所需的 token？
+:::tip
 
-1 个 Token 仅用于部署 1 个 Agent，如需部署多个 Agent，请前往 Tapdata Cloud 创建 Agent。
+A task will only run on one agent, and when there are many tasks, multiple agents can be deployed to improve the workload.
 
-### Agent 一直是部署状态检测中？
+:::
 
-您需要根据提示完成 Agent 的部署，部署完成后 Agent 状态会自动转换为**运行中**。如果超过 5 分钟还未显示正常，则可能部署失败，您可以联系我们[获取技术支持](support.md)，并提供日志协助定位问题。
+### How can I change an Agent for a task when an Agent has an exception?
+
+You can edit the corresponding task, then manually specify a working agent for it, and then troubleshoot the abnormal agent.
+
+![Specify Agent](../images/specify_agent_en.png)
+
+### If Oracle is in rac mode with two nodes, how to deploy the agent?
+
+As long as it can be connected to rac, the agent can connect to the scan/vip of rac, and it does not need to be deployed on the same device with Oracle.
+
+### Failed to pass the test after installing Docker Windows (64 bit)?
+
+The best way to [deploy Agent](../quick-start/install-agent/agent-on-docker.md) is directly through Docker.
+
+### How do I get the tokens needed for deployment again?
+
+1 token is only used to deploy 1 agent, if you want to deploy multiple agents, please go to Tapdata Cloud to create an agent.
+
+### Agent has been in deployment status detection?
+
+You need to follow the prompts to complete the deployment of the Agent, and the Agent state will be automatically converted to **running** after the deployment is completed. If more than 5 minutes have not yet shown normal, the deployment may fail, you can contact us for [technical support](support.md) and provide logs to assist in locating the problem.
 
 
 
-## 管理 Agent
+## Manage Agent
 
-### Agent 启动报错：“start timout”？
+### Agent startup error: "start timout"?
 
-如果遇到启动 Agent 失败，您可以查看安装目录中的日志文件 **logs/tapdata-agent.log**，判断是否为网络问题，您也可以联系我们[获取技术支持](support.md)，并提供日志协助定位问题。
+If you encounter the failure of starting the Agent, you can check the log file **logs/tapdata-agent.log** in the installation directory to determine whether it is a network problem, you can also contact us for [technical support](support.md).
 
-### 输入 token 后报错：“ java.lang.IllegalStateException: Cannot load configuration class: io.tapdata.Application”？
+### Enter the token and report an error: "java.lang.IllegalStateException: Cannot load configuration class: io.tapdata.Application"?
 
-软件包不完整，请更换一个版本重新安装。
+The package is incomplete. Please replace it with a new version.
 
-### 如何检查 Agent 状态？
+### How do I check the status of my Agent?
 
-* **通过命令查看**：登录部署了 Agent 的设备并进入 Agent 安装目录，执行 `./tapdata status` 命令，示例如下，该 Agent 处于正常运行中。
+* **View by command**: Log in to the device where the Agent is deployed and enter the Agent installation directory, execute the `./tapdata status` command, as shown in the following example, the Agent is normally running.
 
-  ![命令查看 Agent 状态](../images/agent_status_cli.png)
+   ![Command to check the status of the Agent](../images/agent_status_cli.png)
 
-* **通过界面查看**：登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)，单击左侧导航栏的 **Agent 管理**即可查看所有 Agent 的状态，单击 Agent 名称还可以获取到该 Agent 安装的目录、日志等信息。
+* **View through the interface**: Log in to the [Tapdata Cloud](https://cloud.tapdata.io/), click **Agent** in the left navigation bar to view the status of all agents, and click Agent name to get the directory, logs, and other information of the Agent.
 
-  ![界面查看 Agent 状态](../images/agent_status_ui_cn.png)
+   ![Check the status of the Agent](../images/agent_status_ui_en.png)
 
-### Agent 意外停止了，如何启动 Agent ？
+### Agent unexpectedly stopped, how to start the agent?
 
-登录部署了 Agent 的设备并进入 Agent 安装目录，执行 `./tapdata start` 命令，如果无法启动可以联系我们[获取技术支持](support.md)，并提供日志协助定位问题。
+Log in to the device where the Agent is deployed and enter the Agent installation directory, execute the `./tapdata start` command, if you cannot start, you can contact us for [technical support](support.md), and provide logs to assist in locating the problem.
 
-### Agent 正常运行，界面上却显示为离线？
+### The Agent is running normally, but appears to be offline in Tapdata Cloud?
 
-Agent 每分钟向 Tapdata Cloud 上报一次心跳信息，如果  Tapdata Cloud 连续五分钟没有收到心跳信息则会显示该 Agent 离线，通常由于网络波动引起，您可以检查 Agent 的状态以确认。
+The Agent reports the heartbeat to the Tapdata Cloud every minute, and if the Tapdata Cloud does not receive the heartbeat information for five consecutive minutes, the Agent is displayed offline, usually due to network fluctuations.
 
-Agent 离线不影响已运行任务的正常运行，但是新建任务会受到影响。 
+The Agent offline does not affect the normal operation of the running task, but the newly created task is affected.
 
-### 如何卸载重装 Agent？
+### How to uninstall the reinstall agent?
 
-根据您的部署方式选择下述方法卸载重装 Agent：
+Select the following methods to uninstall the Reinstall Agent according to your platform:
 
-* Docker 部署：直接删除容器，然后重新运行启动容器的命令即完成了重新安装。
-* Linux/Windows 上部署：
-  * **全新安装**
-    1. 执行命令停止服务：`./tapdata stop -f`。
-    2. 删除安装目录。
-    3. 在 Tapdata Cloud 上创建 Agent 并根据提示完成部署。
-  * **保留配置重装**
-    1. 保存 Agent 安装目录中的配置文件 **application.yml**。
-    2. 执行命令停止服务：`./tapdata stop -f`。
-    3. 删除安装目录。
-    4. 创建新的安装目录，并将 **application.yml** 复制到该目录。
-    5. 下载 tapdata 工具。
-    6. 执行 `./tapdata start backend `
+* Docker: Delete the container directly, and then rerun the command to start the container to complete the installation.
+* Linux/Windows:
+   * **Fresh Install**
+      1. Execute the command stop service: `./tapdata stop -f`.
+      2. Delete the installation directory.
+      3. Create an Agent on Tapdata Cloud and follow the prompts to complete the deployment.
+   * **Retain Configuration Reinstall**
+      1. Save the configuration file **application.yml** in the Agent installation directory.
+      2. Execute the command stop service: `./tapdata stop -f`.
+      3. Delete the installation directory.
+      4. Create a new installation directory and copy **application.yml** to it.
+      5. Download the tapdata agent.
+      6. Execute `./tapdata start backend`
 
-### Agent 运行时报错：“OutOfMemoryError”
+### Agent runtime error: "OutOfMemoryError"
 
-需要确认部署 Agent 设备是否具有充足的可用内存，具体解决方案如下：
+It is necessary to confirm that the Agent device has sufficient available memory. The solution is as follows:
 
-* 内存不足：更换部署 Agent 的设备，也可以尝试调小 Tapdata Cloud 平台中任务的**每次读取数量**配置值。
+* Out of memory: Replace the device where the Agent is deployed, or try reducing the value of **Batch read number** for tasks in the Tapdata Cloud.
 
-* 内存充足
+* Memory is plentiful
 
-  1. 在 Agent 安装目录中，找到并修改 **application.yml** 文件
+   1. In the Agent installation directory, locate and modify the **application.yml** file
 
-  2. 根据设备的可用内存量来调整内存大小，例如在文件里增加配置：`tapdataJavaOpts: "-Xms4G -Xmx8G"`，即初始内存为 4G，最大内存为 8G。
+   2. Adjust the memory size according to the available memory. For example, add the following configuration in the file: `tapdataJavaOpts: "-Xms4G -Xmx8G"`, that is, the initial memory is 4GB, and the maximum memory is 8GB.
 
-     ```yaml
-     tapdata:
-         conf:
-             tapdataPort: '3030'
-             backendUrl: 'https://cloud.tapdata.net/api/'
-             apiServerPort: ""
-             tapdataJavaOpts: "-Xms4G -Xmx8G"
-             reportInterval: 20000
-             uuid: a5f266a1-a495-412f-a433-29d345713c176
-         cloud:
-             accessCode: ""
-             baseURLs: 'https://cloud.tapdata.net/api/'
-             username: null
-             token: 
-     spring:
-         data:
-             mongodb:
-                 username: ""
-                 password: ""
-                 mongoConnectionString: ""
-                 uri: ""
-                 ssl: ""
-                 sslCA: ""
-                 sslCertKey: ""
-                 sslPEMKeyFilePassword: ""
-                 authenticationDatabase: ""
-     ```
+      ```yaml
+      tapdata:
+          conf:
+              tapdataPort: '3030'
+              backendUrl: 'https://cloud.tapdata.io/api/'
+              apiServerPort: ""
+              tapdataJavaOpts: "-Xms4G -Xmx8G"
+              reportInterval: 20000
+              uuid: a5f266a1-a495-412f-a433-29d345713c176
+          cloud:
+              accessCode: ""
+              baseURLs: 'https://cloud.tapdata.io/api/'
+              username: null
+              token:
+      spring:
+          data:
+              mongodb:
+                  username: ""
+                  password: ""
+                  mongoConnectionString: ""
+                  uri: ""
+                  ssl: ""
+                  sslCA: ""
+                  sslCertKey: ""
+                  sslPEMKeyFilePassword: ""
+                  authenticationDatabase: ""
+      ```
 
-     
 
-  3. 保存后执行下述命令重启 Agent。
 
-     ```shell
-     #停止 Agent
-     ./tapdata stop -f
-     #启动 Agent
-     ./tapdata start
-     ```
+   3. After saving, execute the following command to restart the agent.
 
-     
+      ```shell
+      # Stop Agent
+      ./tapdata stop -f
+      # Start Agent
+      ./tapdata start
+      ```
+

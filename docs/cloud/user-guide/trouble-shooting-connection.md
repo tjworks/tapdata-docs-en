@@ -1,45 +1,45 @@
-# 连接测试及失败排查方法
+# Troubleshooting Connections
 
-为保障数据源的连接有效性，当您完成[数据连接配置](connect-database/README.md)后，可单击**连接测试**以验证数据源配置是否满足要求、网络连通性是否正常等。本文介绍 Tapdata Cloud 常见的检查项目及失败时的排查方法。
+In order to ensure the connection effectiveness of the data source, when you have completed the [data connection configuration](connect-database/README.md), you can click **Connection test** to verify the data source configuration meets the requirements, whether the network connectivity is normal, and so on. This article introduces common inspection items in Tapdata Cloud and troubleshooting methods in case of failure.
 
-- **检查服务连接是否可用**
+- **Check if connections are available**
 
-  Tapdata Cloud 尝试连接数据源，如果网络不可达则提示测试失败，此时请检查网络连通性，如：本地 iptables 配置、网络中的 ACL 限制等。
+   Tapdata Cloud tries to connect to the data source, if the network is unreachable, the test fails, then check the network connectivity, such as: local iptables configuration, ACL limit in the network, etc.
 
-- **检查用户名密码及数据库是否正确**
+- **Check if the username, password, and database are correct**
 
-  Tapdata Cloud 尝试使用您配置的用户名与密码来连接数据源，如果用户名、密码或数据库名错误则提示测试失败，此时请检查认证信息的正确性。
+   Tapdata Cloud tries to connect to the data source using your configured user name and password, if the user name, password or database name is wrong, the test fails, then check the correctness of the authentication information.
 
-- **检查数据源版本信息是否可用**
+- **Check if data source version is supported**
 
-  Tapdata Cloud 对数据源进行版本检测，如果不支持该版本则提示测试失败。
+   Tapdata Cloud detects the version of the data source, and if the version is not supported, the test fails.
 
-- **加载模型**
+- **Load model**
 
-  Tapdata Cloud 尝试加载数据源中的表结构信息，如果无法加载则提示测试失败，此时请检查数据库用户是否被授予了相应权限。
+   Tapdata Cloud tries to load the table meta information in the data source, if it fails to load, the test fails, then check whether the database user has been granted the corresponding permission.
 
-- **检查binlog是否开启，并且为ROW级**（适用于 MySQL）
+- **Check if binlog is enabled and set to ROW format** (for MySQL)
 
-  Tapdata Cloud 检查数据库的 binlog 是否开启、binlog 格式是否为 ROW，如果不满足要求则提示测试失败，设置方法，见 [MySQL 数据源准备工作](../prerequisites/config-database/certified/mysql.md)。此时请检查数据库相关配置。
+   Tapdata Cloud checks if the database's binlog is enabled and set to ROW format. If the requirements are not met, the test fails. For more information about the binlog settings, see [MySQL preparations](../prerequisites/config-database/certified/mysql.md). At this time, check the database binlog configuration.
 
-- **检查 cdc 同步同步所需的权限是否授权**
+- **Check if permissions required for CDC are authorized**
 
-  Tapdata Cloud 检查数据库账号是否具备执行 CDC（变化数据捕捉）所需的权限，如果权限不满足则提示测试失败，此时请检查数据库用户是否被授予了相应权限。
+   Tapdata Cloud checks whether the database account has the necessary permissions to perform CDC (Change Data Capture), if the permission is not met, the test fails, then check whether the database user has been granted the corresponding permission.
 
-- **检查 archive log 是否开启**（适用于 Oracle）
+- **Check if archive logging is enabled** (for Oracle)
 
-  Tapdata Cloud 检查是否开启 archive log，如果未开启则测试失败，开启方法，见 [Oracle 数据源准备工作](../prerequisites/config-database/certified/oracle.md)。
+   Tapdata Cloud checks if the archive log is enabled. If it is not enabled, the test fails. For more information about how to enable it, see [Oracle preparation](../prerequisites/config-database/certified/oracle.md).
 
-- **检查 supplemental log 模式是否正确**（适用于 Oracle）
+- **Check if supplemental log mode is correct** (for Oracle)
 
-  Tapdata Cloud 检查supplemental log 模式是否正确，如不正确则提示测试失败，设置方法，见 [Oracle 数据源准备工作](../prerequisites/config-database/certified/oracle.md)。
+   Tapdata Cloud checks if the supplemental log mode is correct. If it is incorrect, the test fails. For more information about how to set it up, see [Oracle preparation](../prerequisites/config-database/certified/oracle.md).
 
-- **检查 DDL 语句所需的权限是否授权**（适用于 Oracle）
+- **Check if permissions required for DDL are authorized** (for Oracle)
 
-  Tapdata Cloud 检查数据库账号是否具备 DDL 执行权限，如果权限不满足则提示测试失败，授权示例，见 [Oracle 数据源准备工作](../prerequisites/config-database/certified/oracle.md)。
+   Tapdata Cloud checks if the database account has DDL execution permissions. If the permission is not met, the test fails. For an example of authorization, see [Oracle preparation](../prerequisites/config-database/certified/oracle.md).
 
 
 
-## 推荐阅读
+## See also
 
-[数据源连接前的准备工作](../prerequisites/config-database/README.md)
+[Preparations Before Connection](../prerequisites/config-database/README.md)

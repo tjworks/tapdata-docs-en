@@ -1,48 +1,44 @@
-# 获取支持
+# Technical Support
 
-除查阅 Tapdata 文档外，您还可以通过在线客服、用户社区和工单系统来获取 Tapdata 产品的原厂技术支持。
+In addition to consulting the Tapdata documentation, you can also access the original technical support of Tapdata products through the online customer service, user community and ticket system.
 
-## 账号说明
+## Description of the account
 
-在获取支持前，您需要[登录 Tapdata Cloud](https://cloud.tapdata.net/console/v3/)并前往用户中心绑定邮箱，使用该邮箱来登录用户社区和工单系统。
-
-![绑定邮箱](../images/bind_email_cn.png)
+Before you get support, you need to log in to Tapdata Cloud and go to the user center to bind your email, using the email to log in to the user community and ticket system.
 
 
 
-## 在线客服
+## Live Chat
 
-登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)后，单击页面左下角的 **Connect**，系统将为您提供常见问题及其解决方案功能参考，如未解决可转接人工服务或通过聊天窗口拨打语音电话。
-
-![在线客服](../images/online_chat_support.png)
+After logging in to Tapdata Cloud, click **Connect** in the bottom left corner of the page, the system will provide you with common problems and solutions, if your problem cannot be resolved, you can transfer human services or make voice calls through the chat window.
 
 
 
-## 用户社区
+## User Community
 
-您可以访问 Tapdata [用户社区](https://tapdata.zohodesk.com.cn/portal/zh/community/tapdata-support)来获取支持，讨论使用中遇到的问题，提出您宝贵的意见和反馈，Tapdata 技术工程师或社区用户会进行回复。
+In the Tapdata user community, you can ask questions about Tapdata products and get technical support, discuss issues encountered, and provide valuable feedback.
 
 :::tip
 
-在新开话题讨论前，您也可以搜索是否有类似问题和解决方案，如果您的问题涉及到一些不宜公开的信息，请使用工单系统获取支持。
+You can also search for similar issues and solutions before opening a new topic discussion. If your problem involves some information that is not suitable for public disclosure, please use the ticket system for support.
 
 :::
 
 
 
-## 工单系统
+## Ticket System
 
-如果用户社区中没有找到相似问题及解决方案，您也可以通过[创建工单](https://tapdata.zohodesk.com.cn/portal/zh/newticket)的方式来获取技术支持。
+If similar issues and solutions are not found in the user community, you can also get technical support by creating a ticket.
 
-为帮助我们更快识别和响应问题，请参考下述说明填写工单信息。
+To help us identify and respond to issues faster, please refer to the instructions below to complete the ticket information.
 
-* **部门**：选择 **Tapdata 技术支持**。
-* **产品名称**：选择 **Tapdata 云版**。
-* **版本号**：在 Agent 管理页面可以获得。
-* **支持分类**：根据您的问题类型选择，如选择**用户使用问题**。
-* **主题**：一句话描述您所遇到的问题，便于识别定位。
-* **描述**：填写您遇到的问题，推荐包含下述信息：
-  * 任务名称，或链接。
-  * 问题现象描述。
-  * 相关报错日志信息或截图。
-  * 源/目标端数据库的类型和版本。
+* **Department**: Select **Tapdata Technical Support**.
+* **Product name**: Select **Tapdata Cloud**.
+* **Version**: Available on the Agent page.
+* **Support Type**: Choose according to your question type, such as select **user use question**.
+* **Subject**: Describe the problem you are experiencing, which is easy to identify and locate.
+* **Description**: Fill in the problem you encountered, the recommendation includes the following information:
+   * Task name, or link.
+   * Description of the problem
+   * Related error log information or screenshot.
+   * Type and version of the source/destination database.

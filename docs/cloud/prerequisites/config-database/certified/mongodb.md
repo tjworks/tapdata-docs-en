@@ -1,103 +1,104 @@
 # MongoDB
 
-安装 Agent 后，您需要在 Tapdata Cloud 平台为 Agent 和 MongoDB 建立连接，完成操作后即可在数据复制/开发任务中使用该数据源。本文介绍建立连接前的准备工作（如授权账号等）。
+After installing the Agent, the next step is to establish a connection between the Agent and MongoDB through Tapdata Cloud. This connection is crucial as it allows you to utilize the MongoDB data source for various data replication or development tasks.
 
-## 支持版本
+Before establishing the connection, it is essential to complete the necessary preparations outlined in the provided article. These preparations may include authorizing an account and performing other relevant steps to ensure a smooth and secure connection.
 
-MongoDB 3.2、3.4、3.6、4.0、4.2
+## Supported Versions
+
+MongoDB 3.2, 3.4, 3.6, 4.0, 4.2
 
 :::tip
 
-Tapdata Cloud 基于 MongoDB 的 Change Stream 实现，此特性在 MongoDB 4.0 开始支持，因此，推荐源和目标数据库的版本为 4.0 及以上。
+You should use 4.0 or higher versions of the source and target databases since the data reading mechanism relies on MongoDB's Change Stream.
 
 :::
 
-## 作为源库
+## As a Source Database
 
-1. 保障源库的架构为副本集或分片集群，如果为单节点架构，您可以将其配置为单成员的副本集以开启 Oplog。
-   具体操作，见[如何将单节点转为副本集](https://docs.mongodb.com/manual/tutorial/convert-standalone-to-replica-set/)。
+1. Make sure that the schema of the source database is a replica set or a sharding cluster. If it is standalone, you can configure it as a single-member replica set to open Oplog.
+   For more information, see [Convert a Standalone to a Replica Set](https://docs.mongodb.com/manual/tutorial/convert-standalone-to-replica-set/).
 
-2. 配置充足的 Oplog 存储空间，至少需要容纳 24 小时的 Oplog。
-   具体操作，见[修改 Oplog 大小](https://docs.mongodb.com/manual/tutorial/change-oplog-size/)。
+2. To ensure sufficient storage space for the Oplog, it is important to configure it to accommodate at least 24 hours' worth of data. For detailed instructions, see [Change the Size of the Oplog](https://docs.mongodb.com/manual/tutorial/change-oplog-size/).
 
-3. 根据权限管控需求选择下述步骤，创建用于数据同步/开发任务的账号并授予权限。
+3. To create an account and grant permissions according to permission management requirements, follow the necessary steps.
 
    :::tip
 
-   由于分片服务器不会向 config 数据库获取用户权限，因此，当源库为分片集群架构时，您需要在每个分片的主节点上创建相应的用户并授予权限。
+   In shard cluster architectures, the shard server is unable to retrieve user permissions from the config database. Therefore, it is necessary to create corresponding users and grant permissions on the master nodes of each shard.
 
    :::
 
-   * 授予指定库（以 demodata 库为例）的读权限
+   * Grant read role to specified database (e.g. demodata)
 
-     ```bash
-     use admin
-     db.createUser({
-         "user" : "tapdata",
-         "pwd"  : "my_password",
-         "roles" : [
-             {
-                 "role" : "clusterMonitor",
-                 "db" : "admin"
-             },
-             {
-                 "role" : "read",
-                 "db" : "demodata"
-             }，
-             {
-                 "role" : "read",
-                 "db" : "local"
-             },
-             {
-                 "role" : "read",
-                 "db" : "config"
-             }
-         ]
-     }
-     ```
-
-     :::tip
-
-     仅当 MongoDB 为 3.2 版本时，需要授予 local 数据库的读权限。
-
-     :::
-
-   * 授予所有库的读权限。
-
-     ```bash
-     use admin
+      ```bash
+      use admin
       db.createUser({
-         "user" : "tapdata",
-         "pwd"  : "my_password",
-         "roles" : [
-             {
-                 "role" : "clusterMonitor",
-                 "db" : "admin"
-             },
-             {
-                 "role" : "readAnyDatabase",
-                 "db" : "admin"
-             }
-         ]
-     }
-     ```
+          "user" : "tapdata",
+          "pwd"  : "my_password",
+          "roles" : [
+              {
+                  "role" : "clusterMonitor",
+                  "db" : "admin"
+              },
+              {
+                  "role" : "read",
+                  "db" : "demodata"
+              }，
+              {
+                  "role" : "read",
+                  "db" : "local"
+              },
+              {
+                  "role" : "read",
+                  "db" : "config"
+              }
+          ]
+      }
+      ```
 
-4. 在设置 MongoDB URI 时，推荐将写关注级别设置为大多数，即 `w=majority`，否则可能因 Primary 节点异常宕机导致的数据丢失文档。
+      :::tip
 
-5. 源库为集群架构时，为提升数据同步性能，Tapdata Cloud 将会为每个分片创建一个线程并读取数据，在配置数据同步/开发任务前，您还需要执行下述操作。
+      Only when using MongoDB version 3.2, it is necessary to grant the **read** role to the local database.
 
-   * 关闭源库的均衡器（Balancer），避免块迁移对数据一致性的影响。具体操作，见[如何停止平衡器](https://docs.mongodb.com/manual/reference/method/sh.stopBalancer/)。
-   * 清除源库中，因块迁移失败而产生的孤立文档，避免 _id 冲突。具体操作，见[如何清理孤立文档](https://docs.mongodb.com/manual/reference/command/cleanupOrphaned/)。
+      :::
+
+   * Grant read role to all databases.
+
+      ```bash
+      use admin
+       db.createUser({
+          "user" : "tapdata",
+          "pwd"  : "my_password",
+          "roles" : [
+              {
+                  "role" : "clusterMonitor",
+                  "db" : "admin"
+              },
+              {
+                  "role" : "readAnyDatabase",
+                  "db" : "admin"
+              }
+          ]
+      }
+      ```
+
+4. When configuring the MongoDB URI, it is advisable to set the write concern to **majority** (`w=majority`) to mitigate the risk of data loss in the event of a primary node downtime.
+
+5. When the source database is a cluster, in order to improve data synchronization performance, Tapdata Cloud will create a thread for each shard and read the data. Before configuring data synchronization/development tasks, you also need to perform the following operations.
+
+   * Turn off the Balancer to avoid the impact of chunk migration on data consistency. For more information, see [Stop the Balancer](https://docs.mongodb.com/manual/reference/method/sh.stopBalancer/).
+   * Clears the orphaned documents due to failed chunk migration to avoid _id conflicts. For more information, see [Clean Up Orphaned Documents](https://docs.mongodb.com/manual/reference/command/cleanupOrphaned/).
 
 
 
-### 作为目标库
+### As a Target Database
 
-授予指定库（以 demodata 库为例）的写权限，并授予 **clusterMonitor** 角色以供数据验证使用，示例如下：
+Grant write role to specified database (e.g. demodata) and **clusterMonitor** role for data validation, e.g.:
 
 ```bash
-> use admin
-> db.createUser({
+use admin
+db.createUser({
   "user" : "tapdata",
   "pwd"  : "my_password",
   "roles" : [
@@ -119,13 +120,13 @@ Tapdata Cloud 基于 MongoDB 的 Change Stream 实现，此特性在 MongoDB 4.0
 
 :::tip
 
-仅当 MongoDB 为 3.2 版本时，需要授予 local 数据库的读权限。
+Only when using MongoDB version 3.2, it is necessary to grant the read role to the local database.
 
 :::
 
 
 
-## 下一步
+## Next step
 
-[连接 MongoDB 数据库](../../../user-guide/connect-database/certified/connect-mongodb.md)
+[Connect to MongoDB](../../../user-guide/connect-database/certified/connect-mongodb.md)
 

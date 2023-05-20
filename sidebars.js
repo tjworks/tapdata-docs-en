@@ -21,7 +21,7 @@ const sidebars = {
     'cloud/what-is-tapdata-cloud',
     {
      type: 'category',
-     label: '产品简介',
+     label: 'Introduction',
      link: {type: 'doc', id: 'cloud/introduction/README'},
      items: [
             'cloud/introduction/architecture',
@@ -34,7 +34,7 @@ const sidebars = {
     },
 {
      type: 'category',
-     label: '产品计费',
+     label: 'Billing',
      link: {type: 'doc', id: 'cloud/billing/README'},
      items: [
             'cloud/billing/billing-overview',
@@ -46,12 +46,12 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: '快速入门',
+     label: 'Quick Start',
      link: {type: 'doc', id: 'cloud/quick-start/README'},
      items: [
             {
              type: 'category',
-             label: '步骤一：安装 Agent',
+             label: 'Step 1: Install Agent',
              link: {type: 'doc', id: 'cloud/quick-start/install-agent/README'},
              items: [
                     'cloud/quick-start/install-agent/agent-on-linux',
@@ -66,18 +66,18 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: '准备工作',
+     label: 'Preparations',
      link: {type: 'doc', id: 'cloud/prerequisites/README'},
      items: [
              'cloud/prerequisites/allow-access-network',
             {
              type: 'category',
-             label: '调整数据配置并授权账号',
+             label: 'Configure Database and Grant Access',
              link: {type: 'doc', id: 'cloud/prerequisites/config-database/README'},
              items: [
                     {
                        type: 'category',
-                       label: '认证数据源',
+                       label: 'GA Data Sources',
                        link: {type: 'doc', id: 'cloud/prerequisites/config-database/certified/README'},
                        items: [
                               'cloud/prerequisites/config-database/certified/clickhouse',
@@ -95,19 +95,19 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: '用户指南',
+     label: 'User Guide',
      link: {type: 'doc', id: 'cloud/user-guide/README'},
      items: [
              'cloud/user-guide/workshop',
              'cloud/user-guide/manage-agent',
              {
               type: 'category',
-              label: '连接数据库',
+              label: 'Connect Data Sources',
               link: {type: 'doc', id: 'cloud/user-guide/connect-database/README'},
               items:[
                     {
                      type: 'category',
-                     label: '认证数据源',
+                     label: 'GA Data Sources',
                      link: {type: 'doc', id: 'cloud/user-guide/connect-database/certified/README'},
                      items:[
                             'cloud/user-guide/connect-database/certified/connect-clickhouse',
@@ -121,7 +121,7 @@ const sidebars = {
                     }, 
                     {
                      type: 'category',
-                     label: 'Beta 数据源',
+                     label: 'Beta Data Sources',
                      link: {type: 'doc', id: 'cloud/user-guide/connect-database/beta/README'},
                      items:[
                             'cloud/user-guide/connect-database/beta/connect-bigquery',
@@ -129,7 +129,7 @@ const sidebars = {
                     },
                     {
                      type: 'category',
-                     label: 'Alpha 数据源',
+                     label: 'Alpha Data Sources',
                      link: {type: 'doc', id: 'cloud/user-guide/connect-database/alpha/README'},
                      items:[
                             'cloud/user-guide/connect-database/alpha/connect-tablestore',
@@ -140,7 +140,7 @@ const sidebars = {
              'cloud/user-guide/manage-connection',
              {
               type: 'category',
-              label: '数据复制',
+              label: 'Data Replication',
               link: {type: 'doc', id: 'cloud/user-guide/copy-data/README'},
               items:[
                     'cloud/user-guide/copy-data/create-task',
@@ -150,7 +150,7 @@ const sidebars = {
             },
             {
              type: 'category',
-             label: '数据开发（Beta）',
+             label: 'Data Development(Beta',
              link: {type: 'doc', id: 'cloud/user-guide/data-development/README'},
              items:[
                    'cloud/user-guide/data-development/create-task',
@@ -163,12 +163,12 @@ const sidebars = {
              'cloud/user-guide/operation-log',
              {
               type: 'category',
-              label: '数据面板（Beta）',
+              label: 'Data Console(Beta)',
               link: {type: 'doc', id: 'cloud/user-guide/data-console/README'},
               items:[
                     {
                      type: 'category',
-                     label: '数据集成平台模式',
+                     label: 'Data Integration Mode',
                      link: {type: 'doc', id: 'cloud/user-guide/data-console/etl-mode/README'},
                      items:[
                             'cloud/user-guide/data-console/etl-mode/etl-mode-dashboard',
@@ -177,7 +177,7 @@ const sidebars = {
                     },
                     {
                      type: 'category',
-                     label: '数据服务平台模式',
+                     label: 'Data Service Platform Model',
                      link: {type: 'doc', id: 'cloud/user-guide/data-console/daas-mode/README'},
                      items:[
                             'cloud/user-guide/data-console/daas-mode/enable-daas-mode',
@@ -193,7 +193,7 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: '最佳实践',
+     label: 'Tutorials',
      link: {type: 'doc', id: 'cloud/best-practice/README'},
      items: [
             'cloud/best-practice/mysql-to-bigquery',
@@ -203,7 +203,7 @@ const sidebars = {
         },
      {
       type: 'category',
-      label: '常见问题',
+      label: 'FAQ',
       link: {type: 'doc', id: 'cloud/faq/README'},
       items:[
              'cloud/faq/data-security',
@@ -214,14 +214,13 @@ const sidebars = {
      },
      {
       type: 'category',
-      label: '附录',
+      label: 'Appendix',
       link: {type: 'doc', id: 'cloud/appendix/README'},
       items: [
               'cloud/appendix/standard-js',
               'cloud/appendix/enhanced-js'
               ]
      },
-     'cloud/faq/support',
   ],
 };
 

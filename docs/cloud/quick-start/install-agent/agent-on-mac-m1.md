@@ -1,69 +1,71 @@
-# Mac 平台上安装（M1 芯片）
+# Install on Mac (M1 Chip)
 
-Tapdata Agent（简称 Agent）通过流式技术从源端获取数据、处理转换数据并发送到目标端，支持多平台安装，本文介绍如何在 Mac 平台（M1 芯片）上安装 Agent。
+Tapdata Agent (abbreviated as Agent) retrieves data from the source, processes it, and transmits it to the target. It also supports installation on multiple platforms. This article provides instructions on installing Agent on the Mac platform (M1 chip).
 
-## 环境要求
+## Requirements
 
-- 网络环境：可连通公网，且可与源/目标数据库通信
-- 软件依赖：Dokcer，安装方法见[官方文档](https://docs.docker.com/desktop/install/mac-install/)。
+- Network: Ability to connect to the public network and communicate with the source/target database.
+- Software: Dokcer, for more information, see [Install docker](https://docs.docker.com/desktop/install/mac-install/).
 
-## 安装 Agent
+## Install Agent
 
-1. 打开 Mac 的命令行终端，依次执行下述命令下载并启动 JDK 镜像。
+1. Open the Mac's terminal, then execute the following command to download and launch the JDK image.
 
    ```shell
-   # Download image
-   docker pull openjdk:8u312 
-   # Run the image
+   # Download Image
+   docker pull openjdk:8u312
+   # Run Image
    docker run -t -d openjdk:8u312
    ```
 
-2. 执行 `docker ps` 获取容器 ID，然后执行下述格式的命令进入容器命令行，示例如下：
+2. Execute `docker ps` to get the container ID, and then execute the following format of the command to enter the container command line, for example:
 
    ```shell
-   docker exec -it 容器ID /bin/bash
+   docker exec -it Container-ID /bin/bash
    ```
 
    :::tip
 
-   需替换命令中的容器 ID，例如 `docker exec -it 1dbee41b4adc /bin/bash`。
+   Replace the Container-ID in the command, such as `docker exec -it 1dbee41b4adc/bin/bash`.
 
    :::
 
-3. 为便于管理 Agent，在容器命令行中执行下述命令创建一个文件夹（如 **tapdata**）并进入。
+3. To manage the Agent easily, create a folder (e.g., **tapdata**) and enter it by executing the following command.
 
    ```shell
    mkdir tapdata&&cd tapdata
    ```
 
-4. 在容器命令行中，执行下述命令下载 Agent 程序并解压。
+4. In the container command line, execute the following command to download the Agent program and unzip it.
 
    ```shell
    wget 'https://resource.tapdata.net/doc-source/tapdata.zip' && unzip tapdata.zip
    ```
-   
-5. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)，获取 Agent 启动的配置信息。
 
-   1. 基于业务需求创建所需规格的 Agent，具体操作，见[订阅实例](../../billing/purchase.md)。
+5. Log in to [Tapdata Cloud](https://cloud.tapdata.io/) to get Agent-initiated configuration information.
 
-   2. 订阅完成后，在跳转到的部署页面选择 **Linux（64 bit）**，然后复制 Agent 启动的配置信息（从 **./tapdata** 开始复制），示例如下。
+   1. [Create an Agent](../../billing/purchase.md) according to business requirements.
 
-      ![复制安装命令](../../images/agent_on_macm1_cn.png)
+   2. After completing subscription, on the **deployment** page that you are redirected to, select **Linux(64 bit)** as the target operating system. Next, copy the installation command, starting from **./tapdata**, as illustrated in the provided example.
 
-6. 返回至容器命令行，粘贴您刚刚复制的命令并执行，启动成功如下图所示。
+      ![Copy the installation command](../../images/agent_on_macm1.png)
+
+6. Paste the previously copied command in the container command line and execute it. 
+
+   The startup is successful, you can refer to the below figure.
 
    ![](../../images/agent_started_on_macm1.png)
 
-   
 
 
 
-## 下一步
 
-[连接数据库](../connect-database.md)
+## Next step
 
-## 推荐阅读
+[Connect Data Sources](../connect-database.md)
 
-* [管理 Agent](../../user-guide/manage-agent.md)
-* [安装与管理 Agent 常见问题](../../faq/agent-installation.md)
+## See also
+
+* [Manage Agent](../../user-guide/manage-agent.md)
+* [FAQ about Agent](../../faq/agent-installation.md)
 

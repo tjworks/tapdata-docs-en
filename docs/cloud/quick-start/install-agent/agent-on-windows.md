@@ -1,49 +1,49 @@
-# Windows 平台上安装
+# Install on Windows
 
-Tapdata Agent（简称 Agent）通过流式技术从源端获取数据、处理转换数据并发送到目标端，支持多平台安装，本文介绍如何在 Windows 平台上安装 Agent。
+Tapdata Agent (abbreviated as Agent) retrieves data from the source, processes it, and transmits it to the target. It also supports installation on multiple platforms. This article provides instructions on installing Agent on the Windows platform.
 
-## 环境要求
+## Requirements
 
-- 硬件环境：x86 架构处理器
-- 操作系统：64 位
-- 网络环境：可连通公网，且可与源/目标数据库通信
-- 软件依赖：Java 1.8 版本
+- CPU: x86 Architecture Processor
+- Operating System: 64-bit
+- Network: Ability to connect to the public network and communicate with the source/target database
+- Software: Java 1.8
 
 :::tip
 
-您可以在 Windows 设备上的命令行中执行 `java -version` 命令查看 Java 版本，如未安装请参见[官方文档](https://www.java.com/en/download/manual.jsp)。
+You can view the Java version by executing the `java-version` command from the command line on your Windows device. For more information, see [install Java](https://www.java.com/en/download/manual.jsp).
 
 :::
 
-## 安装 Agent 
+## Install Agent
 
-1. 登录 [Tapdata Cloud 平台](https://cloud.tapdata.net/console/v3/)。
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. 基于业务需求创建所需规格的 Agent，具体操作，见[订阅实例](../../billing/purchase.md)。
+2. [Create an Agent](../../billing/purchase.md) according to business requirements.
 
-3. 订阅完成后，在跳转到的部署页面选择 **Windows（64 bit）**，单击**下载 Tapdata Agent**，然后复制安装命令。
+3. After completing subscription, on the **deployment** page that you are redirected to, select **Windows (64 bit)** as the target operating system, and then copy the installation command.
 
-   ![复制安装命令](../../images/agent_on_windows_cn.png)
+   ![Copy the installation command](../../images/agent_on_windows.png)
 
-4. 为方便管理，我们将下载的 Agent 安装程序移动至安装目录（如 **C:\tapdata**）。
+4. For easier management of the Tapdata Agent, we recommend moving the downloaded Agent installer to the installation directory of your choice. 
 
-5. 双击安装程序 **tapdata.exe**，根据提示，单击右键粘贴在步骤 3 复制的 Token 信息并按回车键，启动成功后命令窗口将自动关闭。
+   For example, you can move it to **C:\tapdata** on a Windows system. By doing so, you can conveniently access and manage the Tapdata Agent from the designated installation directory.
 
-6. （可选）双击 Agent 安装目录中的 **status.bat** 程序，查看 Agent 状态，正常启动的示例如下。
+5. Double-click the **tapdata.exe** file.
 
-   ![Agent 启动成功](../../images/agent_started_on_windows.png)
+6. Follow the prompts provided in the command window that appears. Right-click inside the window and select **Paste** to input the token information copied during step 3. Press the Enter key to proceed. If the launch is successful, the command window will automatically close.
+
+7. (Optional) Double-click the **status.bat** in the Agent installation directory to check the status of the Agent. The following is an example of a normal startup.
+
+   ![Agent Started Successfully](../../images/agent_started_on_windows.png)
 
 
 
-## 视频教程
+## Next step
 
-<iframe      src="https://20778419.s21v.faiusr.com/58/2/ABUIABA6GAAg-ZOHkQYoqs3RogI.mp4"   width="100%"      height="539"      frameborder="0"    allowfullscreen="true"  > </iframe>
+[Connect Data Sources](../connect-database.md)
 
-## 下一步
+## See also
 
-[连接数据库](../connect-database.md)
-
-## 推荐阅读
-
-* [管理 Agent](../../user-guide/manage-agent.md)
-* [安装与管理 Agent 常见问题](../../faq/agent-installation.md)
+* [Manage Agent](../../user-guide/manage-agent.md)
+* [FAQ about Agent](../../faq/agent-installation.md)
