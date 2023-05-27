@@ -1,6 +1,8 @@
 # Connect to MySQL
 
-MySQL is the most widely used open source relational database, a relational data store used by many websites, applications, and commercial products. Tapdata Cloud supports building data pipelines with MySQL as the source and target database, and this article describes how to add MySQL database to Tapdata Cloud.
+MySQL, the highly popular open-source relational database, is widely utilized as a relational data store by numerous websites, applications, and commercial products. 
+
+Tapdata Cloud extends support for constructing data pipelines with MySQL as both the source and target database. This article provides comprehensive instructions on incorporating a MySQL database into Tapdata Cloud, enabling seamless integration for your data pipelines.
 
 ## Preparations
 
@@ -14,7 +16,7 @@ MySQL is the most widely used open source relational database, a relational data
 
 3. On the right side of the page, click **Create connection**.
 
-4. In the pop-up dialog, click **GA data source**, and select **MySQL**.
+4. In the pop-up dialog, select **MySQL**.
 
 5. On the page that you are redirected to, follow the instructions below to fill in the connection information for MySQL.
 
@@ -27,15 +29,22 @@ MySQL is the most widely used open source relational database, a relational data
       * **Host**: The database connection address.
       * **Port**: The service port of database.
       * **Database**: Database name, a connection corresponding to a database, if there are multiple databases, you need to create multiple connections.
-      * **username**: The database account.
+      * **username**: The database username.
       * **Password**: The database password.
-      * **Connection parameter string**: additional connection parameters, default empty.
+      * **Connection parameter string**: Additional connection parameters, default empty.
+      
    * Advanced settings
 
-      * **Timezone**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.If the source database is in the default database time zone (+8:00) and the target database is in the specified time zone +0:00, then the time of storage of the source database is assumed to be 2020-01-01 16:00:00, and the time of storage of the target database is 2020-01-01 08:00:00.
-      * **Contain table**: Defaults to **all**, you can also choose to custom and fill in the included tables, separated by commas (,) between multiple tables.
-      * **Exclude tables**: After turning on the switch, you can set the tables to be excluded, separated by commas (,) between multiple tables.
+      * **Timezone**: By default, Tapdata Cloud utilizes the time zone used by the database. However, you also have the flexibility to manually specify the time zone based on your business requirements.
+      
+        For instance, let's consider a scenario where the source database operates in the default database time zone (+8:00), while the target database has a specified time zone of +0:00. In this case, if the source database stores a timestamp as **2020-01-01 16:00:00**, the same timestamp will be interpreted as **2020-01-01 08:00:00** in the target database due to the time zone conversion.
+      
+      * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
+      
+      * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
+      
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
+      
       * **Model loading frequency**: When the number of models in the data source is greater than 10,000, Tapdata Cloud will periodically refresh the model according to the set time.
 
 6. Click **Connection Test**, and when passed, click **Save**.

@@ -8,7 +8,7 @@ In this article, only the field types not supported during synchronization are l
 
 #### Oracle as a source
 
-| Targets | Type of field not supported |
+| Targets | Field type not supported |
 | -------------- | ------------------------------------------------------------ |
 | Oracle | RAW, LONG_RAW, BFILE, XMLTYPE, STRUCT |
 | MongoDB | RAW, LONG_RAW, BFILE, XMLTYPE, STRUCT, INTERVAL DAY(2) TO SECOND(6), INTERVAL YEAR(4) TO MONTH |
@@ -21,7 +21,7 @@ In this article, only the field types not supported during synchronization are l
 
 #### MySQL as a source
 
-| Targets | Type of field not supported |
+| Targets | Field type not supported |
 | -------------- | ------------------------------------------------------------ |
 | Oracle | GEOMETRY, POINT, LINESTRING, POLYGON, MULTIPOINT, MULTILINESTRING, MULTIPOLYGON, GEOMETRYCOLLECTION, DOUBLE UNSIGNED, DOUBLE UNSIGNED, BINARY, VARBINARY, TINYBLOB, BLOB, LONGBLOB |
 | MongoDB | GEOMETRY, POINT, LINESTRING, POLYGON, MULTIPOINT, MULTILINESTRING, MULTIPOLYGON, GEOMETRYCOLLECTION, DOUBLE UNSIGNED, DOUBLE UNSIGNED, BINARY, VARBINARY, TINYBLOB, BLOB, LONGBLOB |
@@ -36,11 +36,11 @@ In this article, only the field types not supported during synchronization are l
 
 :::tip
 
-Considering the impact of SQL Server's internal mechanism, if the table to be synchronized contains no primary key and contains text/text/image types, multiple pieces of data may be updated (among multiple pieces of data, only the values of the fields in the previous text are inconsistent, and the values of the other fields are consistent).
+Due to the internal mechanism of SQL Server, if the table to be synchronized lacks a primary key and includes text/ image types, there is a possibility of multiple data pieces being updated. In such cases, the inconsistency would be limited to the values of fields containing text, while the values of other fields would remain consistent across the multiple data pieces.
 
 :::
 
-| Targets | Type of field not supported |
+| Targets | Field type not supported |
 | -------------- | ----------------------------------------------- |
 | Oracle | xml, geometry, geography |
 | MongoDB | xml, geometry, geography |
@@ -52,7 +52,7 @@ Considering the impact of SQL Server's internal mechanism, if the table to be sy
 
 #### PostgreSQL as a source
 
-| Targets | Type of field not supported |
+| Targets | Field type not supported |
 | -------------- | ------------------------------------------------------------ |
 | Oracle | point, line, lseg, box, path, polygon, circle, int4range, int8range, numrange, tsrange, tstzrange, daterange, macaddr8, uuid, xml |
 | MongoDB | point, line, lseg, box, path, polygon, circle, int4range, int8range, numrange, tsrange, tstzrange, daterange, macaddr8, uuid, xml |
@@ -65,7 +65,7 @@ Considering the impact of SQL Server's internal mechanism, if the table to be sy
 
 #### MongoDB as a source
 
-| Targets | Type of field not supported |
+| Targets | Field type not supported |
 | -------------- | --------------------------------------------------------- |
 | Oracle | JAVASCRIPT, MIN_KEY, REGULAR_EXPRESSION, MAX_KEY |
 | SQL Server | JAVASCRIPT, MIN_KEY, REGULAR_EXPRESSION, MAX_KEY |

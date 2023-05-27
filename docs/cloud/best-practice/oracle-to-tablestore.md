@@ -1,6 +1,6 @@
 # Oracle to Tablestore Real-Time Sync
 
-Alibaba Cloud [Tablestore](https://help.aliyun.com/document_detail/27280.html) is a serverless table storage service for large amounts of structured data, while providing a one-stop IoT store solution for the depth optimization of IoT scenarios. With Tapdata Cloud, Oracle can be synchronized to Tablestore in real time, making it easy to achieve data flow and better meet data architecture changes or big data analysis scenarios.
+[Alibaba Cloud Tablestore](https://www.alibabacloud.com/help/en/tablestore) is a serverless table storage service designed for handling large volumes of structured data. It also provides a comprehensive solution for IoT scenarios, offering optimized data storage capabilities. Tapdata Cloud enables real-time synchronization of Oracle data to Tablestore, providing seamless data flow and facilitating easy adaptation to data architecture changes and big data analysis scenarios.
 
 ## Preparations
 
@@ -19,15 +19,15 @@ Also note the reference [data type support](../user-guide/no-supported-data-type
 
 3. On the right side of the page, click **Create** to configure the task.
 
-4. On the left side of the page, drag the Oracle and Tablestore data sources into the right canvas and connect them.
+4. Drag and drop the Oracle and Tablestore data sources from the left side of the page onto the right canvas. Once they are placed, you can connect them by drawing a line or arrow between the two data sources.
 
-5. Click the Oracle data source, select the table you want to synchronize in the right panel, and then click the Tablestore data source to view the synchronized data structure.
+5. Click on the Oracle data source, choose the desired table in the right panel, and then click on the Tablestore data source to view the synchronized data structure.
 
    ![Task Configuration](../images/oracle_to_tablestore_task_en.png)
 
    :::tip
 
-   Since the number of columns in a single table in Tablestore cannot exceed 32, if the number of columns in Oracle to be synchronized tables exceeds 32, you need to drag a **Field Edit** node from the left of the page, connect it as an intermediate node between Oracle and Tablestore, and then block business-independent columns in the **Field Edit**. For more information, see [Processing Node](../user-guide/data-development/process-node.md).
+   Since the number of columns in a single table in Tablestore cannot exceed 32, if the number of columns in the Oracle tables to be synchronized exceeds 32, you can address this limitation by adding a **Field Edit** node between the Oracle and Tablestore data sources. This node allows you to handle the situation and selectively exclude business-independent columns from the synchronization process. For more information, see [Processing Node](../user-guide/data-development/process-node.md).
 
    :::
 

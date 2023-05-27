@@ -1,18 +1,18 @@
 # Data Source/Target
 
-### What data sources does Tapdata Cloud support?
+### Which data sources does Tapdata Cloud support?
 
 Tapdata Cloud supports rich databases, including common relational, non-relational, and queue-type data sources, as detailed in [Supported Data Sources](../introduction/supported-databases.md).
 
 ### What if the connection test fails?
 
-The premise of the connection test is to start the agent, please check the agent status first.
+Before conducting the connection test, it is essential to ensure that the agent is running. Please verify the status of the agent first.
 
-When creating a data connection, you can complete setting relevant parameters according to the connection configuration help.
+When creating a data connection, you can refer to the connection configuration help to accurately set the relevant parameters.
 
 ### what does topic expression in kafka mean?
 
-A topic expression is a regular expression that matches the name of the message queue, and users can define a regular expression to match one or more message queue consumption messages.
+A topic expression is a user-defined regular expression that can be used to match the name of a message queue. This regular expression allows users to define a pattern that matches one or more message queues for message consumption.
 
 ### When testing the MySQL connection, prompt: "The server time zone value is unrecognized."
 
@@ -34,9 +34,5 @@ The machine on which the agent is deployed needs to be added to the whitelist.
 
 ### How do I fill out a Schema when connecting to Oracle?
 
-Fill in according to the schema set when building the database, and pay attention to case-sensitivity.
-
-In Oracle, Schema is a collection of logical structures or pattern objects of data. The schema is owned by a database user and has the same name as that user. For more information, see [Oracle's official documentation](https://docs.oracle.com/cd/B19306_01/server.102/b14220/schema.htm).
-
-
+When building the database, it is important to fill in the information according to the schema set, while also being mindful of case-sensitivity. In Oracle, a schema refers to a collection of logical structures or pattern objects of data. Each schema is owned by a specific database user and shares the same name as that user. For more information, see [Oracle's official documentation](https://docs.oracle.com/cd/B19306_01/server.102/b14220/schema.htm).
 

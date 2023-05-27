@@ -2,8 +2,8 @@
 
 Data Console supports two models to meet the data governance demand:
 
-* [Data Integration Mode](etl-mode)（default）：Suitable for data replication/synchronization, migrate data to cloud or building ETL pipelines. You can simply drag the source table to the target to automatically complete the creation of data replication tasks.
-* [Data Service Platform](daas-mode)：Based on the concept of data hierarchical governance, Tapdata Cloud collects data sources scattered across different business systems through the **Data Cache Layer**, which minimizes the impact of data extraction on business and provides basic data for subsequent data processing and business, thus building a consistent, real-time data platform and connecting data silos.
+* [Data Integration Mode](etl-mode)（default）: Suitable for various data-related tasks such as data replication, data synchronization, data migration to the cloud, and building ETL (Extract, Transform, Load) pipelines. With its intuitive interface, you can easily create data replication tasks by simply dragging the source table to the target, automating the process of task creation.
+* [Data Service Platform](daas-mode): Tapdata Cloud implements data hierarchical governance by collecting data from disparate sources across multiple business systems through the **Data Cache Layer**. This approach minimizes the disruption to business operations during data extraction and establishes a foundation for subsequent data processing and business activities. It enables the creation of a consistent and real-time data platform, fostering the connection of data silos and promoting data integration and accessibility throughout the organization.
 
 
 

@@ -1,23 +1,23 @@
 # Enable Data Service Platform Mode
 
-Due to digital transformation, data islands have become the main obstacle, and business demand for data is increasing. Traditional data delivery has become a bottleneck due to its long cycle and large resource investment. How to quickly open up data flow pipeline and explore data value has become a key factor for enterprise competitiveness.
+Due to digital transformation, the presence of isolated data, data fragmentation, or data silos has emerged as a significant challenge. Moreover, there is a growing demand for data in business operations. However, traditional data delivery methods pose limitations, such as lengthy processes and substantial resource requirements. This situation calls for a solution that enables organizations to swiftly establish data flow pipelines and unlock the value of their data.
 
-With Tapdata Cloud's Data Service Platform Model, you can synchronize data scattered in different business systems to a unified platform cache layer, which can provide basic data for subsequent data processing and business, thus building a consistent, real-time data platform and connecting data silos.
+Tapdata Cloud's Data Service Platform Model offers a powerful solution. By synchronizing data from diverse business systems to a unified platform cache layer, it enables the consolidation of data sources and facilitates seamless data processing and analysis. This unified and real-time data platform helps enterprises overcome data silos and promotes data-driven decision-making, ultimately enhancing their competitiveness in the market.
 
 
 
 ## Data Service Platform Introduction
 
-With the increase in the tasks carried by the source database, in order to minimize the impact of data extraction on the source database and conform to the organization's concept of data hierarchical governance, Tapdata Cloud stratifies the data service platform according to the data flow order as follows:
+With the increase in the tasks carried by the source database, in order to minimize the impact of data extraction on the source database and adhere to the organization's concept of data hierarchical governance, Tapdata Cloud organizes the data service platform in a layered manner based on the data flow order. This hierarchical arrangement ensures efficient and structured data processing, allowing for better data management and seamless integration across different systems.
 
 ![Data Service Platform Architecture](../../../images/ldp_architecture.png)
 
 | Hierarchy | Description |
 | -------------------- | ------------------------------------------------------------ |
-| **Source Data Layer** | Tapdata Cloud abstracts data sources from different business systems into a unified data source layer, which is the first step to connect data silos. For more information, see [Connect Data Sources](../../connect-database/README.md).  |
-| **Data Cache Layer** | By synchronizing the table of the source database to the Data Cache Layer in advance, the data can be directly provided to the business directly through the Foundation Data Layer, which avoids directly reading/manipulating the data of the source database (such as union tables) during data processing, which can greatly reduce the impact on the business of the source database.  |
-| **Data Processing Layer** | If you need to deeply customize the data processing/operation (such as generating a wide table), you can drag the data table of the Data Cache Layer to the Data Processing Layer to operate, so as to generate the model data for the final business.  |
-| **Data Targets and Service Layer** | Tapdata Cloud aggregates and presents data sources that support being used as targets, so that you can provide the processed data to the business, so as to build a unified data service platform for the enterprise.  |
+| **Source Data Layer** | Tapdata Cloud consolidates data sources from various business systems into a centralized data source layer, which serves as the initial step in bridging data silos. This abstraction of data sources enables a unified and streamlined approach to accessing and utilizing data. For more detailed instructions, please refer to the [Connect Data Sources](../../connect-database/README.md) section for comprehensive information on establishing connections with your data sources. |
+| **Data Cache Layer** | By synchronizing the table from the source database to the Data Cache Layer beforehand, the data can be readily accessed by the business through the Foundation Data Layer, thus eliminating the need to directly read or manipulate the data in the source database, such as performing union operations, during data processing. This approach significantly minimizes the impact on the business operations of the source database. |
+| **Data Processing Layer** | If there is a need for extensive customization of data processing or operations, such as generating a wide table, it is possible to extract the data table from the Data Cache Layer and perform the required operations within the Data Processing Layer. This allows for the generation of model data that can be used in the final business processes. |
+| **Data Targets and Service Layer** | Tapdata Cloud provides a centralized platform that aggregates and presents various data sources, allowing them to be utilized as targets for data processing. This enables the provision of processed data to the business, facilitating the creation of a unified data service platform for enterprises. |
 
 
 
@@ -45,17 +45,17 @@ Tapdata Cloud is in [Data Integration Mode](../etl-mode/README.md) by default, a
 
 3. On the right side of the page, click the ![setting_icon](../../../images/setting_icon.png) icon.
 
-4. Choose **Data Service Platform**, and then set up the storage engine used by the Data Cache Layer/Data Processing Layer, that is, the MongoDB data source we set up in the preparatory work.
+4. Once you have selected the **Data Service Platform**, you can proceed with configuring the storage engine for the **Data Cache Layer** and **Data Processing Layer**, specifically utilizing the MongoDB data source that was established during the preparatory phase.
 
    ![Enable Data Service Platform Mode](../../../images/enable_daas_mode.png)
 
    :::tip
 
-   The storage engine currently only supports self-hosted MongoDB database, and once selected and saved, cannot be modified later.
+   The storage engine currently supports only self-hosted MongoDB databases, and once selected and saved, it cannot be modified later.
 
    :::
 
-5. By clicking **Save**, the page will be categorized based on the [hierarchy](daas-mode-dashboard.md) we covered earlier.
+5. Clicking **Save** will categorize the page according to the [hierarchy](daas-mode-dashboard.md) we previously defined.
 
 
 

@@ -1,6 +1,8 @@
 # Connect to BigQuery
 
-[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) is a completely serverless and cost-effective enterprise data warehouse that works across clouds and scales with your data, with BI, machine learning and AI built in. Tapdata Cloud supports data synchronization/data development tasks with BigQuery as the target database, and this article describes how to add BigQuery data sources to Tapdata Cloud.
+Tapdata Cloud offers seamless support for data synchronization and data development tasks using [BigQuery](https://cloud.google.com/bigquery/docs) as the target database. BigQuery is a highly efficient, serverless, and cost-effective enterprise data warehouse that provides extensive capabilities for BI (Business Intelligence), machine learning, and AI (Artificial Intelligence). With Tapdata Cloud, you can easily integrate BigQuery data sources into your workflows. 
+
+This article serves as a comprehensive guide, providing step-by-step instructions on adding BigQuery data sources to Tapdata Cloud, enabling efficient data synchronization and development for your projects.
 
 ## Preparations
 
@@ -13,10 +15,8 @@
 1. Log in to Google Cloud [Role page](https://console.cloud.google.com/iam-admin/roles) to create a role that will contain the permissions required for Tapdata Cloud to operate BigQuery.
 
    1. Click **CREATE ROLE**.
-
-   2. On the page that you are redirected to, fill in the role name and click **ADD PERMISSIONS**.
-
-   3. In the pop-up dialog, search in turn and grant the following permissions.
+   2. On the redirected page, enter the role name and click **ADD PERMISSIONS**.
+   3. In the pop-up dialog, search for each permission one by one and grant them accordingly.
 
 <details>
     <summary>Minimum Permissions List (Click to expand) </summary>
@@ -45,14 +45,14 @@
      </div>
    </details>
 
-4. After the permission selection is complete, click **CREATE**.
+2. After the permission selection is complete, click **CREATE**.
 
 
-2. Log in to Google Cloud [Credentials page](https://console.cloud.google.com/apis/credentials) to create a service account that will be used for subsequent authentication.
+3. Log in to Google Cloud [Credentials page](https://console.cloud.google.com/apis/credentials) to create a service account that will be used for subsequent authentication.
 
    1. At the top of the page, click **CREATE CREDENTIALS** > **Service Account**.
 
-   2. In the Service account details area, fill in the name, ID, and description for the service account, and click **CREATE AND CONTINUE**.
+   2. In the Service account details section, provide the name, ID, and description for the service account, and then click **CREATE AND CONTINUE**.
 
       ![Create access account](../../../images/create_server_account_en.png)
 
@@ -78,7 +78,7 @@
 
          :::tip
 
-         In order to ensure that Tapdata Cloud reads the dataset information properly, when creating the dataset, select the **Location type** as **Multi-region**.
+         To ensure that Tapdata Cloud properly reads the dataset information, when creating the dataset, select the **Location type** as **Multi-region**.
 
          :::
 
@@ -102,7 +102,7 @@
 
    * **Connection name**: Fill in a unique name that has business significance.
    * **Connection type**: Currently only supported as a**Target**.
-   * **Service Account(JSON)**: Open the key file you downloaded in preparation with a text editor, copy and paste it into the text box.
+   * **Service Account(JSON)**: Open the key file that you have downloaded in advance using a text editor. Copy the content of the file and paste it into the text box provided.
    * **Table Set ID**: Select a dataset that already exists in BigQuery.
    * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
 

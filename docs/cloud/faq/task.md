@@ -6,9 +6,9 @@ This article lists common problems encountered while using data synchronization/
 
 ### What is the difference between data replication and data development?
 
-Data replication is mainly used for data synchronization of the whole database or multiple tables, which can meet the business needs of database migration to the cloud, database upgrade, database backup, etc.
+Data replication is primarily employed for achieving data synchronization across the entire database or multiple tables. This functionality caters to various business requirements such as database migration to the cloud, database upgrades, and database backups.
 
-A data development project usually aims at only a single table, whereas ETL, data cleaning, data consolidation (including merging multiple tables into a single table), wide table construction and other business scenarios require data development.
+On the other hand, a data development project typically focuses on a single table. However, scenarios like ETL (Extract, Transform, Load), data cleaning, data consolidation (including merging multiple tables into a single table), and wide table construction often demand data development processes.
 
 
 
@@ -44,11 +44,11 @@ You can contact us for [technical support](support.md).
 
 ### Failed to reset task?
 
-You need to check the health status of the Agent for the task in the Agent page of Tapdata Cloud.
+Please check the health status of the Agent for the task on the **Agent** page in Tapdata Cloud.
 
 
 
-### In addition to the task logs, what other logs can be checked for troubleshooting task display errors?
+### Apart from the task logs, which other logs can be examined to troubleshoot display errors related to tasks?
 
 You can also view the log in the **logs/tapdata-agent.log** in the Agent installation directory.
 
@@ -56,47 +56,47 @@ You can also view the log in the **logs/tapdata-agent.log** in the Agent install
 
 ### Does Tapdata Cloud support cross-regional, cross-network data synchronization?
 
-Support. By connecting the source and target with the Agent, Tapdata Cloud realizes synchronization between the networks.
+Yes, Tapdata Cloud supports cross-regional and cross-network data synchronization. It achieves this by connecting the source and target systems using the Tapdata Agent, enabling synchronization between different networks and regions.
 
 ### Does the source and destination support data synchronization for the same object?
 
-Support. Data permissions need to be granted to the synchronized objects.
+Yes, Tapdata Cloud supports data synchronization between the same objects in the source and destination systems. However, it is important to ensure that the necessary data permissions are granted for the synchronized objects to ensure a successful synchronization process.
 
 
 
 ### Does Tapdata Cloud support real-time synchronization of DDL operations?
 
-Unsupported.
+No.
 
 
 
 ### Does Tapdata Cloud support data synchronization across time zones/character sets?
 
-Support.
+Yes.
 
 
 
 ### Dose Tapdata Cloud support data synchronization for sharding tables?
 
-Support. Tapdata Cloud can synchronize data from multiple sources to the same target table simultaneously.
+Yes, Tapdata Cloud supports data synchronization for sharding tables. It has the capability to synchronize data from multiple sources to the same target table concurrently.
 
 
 
 ### Does Tapdata Cloud support renaming data synchronization objects?
 
-Support.
+Yes.
 
 
 
 ### Does Tapdata Cloud support filtering some fields or data?
 
-Support.
+Yes.
 
 
 
 ### Does Tapdata Cloud support adding or removing synchronization objects?
 
-Support.
+Yes.
 
 
 
@@ -108,11 +108,11 @@ Yes.
 
 ### When creating the task, the list of tables is empty?
 
-Loading Schema and creating connections is an asynchronous process, so there may be instances where loading is not timely or fails, which can be updated manually by clicking Load Schema in Connections page.
+If the list of tables is empty when creating a task, it may be due to the asynchronous nature of loading the schema and creating connections. Sometimes, the loading process may not be immediate or may encounter failures. In such cases, you can manually update the schema information by clicking on the **Load Schema** button on the Connections page. This will help ensure that the tables are loaded correctly and available for selection when creating the task.
 
 
 
-### If the full synchronization is performed again, will the previously synchronized data be cleared?
+### If a full synchronization is performed again, will the previously synchronized data be cleared?
 
 No.
 
@@ -166,23 +166,23 @@ You can re-edit the task, but if you add a table, it may affect the original syn
 
 
 
-### Master data is copied in real-time, and slave data is also increasing. Will there be conflicts?
+### Does the real-time copying of master data and the simultaneous increase in slave data create potential conflicts in the system?
 
-If the target already contains data, Tapdata Cloud will recognize it and update it according to the source. If the slave table is brand new, no conflict will occur.
-
-
-
-### Why does the option to enable incremental concurrency conflict with no primary key synchronization?
-
-Incremental concurrency according to the primary key to group data processing, with no primary key, this group processing capacity will be invalid.
+If the target database already has existing data, Tapdata Cloud will intelligently recognize and synchronize it with the source data. This ensures that updates are applied accurately. On the other hand, when dealing with a newly created slave table, since it does not yet have any pre-existing data, the process proceeds without encountering conflicts.
 
 
 
-### In spite of successfully creating the target table, why does the task prompt that the target table doesn't exist?
+### Why does enabling the option of incremental concurrency conflict with the lack of a primary key?
 
-For some type of database, if the target database is set to case-insensitive table names. When the source table is an uppercase table name, synchronization to the target database is forced to be converted to a lowercase table name. At this time, when the task matches the target table through the capitalized table name of the source database, the error occurred.
+Enabling incremental concurrency relies on grouping data based on the primary key. In the absence of a primary key, the ability to group and process data in this way is compromised, leading to a conflict.
 
-This error can be resolved by converting the table name to match the target table name during the task setup process, so it will synchronize correctly.
+
+
+### I have successfully created the table, so why am I still getting an error during task execution stating that the target table does not exist?
+
+In some databases, when the target database is configured to be case-insensitive for table names, if the source table has uppercase table names, they will be forcibly converted to lowercase table names when synchronized to the target database. This can lead to an error when the task tries to match the source table's uppercase name with the target table.
+
+To resolve this issue, you can use the **field mapping** settings in the task configuration process to force the table names to match the case sensitivity of the target database. By doing so, the synchronization process should work correctly.
 
 ![](../images/table_name_setting.png)
 

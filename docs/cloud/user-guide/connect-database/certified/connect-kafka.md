@@ -1,6 +1,8 @@
 # Connect to Kafka
 
-Apache Kafka is a distributed event store and stream-processing platform. Tapdata Cloud supports building data pipelines with Kafka as the source and target database, and this article describes how to add Kafka to Tapdata Cloud.
+Apache Kafka is a distributed event store and stream-processing platform. Tapdata Cloud supports the creation of data pipelines with Apache Kafka as the source and target database. 
+
+The following article provides a detailed guide on how to add Kafka to Tapdata Cloud. It walks you through the process of integrating Kafka into Tapdata Cloud, allowing you to leverage its capabilities for building efficient data pipelines.
 
 ## Preparations
 
@@ -14,7 +16,7 @@ Apache Kafka is a distributed event store and stream-processing platform. Tapdat
 
 3. On the right side of the page, click **Create connection**.
 
-4. In the pop-up dialog, click **GA data source**, and select **Kafka**.
+4. In the pop-up dialog, select **Kafka**.
 
 5. Complete the data source configuration according to the following instructions.
 
@@ -23,32 +25,38 @@ Apache Kafka is a distributed event store and stream-processing platform. Tapdat
    * Connection Information Settings
       * **Connection name**: Fill in a unique name that has business significance.
       * **Connection type**: Supports Kafka as a source or target database.
-      * **DB host**: Kafka connection address, including address and port number, separated by English colon (:), such as `113.222.22.***:9092`.
-      * **Topic expression**: Topics in Kafka, supports regular expressions and is not longer than 256 characters. For more information, see [Kafka Quick Start](https://kafka.apache.org/23/documentation.html#quickstart).
-      * **Kerberos authentication**: If Kafka turns on the authentication, you need to turn on the switch, and then upload and set the key, configuration and other information.
-      * **User name**,**Password**,**Encryption**: If Kafka has password authentication turned on, you need to fill in the account and password, and choose encryption.
-   * Advanced settings
-      * **Ignore non-JSON Object format messages**: If the message isn't ignored and a message of this format is encountered in the future, the pull will cease.
-      * **ACK confirmation mechanism**: Choose according to business requirements: Do not confirm, write to master partitions, write to most ISR partitions (default), or write to all ISR partitions.
-      * **Message compression type**: Support gzip, snappy, lz4, zstd, when the message volume is large, compression can be enabled to improve transmission efficiency.
-      * **Ignore push message exception**: After turning on the switch, the system will still record the offset of the relevant message, but will not push afterward, there may be a risk of data loss.
+      * **DB host**: Kafka connection address, including the IP address and port number, separated by a colon (:). The format should be as follows: `IP_Address:Port_Number`, `113.222.22.***:9092`. Please replace the appropriate IP address of your Kafka broker, and use the corresponding port number for Kafka communication (usually 9092).
+      * **Topic expression**: In Kafka, topics support regular expressions and have a maximum length of 256 characters. For more information, see [Kafka Quick Start](https://kafka.apache.org/23/documentation.html#quickstart).
+      * **Kerberos authentication**: If authentication is enabled in Kafka, you need to turn on the switch. Afterwards, you should upload and configure the required key and authentication information to establish a secure connection.
+      * **User name**,**Password**,**Encryption**: If password authentication is enabled in Kafka, you will be required to provide the account and password credentials. Additionally, you should choose the encryption option to ensure a secure connection.
+   * Advanced Settings
+      * **Ignore non-JSON Object format messages**: If a message in the specified format is encountered in the future and it is not ignored, the pull operation will be terminated.
+      * **ACK confirmation mechanism**: Select the appropriate option based on your business requirements:
+        * Do not confirm
+        * Write to master partitions
+        * Write to most ISR partitions (default)
+        * Write to all ISR partitions.
+      * **Message compression type**: When dealing with large message volumes, enabling compression can significantly enhance transmission efficiency. Supports gzip, snappy, lz4, and zstd. By leveraging compression, you can effectively reduce the size of the messages, resulting in improved data transfer efficiency.
+      * **Ignore push message exception**: Once the switch is turned on, the system will continue to record the offset of the relevant message; however, it will not push any further messages. It's important to note that this approach carries a risk of potential data loss since the system will not deliver subsequent messages.
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
       * **Model loading frequency**: When the number of models in the data source is greater than 10,000, Tapdata Cloud will periodically refresh the model according to the set time.
 
-Click **Connection Test**, and when passed, click **Save**.
+6. Click **Connection Test**, and when passed, click **Save**.
 
-:::tip
+   :::tip
 
-If the connection test fails, follow the prompts on the page to fix it.
+   If the connection test fails, follow the prompts on the page to fix it.
 
-:::
+   :::
 
 
 
 ## Description of the Consumption of Kafka
 
-* **Full data synchronization only**: Subscribe from the earliest offset of each partition in the Topic, and if there is a previous message consumption record, revert to the previous offset to start consumption.
-* **Incremental data synchronization only**: Subscribe from the latest offset of each partition in the topic, if there is a previous message consumption record, restore to the previous offset to start consumption.
-* **Full + incremental data synchronization**: Skip the full sync phase, starting from the incremental phase.
-   * If there is no full synchronization, the subscription will start from the earliest offset of each partition in the Topic, otherwise the subscription will start from the latest offset of each partition in the Topic.
-   * If there is a previous message consumption record, it will be restored to the previous offset to start consumption.
+* **Only Full Data Synchronization**: You can choose to subscribe from the earliest offset of each partition in the Topic. If there is a previous message consumption record, you have the option to revert to the previous offset and resume message consumption from that point.
+
+* **Only Incremental Data Synchronization**: You can subscribe to the topic from the latest offset of each partition. In the event of a previous message consumption record, you have the option to restore to the previous offset and commence message consumption from that point.
+
+* **Full + Incremental Data Synchronization**: The subscription process will skip the full sync phase and begin directly from the incremental phase. If a full synchronization is not performed, the subscription will start from the earliest offset of each partition in the Topic. 
+
+   However, if a full synchronization has occurred, the subscription will start from the latest offset of each partition in the Topic. In the presence of a previous message consumption record, it will be restored to the previous offset for resuming message consumption.

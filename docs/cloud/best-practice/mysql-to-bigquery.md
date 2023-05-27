@@ -1,8 +1,8 @@
 # MySQL to BigQuery Real-Time Sync
 
-[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) is a completely serverless and cost-effective enterprise data warehouse that works across clouds and scales with your data, with BI, machine learning and AI built in. With Tapdata Cloud, multiple data sources can be synchronized to BigQuery in real time, making it easy to achieve data flow and better meet data architecture changes or big data analysis scenarios.
+[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) is a fully serverless and cost-effective enterprise data warehouse that operates seamlessly across different cloud platforms and effortlessly scales with your data. It incorporates business intelligence, machine learning, and AI functionalities. Tapdata Cloud, on the other hand, enables real-time synchronization of multiple data sources with BigQuery, facilitating smooth data flow and effectively accommodating changes in data architecture or big data analysis requirements.
 
-Taking MySQL as the source data as an example, this article shows how to synchronize its data to BigQuery, and other data source is configured similarly to the flow of this article.
+To illustrate this synchronization process, let's consider MySQL as the source data. The following article demonstrates how to synchronize MySQL data with BigQuery, while similar configuration can be applied to other data sources.
 
 ## Preparations
 
@@ -21,21 +21,21 @@ Also note the reference [data type support](../user-guide/no-supported-data-type
 
 3. On the right side of the page, click **Create** to configure the task.
 
-4. On the left side of the page, drag the MySQL and BigQuery data sources into the right canvas and connect them.
+4. Drag the MySQL and BigQuery data sources into right canvas from the left side of the page and connect them on the right canvas.
 
-5. Click the MySQL data source to complete the parameter configuration of the right panel according to the following instructions.
+5. Click on the MySQL data source in the right panel to proceed with the parameter configuration as per the provided instructions.
 
    ![Select a table to synchronize](../images/mysql_to_bigquery_source_en.png)
 
    - **Node name**: Defaults to connection name, you can also set a name that has business significance.
    - **DDL event collection**: BigQuery does not support DDL writing, so you do not need to configure this parameter.
-   - **Dynamic new tables**: After turning on the switch, Tapdata Cloud automatically synchronizes the source database's new/deleted tables to the target database, only when all tables are selected.
-   - **Select a table**: you can select **All** or **Custom**. If you choose **Custom**, you also need to select a table to synchronize below.
+   - **Dynamic new tables**: Once the switch is turned on, Tapdata Cloud will automatically synchronize any new or deleted tables from the source database to the target database. However, this synchronization process will only occur if all tables are selected for synchronization.
+   - **Select a table**: You have the option to select either **All** or **Custom** when configuring the synchronization settings. If you choose **Custom**, you will need to manually select the specific table(s) that you want to synchronize below.
    - **Batch read number**: The number of records read in each batch during full data synchronization, the default is **100**.
 
 6. Click the BigQuery data source to preview the data structure and set advanced options.
 
-   1. In the Derivation Result area, preview the post-synchronization data structure. ![Preview Data Structure](../images/mysql_to_bigquery_target_en.png)
+   1. In the **Derivation Result** area, preview of the post-synchronization data structure. ![Preview Data Structure](../images/mysql_to_bigquery_target_en.png)
 
       :::tip
 
@@ -47,19 +47,19 @@ Also note the reference [data type support](../user-guide/no-supported-data-type
 
       ![Advanced Settings](../images/mysql_to_bigquery_settings_en.png)
 
-      - **Duplicate processing strategy**, **Data write mode**: Choose how duplication data should be handled.
+      - **Duplicate Processing Strategy**, **Data write mode**: Select the preferred method for handling duplicated data.
 
-      - **Full multi-threaded write**: The number of concurrent threads with full data written, the default is **8**, which can be appropriately adjusted based on the write performance of the target database.
+      - **Full Multi-threaded Write**: The default setting for the number of concurrent threads with full data written is **8**. However, it can be adjusted as needed, taking into consideration the write performance of the target database.
 
-      - **Incremental multi-threaded write**: The number of concurrent threads with incremental data written, which is disabled by default, can be appropriately adjusted based on the write performance of the target database.
+      - **Incremental Multi-threaded Write**: The number of concurrent threads with incremental data written is disabled by default. However, it can be adjusted as needed, considering the write performance of the target database.
 
-      - **Cursor schema name prefix**: An INSERT operation performed by the source table will be directly synchronized to the target table, and an UPDATE/DELETE operation by the source table will be synchronized to the temporary table of the target dataset, which has the specified name prefix.
+      - **Cursor Schema Name Prefix**: When an INSERT operation is performed on the source table, it will be directly synchronized to the target table. On the other hand, when an UPDATE or DELETE operation is performed on the source table, it will be synchronized to a temporary table within the target dataset. The temporary table will have a specified name prefix to distinguish it from the target table.
 
          :::tip
 
          For more information about temporary tables, see [FAQ](#faq).
 
-      - **Data merge delay time**: Tapdata Cloud will merge the data of the temporary table into the target table at the specified time interval. Shorter merge times mean newer data in the target table, and the first merge time is 1 hour after the full data synchronization is completed.
+      - **Data Merge Delay Time**: Tapdata Cloud will merge the data from the temporary table into the target table at regular time intervals. The specified time interval determines how frequently these merges occur. With shorter merge times, the target table will have more up-to-date data. It's important to note that the first merge occurs **1 hour** after the full data synchronization is completed.
 
 7. After confirming the configuration is correct, click **Start**.
 
@@ -87,21 +87,23 @@ For more information, See [Management Tasks](../user-guide/copy-data/manage-task
 
    1. During the full data synchronization stage, use the Stream API for data import.
 
-   2. In the incremental data synchronization stage, incremental events are first written to BigQuery's temporary table, which is then merged into the target table periodically.
+   2. During the incremental data synchronization stage, incremental events are initially written to a temporary table in BigQuery. These events are stored in the temporary table until a periodic merge process is triggered. At the specified intervals, the data from the temporary table is merged into the target table, ensuring that the target table stays up to date with the latest incremental changes.
 
       :::tip
 
-      To avoid not updating data written by the Stream API, the first merge takes place 1 hour after full synchronization data is completed.
+      The first merge occurs 1 hour after the completion of full synchronization data to ensure updates written by the Stream API are not missed.
 
       :::
 
 * Q: What are the fields in the temporary table?
 
-   A: The following figure shows the structure and data of a data item in the temporary table. The **merge_data_before** and **merge_data_after** store the data before and after the record change, and the data type is [Record](https://cloud.google.com/bigquery/docs/nested-repeated). Since the **merge_type** of this record is **D** (abbreviation of delete), that is, the data is deleted, the content of **merge_data_after** is empty.
+   A: The figure illustrates the structure and data of a data item within the temporary table. It includes the **merge_data_before** and **merge_data_after** fields, which store the data before and after the record change, respectively. The data type for these fields is [Record](https://cloud.google.com/bigquery/docs/nested-repeated). 
+
+   In the case of the current record, identified by the **merge_type** as **D** (indicating a deletion), the merge_data_after field is empty, signifying that the data has been deleted.
 
    ![Provisional example](../images/temp_table_demo.png)
 
 * Q: Why is the data queried in BigQuery not up to date?
 
-   A: You can view the incremental delay in the management interface of the task. After excluding the network delay factor, the temporary table may not be merged into the target BigQuery table. You can wait for it to automatically merge before querying.
+   A: You can view the incremental delay in the management interface of the task. Please note that apart from the network delay, the temporary table might not be immediately merged into the target BigQuery table. In such cases, it is recommended to wait for the automatic merge to take place before querying the target table.
 

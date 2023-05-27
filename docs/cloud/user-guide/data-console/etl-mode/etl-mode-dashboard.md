@@ -1,12 +1,12 @@
 # Data Integration Dashboard
 
-Tapdata Cloud's data console is set to Data Integration Mode by default, which is suitable for data replication/synchronization, migrate data to cloud or building ETL pipelines. You can simply drag the source table to the target to automatically complete the creation of data replication tasks. 
+Tapdata Cloud's data console is designed with Data Integration Mode as its default setting. This mode is specifically designed for tasks such as data replication, synchronization, migrating data to the cloud, and building ETL pipelines. It offers a user-friendly interface where you can easily drag and drop the source table onto the target, allowing for the automatic creation of data replication tasks.
 
-This article explains how to use the Data Integration Mode dashboard to help you quickly understand the various functional modules.
+In this article, we will provide a comprehensive guide on utilizing the Data Integration Mode dashboard. It will walk you through the various functional modules, helping you gain a better understanding of how to effectively leverage this powerful tool.
 
 :::tip
 
-With the increase in the tasks carried by the source databases, in order to minimize the impact of data extraction on the source database and conform to the concept of data hierarchical governance in your organization, you can switch to the [Data Service Platform Model](../daas-mode/enable-daas-mode.md) and synchronize the data in real-time to the Data Cache Layer.
+To minimize the impact on source databases and align with the data hierarchical governance concept, you can switch to the [Data Service Platform Model](../daas-mode/enable-daas-mode.md) in Tapdata Cloud. This model enables real-time data synchronization to the Data Cache Layer, ensuring up-to-date and consistent data across systems.
 
 :::
 
@@ -16,7 +16,7 @@ With the increase in the tasks carried by the source databases, in order to mini
 
 2. In the left navigation panel, click **Data Console**.
 
-3. You can easily view your entered data source information on this page, and we'll cover the functions of each button next.
+3. On this page, you can conveniently view the information you have entered for your data source. In the following sections, we will explain the functions of each button available.
 
    ![Data Integration Mode Interface](../../../images/etl_dashboard.png)
 
@@ -33,20 +33,20 @@ import TabItem from '@theme/TabItem';
    <p></p>
    </TabItem>
    <TabItem value="1" label="② Add Data Sources">
-    <p>Click the <img src='/img/add_icon.png'></img> icon, in the pop-up dialog, we can add a data source, select a data source will jump to the connection configuration page. For more information, see <a href="../../connect-database">Connect Data Sources</a>. </p>
+    <p>Clicking the <img src='/img/add_icon.png'></img> icon opens a dialog where you can add a data source. Selecting a data source will take you to the connection configuration page. For more information, see <a href="../../connect-database">Connect Data Sources</a>. </p>
    </TabItem>
    <TabItem value="2" label="③ Search Tables">
 
-   <p>Click the <img src='/img/search_icon.png'></img> icon to enter a keyword for the table name to help you quickly navigate to the specific table, which is also supported at other Layers. </p>
+   <p>Clicking the <img src='/img/search_icon.png'></img> icon allows you to enter a keyword for the table name, enabling you to quickly navigate to the specific table. This feature is also supported in other Layers. </p>
 
    <img src='/img/search_table_en.png'></img>
    </TabItem>
-   <TabItem value="3" label="④ Data Source Details">
+   <TabItem value="3" label="④ Data Source Detail">
 
-   <p>On the right side of the data connection, click the <img src='/img/detail_icon.png'></img> icon, and the right side of the page will display the connection information and associated tasks of the data source. </p>
+   <p>On the right side of the data connection, click the <img src='/img/detail_icon.png'></img> icon will display the connection information and associated tasks of the data source on the right side of the page. </p>
    <img src='/img/data_source_detail_en.png'></img>
    </TabItem>
-   <TabItem value="4" label="⑤ Table Details">
+   <TabItem value="4" label="⑤ Table Detail">
 
    <p>On the right side of the table name, click the <img src='/img/detail_icon.png'></img> icon. On the right side of the page, the basic information of the tasks and tables associated with the table will be displayed, including table size, number of rows, column information, sample data, Scheme (such as primary key/foreign key), etc. </p>
 
@@ -54,7 +54,7 @@ import TabItem from '@theme/TabItem';
    </TabItem>
    <TabItem value="6" label="⑥ Switch Model">
 
-   <p>Click the <img src='/img/setting_icon.png'></img>icon, in the pop-up dialog, you can turn on the <a href="../daas-mode/enable-daas-mode">Data Service Platform Model</a> to synchronize data in real-time to the Data Cache Layer. </p>
+   <p>Click the <img src='/img/setting_icon.png'></img>icon to open the pop-up dialog, you can switch to the <a href="../daas-mode/enable-daas-mode">Data Service Platform Model</a>. </p>
 
 </TabItem>
 </Tabs>

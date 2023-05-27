@@ -1,6 +1,8 @@
 # Connect to Oracle
 
-Oracle Database is a multi-model database management system produced and marketed by Oracle Corporation. Tapdata Cloud supports building data pipelines with Oracle as the source and target database, and this article describes how to add Oracle database to Tapdata Cloud.
+Tapdata Cloud provides support for building data pipelines using Oracle Database as both the source and target database. Oracle Database, developed and marketed by Oracle Corporation, is a versatile and comprehensive multi-model database management system. 
+
+This article serves as a guide, outlining the steps to add an Oracle database to Tapdata Cloud, enabling seamless integration for your data pipelines.
 
 ## Preparations
 
@@ -14,7 +16,7 @@ Oracle Database is a multi-model database management system produced and markete
 
 3. On the right side of the page, click **Create connection**.
 
-4. In the pop-up dialog, click **GA data source**, and select **Oracle**.
+4. In the pop-up dialog, select **Oracle**.
 
 5. On the page that you are redirected to, follow the instructions below to fill in the connection information for Oracle.
 
@@ -36,8 +38,8 @@ Oracle Database is a multi-model database management system produced and markete
    * Advanced settings
       * **Log plugin name**: Keep default (**logMiner**).
       * **Timezone for datetime**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
-      * **Contain table**: defaults to **all**, you can also choose to custom and fill in the included tables, separated by commas (,) between multiple tables.
-      * **Exclude tables**: After turning on the switch, you can set the tables to be excluded, separated by commas (,) between multiple tables.
+      * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
+      * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
       * **Model loading frequency**: When the number of models in the data source is greater than 10,000, Tapdata Cloud will periodically refresh the model according to the set time.
 

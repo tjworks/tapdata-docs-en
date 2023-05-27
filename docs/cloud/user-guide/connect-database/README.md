@@ -1,6 +1,6 @@
 # Connect Data Sources
 
-Establish a connection between the Agent and the database on Tapdata Cloud after [installing the Agent](../../quick-start/install-agent). Then you can create data synchronization tasks.
+After [installing the Agent](../../quick-start/install-agent), you can establish a connection between the Agent and the database on Tapdata Cloud. Once the connection is established, you will be able to create data synchronization tasks.
 
 :::tip
 

@@ -1,14 +1,14 @@
 # Troubleshooting Connections
 
-In order to ensure the connection effectiveness of the data source, when you have completed the [data connection configuration](connect-database/README.md), you can click **Connection test** to verify the data source configuration meets the requirements, whether the network connectivity is normal, and so on. This article introduces common inspection items in Tapdata Cloud and troubleshooting methods in case of failure.
+To ensure the effectiveness of the data source connection, you can perform a connection test after completing the [data connection configuration](connect-database/README.md). By clicking on **Test Connection**, you can verify if the data source configuration meets the requirements and check for normal network connectivity. This article provides an overview of common inspection items within Tapdata Cloud and offers troubleshooting methods in case of connection failures.
 
 - **Check if connections are available**
 
-   Tapdata Cloud tries to connect to the data source, if the network is unreachable, the test fails, then check the network connectivity, such as: local iptables configuration, ACL limit in the network, etc.
+   When Tapdata Cloud attempts to connect to the data source and encounters an unreachable network, the connection test will fail. In such cases, it is recommended to check the network connectivity by examining factors such as the local iptables configuration and any ACL limits present in the network. These checks will help identify potential issues that may be preventing successful network communication.
 
 - **Check if the username, password, and database are correct**
 
-   Tapdata Cloud tries to connect to the data source using your configured user name and password, if the user name, password or database name is wrong, the test fails, then check the correctness of the authentication information.
+   Tapdata Cloud utilizes the configured username and password to establish a connection with the data source. If the provided username, password, or database name is incorrect, the connection test will fail. In such cases, it is important to verify the accuracy of the authentication information entered. Double-check the username, password, and database name to ensure they are correct and match the credentials required for the data source.
 
 - **Check if data source version is supported**
 
@@ -20,7 +20,7 @@ In order to ensure the connection effectiveness of the data source, when you hav
 
 - **Check if binlog is enabled and set to ROW format** (for MySQL)
 
-   Tapdata Cloud checks if the database's binlog is enabled and set to ROW format. If the requirements are not met, the test fails. For more information about the binlog settings, see [MySQL preparations](../prerequisites/config-database/certified/mysql.md). At this time, check the database binlog configuration.
+   Tapdata Cloud verifies whether the database's binlog is enabled and set to the ROW format. If these requirements are not met, the connection test will fail. To gather more information about binlog settings, it is recommended to refer to the [MySQL preparations documentation](../prerequisites/config-database/certified/mysql.md). In such cases, it is necessary to review and verify the configuration of the database's binlog to ensure it is properly enabled and set to the ROW format as per the requirements.
 
 - **Check if permissions required for CDC are authorized**
 

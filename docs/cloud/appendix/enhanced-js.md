@@ -1,8 +1,8 @@
 # Enhanced JS Built-in Function(Beta)
 
-Enhanced JS nodes (Beta) can use all built-in functions to implement external calls (such as network, database, etc.). If you only need to process and operate on data records, please use [standard JS nodes](standard-js.md).
+Enhanced JS nodes (Beta) allow you to utilize all built-in functions for external calls, such as networking and database operations. If your requirement is solely to process and operate on data records, it is recommended to use [standard JS nodes](standard-js.md).
 
-For information on how to use and scenarios, see [JS processing node](../user-guide/data-development/process-node#js-process).
+For detailed instructions on how to use enhanced JS nodes and explore various scenarios, please refer to the documentation and resources available for [JS processing node](../user-guide/data-development/process-node#js-process).
 
 :::tip
 
@@ -189,11 +189,11 @@ var source = ScriptExecutorsManager.getScriptExecutor('mysql-connection-name');
 
 ### execute
 
-Description: Performing operations in databases, and the return value is a boolean type, **true** means that the operation is successful, and **false** means that the operation fails.
+Description: When performing operations on a database, the return value is of Boolean type. **True** indicates a successful operation, while **false** indicates a failed operation.
 
 :::tip
 
-before `execute`, it is a `source` to perform operations on the source database, and a `target` to perform operations on the target database.
+Before executing, the **source** component indicates performing operations on the source database, while the **target** component indicates performing operations on the target database.
 
 :::
 
@@ -213,30 +213,23 @@ var result = target.execute({
 Parameter Description
 
 * For structured databases (such as MySQL), you can refer to the method: `var result = source.execute({sql: “update test.user set name='user001' where id = 1”});`
-
 * For MongoDB, the available parameters are as follows:
 
-   - **database**: The database name of the operation.
-
-   - **collection**: The collection name of the operation.
-
+   - **database**: The name of the database on which the operation is being performed. 
+   - **collection**: The collection name.
    - **op**: The action to be performed (INSERT/UPDATE/DELETE).
-
-   - **filter**: The condition of UPDATE or DELETE.
-
-   - **opObject**: Specific data added, updated, or deleted.
-
-   - **upsert**: Whether to use MongoDB's UPSERT mode, that is, there is no new addition, or update if it exists, the default is **false**.
-
-   - **multi**: Whether to update multiple records, the default is **false**.
+   - **filter**: The conditions for updating or deleting data.
+   - **opObject**: The specific data for insertion, update, or deletion operations
+   - **upsert**: You can choose whether to use the UPSERT mode of MongoDB, which enables inserting data if it doesn't exist and updating it if it does. The default value is **false**.
+   - **multi**: You can specify whether to update multiple records. By default, it is set to **false**.
 
 ### executeQuery
 
-Description: Database query operation, and the return value is an array type, indicating the result set of the query.
+Description: When performing database query operations, the return value is an array type that represents the result set of the query.
 
 :::tip
 
-`before` executeQuery, it is a `source` to perform operations on the source database, and a `target` to perform operations on the target database.
+Before executing, the **source** component indicates performing operations on the source database, while the **target** component indicates performing operations on the target database.
 
 :::
 
@@ -256,15 +249,15 @@ Parameter Description
 
 * For structured databases (such as MySQL), you can refer to the method: `var users = source.executeQuery({sql: “select * from test.user where age>10”});`
 * For MongoDB, the available parameters are as follows:
-   * **database**: The database name of the operation.
-   * **collection**: The collection name of the operation.
-   * **filter**: The condition of UPDATE or DELETE.
-   * **sort**: Sort criteria (optional).
-   * **limit**: Limit the number of result (optional).
+   * **database**: The name of the database being operated on.
+   * **collection**: The name of the collection on which the operation is being performed.
+   * **filter**: The conditions for updating or deleting data.
+   * **sort**:  Sorting condition (optional).
+   * **limit**: Limit on the number of output records (optional).
 
 ### call
 
-Description: Execute stored procedures and custom functions, supported only by structured databases. The return value is a key-value pair type, and the result is returned according to the procedure definition.
+Description: Executing stored procedures and functions is supported only by structured databases. This feature enables the execution of specific database stored procedures and custom functions. The return value is in the form of key-value pairs, based on the defined result of the stored procedure.
 
 Example:
 
@@ -274,9 +267,9 @@ var result = source.call('demo' [{'param1':'aa'}])
 
 Parameter Description
 
-* **funcName**: Procedure/Function name.
-* **params**: incoming parameters, support the following parameters.
-   * **mode**: Input parameter type, take value: **in** (default, incoming), **out** (outgoing), **in/out** (incoming and outgoing).
+* **funcName**: The name of the stored procedure or function.
+* **params**: The supported parameters for input.
+   * **mode**: Parameter types for input, with the following values: **in** (default, for input parameters), **out** (for output parameters), and **in/out** (for parameters that are both input and output).
    * **name**: Parameter name.
    * **value**: The value of the parameter.
    * **type**: Parameter class type.
@@ -404,7 +397,7 @@ var a = MapUtil.getValueByKey(map, 'a.b.c');
 
 ## sleep
 
-Description: The duration of the program hibernation is specified in milliseconds.
+Description: The program sleeps for a specified duration, measured in milliseconds.
 
 Example:
 
@@ -426,9 +419,9 @@ rest.get(url, header, connectTimeOut, readTimeOut)
 rest.get(url, header, returnType, connectTimeOut, readTimeOut)
 ```
 
-* **returnType**: The result type returned, the default is array.
-* **connectTimeOut**: connection timeout, in milliseconds. The default is 10,000 milliseconds.
-* **readTimeOut**: read timeout, in milliseconds. The default is 30,000 milliseconds.
+* **returnType**: The default return result type is an array.
+* **connectTimeOut**: The connection timeout duration in milliseconds. The default value is 10,000 milliseconds (10 seconds).
+* **readTimeOut**: The read timeout duration in milliseconds. The default value is 30,000 milliseconds (30 seconds). 
 
 Example:
 

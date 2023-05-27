@@ -1,6 +1,8 @@
 # Connect to ClickHouse
 
-ClickHouse is a high-performance, column-oriented SQL database management system (DBMS) for online analytical processing (OLAP). Tapdata Cloud supports building data pipelines with ClickHouse as the target database, and this article describes how to add ClickHouse to Tapdata Cloud.
+ClickHouse® is a high-performance, column-oriented SQL database management system (DBMS) for online analytical processing (OLAP).
+
+Tapdata Cloud supports the creation of data pipelines with ClickHouse as the target database. The following article provides a comprehensive guide on how to add ClickHouse to Tapdata Cloud.
 
 ## Preparations
 
@@ -14,7 +16,7 @@ ClickHouse is a high-performance, column-oriented SQL database management system
 
 3. On the right side of the page, click **Create connection**.
 
-4. In the pop-up dialog, click **GA data source**, and select **ClickHouse**.
+4. In the pop-up dialog, select **ClickHouse**.
 
 5. Complete the data source configuration according to the following instructions.
 

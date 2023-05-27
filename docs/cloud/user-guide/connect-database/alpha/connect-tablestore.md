@@ -1,23 +1,27 @@
 # Connect to Tablestore
 
-[Alibaba Cloud Tablestore](https://www.alibabacloud.com/help/en/tablestore) is a serverless table storage service for large amounts of structured data, while providing a one-stop IoT store solution for the depth optimization of IoT scenarios. Tapdata Cloud supports data synchronization tasks with Tablestore as the target database, and this article describes how to add Tablestore data sources to Tapdata Cloud.
+[Alibaba Cloud Tablestore](https://www.alibabacloud.com/help/en/tablestore) is a serverless table storage service designed for handling large volumes of structured data. It also provides a comprehensive solution for IoT scenarios, offering optimized data storage capabilities. Tapdata Cloud supports data synchronization tasks with Tablestore as the target database. 
+
+This article provides instructions on how to add Tablestore data sources to Tapdata Cloud.
+
+
 
 ## <span id="prerequisite">Preparations</span>
 
-1. [Create an Alibaba Cloud Tablestore instance](https://help.aliyun.com/document_detail/342853.html), then get the public network connection address and instance name of the instance.
+1. After [creating an Alibaba Cloud Tablestore instance](https://help.aliyun.com/document_detail/342853.html), you can retrieve the public network connection address and instance name of the instance.
 
    ![Get Tablestore Connection Address and Name](../../../images/obtain_tablestore_info_en.png)
 
 2. Create a RAM user on the Alibaba Cloud and get AccessKey (AK), which will be used when connecting.
 
    1. To [create a RAM user](https://help.aliyun.com/document_detail/93720.htm#task-187540), select **OpenAPI access**.
-   2. On the page that you are redirected to, click **Download CSV file** that contains the AccessKey information.
+   2. On the redirected page, click **Download CSV file** that contains the AccessKey information.
 
-3. Grant **AliyunOTSFullAccess** for this RAM user, that is grant manage permissions for Tablestore service.
+3. Grant the **AliyunOTSFullAccess** permission to the RAM user, which will provide them with full management permissions for the Tablestore service.
 
    1. Select the newly created RAM user and click **Add permissions**.
 
-   2. Type **AliyunOTSFullAccess** in the text box of the dialog, and then click Select the permissions policy name in the search results.
+   2. Enter **AliyunOTSFullAccess** in the text box of the dialog, and then click on the search result to select the permissions policy name.
 
       ![Grant RAM User Permissions](../../../images/add_ram_permission_en.png)
 
@@ -39,7 +43,7 @@
 
    * **Connection name**: Fill in a unique name that has business significance.
    * **Connection type**: Currently only supported as a**Target**.
-   * **Endpoint**, **Instance**: Fill in theTablestore public network connection address and instance name obtained in the [preparatory work](#prerequisite).
+   * **Endpoint**, **Instance**: Fill in the Tablestore public network connection address and instance name that you obtained during the [preparatory work](#prerequisite).
    * **AccessKey ID**, **AccessKey Secret**: Fill in the AccessKey information of the RAM user obtained in the [preparation](#prerequisite).
    * **AccessKey Token**: Default empty.
    * **Client type**: fixed as **Wide table**.

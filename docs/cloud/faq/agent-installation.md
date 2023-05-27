@@ -6,7 +6,7 @@ This article lists common problems encountered by Tapdata Agent in deployment an
 
 ### What is the role of the agent?
 
-Agent is a key program in data synchronization, data heterogeneity, and data development scenarios. It is responsible for obtaining data from the source system, processing and transmitting it to the target system, and is unifiedly managed by Tapdata cloud. The workflow is as follows:
+The Tapdata Agent plays a crucial role in data synchronization, handling data heterogeneity, and supporting data development scenarios. It is responsible for extracting data from the source system, performing necessary processing, and transmitting it to the target system. The Tapdata Agent is centrally managed by Tapdata Cloud. The workflow for data synchronization typically follows these steps:
 
 ![Agent Architecture](../images/architecture.png)
 
@@ -24,11 +24,11 @@ See [Deploying Tapdata Agent](../quick-start/install-agent) for more information
 
 ### How many agents need to be deployed?
 
-Just deploy an agent and make sure that the agent can communicate with the source/destination of the database.
+The installation of at least one Tapdata Agent is necessary to initiate and carry out the synchronization process. However, the exact number of agents required can vary based on specific business needs and requirements.
 
 ### Can multiple agents be deployed?
 
-Yes, you need to make sure that these agents can communicate with the source/destination of the database.
+Yes, you can deploy multiple agents.
 
 :::tip
 
@@ -36,17 +36,17 @@ A task will only run on one agent, and when there are many tasks, multiple agent
 
 :::
 
-### How can I change an Agent for a task when an Agent has an exception?
+### In the event of an exception occurring with an Agent, how can I replace or change the Agent associated with a task?
 
-You can edit the corresponding task, then manually specify a working agent for it, and then troubleshoot the abnormal agent.
+To change the Agent for a task when an exception occurs, you can edit the task and manually assign a working Agent. Additionally, you can troubleshoot the abnormal Agent to address the issue.
 
 ![Specify Agent](../images/specify_agent_en.png)
 
-### If Oracle is in rac mode with two nodes, how to deploy the agent?
+### How should the Tapdata Agent be deployed when Oracle is in RAC mode with two nodes?
 
-As long as it can be connected to rac, the agent can connect to the scan/vip of rac, and it does not need to be deployed on the same device with Oracle.
+When Oracle is in RAC mode with two nodes, the Tapdata Agent can be deployed on a separate device as long as it can establish a connection to the SCAN/VIP of the RAC environment. It is not necessary for the Agent to be deployed on the same device with Oracle.
 
-### Failed to pass the test after installing Docker Windows (64 bit)?
+### What should I do if the test fails after installing Docker on Windows (64-bit)?
 
 The best way to [deploy Agent](../quick-start/install-agent/agent-on-docker.md) is directly through Docker.
 
@@ -54,9 +54,9 @@ The best way to [deploy Agent](../quick-start/install-agent/agent-on-docker.md) 
 
 1 token is only used to deploy 1 agent, if you want to deploy multiple agents, please go to Tapdata Cloud to create an agent.
 
-### Agent has been in deployment status detection?
+### How can the deployment status of the Tapdata Agent be detected?
 
-You need to follow the prompts to complete the deployment of the Agent, and the Agent state will be automatically converted to **running** after the deployment is completed. If more than 5 minutes have not yet shown normal, the deployment may fail, you can contact us for [technical support](support.md) and provide logs to assist in locating the problem.
+To detect the deployment status of the Tapdata Agent, follow the provided instructions to complete the deployment process. Once the deployment is finished, the Agent state will automatically change to **running**. If more than 5 minutes have passed and the state has not changed to normal, it may indicate a deployment failure. In such cases, it is recommended to contact [technical support](support.md) for assistance. Providing logs will aid in identifying and resolving the problem effectively.
 
 
 
@@ -90,7 +90,7 @@ The Agent reports the heartbeat to the Tapdata Cloud every minute, and if the Ta
 
 The Agent offline does not affect the normal operation of the running task, but the newly created task is affected.
 
-### How to uninstall the reinstall agent?
+### What is the process for uninstalling and reinstalling the Tapdata Agent?
 
 Select the following methods to uninstall the Reinstall Agent according to your platform:
 
