@@ -1,8 +1,8 @@
 # GA data sources
 
-GA data source means that it has gone through the Tapdata Cloud certification testing process and is running stably.
+The term **GA data source** indicates that it has undergone the certification testing process on Tapdata Cloud and is currently operating in a stable manner.
 
-Please refer to the following documents based on your database type to complete the database connection:
+To complete the database connection, please refer to the relevant documents based on your specific database type. These documents will provide you with detailed instructions on how to establish the connection between your database and Tapdata Cloud.
 
 import DocCardList from '@theme/DocCardList';
 

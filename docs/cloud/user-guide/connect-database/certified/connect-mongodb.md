@@ -1,6 +1,6 @@
 # Connect to MongoDB
 
-MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need. Tapdata Cloud supports building data pipelines with MongoDB as the source and target database, and this article describes how to add MongoDB to Tapdata Cloud.
+Tapdata Cloud supports the integration of MongoDB as both the source and target database for building data pipelines. This article provides a comprehensive guide on how to add MongoDB to Tapdata Cloud, enabling you to leverage its scalability, flexibility, querying, and indexing capabilities for your data processing needs.
 
 ## Preparations
 
@@ -14,7 +14,7 @@ MongoDB is a document database with the scalability and flexibility that you wan
 
 3. On the right side of the page, click **Create connection**.
 
-4. In the pop-up dialog, click **GA data source**, and select **MongoDB**.
+4. In the pop-up dialog, select **MongoDB**.
 
 5. On the page that you are redirected to, follow the instructions below to fill in the connection information for MongoDB.
 
@@ -23,17 +23,24 @@ MongoDB is a document database with the scalability and flexibility that you wan
    * Connection Information Settings
 
       * **Connection name**: Fill in a unique name that has business significance.
+      
       * **Connection type**: Supports MongoDB as a source or target database.
+      
       * **Connection method**: Choose how you want to connect:
-         * **URI mode**: After selecting this mode, you need to fill in the database URI connection information, and the user name and password need to be spliced in the connection string, for example` mongodb://admin:password@192.168.0.100:27017/mydb?replicaSet=xxx&authSource=admin`
-         * **Standard mode**: After selecting this mode, you need to fill in the database address, name, account number, password and other connection string parameters.
+         * **URI mode**: After selecting this mode, you will be required to provide the necessary information for the database URI connection. The connection string should include the username and password, which are concatenated in the format. 
+         
+           For example, the connection string may look like: ` mongodb://admin:password@192.168.0.100:27017/mydb?replicaSet=xxx&authSource=admin`.           
+         
+         * **Standard mode**: After selecting this mode, you need to fill in the database address, name, account number, password and other connection string parameters. 
+         
       * **Connect using TLS/SSL**: Choose how you want to connect:
-         * **TSL/SSL connection:** Tapdata Cloud will connect to a separate server in the network that provides a TSL/SSL channel to the database. If your database is in an inaccessible subnet, you can try this method.
+         * **TSL/SSL connection:** In cases where your database is located in an inaccessible subnet, Tapdata Cloud offers the option to establish a connection through a separate server within the network. This server acts as a TSL/SSL channel to facilitate the connection to the database. This method enables connectivity to the database even when it is in a subnet that would otherwise be inaccessible.
          * **Direct connection**: Tapdata Cloud will connect directly to the database and you need to set up security rules to allow access.
+      
    * Advanced settings
 
-      * **Contain table**: Defaults to **all**, you can also choose to custom and fill in the included tables, separated by commas (,) between multiple tables.
-      * **Exclude tables**: After turning on the switch, you can set the tables to be excluded, separated by commas (,) between multiple tables.
+      * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
+      * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
       * **Model loading frequency**: When the number of models in the data source is greater than 10,000, Tapdata Cloud will periodically refresh the model according to the set time.
 

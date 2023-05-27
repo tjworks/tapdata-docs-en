@@ -1,6 +1,6 @@
 # Alpha Data Sources
 
-The Alpha version of the data sources is in public preview and has passed the basic test cases, but has not yet passed the integration test cases and the Tapdata certification test process. If you have any questions during use, please [contact us](mailto:team@tapdata.io).
+The Alpha version of the data sources is currently in public preview and has successfully completed the basic test cases. However, it is still undergoing integration test cases and the Tapdata certification test process. If you encounter any questions or issues while using the Alpha version, please do not hesitate to [contact us](mailto:team@tapdata.io) for assistance.
 
 
 

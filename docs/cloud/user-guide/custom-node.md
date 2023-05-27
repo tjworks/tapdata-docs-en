@@ -1,6 +1,8 @@
 # Custom Node (Beta)
 
-By customizing the node function, you can organize the general JS script into reusable processing nodes, and after creation, you can reference the node directly in the data development task, without rewriting the script, which greatly reduces the development workload. In this article, we describe how to use custom nodes and provide use cases for your reference.
+By customizing the node function, you have the flexibility to organize your JavaScript script into reusable processing nodes. Once created, these custom nodes can be easily referenced in your data development tasks without the need for rewriting the script. This significantly reduces the development workload. 
+
+In this article, we will guide you on how to use custom nodes effectively and provide use cases as examples for your reference.
 
 
 
@@ -18,15 +20,15 @@ By customizing the node function, you can organize the general JS script into re
 
       ![](../images/add_form_component_en.png)
 
-      * On the left is the component area, which can be dragged to the operation area and configured.
-      * The middle is the operation area, and the position of each component can be adjusted or configured after selection.
-      * On the right is the property settings area, you can set the configurations of the component (such as title, description, default value, etc.)
+      * On the left side of the page, you will find the component area. You can drag components from this area to the operation area and configure them accordingly.
+      * The middle section of the page is the operation area. Once a component is selected and placed in this area, you can adjust its position and configure its settings as needed.
+      * On the right side of the page is the property settings area. Here, you can configure various settings for the selected component, such as its title, description, default values, and other properties based on your requirements.
 
-   2. Click the ![](../images/json_icon.png) icon at the top of the page to display the JSON model for the processing node form item, where you can edit the form information directly.
+   2. Clicking  the ![](../images/json_icon.png) icon located at the top of the page will display the JSON model for the processing node's form item. This allows you to directly edit and modify the form information in JSON format. 
 
       ![](../images/json_schema_view_en.png)
 
-   3. Click the ![](../images/code_icon.png) icon at the top of the page to edit the data processing logic of the processing node, and the field identification in the form can be referenced.
+   3. Clicking  the ![](../images/code_icon.png) icon at the top of the page allows you to edit the data processing logic of the processing node. You can reference the field identification in the form while customizing the logic.
 
       ![](../images/code_view_en.png)
 
@@ -44,7 +46,7 @@ In the development task, you can use the custom processing node that has been cr
 
 ## Example: Custom Decryption Rule
 
-For information security, we want to desensitize some of the mobile phone numbers in the MySQL table, we can create a custom node, and then create a development task and apply the node.
+To ensure information security, if you need to desensitize certain mobile phone numbers in a MySQL table, you can create a custom node in Tapdata Cloud. Once the custom node is created, you can create a development task and apply the node to perform the desired data desensitization.
 
 **Procedure:**
 
@@ -80,7 +82,7 @@ For information security, we want to desensitize some of the mobile phone number
 
 6. Click the **Save** in the top right corner.
 
-7. [Create a data development task](data-development/create-task.md), between the source and the target node, add the phone number desensitization node we just created, and fill in the field corresponding to the mobile number, in this case, mobile.
+7. [Create a data development task](data-development/create-task.md). Add the phone number desensitization node between the source and target nodes in the data development task, and specify the field **mobile** as the input for the desensitization process.
 
    ![Phone number desensitization](../images/masking_mobile_en.png)
 

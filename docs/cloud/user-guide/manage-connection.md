@@ -1,6 +1,8 @@
 # Manage Connection
 
-Tapdata Cloud saves the connection information of each database through connection, so that you can reference directly when creating data replication/development tasks, without repeated configuration, and improve the convenience of operation and maintenance. This article describes the common O&M operations of the connection.
+Tapdata Cloud saves the connection information for each database using a connection, allowing you to reference it directly when creating data replication/development tasks. This eliminates the need for repetitive configuration and improves the convenience of operation and maintenance. 
+
+This article provides a guide on the common operations for managing connections.
 
 ## Procedure
 
@@ -12,10 +14,10 @@ Tapdata Cloud saves the connection information of each database through connecti
 
    ![](../images/manage_connections.png)
 
-   * **Filter connections**: Quickly filter based on status, connection type, database type, or search by connection name.
-   * **Connection test**: Test whether the connection is valid. You can troubleshoot according to the prompts in the dialog box if abnormalities are found.
+   * **Filter connections**: You can quickly filter connections based on their status, connection type, database type, or search by connection name.
+   * **Connection test**: You can test the validity of a connection to check if it is functioning properly. If any abnormalities are found, you can troubleshoot the issue by following the prompts in the dialog box.
    * **Load Schema**: Manually loads database schema information.
-   * **Edit**: Mmodify the name and configuration information of the connection.
+   * **Edit**: Modify the name and configuration information of the connection.
    * **Copy**: Quickly clone a connection with the same configuration based on the specified connection.
    * **Delete**: If you no longer need a connection, you can delete it, but keep in mind that it cannot be recovered.
 

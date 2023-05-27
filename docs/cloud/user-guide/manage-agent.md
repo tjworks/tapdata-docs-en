@@ -14,12 +14,38 @@ Tapdata Cloud provides visual management and maintenance capabilities for Agents
 
 
 
-| No. | Operation | Description |
-| ---- | ---------- | ------------------------------------------------------------ |
-| ① | Create Agent | Agent support multi-platform installation, see [Install Agent](../quick-start/install-agent). |
-| ② | Upgrade Agent | When a new version is available, the upgrade icon will appear on the right side of the version information. Click the icon and choose the upgrade method:<br /> ● **Automatic upgrade**: You can choose this method when the Agent status is **running**, and the upgrade icon will disappear automatically after the upgrade is completed. If the upgrade fails, you<br /> can upgrade manually. <br />● **Manual upgrade**: Execute the upgrade command on the Agent's installed device as prompted in the popup. <br />💡 In order to avoid the upgrade operation from affecting the operation of the task, please stop the task related to the agent before upgrading.  |
-| ③ | Stop Agent | Click **Stop** to pause the Agent, which can be used for temporary maintenance scenarios, to restart the Agent later, you should run it from the command line.  |
-| ④ | Delete Agent | If the Agent is no longer needed, it can be **deleted** after stopping it, and it cannot be recovered after deletion.  |
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs className="unique-tabs">
+    <TabItem value="create-agent" label="① Create Agent" default>
+    <p>Agent support multi-platform installation, see <a href="../quick-start/install-agent">Install Agent</a>.</p>
+   </TabItem>
+   <TabItem value="upgrade-agent" label="② Upgrade Agent">
+   <p>When a new version becomes available, an upgrade icon will appear on the right side of the version information. To initiate the upgrade process, follow these steps:</p>
+   <p></p>
+   <ul>
+   <li><b>Automatic Upgrade</b>
+   <ol>
+   <li>Choose this method if the Agent status is running.</li>
+   <li>Click the upgrade icon, and the upgrade process will begin.</li>
+   <li>After the upgrade is completed, the upgrade icon will disappear automatically.</li>
+   <li>In case the automatic upgrade fails, you can proceed with a manual upgrade.</li>
+   </ol></li>
+   <li><b>Manual Upgrade</b>
+   <ol> <li>To ensure that the upgrade operation does not impact any ongoing tasks, it is advisable to stop any task associated with the Agent before proceeding with the upgrade.</li>
+   <li>Execute the upgrade command on the device where the Agent is installed.</li></ol></li>
+  </ul> 
+  <p>By following these instructions, you can easily upgrade to the latest version of the Agent software. If you encounter any issues during the upgrade process, please refer to the documentation or contact our support team for assistance.</p>
+   </TabItem>
+   <TabItem value="stop-agent" label="③ Stop Agent">
+   <p>Click <b>Stop</b> to pause the Agent, which can be used for temporary maintenance scenarios, to restart the Agent later, you should run it from the command line.</p>
+   </TabItem>
+   <TabItem value="delete-agent" label="④ Delete Agent">
+   <p>If the Agent is no longer needed, it can be deleted after stopping it. Please note that once deleted, the Agent cannot be recovered.</p>
+   </TabItem>
+  </Tabs>
+
 
 
 
@@ -27,12 +53,10 @@ Tapdata Cloud provides visual management and maintenance capabilities for Agents
 
 According to the platform selection of the Agent installation, view the relevant command description:
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <Tabs className="unique-tabs">
     <TabItem value="linux" label="Linux" default>
-    <p>Enter the installation directory of the Agent, and choose to execute the following command: </p>
+    <p>Navigate to the installation directory of the Agent and proceed by executing the following command: </p>
     <ul>
     <li>View command help: <code>./tapdata help</code>
  </li>
@@ -42,7 +66,7 @@ import TabItem from '@theme/TabItem';
     </ul>
    </TabItem>
    <TabItem value="windows" label="Windows">
-    <p>Enter the installation directory of the Agent, and choose to perform the following operation: </p>
+    <p>Enter the installation directory of the Agent and proceed with the chosen operation:</p>
     <ul>
     <li>Check the status of the Agent: Double-click the <b>sstatus.bat</b> </li>
     <li>Start Agent: Double-click the <b>start.bat</b> or <b>tapdata.exe</b> </li>
@@ -53,12 +77,12 @@ import TabItem from '@theme/TabItem';
     <ol>
     <li>Execute <code>docker ps</code> to get the container ID. </li>
     <p></p>
-    <li>Execute the following format of the command to enter the container command line.
+    <li>To access the container command line, execute the following command format:
     <pre>
     docker exec -it container ID/bin/bash</pre>
     <p>Replace the container ID in the command, such as <code>docker exec -it 1dbee41b4adc/bin/bash</code>. </p>
     </li>
-    <li>In the container command line, enter the installation directory of the Agent, and choose to execute the following command:
+    <li> Within the container command line, navigate to the installation directory of the Agent and proceed by executing the following command:
     <ul>
     <li>View command help: <code>./tapdata help</code>
  </li>
@@ -97,16 +121,14 @@ tap_table_ehcache: Cache the table's structure of the data source associated wit
 
 
 :::tip
-
-In order to make sure the Agent runs smoothly and quickly locates faults, do not delete the above directory or file.
-
+To ensure the smooth operation of the Agent and enable efficient fault detection, please refrain from deleting the mentioned directory or file.
 :::
 
 
 
 ### Adjust Agent Runtime Memory
 
-Locate the configuration file **application.yml** in the Agent installation directory, edit the file, and adjust the memory configuration according to the available memory of the server, for example, configure it as `tapdataJavaOpts: "-Xms4G -Xmx8G"`, which means that the initial memory is 4G, and the maximum memory is 8G:
+To adjust the memory configuration in the Agent installation directory, locate the **application.yml** configuration file and edit it accordingly. Set the tapdataJavaOpts: `-Xms4G -Xmx8G` to allocate 4GB as the initial memory and allow a maximum of 8GB.
 
 ```yaml
 tapdata:

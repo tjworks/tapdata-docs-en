@@ -1,6 +1,6 @@
 # Standard JS Built-in Function
 
-Standard JS nodes can only process and operate on data records. If you need to use all system built-in functions to implement external calls (such as network, database, etc.), you can use [enhanced JS nodes](enhanced-js.md).
+Standard JS nodes can only process and operate on data records. If you require the usage of system built-in functions for external calls, such as networking or database operations, you can utilize [enhanced JS nodes](enhanced-js.md).
 
 For information on how to use and scenarios, see [JS processing node](../user-guide/data-development/process-node#js-process).
 

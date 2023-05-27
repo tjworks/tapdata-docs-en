@@ -1,6 +1,6 @@
-# Monitor Data Pipeline Task
+# Monitor Data Dev Task
 
-After the data pipeline task is started, the page will automatically jump to the task monitoring page, through which you can observe the task operation details, including Agent status, data synchronization status, task progress, alarm settings and other information.
+Once the data development task is started, the page will automatically redirect to the task monitoring page. From there, you can monitor the task's operation details, such as the status of the Agent, data synchronization progress, task progress, alarm settings, and other relevant information.
 
 :::tip
 
@@ -14,27 +14,27 @@ By clicking the **monitor** button on the task list page, you can access the mon
 
 ## ① Top control bar
 
-You can rename a task name, view the task start time, and see the Agent status, which includes the following information:
+You can rename the task, view its start time, and check the Agent status, which includes the following information:
 
-* CPU usage: the proportion of CPU used by the engine process to the total CPU of the system
-* Memory usage: Used / Memory Max
-* GC Throughput: (Engine Cumulative Run Time - GC Time)/Engine Cumulative Run Time * 100%
+* **CPU Usage**: The CPU usage of the engine process as a proportion of the total CPU usage of the system.
+* **Memory Usage**: Used / Memory Max
+* **GC Throughput**: (Engine Cumulative Run Time - GC Time)/Engine Cumulative Run Time * 100%
 
 
 
-## ② Task indicators display bar
+## ② Task Indicators Display Bar
 
-Display basic information and key monitoring indicators of the task, including synchronization information, task verification information, performance indicators and task time statistics, including:
+Displaying basic information and key monitoring indicators of the task, including synchronization information, task verification information, performance indicators, and task time statistics.
 
-* Task checksumming: will be displayed only if the task has checksumming enabled. Click to view checksumming details if any anomalies are found.
-* QPS: The average number of input events and output events processed per second by the task.
-* Incremental delay: The delay from the time the event is generated from the source database to the time it is completed by the task processing to write the target. When there are multiple targets, only the maximum incremental delay time is counted, in milliseconds.
-* Task event statistics: Statistics of all cumulative events after the operation of the task, the statistical precautions are as follows:
-   * Update: The insertion event becomes the update event if the target database already exists when the target database is inserted, and the write policy sets the update to occur when the target already exists.
-   * DDL
-      * Tapdata builds a table directly on the target based on deduction results, so DDL events of the table cannot be counted at the source.
-      * If the target is a database type that does not require table building (such as MongoDB), the target's table building events are not counted.
-      - DDL events are counted for drop table and create table if the target duplicate processing policy selects clear target structure and data.
+* **Task Checksumming**: Will only be displayed if the task has checksum enabled. You can click to view checksum details if any anomalies are found.
+* **QPS**: The average number of input events and output events processed per second by the task.
+* **Incremental Delay**: The delay is calculated as the time it takes for an event generated in the source database to be processed and written to the target by the task. When there are multiple targets, only the maximum incremental delay time is considered, measured in milliseconds.
+* **Task Event Statistics**: Statistics of all cumulative events after the operation of the task should be analyzed with the following precautions in mind.
+  * **Update**: If the target database already exists when performing an insertion event, it will be treated as an update event. This behavior is determined by the write policy, which is configured to update when the target already exists.
+  * **DDL**
+    * Tapdata Cloud directly creates a table on the target based on deduction results, so DDL (Data Definition Language) events of the table cannot be tracked or counted at the source.
+    * If the target is a database type that does not require explicit table creation, such as MongoDB, the table-building events on the target side are not counted or considered as part of the synchronization process.
+    * DDL events for **drop table** and **create table** are counted if the target duplicate processing policy is set to **clear target structure and data**.
 
 
 
@@ -42,13 +42,13 @@ Display basic information and key monitoring indicators of the task, including s
 
 Hover your mouse pointer over a node to display key metrics for that node, and click the ![](../../images/node_more_icon.png) icon in the bottom right corner of the node to see more details.
 
-- Full sync progress: The progress report on the full data synchronization.
-- incremental data synchronization: The time point at which incremental logs are collected. By moving the mouse in the floating window, it is expressed as the relative time of (the engine time - the incremental time point of the node).
-- Writing time: The time it takes for data to be written to the target.
-- QPS: The QPS of the node.
-- Cumulative input events: The number of events entered into the node from the previous node or source database.
-- Cumulative output events: The number of events output from the node to the next node or target database.
-- Processing time: The time it takes for the node to process data.
+- **Full Sync Progress**: The progress report on the full data synchronization.
+- **Incremental Data Synchronization**: The incremental log collection time point is represented as the relative time of (engine time - incremental time point of the node) in the floating window when hovering the mouse.
+- **Writing time**: The time it takes for data to be written to the target.
+- **QPS**: The QPS of the node.
+- **Cumulative Input Events**: The number of events received by the node from the previous node or source database.
+- **Cumulative Output Events**: The number of events sent by the node to the next node or target database.
+- **Processing time**: The processing time for the node to process data.
 
 
 
