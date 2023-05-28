@@ -39,7 +39,7 @@ The following article provides a detailed guide on how to add Kafka to Tapdata C
       * **Message compression type**: When dealing with large message volumes, enabling compression can significantly enhance transmission efficiency. Supports gzip, snappy, lz4, and zstd. By leveraging compression, you can effectively reduce the size of the messages, resulting in improved data transfer efficiency.
       * **Ignore push message exception**: Once the switch is turned on, the system will continue to record the offset of the relevant message; however, it will not push any further messages. It's important to note that this approach carries a risk of potential data loss since the system will not deliver subsequent messages.
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
-      * **Model loading frequency**: When the number of models in the data source is greater than 10,000, Tapdata Cloud will periodically refresh the model according to the set time.
+      * **Model load time**: If there are less than 10,000 models in the data source, their information will be updated every hour. But if the number of models exceeds 10,000, the refresh will take place daily at the time you have specified.
 
 6. Click **Connection Test**, and when passed, click **Save**.
 

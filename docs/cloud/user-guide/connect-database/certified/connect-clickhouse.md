@@ -33,7 +33,7 @@ Tapdata Cloud supports the creation of data pipelines with ClickHouse as the tar
    * Advanced settings
       * **Timezone**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
-      * **Model loading frequency**: When the number of models in the data source is greater than 10,000, Tapdata Cloud will periodically refresh the model according to the set time.
+      * **Model load time**: If there are less than 10,000 models in the data source, their information will be updated every hour. But if the number of models exceeds 10,000, the refresh will take place daily at the time you have specified.
 
 6. Click **Connection Test**, and when passed, click **Save**.
 

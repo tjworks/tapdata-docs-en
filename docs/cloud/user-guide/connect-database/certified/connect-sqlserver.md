@@ -39,7 +39,7 @@ This article serves as a detailed guide, outlining the steps to seamlessly incor
       * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
       * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
-      * **Model loading frequency**: When the number of models in the data source is greater than 10,000, Tapdata Cloud will periodically refresh the model according to the set time.
+      * **Model load time**: If there are less than 10,000 models in the data source, their information will be updated every hour. But if the number of models exceeds 10,000, the refresh will take place daily at the time you have specified.
 
 6. Click **Connection Test**, and when passed, click **Save**.
 

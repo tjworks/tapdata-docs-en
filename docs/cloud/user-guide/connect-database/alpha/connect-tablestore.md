@@ -35,9 +35,9 @@ This article provides instructions on how to add Tablestore data sources to Tapd
 
 3. On the right side of the page, click **Create connection**.
 
-4. In the pop-up dialog, click **Beta data source**, and select **Tablestore**.
+4. In the pop-up dialog, select **Tablestore**.
 
-5. On the page that you are redirected to, follow the instructions below to fill in the connection information for Tablestore.
+5. Fill in the connection information for Tablestore on the redirected page, following the instructions provided below.
 
    ![Fill in Tablestore Connection Information](../../../images/create_tablestore_connection_en.png)
 
