@@ -89,6 +89,22 @@ const sidebars = {
                               'cloud/prerequisites/config-database/certified/sqlserver',
                        ]
                       },
+                      {
+                       type: 'category',
+                       label: 'Beta Data Sources',
+                       link: {type: 'doc', id: 'cloud/prerequisites/config-database/beta/README'},
+                       items: [
+                              'cloud/prerequisites/config-database/beta/mongodb-atlas',
+                       ]
+                      },
+                      {
+                       type: 'category',
+                       label: 'Alpha Data Sources',
+                       link: {type: 'doc', id: 'cloud/prerequisites/config-database/alpha/README'},
+                       items: [
+                              'cloud/prerequisites/config-database/alpha/zoho-crm',
+                       ]
+                      },                                            
              ]
             },
      ]
@@ -125,6 +141,12 @@ const sidebars = {
                      link: {type: 'doc', id: 'cloud/user-guide/connect-database/beta/README'},
                      items:[
                             'cloud/user-guide/connect-database/beta/connect-bigquery',
+                            'cloud/user-guide/connect-database/beta/connect-dummy',
+                            'cloud/user-guide/connect-database/beta/connect-github',
+                            'cloud/user-guide/connect-database/beta/connect-mongodb-atlas',
+                            'cloud/user-guide/connect-database/beta/connect-redis',
+                            'cloud/user-guide/connect-database/beta/connect-salesforce',
+                            'cloud/user-guide/connect-database/beta/connect-selectdb',
                            ]
                     },
                     {
@@ -133,6 +155,7 @@ const sidebars = {
                      link: {type: 'doc', id: 'cloud/user-guide/connect-database/alpha/README'},
                      items:[
                             'cloud/user-guide/connect-database/alpha/connect-tablestore',
+                            'cloud/user-guide/connect-database/alpha/connect-zoho',
                            ]
                     }, 
               ]

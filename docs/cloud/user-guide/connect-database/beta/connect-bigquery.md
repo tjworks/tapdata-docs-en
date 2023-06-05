@@ -6,7 +6,7 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
 ## Preparations
 
-[Agent](../../../quick-start/install-agent/README.md) 's machine can access to Google Cloud Services.
+[Agent](../../../quick-start/install-agent/README.md)'s machine can access to Google Cloud Services.
 
 
 
@@ -94,17 +94,18 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
 3. On the right side of the page, click **Create connection**.
 
-4. In the pop-up dialog, click **Beta data source**, and select **BigQuery**.
+4. In the pop-up dialog, select **BigQuery**.
 
-5. On the page that you are redirected to, follow the instructions below to fill in the connection information for BigQuery.
+5. Fill in the connection information for BigQuery on the redirected page, following the instructions provided below.
 
    ![Configure BigQuery Connection Information](../../../images/connect_bigquery_en.png)
 
    * **Connection name**: Fill in a unique name that has business significance.
-   * **Connection type**: Currently only supported as a**Target**.
+   * **Connection type**: Currently only supported as a **Target**.
    * **Service Account(JSON)**: Open the key file that you have downloaded in advance using a text editor. Copy the content of the file and paste it into the text box provided.
    * **Table Set ID**: Select a dataset that already exists in BigQuery.
    * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
+   * **Model load time**: If there are less than 10,000 models in the data source, their information will be updated every hour. But if the number of models exceeds 10,000, the refresh will take place daily at the time you have specified.
 
 6. Click **Connection Test**, and when passed, click **Save**.
 

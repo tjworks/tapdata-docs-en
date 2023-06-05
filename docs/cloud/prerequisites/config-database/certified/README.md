@@ -1,6 +1,10 @@
-# Certified Data Source
+# Certified Data Sources
 
-**GA data source** refers to data sources that has passed Tapdata's certification testing process and has stable performance.
+The term **GA data source** indicates that it has undergone the certification testing process on Tapdata Cloud and is currently operating in a stable manner.
+
+
+
+Please refer to the following documents based on your data source to complete the preparations:
 
 import DocCardList from '@theme/DocCardList';
 
