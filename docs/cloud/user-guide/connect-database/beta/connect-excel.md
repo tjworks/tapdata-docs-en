@@ -33,7 +33,7 @@ Supports both XLS and XLSX formats and forms that include merged cells and formu
 
    :::tip
 
-   For more about how to obtain the information needed for each file protocol, see [Preparations for CSV/Excel](../../../prerequisites/config-database/alpha/csv-and-excel.md). 
+   For more about how to obtain the information needed for each file protocol, see [Preparations for CSV/Excel](../../../prerequisites/config-database/beta/csv-and-excel.md). 
 
    :::
 

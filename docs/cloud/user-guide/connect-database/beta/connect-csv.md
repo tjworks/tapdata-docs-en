@@ -28,7 +28,7 @@ This article describes how to connect to CSV data sources on Tapdata Cloud.
 
    :::tip
 
-   For more about how to obtain the information needed for each file protocol, see [Preparations for CSV/Excel](../../../prerequisites/config-database/alpha/csv-and-excel.md). 
+   For more about how to obtain the information needed for each file protocol, see [Preparations for CSV/Excel](../../../prerequisites/config-database/beta/csv-and-excel.md). 
 
    :::
 
