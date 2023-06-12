@@ -60,7 +60,8 @@ const config = {
 
 // An Image Zoom plugin for Docusaurus 2
   plugins: [
-    'plugin-image-zoom'
+    'plugin-image-zoom',
+    'docusaurus-plugin-hotjar'
   ],
 
   themeConfig:
@@ -142,6 +143,10 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      // Hotjar for Feedback
+      hotjar: {
+      applicationId: '3447165',
+    },
     }),
 };
 
