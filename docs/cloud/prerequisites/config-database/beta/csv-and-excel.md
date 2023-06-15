@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 <p>When you store CSV and Excel files on Tapdata Agent's device, it can be used as a data source, and the preparations are as follows: </p>
   <ol>
    <li>Log in to Tapdata Agent's device. </li>
-   <li>Create a folder first (e.g., <code>/root/files</code>) for easier file management. </li>
+   <li>Create a folder first (e.g., <code>/root/files</code> for the root user) for easier file management.</li>
    <li>Save the CSV or Excel files to the folder that you created. </li>
   </ol>
   <p>When configuring the data source later, all you need to do is specify the <strong>file path</strong>. </p>
