@@ -94,6 +94,7 @@ const sidebars = {
                        label: 'Beta Data Sources',
                        link: {type: 'doc', id: 'cloud/prerequisites/config-database/beta/README'},
                        items: [
+                              'cloud/prerequisites/config-database/beta/csv-and-excel',
                               'cloud/prerequisites/config-database/beta/mongodb-atlas',
                        ]
                       },
@@ -102,6 +103,7 @@ const sidebars = {
                        label: 'Alpha Data Sources',
                        link: {type: 'doc', id: 'cloud/prerequisites/config-database/alpha/README'},
                        items: [
+                              'cloud/prerequisites/config-database/alpha/json-and-xml',
                               'cloud/prerequisites/config-database/alpha/zoho-crm',
                        ]
                       },                                            
@@ -141,7 +143,9 @@ const sidebars = {
                      link: {type: 'doc', id: 'cloud/user-guide/connect-database/beta/README'},
                      items:[
                             'cloud/user-guide/connect-database/beta/connect-bigquery',
+                            'cloud/user-guide/connect-database/beta/connect-csv',
                             'cloud/user-guide/connect-database/beta/connect-dummy',
+                            'cloud/user-guide/connect-database/beta/connect-excel',
                             'cloud/user-guide/connect-database/beta/connect-github',
                             'cloud/user-guide/connect-database/beta/connect-mongodb-atlas',
                             'cloud/user-guide/connect-database/beta/connect-redis',
@@ -155,6 +159,8 @@ const sidebars = {
                      link: {type: 'doc', id: 'cloud/user-guide/connect-database/alpha/README'},
                      items:[
                             'cloud/user-guide/connect-database/alpha/connect-tablestore',
+                            'cloud/user-guide/connect-database/alpha/connect-json',
+                            'cloud/user-guide/connect-database/alpha/connect-xml',
                             'cloud/user-guide/connect-database/alpha/connect-zoho',
                            ]
                     }, 
