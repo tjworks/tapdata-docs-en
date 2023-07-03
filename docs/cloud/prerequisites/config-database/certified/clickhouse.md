@@ -39,14 +39,16 @@ If binary-related fields are included, you need to remove them via field mapping
    CREATE USER tapdata HOST ANY IDENTIFIED WITH sha256_password BY 'Tap@123456';
    ```
 
-3. To grant permissions to the account you have just created, it is advisable to implement more granular permission controls based on your business needs. For detailed instructions on authorization syntax and further information, see [authorization syntax](https://clickhouse.com/docs/zh/sql-reference/statements/grant).
+3. To grant permissions to the account you have just created, it is advisable to implement more granular permission controls based on your business needs. For detailed instructions on authorization syntax and further information, see [authorization syntax](https://clickhouse.com/docs/en/sql-reference/statements/grant).
 
    ```sql
-   GRANT ALL ON database_name.table_name TO 'username' WITH GRANT OPTION;
+   GRANT SELECT, INSERT, CREATE TABLE, ALTER TABLE, ALTER UPDATE, DROP TABLE, TRUNCATE ON database_name.* TO username
    ```
 
-   * **database_name.table_name**: To grant permissions to specific databases and tables, you can specify them by separating the names with periods (.) as follows, such as demodata.customer.
-   * **usernmae**: Enter user name.
+   * **database_name**: Enter database name.
+   * **username**: Enter user name.
+   
+   
 
 ## Next step
 

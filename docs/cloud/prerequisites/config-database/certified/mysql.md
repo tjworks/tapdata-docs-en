@@ -41,15 +41,17 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 2. Grant permissions to the account that we just created, we recommend setting more granular permissions control based on business needs.
 
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase" label="Grant SELECT to Specified DB" default>
-    <pre>GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON database_name.table_name TO 'username' IDENTIFIED BY 'password';</pre>
+    <TabItem value="onedatabase" label="Grant to Specified DB" default>
+    <pre>GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';<br /> 
+GRANT SELECT ON database_name.* TO 'username' IDENTIFIED BY 'password';</pre>
    </TabItem>
-   <TabItem value="all" label="Grant Global Privileges">
-    <pre>GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
+   <TabItem value="all" label="Grant to All DB">
+    <pre>GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';<br /> 
+GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
    </TabItem>
   </Tabs>
 
-* **database_name.table_name**: To grant permissions to specific databases and tables, you can specify them by separating the names with periods (.) as follows, such as `demodata.custome`.
+* **database_name**: Enter database name.
 * **username**: Enter user name.
 * **password**: Enter password.
 
@@ -124,17 +126,16 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 2. Grant permissions to the account that we just created, we recommend setting more granular permissions control based on business needs.
 
 <Tabs className="unique-tabs">
-    <TabItem value="onedatabase" label="Grant SELECT to Specified DB" default>
-    <pre>GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON database_name.table_name TO 'username' IDENTIFIED BY 'password';</pre>
+    <TabItem value="onedatabase" label="Grant to Specified DB" default>
+    <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP ON database_name.* TO 'username';</pre>
    </TabItem>
-   <TabItem value="all" label="Grant Global Privileges">
-    <pre>GRANT RELOAD, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
+   <TabItem value="all" label="Grant to All DB">
+    <pre>GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP ON *.* TO 'username';</pre>
    </TabItem>
   </Tabs>
 
-* **database_name.table_name**: To grant permissions to specific databases and tables, you can specify them by separating the names with periods (.) as follows, such as `demodata.custome`.
+* **database_name**: Enter database name.
 * **username**: Enter user name.
-* **password**: Enter password.
 
 
 
