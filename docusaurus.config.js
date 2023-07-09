@@ -142,6 +142,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        theme: require('prism-react-renderer/themes/dracula'),
       },
       // Hotjar for Feedback
       hotjar: {
