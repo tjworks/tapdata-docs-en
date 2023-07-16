@@ -8,8 +8,6 @@ In order to establish a Kafka connection and effectively utilize the data source
 
 Kafka 2.3.x
 
-
-
 ## Limitations
 
 * Only the message format of the JSON Object string is supported, for example: `{"id":1, "name": "Jack"}`.
@@ -19,11 +17,24 @@ Kafka 2.3.x
 
 ## Preparations
 
-1. Login to Kafka's server and complete the process of creation of topic. For more information, see [Kafka Quick Start](https://kafka.apache.org/23/documentation.html#quickstart).
-2. Confirm the encryption method, if the kerberos authentication is enabled, you also need to prepare the key, configuration and other files.
+1. Log in to Kafka's server.
+
+2. (Optional) If you use Kafka as the target database, it is recommended to create the topic to store the data in advance. If it is automatically created by Tapdata Cloud, the number of partitions and copies is 1.
+
+   The following example creates a topic named kafa_demo_topic, which has a number of partitions and copies of 3:
+
+   ```bash
+   bin/kafka kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 3 --partitions 3 --topic kafa_demo_topic
+   ```
+
+   For more information, see [Kafka Quick Start](https://kafka.apache.org/23/documentation.html#quickstart).
+
+3. Confirm the encryption method, if the kerberos authentication is enabled, you also need to prepare the key, configuration and other files.
+
+
 
 
 
 ## Next step
 
- [Connect to Kafka](../../../user-guide/connect-database/certified/connect-kafka.md)
+[Connect to Kafka](../../../user-guide/connect-database/certified/connect-kafka.md)
