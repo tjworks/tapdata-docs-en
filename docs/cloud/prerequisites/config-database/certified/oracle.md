@@ -1,8 +1,12 @@
 # Oracle
 
-After installing the Agent, the next step is to establish a connection between the Agent and Oracle through Tapdata Cloud. This connection is crucial as it allows you to utilize the Oracle data source for various data replication or development tasks.
+After installing the Agent, the next step is to establish a connection between the Agent and Oracle through Tapdata Cloud. This connection is crucial as it allows you to utilize the Oracle data source for various data replication or development tasks. Before establishing the connection, it is essential to complete the necessary preparations outlined in the provided article. These preparations may include authorizing an account and performing other relevant steps to ensure a smooth and secure connection.
 
-Before establishing the connection, it is essential to complete the necessary preparations outlined in the provided article. These preparations may include authorizing an account and performing other relevant steps to ensure a smooth and secure connection.
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 
 ## Supported Versions
 
@@ -12,145 +16,235 @@ Oracle 9i, 10g, 11g, 12c, 19c
 * To check the setting of the connect_time parameter, which automatically disconnects timeout sessions and may lead to real-time synchronization exceptions, you can use the following command.
 
    ```sql
-   select resource_name, limit from dba_profiles where profile=( select profile from dba_users where username = '<username>');
+   SELECT resource_name, limit FROM dba_profiles WHERE profile=( SELECT profile FROM dba_users WHERE username = 'username');
    ```
 
-* To ensure smooth database operation, it is important to allocate sufficient storage space for archive logs and prevent overcrowding.
+* To ensure smooth database operation, it is important to allocate sufficient storage space for archive logs and prevent overcrowding, you can use the `ALTER SYSTEM SET DB_RECOVERY_FILE_DEST_SIZE` to set the storage capacity.
+## Limitations
+
+* When Oracle as a source database:
+   * If the incremental event exceeds a rate of 10,000 queries per second, it could lead to a delay in data processing due to the current log parsing speed.
+   * At this time, the raw log function cannot be used on RAC-ASM deployment architectures. Additionally, it is not possible to retrieve raw logs from non-master nodes of the DG architecture.
+* When Oracle as a target database:
+   * If you assign a non-empty value of Db2 as "", it may fail to write when transferred to Oracle , as Oracle considers it to be null.
+
+
 ## As a Source Database
 
-1. Log in to the Oracle database as a user with DBA privileges.
+1. Log in to the Oracle database using the DBA role.
 
-2. Turn on database archive mode (ARCHIVELOG).
+2. Execute the following command to create a user for data synchronization/development tasks.
 
-   :::tip
-
-   You can verify if the feature is enabled by executing the `SELECT log_mode FROM v$database` command. If the result returned is `ARCHIVELOG`, it indicates that the feature is turned on, and you can skip this step.
-
-   :::
-
-   1. Execute the following command to close the database.It is advisable to perform this operation during off-peak times to minimize any impact on data reading and writing.
-
-      ```sql
-      shutdown immediate;
-      ```
-
-   2. Execute the following command to start and mount the database.
-
-      ```sql
-      startup mount;
-      ```
-
-   3. Execute the following command to open archive and database.
-
-      ```sql
-      alter database archivelog;
-      alter database open;
-
-
-3. Turn on Supplemental Logging.
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="9i" label="Oracle 9i" default>
-    <pre>ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;</pre>
-   </TabItem>
-   <TabItem value="10g11g" label="Oracle 10g、11g">
-    <pre>ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;<br />
-ALTER system switch logfile;<br />
-ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;</pre>
-   </TabItem>
-   <TabItem value="12c" label="Oracle 12c">
-    <pre>/* Execute the following command to confirm whether supplemental logging is enabled */<br />
-    SELECT supplemental_log_data_min, supplemental_log_data_pk, supplemental_log_data_all FROM v$database;
-</pre>
-<p>If the first two columns returned are Yes or Implicit, only identification key logging is enabled, and full supplemental logging is required. </p>
-   </TabItem>
-  </Tabs>
+<TabItem value="Oracle Standard Mode">
+```
+```sql
+CREATE USER username IDENTIFIED BY password;
+```
+</TabItem>
 
-4. Turn on the identification key log.
+<TabItem value="Oracle Multi-tenant Mode">
 
-   :::tip
+```sql
+-- Switch to the root container
+ALTER SESSION SET CONTAINER=cdb$root;
 
-   When using the 12c PDB, it is recommended to open the log for the container's table, and you can execute the command `ALTER SESSION SET CONTAINER=;<pdb>;` to apply the changes to the container.
+-- Create a user
+CREATE USER username IDENTIFIED BY password CONTAINER=all;
+```
+</TabItem>
+</Tabs>
 
-   :::
+- **username**: Enter user name. If you're using Oracle in multi-tenant mode, you need to add the prefix `C##` to the username.
+- **password**: Enter user's password.
 
-   * **Turn on for single table**
 
+3. Grant permissions to the account we just created, or you can customize permissions control based on business needs.
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="Read Full Data Only">
+```
+```sql
+-- Replace the username with the actual username
+GRANT CREATE SESSION, SELECT ANY TABLE TO username;
+```
+</TabItem>
+
+<TabItem value="Read Full Data and Incremental Data">
+
+```sql
+-- Replace the username with the actual username
+GRANT CREATE SESSION,
+      ALTER SESSION,
+      EXECUTE_CATALOG_ROLE,
+      SELECT ANY DICTIONARY,
+      SELECT ANY TRANSACTION,
+      SELECT ANY TABLE
+TO username;
+```
+:::tip
+When the Oracle version is 12c or above, you also need to execute the `GRANT LOGMINING TO username;` command.
+:::
+</TabItem>
+</Tabs>
+
+
+4. If you need to obtain the data changes from the database for incremental synchronization, you also need to follow the steps below.
+
+   1. Turn on database archive mode (ARCHIVELOG).
+
+      :::tip
+
+      You can verify if the feature is enabled by executing the `SELECT log_mode FROM v$database` command. If the result returned is **ARCHIVELOG**, it indicates that the feature is turned on, and you can skip this step.
+
+      :::
+
+      1. Execute the following command to close the database.It is advisable to perform this operation during off-peak times to minimize any impact on data reading and writing.
+
+         ```sql
+         SHUTDOWN IMMEDIATE;
+         ```
+
+      2. Execute the following command to start and mount the database.
+
+         ```sql
+         STARTUP MOUNT;
+         ```
+
+      3. Execute the following command to open archive and database.
+
+         ```sql
+         ALTER DATABASE archivelog;
+         ALTER DATABASE OPEN;
+         ```
+
+   2. Turn on Supplemental Logging.
       ```sql
       ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;
-      ALTER TABLE <schema name>.<table name> ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
       ```
 
-   * **Turn on for all tables**
+   3. Select the following command to turn on the identification key log for a single table or all tables.
 
       ```sql
+      -- Turn on for single table, you need to replace the Schem_Name and Table_Name with yours
+      ALTER TABLE Schema_Name.Table_Name ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
+
+      -- Turn on for all tables
       ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
       ```
 
-5. Turn on full supplemental logging.
+      :::tip
 
-   * **Turn on for single table**
+      When using Oracle in multi-tenant mode, it's recommended to first open the designated container by running the `ALTER SESSION SET CONTAINER=PDB Name;` command before executing any other commands in order to properly apply changes to the container.
 
-      ```sql
-      ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;
-      ALTER TABLE <schema name>.<table name> ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
-      ```
+      :::
 
-   * **Turn on for all tables**
+   4. Select the following command to turn on full supplemental logging for a single table or all tables.
 
       ```sql
+      -- Turn on for single table, you need to replace the Schem_Name and Table_Name with yours
+      ALTER TABLE Schema_Name.Table_Name ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
+
+      -- Turn on for all tables
       ALTER DATABASE ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
       ```
 
-6. Submit changes.
+   5. Submit changes
 
-   ```sql
-   ALTER SYSTEM SWITCH LOGFILE;
-   ```
+      ```sql
+      ALTER SYSTEM SWITCH LOGFILE;
+      ```
 
-7. Create an account for data synchronization/development tasks.
+   6. When using Oracle in multi-tenant mode, you also need to execute the following command to open the pluggable database.
 
-<Tabs className="unique-tabs">
-    <TabItem value="account10g11g" label="Oracle 10g&#12289;11g" default>
-    <pre>CREATE USER username IDENTIFIED BY password;<br />
-GRANT create session, alter session, execute_catalog_role, select any dictionary, select any transaction, select any table, create any table, create any index, unlimited tablespace to user name;</pre>
-   </TabItem>
-   <TabItem value="account12c-m" label="Oracle 12c（Multi-tenant Mode）">
-    <pre>/* Create user in Oracle 12c multi-tenant environment, must be created in cdb, and the naming convention is c##name */<br />
-    ALTER SESSION SET CONTAINER=cdb$root;<br />
-CREATE USER username IDENTIFIED BY password CONTAINER=all;<br />
-GRANT create session, alter session, set container, select any dictionary, select any transaction, logmining, execute_catalog_role, create any table, create any index, unlimited tablespace TO username CONTAINER=all;<br />
-ALTER SESSION SET CONTAINER=pdb;</pre>
-    <p>Repeat the last command to grant the SELECT permission, depending on your permission needs for the table. When you are configuring a source database connection, use this user to authenticate with JDBC. Note that the entire username (including c ##) must be used as the username for the JDBC connection. </p>
-   </TabItem>
-   <TabItem value="account12c-s" label="Oracle 12c（Standard Mode）">
-    <pre>/* Execute the following command to confirm whether supplemental logging is enabled */
-<br />
-    CREATE USER username IDENTIFIED BY password;<br />
-GRANT create session, alter session, select any dictionary, select any transaction, logmining, execute_catalog_role, create any table, create any index, unlimited tablespace TO username;
-</pre>
-
-<p>Repeat the last command to grant the SELECT permission, depending on your permission needs for the table. </p>
-   </TabItem>
-  </Tabs>
+      ```sql
+      ALTER PLUGGABLE DATABASE ALL OPEN;
+      ```
 
 
 
 ## As a Target Database
-1. Log in to the Oracle database as a user with DBA privileges.
 
-2. To facilitate data  synchronization and development tasks, create an account with schema owner privileges.
+1. Log in to the Oracle database using the DBA role.
 
-   For more information, see [CREATE USER](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_8003.htm) and [GRANT](https://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_9013.htm).
+2. Execute the following command to create a user for data synchronization/development tasks.
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="Oracle Standard Mode">
+```
+```sql
+CREATE USER username IDENTIFIED BY password;
+```
+</TabItem>
+
+<TabItem value="Oracle Multi-tenant Mode">
+
+```sql
+-- Switch to root container
+ALTER SESSION SET CONTAINER=cdb$root;
+
+-- Create a user
+CREATE USER username IDENTIFIED BY password CONTAINER=all;
+```
+</TabItem>
+</Tabs>
+
+- **username**: Enter user name. If you're using Oracle in multi-tenant mode, you need to add the prefix `C##` to the username.
+- **password**: Enter user's password.
+
+
+3. Grant permissions to the account we just created, or you can customize permissions control based on business needs.
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="Oracle Standard Mode">
+```
+```sql
+-- Replace the username with the actual username
+GRANT CREATE SESSION,
+      CREATE ANY TABLE,
+      DELETE ANY TABLE,
+      DROP ANY TABLE,
+      INSERT ANY TABLE,
+      SELECT ANY TABLE,
+      UPDATE ANY TABLE,
+      ALTER ANY INDEX,
+      CREATE ANY INDEX,
+      DROP ANY INDEX,
+      UNLIMITED TABLESPACE
+TO  username;
+```
+</TabItem>
+
+<TabItem value="Oracle Multi-tenant Mode">
+
+```sql
+-- Replace the username with the actual username
+GRANT CREATE SESSION,
+      CREATE ANY TABLE,
+      DELETE ANY TABLE,
+      DROP ANY TABLE,
+      INSERT ANY TABLE,
+      SELECT ANY TABLE,
+      UPDATE ANY TABLE,
+      ALTER ANY INDEX,
+      CREATE ANY INDEX,
+      DROP ANY INDEX,
+      UNLIMITED TABLESPACE
+TO  username CONTAINER=all;
+```
+</TabItem>
+</Tabs>
+
 
 
 
 ## Next step
 
-[Connect to Oracle](../../../user-guide/connect-database/certified/connect-oracle)
+[Connect to an Oracle Database](../../../user-guide/connect-database/certified/connect-oracle)
 
 
 
