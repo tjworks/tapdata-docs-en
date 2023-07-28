@@ -15,6 +15,18 @@ Kafka 2.3.x
 
 
 
+## Description of the Consumption of Kafka
+
+In the subsequent configuration of data replication/data development tasks, you can choose the synchronization method for the data, and the corresponding consumption instructions are as follows:
+
+* **Only Full Data Synchronization**: You can choose to subscribe from the earliest offset of each partition in the Topic. If there is a previous message consumption record, you have the option to revert to the previous offset and resume message consumption from that point.
+
+* **Only Incremental Data Synchronization**: You can subscribe to the topic from the latest offset of each partition. In the event of a previous message consumption record, you have the option to restore to the previous offset and commence message consumption from that point.
+
+* **Full + Incremental Data Synchronization**: The subscription process will skip the full sync phase and begin directly from the incremental phase. If a full synchronization is not performed, the subscription will start from the earliest offset of each partition in the Topic. 
+
+  However, if a full synchronization has occurred, the subscription will start from the latest offset of each partition in the Topic. In the presence of a previous message consumption record, it will be restored to the previous offset for resuming message consumption.
+
 ## Preparations
 
 1. Log in to Kafka's server.
