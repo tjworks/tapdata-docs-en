@@ -66,49 +66,51 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: 'Preparations',
+     label: 'Connect Data Sources',
      link: {type: 'doc', id: 'cloud/prerequisites/README'},
      items: [
              'cloud/prerequisites/allow-access-network',
-            {
-             type: 'category',
-             label: 'Configure Database and Grant Access',
-             link: {type: 'doc', id: 'cloud/prerequisites/config-database/README'},
-             items: [
-                    {
-                       type: 'category',
-                       label: 'GA Data Sources',
-                       link: {type: 'doc', id: 'cloud/prerequisites/config-database/certified/README'},
-                       items: [
-                              'cloud/prerequisites/config-database/certified/clickhouse',
-                              'cloud/prerequisites/config-database/certified/kafka',
-                              'cloud/prerequisites/config-database/certified/mysql',
-                              'cloud/prerequisites/config-database/certified/mongodb',
-                              'cloud/prerequisites/config-database/certified/oracle',
-                              'cloud/prerequisites/config-database/certified/postgresql',
-                              'cloud/prerequisites/config-database/certified/sqlserver',
-                       ]
-                      },
-                      {
-                       type: 'category',
-                       label: 'Beta Data Sources',
-                       link: {type: 'doc', id: 'cloud/prerequisites/config-database/beta/README'},
-                       items: [
-                              'cloud/prerequisites/config-database/beta/csv-and-excel',
-                              'cloud/prerequisites/config-database/beta/mongodb-atlas',
-                       ]
-                      },
-                      {
-                       type: 'category',
-                       label: 'Alpha Data Sources',
-                       link: {type: 'doc', id: 'cloud/prerequisites/config-database/alpha/README'},
-                       items: [
-                              'cloud/prerequisites/config-database/alpha/json-and-xml',
-                              'cloud/prerequisites/config-database/alpha/zoho-crm',
-                       ]
-                      },                                            
-             ]
-            },
+             {
+              type: 'category',
+              label: 'GA Data Sources',
+              link: {type: 'doc', id: 'cloud/prerequisites/certified/README'},
+              items: [
+                     'cloud/prerequisites/certified/clickhouse',
+                     'cloud/prerequisites/certified/kafka',
+                     'cloud/prerequisites/certified/mysql',
+                     'cloud/prerequisites/certified/mongodb',
+                     'cloud/prerequisites/certified/oracle',
+                     'cloud/prerequisites/certified/postgresql',
+                     'cloud/prerequisites/certified/sqlserver',
+                     ]
+                     },
+                     {
+                     type: 'category',
+                     label: 'Beta Data Sources',
+                     link: {type: 'doc', id: 'cloud/prerequisites/beta/README'},
+                     items: [
+                            'cloud/prerequisites/beta/bigquery',
+                            'cloud/prerequisites/beta/csv',
+                            'cloud/prerequisites/beta/excel',
+                            'cloud/prerequisites/beta/dummy',
+                            'cloud/prerequisites/beta/github',
+                            'cloud/prerequisites/beta/mongodb-atlas',
+                            'cloud/prerequisites/beta/redis',
+                            'cloud/prerequisites/beta/salesforce',
+                            'cloud/prerequisites/beta/selectdb',
+                     ]
+                     },
+                     {
+                     type: 'category',
+                     label: 'Alpha Data Sources',
+                     link: {type: 'doc', id: 'cloud/prerequisites/alpha/README'},
+                     items: [
+                            'cloud/prerequisites/alpha/json',
+                            'cloud/prerequisites/alpha/tablestore',
+                            'cloud/prerequisites/alpha/xml',
+                            'cloud/prerequisites/alpha/zoho-crm',
+                     ]
+                     },
      ]
     },
     {
@@ -118,54 +120,6 @@ const sidebars = {
      items: [
              'cloud/user-guide/workshop',
              'cloud/user-guide/manage-agent',
-             {
-              type: 'category',
-              label: 'Connect Data Sources',
-              link: {type: 'doc', id: 'cloud/user-guide/connect-database/README'},
-              items:[
-                    {
-                     type: 'category',
-                     label: 'GA Data Sources',
-                     link: {type: 'doc', id: 'cloud/user-guide/connect-database/certified/README'},
-                     items:[
-                            'cloud/user-guide/connect-database/certified/connect-clickhouse',
-                            'cloud/user-guide/connect-database/certified/connect-kafka',
-                            'cloud/user-guide/connect-database/certified/connect-mysql',
-                            'cloud/user-guide/connect-database/certified/connect-mongodb',
-                            'cloud/user-guide/connect-database/certified/connect-oracle',
-                            'cloud/user-guide/connect-database/certified/connect-postgresql',
-                            'cloud/user-guide/connect-database/certified/connect-sqlserver',
-                           ]
-                    }, 
-                    {
-                     type: 'category',
-                     label: 'Beta Data Sources',
-                     link: {type: 'doc', id: 'cloud/user-guide/connect-database/beta/README'},
-                     items:[
-                            'cloud/user-guide/connect-database/beta/connect-bigquery',
-                            'cloud/user-guide/connect-database/beta/connect-csv',
-                            'cloud/user-guide/connect-database/beta/connect-dummy',
-                            'cloud/user-guide/connect-database/beta/connect-excel',
-                            'cloud/user-guide/connect-database/beta/connect-github',
-                            'cloud/user-guide/connect-database/beta/connect-mongodb-atlas',
-                            'cloud/user-guide/connect-database/beta/connect-redis',
-                            'cloud/user-guide/connect-database/beta/connect-salesforce',
-                            'cloud/user-guide/connect-database/beta/connect-selectdb',
-                           ]
-                    },
-                    {
-                     type: 'category',
-                     label: 'Alpha Data Sources',
-                     link: {type: 'doc', id: 'cloud/user-guide/connect-database/alpha/README'},
-                     items:[
-                            'cloud/user-guide/connect-database/alpha/connect-tablestore',
-                            'cloud/user-guide/connect-database/alpha/connect-json',
-                            'cloud/user-guide/connect-database/alpha/connect-xml',
-                            'cloud/user-guide/connect-database/alpha/connect-zoho',
-                           ]
-                    }, 
-              ]
-             },
              'cloud/user-guide/manage-connection',
              {
               type: 'category',

@@ -24,7 +24,7 @@ Before connecting to the data sources, you also need to ensure that the network 
 
    :::tip
 
-   The operation process will be demonstrated using MySQL as an example. For more examples, see [Connect Data Sources](../user-guide/connect-database/README.md).
+   The operation process will be demonstrated using MySQL as an example. For more examples, see [Connect Data Sources](../prerequisites/README.md).
 
    :::
 

@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
    <p></p>
    </TabItem>
    <TabItem value="1" label="② Add Data Sources">
-    <p>Clicking the <img src='/img/add_icon.png'></img> icon, in the pop-up dialog, we can add a data source, select a data source will jump to the connection configuration page. For more information, see <a href="../../connect-database/">Connect Data Sources</a>. </p>
+    <p>Clicking the <img src='/img/add_icon.png'></img> icon, in the pop-up dialog, we can add a data source, select a data source will jump to the connection configuration page. For more information, see <a href="../../../prerequisites">Connect Data Sources</a>. </p>
    </TabItem>
    <TabItem value="2" label="③ Search Tables">
 
