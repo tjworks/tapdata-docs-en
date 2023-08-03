@@ -27,7 +27,7 @@ This article provides instructions on how to add Tablestore data sources to Tapd
 
    3. Click **OK**, and then click **Complete**.
 
-## Procedure
+## Connect to Tablestore
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
