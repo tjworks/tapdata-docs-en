@@ -12,12 +12,12 @@ With the increase in the tasks carried by the source database, in order to minim
 
 ![Data Service Platform Architecture](../../../images/ldp_architecture.png)
 
-| Hierarchy | Description |
-| -------------------- | ------------------------------------------------------------ |
-| **Source Data Layer** | Tapdata Cloud consolidates data sources from various business systems into a centralized data source layer, which serves as the initial step in bridging data silos. This abstraction of data sources enables a unified and streamlined approach to accessing and utilizing data. For more detailed instructions, please refer to the [Connect Data Sources](../../connect-database/README.md) section for comprehensive information on establishing connections with your data sources. |
-| **Data Cache Layer** | By synchronizing the table from the source database to the Data Cache Layer beforehand, the data can be readily accessed by the business through the Foundation Data Layer, thus eliminating the need to directly read or manipulate the data in the source database, such as performing union operations, during data processing. This approach significantly minimizes the impact on the business operations of the source database. |
-| **Data Processing Layer** | If there is a need for extensive customization of data processing or operations, such as generating a wide table, it is possible to extract the data table from the Data Cache Layer and perform the required operations within the Data Processing Layer. This allows for the generation of model data that can be used in the final business processes. |
-| **Data Targets and Service Layer** | Tapdata Cloud provides a centralized platform that aggregates and presents various data sources, allowing them to be utilized as targets for data processing. This enables the provision of processed data to the business, facilitating the creation of a unified data service platform for enterprises. |
+| Hierarchy | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| -------------------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Source Data Layer** | Tapdata Cloud consolidates data sources from various business systems into a centralized data source layer, which serves as the initial step in bridging data silos. This abstraction of data sources enables a unified and streamlined approach to accessing and utilizing data. For more detailed instructions, please refer to the [Connect Data Sources](../../../prerequisites/README.md) section for comprehensive information on establishing connections with your data sources. |
+| **Data Cache Layer** | By synchronizing the table from the source database to the Data Cache Layer beforehand, the data can be readily accessed by the business through the Foundation Data Layer, thus eliminating the need to directly read or manipulate the data in the source database, such as performing union operations, during data processing. This approach significantly minimizes the impact on the business operations of the source database.                                                   |
+| **Data Processing Layer** | If there is a need for extensive customization of data processing or operations, such as generating a wide table, it is possible to extract the data table from the Data Cache Layer and perform the required operations within the Data Processing Layer. This allows for the generation of model data that can be used in the final business processes.                                                                                                                                |
+| **Data Targets and Service Layer** | Tapdata Cloud provides a centralized platform that aggregates and presents various data sources, allowing them to be utilized as targets for data processing. This enables the provision of processed data to the business, facilitating the creation of a unified data service platform for enterprises.                                                                                                                                                                                |
 
 
 
@@ -33,7 +33,7 @@ In the Data Service Platform Mode, we need to prepare a self-hosted MongoDB data
 
    :::
 
-2. [Connect to MongoDB Database](../../connect-database/certified/connect-mongodb.md)
+2. [Connect to MongoDB Database](../../../prerequisites/README.md)
 
 ## Procedure
 
