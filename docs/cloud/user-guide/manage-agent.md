@@ -8,7 +8,7 @@ Tapdata Cloud provides visual management and maintenance capabilities for Agents
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. Click **Agent** in the left navigation panel, and then choose which operation to perform.
+2. Click **Resource Management** in the left navigation panel, and then choose which operation to perform.
 
    ![](../images/agent_list.png)
 
@@ -21,7 +21,16 @@ import TabItem from '@theme/TabItem';
     <TabItem value="create-agent" label="① Create Agent" default>
     <p>Agent support multi-platform installation, see <a href="../quick-start/install-agent">Install Agent</a>.</p>
    </TabItem>
-   <TabItem value="upgrade-agent" label="② Upgrade Agent">
+   <TabItem value="stop-agent" label="② Stop Agent">
+   <p>Click <b>Stop</b> to pause the Agent, which can be used for temporary maintenance scenarios, to restart the Agent later, you should run it from the command line.</p>
+   </TabItem>
+   <TabItem value="restart-agent" label="③ Restart Agent">
+   <p>Click <b>Restart</b> to restart the Agent.</p>
+   </TabItem>
+   <TabItem value="delete-agent" label="④ Unsubscribe Agent">
+   <p>If the Agent is no longer needed, it can be unsubscribed after stopping it. Please note that once deleted, the Agent cannot be recovered.</p>
+   </TabItem>
+   <TabItem value="upgrade-agent" label="⑤ Upgrade Agent">
    <p>When a new version becomes available, an upgrade icon will appear on the right side of the version information. To initiate the upgrade process, follow these steps:</p>
    <p></p>
    <ul>
@@ -37,12 +46,6 @@ import TabItem from '@theme/TabItem';
    <li>Execute the upgrade command on the device where the Agent is installed.</li></ol></li>
   </ul> 
   <p>By following these instructions, you can easily upgrade to the latest version of the Agent software. If you encounter any issues during the upgrade process, please refer to the documentation or contact our support team for assistance.</p>
-   </TabItem>
-   <TabItem value="stop-agent" label="③ Stop Agent">
-   <p>Click <b>Stop</b> to pause the Agent, which can be used for temporary maintenance scenarios, to restart the Agent later, you should run it from the command line.</p>
-   </TabItem>
-   <TabItem value="delete-agent" label="④ Delete Agent">
-   <p>If the Agent is no longer needed, it can be deleted after stopping it. Please note that once deleted, the Agent cannot be recovered.</p>
    </TabItem>
   </Tabs>
 
