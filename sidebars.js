@@ -64,7 +64,7 @@ const sidebars = {
             'cloud/quick-start/create-task',
      ]
     },
-    {
+{
      type: 'category',
      label: 'Connect Data Sources',
      link: {type: 'doc', id: 'cloud/prerequisites/README'},
@@ -72,45 +72,137 @@ const sidebars = {
              'cloud/prerequisites/allow-access-network',
              {
               type: 'category',
-              label: 'GA Data Sources',
+              label: 'Certified Databases',
               link: {type: 'doc', id: 'cloud/prerequisites/certified/README'},
               items: [
-                     'cloud/prerequisites/certified/clickhouse',
-                     'cloud/prerequisites/certified/kafka',
-                     'cloud/prerequisites/certified/mysql',
-                     'cloud/prerequisites/certified/mongodb',
-                     'cloud/prerequisites/certified/oracle',
-                     'cloud/prerequisites/certified/postgresql',
-                     'cloud/prerequisites/certified/sqlserver',
-                     ]
-                     },
-                     {
-                     type: 'category',
-                     label: 'Beta Data Sources',
-                     link: {type: 'doc', id: 'cloud/prerequisites/beta/README'},
-                     items: [
-                            'cloud/prerequisites/beta/bigquery',
-                            'cloud/prerequisites/beta/csv',
-                            'cloud/prerequisites/beta/excel',
-                            'cloud/prerequisites/beta/dummy',
-                            'cloud/prerequisites/beta/github',
-                            'cloud/prerequisites/beta/mongodb-atlas',
-                            'cloud/prerequisites/beta/redis',
-                            'cloud/prerequisites/beta/salesforce',
-                            'cloud/prerequisites/beta/selectdb',
-                     ]
-                     },
-                     {
-                     type: 'category',
-                     label: 'Alpha Data Sources',
-                     link: {type: 'doc', id: 'cloud/prerequisites/alpha/README'},
-                     items: [
-                            'cloud/prerequisites/alpha/json',
-                            'cloud/prerequisites/alpha/tablestore',
-                            'cloud/prerequisites/alpha/xml',
-                            'cloud/prerequisites/alpha/zoho-crm',
-                     ]
-                     },
+                      'cloud/prerequisites/certified/clickhouse',
+                      'cloud/prerequisites/certified/kafka',
+                      'cloud/prerequisites/certified/mysql',
+                      'cloud/prerequisites/certified/mongodb',
+                      'cloud/prerequisites/certified/oracle',
+                      'cloud/prerequisites/certified/postgresql',
+                      'cloud/prerequisites/certified/sqlserver',
+                      ]
+              },
+              {
+               type: 'category',
+               label: 'Beta Data Source',
+               link: {type: 'doc', id: 'cloud/prerequisites/beta/README'},
+               items: [
+                       {
+                        type: 'category',
+                        label: 'Databases',
+                        link: {type: 'doc', id: 'cloud/prerequisites/beta/database/README'},
+                         items: [
+                                'cloud/prerequisites/beta/database/big-query',
+                                'cloud/prerequisites/beta/database/custom-connection',
+                                'cloud/prerequisites/beta/database/dameng',
+                                'cloud/prerequisites/beta/database/databend',
+                                'cloud/prerequisites/beta/database/db2',
+                                'cloud/prerequisites/beta/database/doris',
+                                'cloud/prerequisites/beta/database/dummy',
+                                'cloud/prerequisites/beta/database/kingbase-es-r6',
+                                'cloud/prerequisites/beta/database/mariadb',
+                                'cloud/prerequisites/beta/database/redis',
+                                'cloud/prerequisites/beta/database/selectdb',
+                                'cloud/prerequisites/beta/database/tdengine',
+                                'cloud/prerequisites/beta/database/tidb',
+                                'cloud/prerequisites/beta/database/yashandb',
+                                ]
+                        },
+                        {
+                        type: 'category',
+                        label: 'SaaS',
+                        link: {type: 'doc', id: 'cloud/prerequisites/beta/saas/README'},
+                         items: [
+                                'cloud/prerequisites/beta/saas/coding',
+                                'cloud/prerequisites/beta/saas/github',
+                                'cloud/prerequisites/beta/saas/http-receiver',
+                                'cloud/prerequisites/beta/saas/hubspot',
+                                'cloud/prerequisites/beta/saas/lark-im',
+                                'cloud/prerequisites/beta/saas/lark-task',
+                                'cloud/prerequisites/beta/saas/metabase',
+                                'cloud/prerequisites/beta/saas/salesforce',
+                                'cloud/prerequisites/beta/saas/zoho-desk',
+                                ]
+                        },
+                        {
+                        type: 'category',
+                        label: 'Files',
+                        link: {type: 'doc', id: 'cloud/prerequisites/beta/file/README'},
+                         items: [
+                                'cloud/prerequisites/beta/file/csv',
+                                'cloud/prerequisites/beta/file/excel',
+                                ]
+                        }
+                       ]
+               },
+               {
+               type: 'category',
+               label: 'Alpha Data Source',
+               link: {type: 'doc', id: 'cloud/prerequisites/alpha/README'},
+               items: [
+                       {
+                        type: 'category',
+                        label: 'Databases',
+                        link: {type: 'doc', id: 'cloud/prerequisites/alpha/database/README'},
+                         items: [
+                                'cloud/prerequisites/alpha/database/activemq',
+                                'cloud/prerequisites/alpha/database/aliyun-adb-mysql',
+                                'cloud/prerequisites/alpha/database/aliyun-mongodb',
+                                'cloud/prerequisites/alpha/database/aliyun-rds-for-mariadb',
+                                'cloud/prerequisites/alpha/database/aliyun-rds-for-mongodb',
+                                'cloud/prerequisites/alpha/database/aliyun-rds-for-mysql',
+                                'cloud/prerequisites/alpha/database/aliyun-rds-for-pg',
+                                'cloud/prerequisites/alpha/database/amazon-rds-mysql',
+                                'cloud/prerequisites/alpha/database/elasticsearch',
+                                'cloud/prerequisites/alpha/database/gbase-8a',
+                                'cloud/prerequisites/alpha/database/gbase-8s',
+                                'cloud/prerequisites/alpha/database/hazelcast-cloud',
+                                'cloud/prerequisites/alpha/database/hive1',
+                                'cloud/prerequisites/alpha/database/hive3',
+                                'cloud/prerequisites/alpha/database/kingbase-es-r3',
+                                'cloud/prerequisites/alpha/database/mrs-hive3',
+                                'cloud/prerequisites/alpha/database/mysql-pxc',
+                                'cloud/prerequisites/alpha/database/oceanbase',
+                                'cloud/prerequisites/alpha/database/opengauss',
+                                'cloud/prerequisites/alpha/database/polardb-mysql',
+                                'cloud/prerequisites/alpha/database/polardb-postgresql',
+                                'cloud/prerequisites/alpha/database/rabbitmq',
+                                'cloud/prerequisites/alpha/database/rocketmq',
+                                'cloud/prerequisites/alpha/database/tablestore',
+                                'cloud/prerequisites/alpha/database/tencentdb-for-mariadb',
+                                'cloud/prerequisites/alpha/database/tencentdb-for-mongodb',
+                                'cloud/prerequisites/alpha/database/tencentdb-for-mysql',
+                                'cloud/prerequisites/alpha/database/tencentdb-for-pg',
+                                ]
+                       },
+                       {
+                        type: 'category',
+                        label: 'SaaS',
+                        link: {type: 'doc', id: 'cloud/prerequisites/alpha/saas/README'},
+                         items: [
+                                'cloud/prerequisites/alpha/saas/ai-chat',
+                                'cloud/prerequisites/alpha/saas/bes-channels',
+                                'cloud/prerequisites/alpha/saas/lark-approval',
+                                'cloud/prerequisites/alpha/saas/lark-doc',
+                                'cloud/prerequisites/alpha/saas/quick-api',
+                                'cloud/prerequisites/alpha/saas/shein',
+                                'cloud/prerequisites/alpha/saas/vika',
+                                'cloud/prerequisites/alpha/saas/zoho-crm',
+                                ]
+                       },
+                       {
+                        type: 'category',
+                        label: 'Files',
+                        link: {type: 'doc', id: 'cloud/prerequisites/alpha/file/README'},
+                         items: [
+                                'cloud/prerequisites/alpha/file/json',
+                                'cloud/prerequisites/alpha/file/xml',
+                                ]
+                       },
+                       ]
+               },
      ]
     },
     {

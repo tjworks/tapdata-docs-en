@@ -9,7 +9,7 @@ To illustrate this synchronization process, let's consider MySQL as the source d
 Before you create a replication task, make sure you have configured the relevant data source:
 
 1. [Configure MySQL Connection](../prerequisites/certified/mysql.md)
-2. [Configure BigQuery Connection](../prerequisites/beta/bigquery.md)
+2. [Configure BigQuery Connection](../prerequisites/beta/database/big-query.md)
 
 Also note the reference [data type support](../user-guide/no-supported-data-type.md).
 

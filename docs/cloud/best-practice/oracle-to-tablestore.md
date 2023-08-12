@@ -7,7 +7,7 @@
 Before you create a replication task, make sure you have configured the relevant data source:
 
 1. [Configure Oracle Connection](../prerequisites/certified/oracle.md)
-2. [Configure Tablestore Connection](../prerequisites/alpha/tablestore.md)
+2. [Configure Tablestore Connection](../prerequisites/alpha/database/tablestore.md)
 
 Also note the reference [data type support](../user-guide/no-supported-data-type.md).
 
