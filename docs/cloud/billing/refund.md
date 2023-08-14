@@ -6,9 +6,9 @@ If you no longer need to use the Agent instance, you can follow the process to u
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. In the left navigation panel, click **Agent Management**.
+2. In the left navigation panel, click **Resource Management**.
 
-3. Ensure that the Agent is not associated with a running task.
+3. In the **Agent Resource** tab, ensure that the Agent is not associated with a running task.
 
    1. Locate the target Agent to see if any running task is associated, skip this step if the there is not running task associated.
 

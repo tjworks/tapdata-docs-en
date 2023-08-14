@@ -6,7 +6,7 @@ After registering with Tapdata Cloud, you will receive the benefit of creating o
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. In the left navigation panel, click **Agent Management**.
+2. In the left navigation panel, click **Resource Management**.
 
    After successfully creating a free Agent instance, if you find that your business requires additional Agent instances to meet performance needs, you can proceed with subscribing to more instances. This will allow you to scale up the capabilities of Tapdata Cloud to accommodate your business requirements effectively.
 
