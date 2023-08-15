@@ -19,7 +19,7 @@ Redis 2.8 ~ 6.0
 
 5. Fill in the connection information for Redis on the redirected page, following the instructions provided below.
 
-   ![Connect to Redis](../../../images/connect_redis.png)
+   ![Connect to Redis](../../images/connect_redis.png)
 
    * **Connection name**: Fill in a unique name that has business significance.
    * **Connection type**: Currently only supported as a** Target**.

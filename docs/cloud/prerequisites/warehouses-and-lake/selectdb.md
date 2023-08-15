@@ -38,7 +38,7 @@ GRANT PROCESS ON *.* TO 'tapdata' IDENTIFIED BY 'password';
 
 6. On the page that you are redirected to, follow the instructions below to fill in the connection information for SelectDB.
 
-   ![Connect to SelectDB](../../../images/connect_selectdb.png)
+   ![Connect to SelectDB](../../images/connect_selectdb.png)
 
     - **Connection name**: Fill in a unique name that has business significance.
     - **Connection type**: Currently only supported as a **Target**.

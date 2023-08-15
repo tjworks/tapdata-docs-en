@@ -10,7 +10,7 @@ This article provides instructions on how to add Tablestore data sources to Tapd
 
 1. After [creating an Alibaba Cloud Tablestore instance](https://help.aliyun.com/document_detail/342853.html), you can retrieve the public network connection address and instance name of the instance.
 
-   ![Get Tablestore Connection Address and Name](../../../images/obtain_tablestore_info_en.png)
+   ![Get Tablestore Connection Address and Name](../../images/obtain_tablestore_info_en.png)
 
 2. Create a RAM user on the Alibaba Cloud and get AccessKey (AK), which will be used when connecting.
 
@@ -23,7 +23,7 @@ This article provides instructions on how to add Tablestore data sources to Tapd
 
    2. Enter **AliyunOTSFullAccess** in the text box of the dialog, and then click on the search result to select the permissions policy name.
 
-      ![Grant RAM User Permissions](../../../images/add_ram_permission_en.png)
+      ![Grant RAM User Permissions](../../images/add_ram_permission_en.png)
 
    3. Click **OK**, and then click **Complete**.
 
@@ -39,7 +39,7 @@ This article provides instructions on how to add Tablestore data sources to Tapd
 
 5. Fill in the connection information for Tablestore on the redirected page, following the instructions provided below.
 
-   ![Fill in Tablestore Connection Information](../../../images/create_tablestore_connection_en.png)
+   ![Fill in Tablestore Connection Information](../../images/create_tablestore_connection_en.png)
 
    * **Connection name**: Fill in a unique name that has business significance.
    * **Connection type**: Currently only supported as a**Target**.
@@ -61,4 +61,4 @@ This article provides instructions on how to add Tablestore data sources to Tapd
 
 ## Related Topics
 
-[Oracle to Tablestore Real-Time Sync](../../../best-practice/oracle-to-tablestore.md)
+[Oracle to Tablestore Real-Time Sync](../../best-practice/oracle-to-tablestore.md)

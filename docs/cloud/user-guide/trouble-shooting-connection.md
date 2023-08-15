@@ -20,7 +20,7 @@ To ensure the effectiveness of the data source connection, you can perform a con
 
 - **Check if binlog is enabled and set to ROW format** (for MySQL)
 
-   Tapdata Cloud verifies whether the database's binlog is enabled and set to the ROW format. If these requirements are not met, the connection test will fail. To gather more information about binlog settings, it is recommended to refer to the [MySQL preparations documentation](../prerequisites/certified/mysql.md). In such cases, it is necessary to review and verify the configuration of the database's binlog to ensure it is properly enabled and set to the ROW format as per the requirements.
+   Tapdata Cloud verifies whether the database's binlog is enabled and set to the ROW format. If these requirements are not met, the connection test will fail. To gather more information about binlog settings, it is recommended to refer to the [MySQL preparations documentation](../prerequisites/on-prem-databases/mysql.md). In such cases, it is necessary to review and verify the configuration of the database's binlog to ensure it is properly enabled and set to the ROW format as per the requirements.
 
 - **Check if permissions required for CDC are authorized**
 
@@ -28,15 +28,15 @@ To ensure the effectiveness of the data source connection, you can perform a con
 
 - **Check if archive logging is enabled** (for Oracle)
 
-   Tapdata Cloud checks if the archive log is enabled. If it is not enabled, the test fails. For more information about how to enable it, see [Oracle preparation](../prerequisites/certified/oracle.md).
+   Tapdata Cloud checks if the archive log is enabled. If it is not enabled, the test fails. For more information about how to enable it, see [Oracle preparation](../prerequisites/on-prem-databases/oracle.md).
 
 - **Check if supplemental log mode is correct** (for Oracle)
 
-   Tapdata Cloud checks if the supplemental log mode is correct. If it is incorrect, the test fails. For more information about how to set it up, see [Oracle preparation](../prerequisites/certified/oracle.md).
+   Tapdata Cloud checks if the supplemental log mode is correct. If it is incorrect, the test fails. For more information about how to set it up, see [Oracle preparation](../prerequisites/on-prem-databases/oracle.md).
 
 - **Check if permissions required for DDL are authorized** (for Oracle)
 
-   Tapdata Cloud checks if the database account has DDL execution permissions. If the permission is not met, the test fails. For an example of authorization, see [Oracle preparation](../prerequisites/certified/oracle.md).
+   Tapdata Cloud checks if the database account has DDL execution permissions. If the permission is not met, the test fails. For an example of authorization, see [Oracle preparation](../prerequisites/on-prem-databases/oracle.md).
 
 
 

@@ -14,7 +14,7 @@ Salesforce is a massive infrastructure of customer relationship management softw
 
 5. Fill in the connection information for Salesforce on the redirected page, following the instructions provided below.
 
-   ![Salesforce Connection Example](../../../images/salesforce_connection_setting.png)
+   ![Salesforce Connection Example](../../images/salesforce_connection_setting.png)
 
    * **Connection name**: Fill in a unique name that has business significance.
    * **Connection type**: Salesforce is only supported as a Source.

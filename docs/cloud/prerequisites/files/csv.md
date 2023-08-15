@@ -28,20 +28,20 @@ Select the option to read based on the location of the CSV file.
 
 ### Stored on Local/FTP/SFTP/SMB
 
-import Content1 from '../../../../reuse-content/_files_on_local.md';
+import Content1 from '../../../reuse-content/_files_on_local.md';
 
 <Content1 />
 
 
 ### Stored on Amazon S3
 
-import Content2 from '../../../../reuse-content/_files_on_s3.md';
+import Content2 from '../../../reuse-content/_files_on_s3.md';
 
 <Content2 />
 
 ### Stored on OSS
 
-import Content3 from '../../../../reuse-content/_files_on_oss.md';
+import Content3 from '../../../reuse-content/_files_on_oss.md';
 
 <Content3 />
 
@@ -59,7 +59,7 @@ import Content3 from '../../../../reuse-content/_files_on_oss.md';
 
 5. On the page that you are redirected to, follow the instructions below to fill in the connection information for the CSV data source.
 
-   ![Connect to CSV](../../../images/connect_csv.png)
+   ![Connect to CSV](../../images/connect_csv.png)
 
    :::tip
 

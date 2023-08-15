@@ -12,11 +12,11 @@ Zoho CRM is a SaaS cloud CRM customer management system. Tapdata Cloud supports 
 
 4. After the creation is complete, you will get the **Client ID** and **Client Secret**, which will be used when connecting the data source.
 
-   ![](../../../images/obtain_zoho_secret.png)
+   ![](../../images/obtain_zoho_secret.png)
 
 5. Click the **Generate Code** tab, fill in the **Scope** and description information you want to authorize, and then click **Create**.
 
-   ![](../../../images/zoho_generate_code.png)
+   ![](../../images/zoho_generate_code.png)
 
    :::tip
 
@@ -28,7 +28,7 @@ Zoho CRM is a SaaS cloud CRM customer management system. Tapdata Cloud supports 
 
 7. In the pop-up dialog, copy or download the Code information (ie, token information), save the information properly, and then use it when connecting the data source.
 
-   ![](../../../images/obtain_zoho_code.png)
+   ![](../../images/obtain_zoho_code.png)
 
    :::tip
 
@@ -53,7 +53,7 @@ Zoho CRM is a SaaS cloud CRM customer management system. Tapdata Cloud supports 
 
 5. Fill in the connection information for Zoho-CRM on the redirected page, following the instructions provided below.
 
-   ![](../../../images/zoho_connection_setting.png)
+   ![](../../images/zoho_connection_setting.png)
    * **Connection name**: Fill in a unique name that has business significance.
    * **Connection type**: Currently only supported as a **Source**.
    * **Client ID**,**Client secret**, and **Grant token**: Fill in the required authentication information, and see the [preparations](#preparations) for more detailed.

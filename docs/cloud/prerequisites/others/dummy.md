@@ -8,7 +8,7 @@ Dummy is a data source that generates test data. This article describes how to a
 2. In the left navigation panel, click **Connections**.
 3. On the right side of the page, click **Create**.
 4. In the pop-up dialog, select **Dummy**.
-5. Fill in the connection information for Dummy on the redirected page, following the instructions provided below.![](../../../images/connect_dummy.png)
+5. Fill in the connection information for Dummy on the redirected page, following the instructions provided below.![](../../images/connect_dummy.png)
       * **Connection Information Settings**
         * **Connection name**: Fill in a unique name that has business significance.
         * **Connection type**: Supports Dummy as a source or target database.

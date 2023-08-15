@@ -29,7 +29,7 @@ Before establishing the connection, it is essential to complete the necessary pr
 
    3. In the pop-up dialog, fill in the public address of the Tapdata Agent (CIDR format) and click **Confirm**.
 
-      ![Set Network Whitelist](../../../images/atlas_add_ip_address.png)
+      ![Set Network Whitelist](../../images/atlas_add_ip_address.png)
 
 3. Create an account and grant permissions for database connectivity.
 
@@ -39,7 +39,7 @@ Before establishing the connection, it is essential to complete the necessary pr
 
    3. In the pop-up dialog, select the authentication method and grant permissions.
 
-      ![Create an account and authorize](../../../images/atlas_create_user.png)
+      ![Create an account and authorize](../../images/atlas_create_user.png)
 
       In this case, we will use password authentication as an example to demonstrate the operation process. The permission selection instructions are as follows.
 
@@ -57,7 +57,7 @@ Before establishing the connection, it is essential to complete the necessary pr
 
    3. In the pop-up dialog, select **Connect to your application** to get connection information, which will be used when connecting to the database.
 
-      ![Get Connection Information](../../../images/atlas_obtain_connection.png)
+      ![Get Connection Information](../../images/atlas_obtain_connection.png)
 
 ## Connect to MongoDB Atlas
 
@@ -71,7 +71,7 @@ Before establishing the connection, it is essential to complete the necessary pr
 
 5. Fill in the connection information for MongoDB Atlas on the redirected page, following the instructions provided below.
 
-   ![MongoDB Connection Example](../../../images/mongodb_atlas_connection_setting.png)
+   ![MongoDB Connection Example](../../images/mongodb_atlas_connection_setting.png)
 
    * Connection Information Settings
 

@@ -2,7 +2,7 @@
 
 This article describes how to connect to Db2 on Tapdata Cloud.
 
-## Limits
+## Limitations
 
 - Mainly applicable to LUW version
 - Data incremental reading is highly dependent on the raw log parsing module

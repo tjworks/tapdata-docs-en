@@ -6,7 +6,7 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
 ## Precautions
 
-[Agent](../../../quick-start/install-agent/README.md)'s machine can access to Google Cloud Services.
+[Agent](../../quick-start/install-agent/README.md)'s machine can access to Google Cloud Services.
 
 
 
@@ -54,11 +54,11 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
    2. In the Service account details section, provide the name, ID, and description for the service account, and then click **CREATE AND CONTINUE**.
 
-      ![Create access account](../../../images/create_server_account_en.png)
+      ![Create access account](../../images/create_server_account_en.png)
 
    3. In the **Role** drop-down box, select the role we just created (**bigquery-role**), and click **DONE** at the bottom of the page.
 
-      ![Grant access](../../../images/grant_bigquery_role_en.png)
+      ![Grant access](../../images/grant_bigquery_role_en.png)
 
 4. Create an authentication key for the service account.
 
@@ -66,7 +66,7 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
    2. On the **KEYS** table, click **ADD KEY** > **Create new key**.
 
-      ![Create Key](../../../images/create_account_key_en.png)
+      ![Create Key](../../images/create_account_key_en.png)
 
    3. In the pop-up dialog, select the **key type** as **JSON**, and click **CREATE**.
 
@@ -98,7 +98,7 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
 5. Fill in the connection information for BigQuery on the redirected page, following the instructions provided below.
 
-   ![Configure BigQuery Connection Information](../../../images/connect_bigquery_en.png)
+   ![Configure BigQuery Connection Information](../../images/connect_bigquery_en.png)
 
    * **Connection name**: Fill in a unique name that has business significance.
    * **Connection type**: Currently only supported as a **Target**.
@@ -117,4 +117,4 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
 ## Related Topics
 
-[MySQL to BigQuery Real-Time Sync](../../../best-practice/mysql-to-bigquery)
+[MySQL to BigQuery Real-Time Sync](../../best-practice/mysql-to-bigquery)

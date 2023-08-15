@@ -18,7 +18,7 @@ This article describes how to add GitHub data source to Tapdata Cloud.
 
 5. Fill in the connection information for GitHub on the redirected page, following the instructions provided below.
 
-   ![GitHub Connection Settings](../../../images/github_connection_setting.png)
+   ![GitHub Connection Settings](../../images/github_connection_setting.png)
 
    * **Connection name**: Fill in a unique name that has business significance.
    * **Connection type**: Currently only supported as a **Source**.
