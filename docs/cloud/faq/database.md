@@ -22,7 +22,7 @@ When this problem occurs, you can add parameters to the connection string of you
 
 ### Is the Select permission sufficient for Oracle to synchronize with SQL Server?
 
-Oracle needs some additional permissions to do CDC, the specific configuration and authorization, see [Oracle preparations](../prerequisites/certified/oracle.md).
+Oracle needs some additional permissions to do CDC, the specific configuration and authorization, see [Oracle preparations](../prerequisites/on-prem-databases/oracle.md).
 
 
 

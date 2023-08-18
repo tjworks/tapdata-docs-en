@@ -64,7 +64,7 @@ const sidebars = {
             'cloud/quick-start/create-task',
      ]
     },
-    {
+{
      type: 'category',
      label: 'Connect Data Sources',
      link: {type: 'doc', id: 'cloud/prerequisites/README'},
@@ -72,45 +72,141 @@ const sidebars = {
              'cloud/prerequisites/allow-access-network',
              {
               type: 'category',
-              label: 'GA Data Sources',
-              link: {type: 'doc', id: 'cloud/prerequisites/certified/README'},
+              label: 'Warehouses and Lakes',
+              link: {type: 'doc', id: 'cloud/prerequisites/warehouses-and-lake/README'},
               items: [
-                     'cloud/prerequisites/certified/clickhouse',
-                     'cloud/prerequisites/certified/kafka',
-                     'cloud/prerequisites/certified/mysql',
-                     'cloud/prerequisites/certified/mongodb',
-                     'cloud/prerequisites/certified/oracle',
-                     'cloud/prerequisites/certified/postgresql',
-                     'cloud/prerequisites/certified/sqlserver',
+                      'cloud/prerequisites/warehouses-and-lake/big-query',
+                      'cloud/prerequisites/warehouses-and-lake/clickhouse',
+                      'cloud/prerequisites/warehouses-and-lake/databend',
+                      'cloud/prerequisites/warehouses-and-lake/doris',
+                      'cloud/prerequisites/warehouses-and-lake/selectdb',
+                      'cloud/prerequisites/warehouses-and-lake/tablestore',
+                      'cloud/prerequisites/warehouses-and-lake/yashandb',
                      ]
-                     },
-                     {
-                     type: 'category',
-                     label: 'Beta Data Sources',
-                     link: {type: 'doc', id: 'cloud/prerequisites/beta/README'},
-                     items: [
-                            'cloud/prerequisites/beta/bigquery',
-                            'cloud/prerequisites/beta/csv',
-                            'cloud/prerequisites/beta/excel',
-                            'cloud/prerequisites/beta/dummy',
-                            'cloud/prerequisites/beta/github',
-                            'cloud/prerequisites/beta/mongodb-atlas',
-                            'cloud/prerequisites/beta/redis',
-                            'cloud/prerequisites/beta/salesforce',
-                            'cloud/prerequisites/beta/selectdb',
-                     ]
-                     },
-                     {
-                     type: 'category',
-                     label: 'Alpha Data Sources',
-                     link: {type: 'doc', id: 'cloud/prerequisites/alpha/README'},
-                     items: [
-                            'cloud/prerequisites/alpha/json',
-                            'cloud/prerequisites/alpha/tablestore',
-                            'cloud/prerequisites/alpha/xml',
-                            'cloud/prerequisites/alpha/zoho-crm',
-                     ]
-                     },
+              },
+             {
+              type: 'category',
+              label: 'On-Prem Databases',
+              link: {type: 'doc', id: 'cloud/prerequisites/on-prem-databases/README'},
+              items: [
+                      'cloud/prerequisites/on-prem-databases/dameng',
+                      'cloud/prerequisites/on-prem-databases/db2',
+                      'cloud/prerequisites/on-prem-databases/elasticsearch',
+                      'cloud/prerequisites/on-prem-databases/gbase-8a',
+                      'cloud/prerequisites/on-prem-databases/gbase-8s',
+                      'cloud/prerequisites/on-prem-databases/hive1',
+                      'cloud/prerequisites/on-prem-databases/hive3',
+                      'cloud/prerequisites/on-prem-databases/informix',
+                      'cloud/prerequisites/on-prem-databases/kingbase-es-r3',
+                      'cloud/prerequisites/on-prem-databases/kingbase-es-r6',
+                      'cloud/prerequisites/on-prem-databases/mariadb',
+                      'cloud/prerequisites/on-prem-databases/mongodb',
+                      'cloud/prerequisites/on-prem-databases/mongodb-atlas',
+                      'cloud/prerequisites/on-prem-databases/mrs-hive3',
+                      'cloud/prerequisites/on-prem-databases/mysql',
+                      'cloud/prerequisites/on-prem-databases/mysql-pxc',
+                      'cloud/prerequisites/on-prem-databases/oceanbase',
+                      'cloud/prerequisites/on-prem-databases/opengauss',
+                      'cloud/prerequisites/on-prem-databases/oracle',
+                      'cloud/prerequisites/on-prem-databases/postgresql',
+                      'cloud/prerequisites/on-prem-databases/redis',
+                      'cloud/prerequisites/on-prem-databases/sqlserver',
+                      'cloud/prerequisites/on-prem-databases/tdengine',
+                      'cloud/prerequisites/on-prem-databases/tidb',
+                      ]
+              },
+              {
+               type: 'category',
+               label: 'Cloud Databases',
+               link: {type: 'doc', id: 'cloud/prerequisites/cloud-databases/README'},
+               items: [
+                       'cloud/prerequisites/cloud-databases/aliyun-adb-mysql',
+                       'cloud/prerequisites/cloud-databases/aliyun-adb-postgresql',
+                       'cloud/prerequisites/cloud-databases/aliyun-mongodb',
+                       'cloud/prerequisites/cloud-databases/aliyun-rds-for-mariadb',
+                       'cloud/prerequisites/cloud-databases/aliyun-rds-for-mongodb',
+                       'cloud/prerequisites/cloud-databases/aliyun-rds-for-mysql',
+                       'cloud/prerequisites/cloud-databases/aliyun-rds-for-pg',
+                       'cloud/prerequisites/cloud-databases/amazon-rds-mysql',
+                       'cloud/prerequisites/cloud-databases/polardb-mysql',
+                       'cloud/prerequisites/cloud-databases/polardb-postgresql',
+                       'cloud/prerequisites/cloud-databases/tencentdb-for-mariadb',
+                       'cloud/prerequisites/cloud-databases/tencentdb-for-mongodb',
+                       'cloud/prerequisites/cloud-databases/tencentdb-for-mysql',
+                       'cloud/prerequisites/cloud-databases/tencentdb-for-pg',
+                      ]
+               },
+              {
+               type: 'category',
+               label: 'MQ and Middleware',
+               link: {type: 'doc', id: 'cloud/prerequisites/mq-and-middleware/README'},
+               items: [
+                       'cloud/prerequisites/mq-and-middleware/activemq',
+                       'cloud/prerequisites/mq-and-middleware/ai-chat',
+                       'cloud/prerequisites/mq-and-middleware/bes-channels',
+                       'cloud/prerequisites/mq-and-middleware/hazelcast-cloud',
+                       'cloud/prerequisites/mq-and-middleware/kafka',
+                       'cloud/prerequisites/mq-and-middleware/rabbitmq',
+                       'cloud/prerequisites/mq-and-middleware/rocketmq',
+                      ]
+               },
+               {
+               type: 'category',
+               label: 'CRM and Sales Analytics',
+               link: {type: 'doc', id: 'cloud/prerequisites/crm-and-sales-analytics/README'},
+               items: [
+                       'cloud/prerequisites/crm-and-sales-analytics/hubspot',
+                       'cloud/prerequisites/crm-and-sales-analytics/metabase',
+                       'cloud/prerequisites/crm-and-sales-analytics/salesforce',
+                       'cloud/prerequisites/crm-and-sales-analytics/zoho-crm',
+                      ]
+               },
+               {
+                type: 'category',
+                label: 'SaaS and APIs',
+                link: {type: 'doc', id: 'cloud/prerequisites/saas-and-api/README'},
+                items: [
+                        'cloud/prerequisites/saas-and-api/coding',
+                        'cloud/prerequisites/saas-and-api/github',
+                        'cloud/prerequisites/saas-and-api/lark-approval',
+                        'cloud/prerequisites/saas-and-api/lark-doc',
+                        'cloud/prerequisites/saas-and-api/lark-im',
+                        'cloud/prerequisites/saas-and-api/lark-task',
+                        'cloud/prerequisites/saas-and-api/quick-api',
+                        'cloud/prerequisites/saas-and-api/vika',
+                        'cloud/prerequisites/saas-and-api/zoho-desk',
+                       ]
+               },
+               {
+                type: 'category',
+                label: 'E-Commerce',
+                link: {type: 'doc', id: 'cloud/prerequisites/e-commerce/README'},
+                items: [
+                        'cloud/prerequisites/e-commerce/alibaba-1688',
+                        'cloud/prerequisites/e-commerce/shein',
+                       ]
+               },
+               {
+                type: 'category',
+                label: 'Files',
+                link: {type: 'doc', id: 'cloud/prerequisites/files/README'},
+                items: [
+                        'cloud/prerequisites/files/csv',
+                        'cloud/prerequisites/files/excel',
+                        'cloud/prerequisites/files/json',
+                        'cloud/prerequisites/files/xml',
+                       ]
+               },
+               {
+                type: 'category',
+                label: 'Others',
+                link: {type: 'doc', id: 'cloud/prerequisites/others/README'},
+                items: [
+                        'cloud/prerequisites/others/custom-connection',
+                        'cloud/prerequisites/others/dummy',
+                        'cloud/prerequisites/others/http-receiver',
+                       ]
+               },
      ]
     },
     {
