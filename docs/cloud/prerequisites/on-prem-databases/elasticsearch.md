@@ -1,26 +1,40 @@
-# ElasticSearch
+# Elasticsearch
 
-Please follow the instructions below to ensure that the Elastic Search database is successfully added and used in Tapdata Cloud.
+Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases.
 
-### **Limits **
+Tapdata Cloud supports Elasticsearch as a target data source to help you quickly build data pipelines for scenarios such as log data write analytics, content management, and search analytics.  This article provides a comprehensive guide on how to add Elasticsearch to Tapdata Cloud.
 
-The current version of the Tapdata Cloud, ElasticSearch only supports as a target, and the supported data source types are: Oracle, MySQL, MongoDB, PostgreSQL, and SQL Server.
+## Supported Versions
 
-### **Supported version**
+Elasticsearch 7.6
 
-Elastic search 7.6
+## Connect to Elasticsearch
 
-### **Configuration Instructions**
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-- Host/IP
-- Port
-- Database name
-- Cluster name
+2. In the left navigation panel, click **Connections**.
 
-> **Special Instructions**
-> The Elastic Search password is not required, but if the Elastic Search database you want to configure has a password, and you have not configured the password in Tapdata, the test will fail.
+3. On the right side of the page, click **Create**.
 
-### **Connection test items**
+4. In the pop-up dialog box, search for and select **Elasticsearch**.
 
-- Check host/IP and port
-- Check account and password
+5. Fill in the connection information for Elasticsearch on the redirected page, following the instructions provided below.
+
+   ![Elastic Connection Example](../../images/elasticsearch_connection_setting.png)
+
+   * **Name**: Fill in a unique name that has business significance.
+   * **Type**: Currently only supported as a Target.
+   * **DB Host**: Fill in the Elasticsearch connection address.
+   * **Port**: Fill in the service port for Elasticsearch, for example **9200**.
+   * **User Name**, **Password**: Fill in the username and password for Elasticsearch separately. If authentication is not enabled, you can leave it blank.
+   * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
+   * **Model load time**: When the number of models in the data source is less than 10,000, the model information is refreshed every hour; if the model data exceeds 10,000, the model information is refreshed every day at the time you specify.
+
+6. Click **Test Connection**, and when passed, click **Save**.
+
+   :::tip
+
+   If the connection test fails, follow the prompts on the page to fix it.
+
+   :::
+
