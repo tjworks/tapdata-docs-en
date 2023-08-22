@@ -13,6 +13,12 @@ import TabItem from '@theme/TabItem';
 
 Dorix 1.x, 2.x
 
+import Content from '../../../reuse-content/_beta.md';
+
+<Content />
+
+
+
 ## Precautions
 
 If you want to use Doris as the source database to synchronize incremental data changes, you need to [create a data transformation task](../../user-guide/data-development/create-task.md) and select **Incremental Synchronization Method** as the **Polling**.
@@ -59,11 +65,11 @@ GRANT SELECT_PRIV, ALTER_PRIV, CREATE_PRIV, DROP_PRIV, LOAD_PRIV ON catalog_name
 :::tip
 
 Please replace the username, password, and host in the command above.
-* **catalog_name**: The name of the data catalog. The default name is **internal**. You can view the created data catalog through the [SHOW CATALOGS](https://doris.apache.org/zh-CN/docs/1.2/sql-manual/sql-reference/Show-Statements/SHOW-CATALOGS) command. For more information, see [Multi Catalog](https://doris.apache.org/zh-CN/docs/1.2/lakehouse/multi-catalog/).
+* **catalog_name**: The name of the data catalog. The default name is **internal**. You can view the created data catalog through the [SHOW CATALOGS](https://doris.apache.org/zh-CN/docs/1.2/sql-manual/sql-reference/Show-Statements/SHOW-CATALOGS) command. For more information, see [Multi Catalog](https://doris.apache.org/docs/1.2/lakehouse/multi-catalog/).
 * **database_name**: Enter database name.
 * **username**: Enter user name.
 
-
+:::
 
 
 
@@ -86,7 +92,7 @@ Please replace the username, password, and host in the command above.
    - **DB Address**: The connection address of Doris.
    - **Port**: The query service port for Doris, the default port is **9030**.
    - **HTTP Address**: The HTTP protocol address of the BE service, including address and port(e.g. http://192.168.1.18:8040), the default port is **8040**.
-   - **Doris Catalog**: The catalog of Doris, whose hierarchy is above the database. If you use the default catalog, you can leave it empty. For more information, see [Multi-Catalog](https://doris.apache.org/zh-CN/docs/1.2/lakehouse/multi-catalog/).
+   - **Doris Catalog**: The catalog of Doris, whose hierarchy is above the database. If you use the default catalog, you can leave it empty. For more information, see [Multi-Catalog](https://doris.apache.org/docs/1.2/lakehouse/multi-catalog/).
    - **DB Name**: database name, a connection corresponding to a database, if there are multiple databases, you need to create multiple connections.
    - **User**, **Password**: The database username and password.
    - **Other Connection String Parameters**: Additionall connection parameters, empty by default.
