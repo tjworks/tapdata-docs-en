@@ -1,6 +1,8 @@
-# Aliyun RDS for MySQL
+# Aliyun RDS MySQL
 
-Follow the instructions below to successfully add and use Aliyun RDS for MySQL database in Tapdata Cloud.
+ApsaraDB RDS MySQL is a relational database service with high availability, scalability, security and reliability provided by Alibaba Cloud. 
+
+Tapdata Cloud extends support for constructing data pipelines with Aliyun RDS MySQL as both the source and target database. This article introduces how to connect to Aliyun RDS MySQL, helping you quickly achieve data migration to the cloud or data flow across different cloud platforms.
 
 ## Supported Versions
 
@@ -8,11 +10,9 @@ Follow the instructions below to successfully add and use Aliyun RDS for MySQL d
 
 ## Prerequisites
 
-When connecting to Aliyun RDS for MySQL, follow these steps for both source and target databases.
-
 1. Access the [RDS instance list](https://rdsnext.console.aliyun.com/rdsList/basic) on Aliyun Cloud, select the region at the top, and click on the target instance ID.
 
-2. Create a high-privilege account.
+2. Create a Privileged Account.
 
    1. In the left navigation, select **Account Management**.
 
@@ -20,10 +20,11 @@ When connecting to Aliyun RDS for MySQL, follow these steps for both source and 
 
    3. Complete the following settings in the panel on the right.
 
+      ![Create Account](../../images/aliyun_mysql_create_account.png)
+
       * **Database Account**: Starts with a lowercase letter, ends with a lowercase letter or number, supports lowercase letters, numbers, and underscores, with a length of 2 to 32 characters.
-   * **Account Type**: Choose **High Privilege** account to have access to the database's Binlog and read-write permissions. For more account types, see [Account Types](https://help.aliyun.com/document_detail/96089.htm#section-b3f-whz-q2b).
-      * **Account Password**: Length of 8 to 32 characters, with at least three of the following: uppercase letter, lowercase letter, number, special character `!@#$%^&*()_+-=`.
-      
+      * **Account Type**: Choose **Privileged Account**  to have access to the database's Binlog and read-write permissions. For more account types, see [Account Types](https://www.alibabacloud.com/help/en/apsaradb-for-rds/latest/create-an-account-on-an-apsaradb-rds-for-mysql-instance#section-b3f-whz-q2b).
+      * **Password**: Length of 8 to 32 characters, with at least three of the following: uppercase letter, lowercase letter, number, special character `!@#$%^&*()_+-=`.
    4. Click **OK**.
 
 3. Create a database.
@@ -41,54 +42,42 @@ When connecting to Aliyun RDS for MySQL, follow these steps for both source and 
       After completing this operation, you can view the external network connection address on this page, which you will use when connecting to the data source later.
       :::
 
-## Add Data Source
+## Connect to Aliyun RDS MySQL
 1. Log in to the [Tapdata Cloud platform](https://cloud.tapdata.net/console/v3/).
 
 2. In the left navigation, click on **Connection Management**.
 
-3. Click on **Create Connection** on the right side of the page.
+3. Click on **Create** on the right side of the page.
 
-4. In the pop-up dialog, click on **Authenticate Data Source**, then select **MySQL**.
+4. In the pop-up dialog, search and select **Aliyun RDS MySQL**.
 
 5. On the page that opens, fill in the MySQL connection information according to the instructions below.
 
+   ![Aliyun MySQL Connection](../../images/aliyun_mysql_connection_settings.png)
+
    * **Connection Information Settings**
-      * **Connection Name**: Fill in a meaningful and unique name.
-      * **Connection Type**: Supports both source and target databases.
-      * **Address**: Database connection address, the external network connection address you obtained during the preparation.
+      * **Name**: Fill in a meaningful and unique name.
+      * **Type**: Supports both source and target databases.
+      * **Host**: Database connection address, the external network connection address you obtained during the preparation.
       * **Port**: Database service port, default is **3306**.
       * **Database**: Database name, each connection corresponds to a database. If there are multiple databases, you need to create multiple data connections.
-      * **Account**: High-privilege account name.
+      * **Account**: Fill in the Privileged Account name.
       * **Password**: Password corresponding to the database account.
-      * **Connection Parameters**: Additional connection parameters, default is empty.
+      * **Connection parameter string**: Additional connection parameters, default empty.
+      
    * **Advanced Settings**
-      * **Time Zone**: Default is the time zone used by the database. You can also manually specify it based on business requirements.
-        If the source database is in the default time zone (+8:00), and the target database is in a specified time zone (+0:00), then assuming the source database stores the time as 2020-01-01 16:00:00, the target database will store the time as 2020-01-01 08:00:00.
-      * **Include Tables**: Default is **All**, you can also choose custom and fill in included tables, separate multiple tables with commas (,).
-      * **Exclude Tables**: Turn on this switch to exclude specific tables, separate multiple tables with commas (,).
-      * **Agent Settings**: Default is **Automatically Assigned by Platform**, you can also manually specify an Agent.
-      * **Model Loading Frequency**: When the number of models in the data source is over 10,000, Tapdata Cloud will periodically refresh the models according to the set time.
-   
-6. Click on **Connection Test**, once successful, click on **Save**.
+      * **Time Zone**: By default, Tapdata Cloud utilizes the time zone used by the database. However, you also have the flexibility to manually specify the time zone based on your business requirements.
+        For instance, let's consider a scenario where the source database operates in the default database time zone (+8:00), while the target database has a specified time zone of +0:00. In this case, if the source database stores a timestamp as **2020-01-01 16:00:00**, the same timestamp will be interpreted as **2020-01-01 08:00:00** in the target database due to the time zone conversion.
+      * **Contain Tables**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
+      * **Exclude Tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
+      * **Agent Settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
+      * **Model Loading Frequency**: If there are less than 10,000 models in the data source, their information will be updated every hour. But if the number of models exceeds 10,000, the refresh will take place daily at the time you have specified.
+      * **Enable Heartbeat Table**: This switch is supported when the connection type is set as the **Source&Target** or **Source**. Tapdata Cloud will generate a table named **tapdata_heartbeat_table** in the source database, which is used to monitor the source database connection and task health.
+        :::tip
+        After referencing and starting the data replication/development task, the heartbeat task will be activated. At this point, you can click **View heartbeat task** to monitor the task.
+        :::
+
+6. Click **Test**, and when passed, click **Save**.
    :::tip
-   If the connection test fails, follow the page prompts to fix the issue.
+   If the connection test fails, follow the prompts on the page to fix it.
    :::
-
-
-
-## Frequently Asked Questions
-
-* Question: When synchronizing between heterogeneous data sources, data updates and deletes triggered by table cascades are not synchronized to the target database?
-
-  Answer: In this scenario, if you need to build cascade processing capability on the target side, you can use triggers or other methods to achieve this type of data synchronization.
-
-* Question: When performing a connection test in Tapdata Cloud, it prompts an error "Unknown error 1044"?
-
-  Answer: If the correct permissions have been granted, you can check and fix it using the following method:
-
-  ```sql
-  SELECT host,user,Grant_priv,Super_priv FROM mysql.user where user='username';
-  // Check if the value of Grant_priv field is Y
-  // If not, execute the following command
-  UPDATE mysql.user SET Grant_priv='Y' WHERE user='username';
-  FLUSH PRIVILEGES;
