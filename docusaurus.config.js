@@ -149,6 +149,9 @@ const config = {
       applicationId: '3447165',
     },
     }),
+  scripts: [
+    '/js/iframe.js'
+  ]
 };
 
 module.exports = config;
