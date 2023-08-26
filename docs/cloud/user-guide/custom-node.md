@@ -1,6 +1,6 @@
 # Custom Node (Beta)
 
-By customizing the node function, you have the flexibility to organize your JavaScript script into reusable processing nodes. Once created, these custom nodes can be easily referenced in your data development tasks without the need for rewriting the script. This significantly reduces the development workload. 
+By customizing the node function, you have the flexibility to organize your JavaScript script into reusable processing nodes. Once created, these custom nodes can be easily referenced in your data transformation tasks without the need for rewriting the script. This significantly reduces the development workload. 
 
 In this article, we will guide you on how to use custom nodes effectively and provide use cases as examples for your reference.
 
@@ -82,7 +82,7 @@ To ensure information security, if you need to desensitize certain mobile phone 
 
 6. Click the **Save** in the top right corner.
 
-7. [Create a data development task](data-development/create-task.md). Add the phone number desensitization node between the source and target nodes in the data development task, and specify the field **mobile** as the input for the desensitization process.
+7. [Create a data transformation task](data-development/create-task.md). Add the phone number desensitization node between the source and target nodes in the data development task, and specify the field **mobile** as the input for the desensitization process.
 
    ![Phone number desensitization](../images/masking_mobile_en.png)
 

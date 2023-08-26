@@ -10,11 +10,11 @@ Tapdata Cloud offers support for both full data synchronization and real-time in
 
 
 
-## Data Development
+## Data transformation
 
 Aiming at complex data processing needs, Tapdata Cloud supports a variety of [processing nodes](../user-guide/data-development/process-node.md) between data sources based on data replication capabilities. These nodes provide advanced data processing capabilities such as data splitting, data splitting, field addition, and deletion, and shared mining.
 
-![Data Development Workflow](../images/features_data_dev.png)
+![Data Transformation Workflow](../images/features_data_dev.png)
 
 
 

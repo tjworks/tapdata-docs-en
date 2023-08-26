@@ -11,7 +11,7 @@ Tapdata Agent (abbreviated as Agent) retrieves data from the source, processes i
 
 :::tip
 
-To view the Java version on your device, you can execute the `java-version` command. If Java is not already installed, you will need to manually install the Java environment. For instance, you can execute the command: `yum -y install java-1.8.0-openjdk`.
+To view the Java version on your device, you can execute the `java -version` command. If Java is not already installed, you will need to manually install the Java environment. For instance, you can execute the command: `yum -y install java-1.8.0-openjdk`.
 
 :::
 

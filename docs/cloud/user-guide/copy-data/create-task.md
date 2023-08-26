@@ -21,6 +21,12 @@ As an example of creating a data replication task, the article demonstrates the 
 
 3. On the right side of the page, click **Create** to configure the task.
 
+   :::tip
+
+   You can also switch to the Data Console view by clicking the **Board** button. In this view, you simply need to drag the source table to the target database, and a data replication task will be generated automatically. This greatly simplifies the task configuration process and achieves real-time synchronization of source and target data.
+
+   :::
+
 4. On the left side of the page, you can drag and drop the source and destination data icons onto the right canvas. After placing them, you can connect them by drawing a line between them to establish the data flow for the replication task.
 
    ![Drag Data Source to Canvas](../../images/drag_database.png)
@@ -64,12 +70,12 @@ As an example of creating a data replication task, the article demonstrates the 
       - **Full multi-threaded write**: The number of concurrent threads for writing full data is set to the default value of **8**. You can adjust this value based on the write performance of the target database.
       - **Incremental multi-threaded write**: The number of concurrent threads for writing incremental data is disabled by default. You can adjust this value based on the write performance of the target database.
 
-7. (Optional) Click the ![setting](../../images/setting.png) icon above to configure the task properties.
+7. (Optional) Click the ![setting](../../images/setting.png) icon above to configure the <span id="task-attr">task properties</span>.
 
    * **Task name**: Fill in a name that has business significance.
    * **Sync type**: You have the option to select F**ull + incremental synchronization**, or you can choose to perform **Initial sync** and **CDC** (Change Data Capture) separately. In real-time data synchronization scenarios, using the combination of full and incremental data copying allows you to copy existing data from the source database to the target database.
    * **Task description**: Provide a description for the task by filling in the relevant information.
-   * **Advanced settings**: Set the start time of the task, select the incremental data processing mode, specify the number of processor threads, and choose the appropriate agent.
+   * **Advanced settings**: Set the start time of the task, select the incremental data processing mode, scheduled tasks, dynamic adjustment memory usage, specify the number of processor threads, and choose the appropriate agent.
 
 8. Click **Start**, and you will be able to view the performance of the task on the current page, including metrics such as QPS (Queries Per Second), delay, and task event statistics.
 

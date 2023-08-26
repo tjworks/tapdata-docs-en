@@ -4,11 +4,11 @@ This article lists common problems encountered while using data synchronization/
 
 
 
-### What is the difference between data replication and data development?
+### What is the difference between data replication and data transformation?
 
 Data replication is primarily employed for achieving data synchronization across the entire database or multiple tables. This functionality caters to various business requirements such as database migration to the cloud, database upgrades, and database backups.
 
-On the other hand, a data development project typically focuses on a single table. However, scenarios like ETL (Extract, Transform, Load), data cleaning, data consolidation (including merging multiple tables into a single table), and wide table construction often demand data development processes.
+On the other hand, a data transformation project typically focuses on a single table. However, scenarios like ETL (Extract, Transform, Load), data cleaning, data consolidation (including merging multiple tables into a single table), and wide table construction often demand data development processes.
 
 
 

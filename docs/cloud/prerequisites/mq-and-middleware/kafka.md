@@ -17,7 +17,7 @@ Kafka 2.3.x
 
 ## Kafka Consumption Description
 
-In the subsequent configuration of data replication/data development tasks, you can choose the synchronization method for the data, and the corresponding consumption instructions are as follows:
+In the subsequent configuration of data replication/data transformation tasks, you can choose the synchronization method for the data, and the corresponding consumption instructions are as follows:
 
 * **Only Full Data Synchronization**: You can choose to subscribe from the earliest offset of each partition in the Topic. If there is a previous message consumption record, you have the option to revert to the previous offset and resume message consumption from that point.
 

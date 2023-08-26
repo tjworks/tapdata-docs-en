@@ -232,7 +232,7 @@ const sidebars = {
             },
             {
              type: 'category',
-             label: 'Data Development(Beta',
+             label: 'Data Transformation',
              link: {type: 'doc', id: 'cloud/user-guide/data-development/README'},
              items:[
                    'cloud/user-guide/data-development/create-task',
@@ -245,7 +245,7 @@ const sidebars = {
              'cloud/user-guide/operation-log',
              {
               type: 'category',
-              label: 'Data Console(Beta)',
+              label: 'Real-time Data Hub',
               link: {type: 'doc', id: 'cloud/user-guide/data-console/README'},
               items:[
                     {

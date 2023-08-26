@@ -6,7 +6,7 @@ This article lists common problems encountered by Tapdata Agent in deployment an
 
 ### What is the role of the agent?
 
-The Tapdata Agent plays a crucial role in data synchronization, handling data heterogeneity, and supporting data development scenarios. It is responsible for extracting data from the source system, performing necessary processing, and transmitting it to the target system. The Tapdata Agent is centrally managed by Tapdata Cloud. The workflow for data synchronization typically follows these steps:
+The Tapdata Agent plays a crucial role in data synchronization, handling data heterogeneity, and supporting data transformation scenarios. It is responsible for extracting data from the source system, performing necessary processing, and transmitting it to the target system. The Tapdata Agent is centrally managed by Tapdata Cloud. The workflow for data synchronization typically follows these steps:
 
 ![Agent Architecture](../images/architecture.png)
 

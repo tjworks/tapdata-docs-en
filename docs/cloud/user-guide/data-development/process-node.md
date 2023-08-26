@@ -17,7 +17,7 @@ The main usage of processing nodes in Tapdata Cloud is to filter table data, whe
 
 ## Add and Delete Fields
 
-The **Add and Delete Fields** node can be added to the canvas and its parameters can be configured after connecting it to the data node. It allows for adding new fields or deleting existing fields, and if a field is deleted, it will not be passed to the next node.
+The **Add and Delete Fields** node can be added to the canvas and its parameters can be configured after connecting it to the data node. It allows for adding new fields or deleting existing fields, and if a field is deleted, it will not be passed to the next node, and you can also adjust the fields order.
 
 ![](../../images/add_and_delete_fields.png)
 

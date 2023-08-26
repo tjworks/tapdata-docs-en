@@ -38,7 +38,7 @@ GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON database_name.table_name
 
 :::tip
 
-If you wish to synchronize TiDB data to a target database in real-time, you can configure polling fields for the source TiDB node when setting up data development tasks.
+If you wish to synchronize TiDB data to a target database in real-time, you can configure polling fields for the source TiDB node when setting up data transformation tasks.
 
 :::
 
