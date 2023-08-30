@@ -6,7 +6,7 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
 ## Precautions
 
-[Agent](../../quick-start/install-agent/README.md)'s machine can access to Google Cloud Services.
+[Agent](../../quick-start/install-agent.md)'s machine can access to Google Cloud Services.
 
 
 

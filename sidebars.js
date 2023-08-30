@@ -49,17 +49,7 @@ const sidebars = {
      label: 'Quick Start',
      link: {type: 'doc', id: 'cloud/quick-start/README'},
      items: [
-            {
-             type: 'category',
-             label: 'Step 1: Install Agent',
-             link: {type: 'doc', id: 'cloud/quick-start/install-agent/README'},
-             items: [
-                    'cloud/quick-start/install-agent/agent-on-linux',
-                    'cloud/quick-start/install-agent/agent-on-windows',
-                    'cloud/quick-start/install-agent/agent-on-docker',
-                    'cloud/quick-start/install-agent/agent-on-mac-m1',
-             ]
-            },
+            'cloud/quick-start/install-agent',
             'cloud/quick-start/connect-database',
             'cloud/quick-start/create-task',
      ]
