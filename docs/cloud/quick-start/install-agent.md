@@ -50,6 +50,16 @@ Next, let's create a free Agent instance.
 
    3. Follow the steps below based on the selected deployment platform.
 
+<details>
+<summary>Show Requirements</summary>
+
+- CPU: x86 Architecture Processor
+- Operating System: 64-bit
+- Network: Ability to connect to the public network and communicate with the source/target database
+- Software: Java 1.8
+
+</details>
+
 ```mdx-code-block
 <Tabs className="unique-tabs">
 <TabItem value="Linux (64 bit)">
@@ -90,13 +100,51 @@ Next, let's create a free Agent instance.
 
    
 
-<details>
-<summary>Show Requirements</summary>
 
-- CPU: x86 Architecture Processor
-- Operating System: 64-bit
-- Network: Ability to connect to the public network and communicate with the source/target database
-- Software: Java 1.8
+
+<details>
+<summary>Need to Install on Mac (M1 Chip)?</summary>
+
+1. Open the Mac's terminal, then execute the following command to download and launch the JDK image.
+
+   ```shell
+   # Download Image
+   docker pull openjdk:8u312
+   # Run Image
+   docker run -t -d openjdk:8u312
+   ```
+
+2. Execute `docker ps` to get the container ID, and then execute the following format of the command to enter the container command line, for example:
+
+   ```shell
+   docker exec -it Container-ID /bin/bash
+   ```
+
+   :::tip
+
+   Replace the Container-ID in the command, such as `docker exec -it 1dbee41b4adc/bin/bash`.
+
+   :::
+
+3. To manage the Agent easily, create a folder (e.g., **tapdata**) and enter it by executing the following command.
+
+   ```shell
+   mkdir tapdata&&cd tapdata
+   ```
+
+4. In the container command line, execute the following command to download the Agent program and unzip it.
+
+   ```shell
+   wget 'https://resource.tapdata.net/doc-source/tapdata.zip' && unzip tapdata.zip
+   ```
+
+5. Back to the Deployment page on Tapdata Cloud, select **Linux(64 bit)** as the target operating system and click **copy**.
+
+      ![Copy the installation command](../images/select_deploy_platform.png)
+
+6. In the Docker container's command line, paste the copied command, remove the content before `./tapdata`, and then execute it.  The startup is successful, you can refer to the below figure.
+
+   ![](../images/agent_started_on_macm1.png)
 
 </details>
 
