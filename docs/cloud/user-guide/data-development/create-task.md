@@ -1,12 +1,12 @@
 # Create a Data Dev Task
 
-In Tapdata Cloud, data development tasks provide the capability to incorporate processing nodes between source and target data nodes. These processing nodes serve as valuable tools for efficiently carrying out data processing tasks, such as merging multiple tables, splitting data, and adding or removing fields. 
+In Tapdata Cloud, data transformation tasks provide the capability to incorporate processing nodes between source and target data nodes. These processing nodes serve as valuable tools for efficiently carrying out data processing tasks, such as merging multiple tables, splitting data, and adding or removing fields. 
 
-The following article outlines the step-by-step process of creating data development tasks, enabling users to leverage the advanced data processing functionalities offered by Tapdata Cloud.
+The following article outlines the step-by-step process of creating data transformation tasks, enabling users to leverage the advanced data processing functionalities offered by Tapdata Cloud.
 
 ## Procedure
 
-As an example, we will show how to change the **birthdate** field's data type from **STRING** to **DATE** in the table structure without modifying the source table (**customer** table) and simultaneously filter out users born after **1991-01-01**, a data development task is created. The resulting table, **customer_new**, will reflect the updated table structure and filtered data.
+As an example, we will show how to change the **birthdate** field's data type from **STRING** to **DATE** in the table structure without modifying the source table (**customer** table) and simultaneously filter out users born after **1991-01-01**, a data transformation task is created. The resulting table, **customer_new**, will reflect the updated table structure and filtered data.
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
@@ -82,7 +82,7 @@ As an example, we will show how to change the **birthdate** field's data type fr
    * **Task name**: Fill in a name that has business significance.
    * **Sync type**: You have the option to select **full + incremental synchronization**, or you can choose to perform an **initial sync** and use Change Data Capture (**CDC**) separately. In real-time data synchronization scenarios, the combination of full and incremental data copying is often used to transfer existing data from the source database to the target database.
    * **Task description**: Provide the description information for the task based on your specific context and requirements.
-   * **Advanced settings**: Set the start time of the task, choose the incremental data processing mode, specify the number of processor threads, and select the appropriate agent for the task.
+   * **Advanced settings**: Set the start time of the task, select the incremental data processing mode, scheduled tasks, dynamic adjustment memory usage, specify the number of processor threads, and choose the appropriate agent.
 
 9. Click **Save** or **Start**, the following figure shows that after the task starts successfully, you can view its QPS, delay, task event, and other information.
 

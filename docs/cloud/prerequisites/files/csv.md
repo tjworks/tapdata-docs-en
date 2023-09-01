@@ -9,7 +9,7 @@ Tapdata Cloud supports reading CSV files stored on local, FTP, SFTP, SMB, or S3F
 
 - A connection only refers to a model (table). If there are multiple models, you need to create connection for each one separately.
 - If the headers of multiple files are inconsistent, Tapdata Cloud uses the union as a model.
-- CSV data sources are only available for data development tasks.
+- CSV data sources are only available for data transformation tasks.
 - By default, Tapdata Cloud checks for changes (such as adding or modifying) to the XML file every minute. Tapdata Cloud synchronizes all files to accurately update the condition field when changes are detected. However, synchronous deletion of files or data is not supported.
 - Data types that can be used in CSV files include BOOLEAN, DATETIME, INTEGER, NUMBER, STRING, and TEXT.
 

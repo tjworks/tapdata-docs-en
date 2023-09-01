@@ -11,7 +11,7 @@ Supports both XLS and XLSX formats and forms that include merged cells and formu
 ## Precautions
 
 - A connection only refers to a model (table). If there are multiple models, you need to create connections for each one separately.
-- Excel data sources are only available for data development tasks.
+- Excel data sources are only available for data transformation tasks.
 - To avoid excessive memory usage on machines, it is recommended that Excel files do not exceed 512 MB.
 - By default, Tapdata Cloud checks for changes (such as adding or modifying) to the XML file every minute. Tapdata Cloud synchronizes all files to accurately update the condition field when changes are detected. However, synchronous deletion of files or data is not supported.
 - Data types that can be used in Excel files include BOOLEAN, DATE, DOUBLE, STRING, and TEXT.

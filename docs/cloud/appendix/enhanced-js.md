@@ -6,7 +6,7 @@ For detailed instructions on how to use enhanced JS nodes and explore various sc
 
 :::tip
 
-This feature is only supported for use in data development tasks.
+This feature is only supported for use in data transformation tasks.
 
 :::
 

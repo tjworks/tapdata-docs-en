@@ -49,17 +49,7 @@ const sidebars = {
      label: 'Quick Start',
      link: {type: 'doc', id: 'cloud/quick-start/README'},
      items: [
-            {
-             type: 'category',
-             label: 'Step 1: Install Agent',
-             link: {type: 'doc', id: 'cloud/quick-start/install-agent/README'},
-             items: [
-                    'cloud/quick-start/install-agent/agent-on-linux',
-                    'cloud/quick-start/install-agent/agent-on-windows',
-                    'cloud/quick-start/install-agent/agent-on-docker',
-                    'cloud/quick-start/install-agent/agent-on-mac-m1',
-             ]
-            },
+            'cloud/quick-start/install-agent',
             'cloud/quick-start/connect-database',
             'cloud/quick-start/create-task',
      ]
@@ -233,7 +223,7 @@ const sidebars = {
             },
             {
              type: 'category',
-             label: 'Data Development(Beta',
+             label: 'Data Transformation',
              link: {type: 'doc', id: 'cloud/user-guide/data-development/README'},
              items:[
                    'cloud/user-guide/data-development/create-task',
@@ -246,7 +236,7 @@ const sidebars = {
              'cloud/user-guide/operation-log',
              {
               type: 'category',
-              label: 'Data Console(Beta)',
+              label: 'Real-time Data Hub',
               link: {type: 'doc', id: 'cloud/user-guide/data-console/README'},
               items:[
                     {

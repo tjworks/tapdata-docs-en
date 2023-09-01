@@ -23,7 +23,7 @@ Before you create a replication task, make sure you have configured the relevant
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. In the left navigation panel, click**Data Development**.
+2. In the left navigation panel, click**Data transformation**.
 
 3. On the right side of the page, click **Create**.
 
