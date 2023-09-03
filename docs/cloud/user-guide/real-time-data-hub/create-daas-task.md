@@ -10,11 +10,11 @@ In the Data Service Platform Mode, you can simply drag the source table to the r
 
 3. On this page, you can conveniently access the data source information you have entered. Tapdata organizes the data governance and flow order into four distinct levels, providing a clear view of the data hierarchy.
 
-   ![Data Service Platform Page](../../../images/view_daas_dashboard.png)
+   ![Data Service Platform Page](../../images/view_daas_dashboard.png)
 
    :::tip
 
-   For detailed descriptions of each level, see [Data Service Platform Introduction](enable-daas-mode.md).
+   For detailed descriptions of each level, see [Data Service Platform Introduction](enable-real-time-data-hub.md).
 
    :::
 

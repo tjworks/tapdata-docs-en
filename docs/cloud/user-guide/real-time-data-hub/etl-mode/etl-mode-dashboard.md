@@ -6,7 +6,7 @@ In this article, we will provide a comprehensive guide on utilizing the Data Int
 
 :::tip
 
-To minimize the impact on source databases and align with the data hierarchical governance concept, you can switch to the [Data Service Platform Model](../daas-mode/enable-daas-mode.md) in Tapdata Cloud. This model enables real-time data synchronization to the Data Cache Layer, ensuring up-to-date and consistent data across systems.
+To minimize the impact on source databases and align with the data hierarchical governance concept, you can switch to the [Data Service Platform Model](../enable-real-time-data-hub.md) in Tapdata Cloud. This model enables real-time data synchronization to the Data Cache Layer, ensuring up-to-date and consistent data across systems.
 
 :::
 

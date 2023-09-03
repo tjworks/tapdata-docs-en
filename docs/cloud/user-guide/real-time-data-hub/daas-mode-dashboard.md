@@ -1,6 +1,6 @@
 # Data Service Platform Dashboard
 
-Once the data service platform mode is activated, the page will be organized according to the previously mentioned [hierarchy](enable-daas-mode.md). You can effortlessly drag the table to the next level, which will automatically create data replication tasks and streamline the data flow.
+Once the data service platform mode is activated, the page will be organized according to the previously mentioned [hierarchy](enable-real-time-data-hub.md). You can effortlessly drag the table to the next level, which will automatically create data replication tasks and streamline the data flow.
 
 This article provides a comprehensive guide on utilizing the Data Service Platform Mode interface, enabling you to swiftly grasp the functionality of the various modules.
 
@@ -12,7 +12,7 @@ This article provides a comprehensive guide on utilizing the Data Service Platfo
 
 3. On this page, you can conveniently view the information you have entered for your data source. In the following sections, we will explain the functions of each button available.
 
-   ![Data Integration Mode Interface](../../../images/daas_dashboard.png)
+   ![Data Integration Mode Interface](../../images/daas_dashboard.png)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
