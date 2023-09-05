@@ -6,7 +6,7 @@ Tapdata Cloud's Real-Time Data Hub offers a powerful solution. By synchronizing 
 
 
 
-## Real-Time Data Hub Introduction
+## <span id="intro">Real-Time Data Hub Introduction</span>
 
 With the increase in the tasks carried by the source database, in order to minimize the impact of data extraction on the source database and adhere to the organization's concept of data hierarchical governance, Tapdata Cloud organizes the data service platform in a layered manner based on the data flow order. This hierarchical arrangement ensures efficient and structured data processing, allowing for better data management and seamless integration across different systems.
 
@@ -21,20 +21,6 @@ With the increase in the tasks carried by the source database, in order to minim
 
 
 
-## Preparations
-
-
-
-1. Prepare a MongoDB database (4.0 and above), and see the [MongoDB official website](https://www.mongodb.com/docs/manual/administration/install-on-linux/) for information on deployment.
-
-   :::tip
-
-   In order to ensure high service availability, MongoDB is recommended to use replica/cluster architecture, and to reserve enough storage space based on the data size of the Source Data Layer.
-
-   :::
-
-2. [Connect to MongoDB Database](../../prerequisites/README.md)
-
 ## Procedure
 
 In the Real-Time Data Hub, we need to prepare a MongoDB database as a data repository for the Data Cache Layer and Data Processing Layer.
@@ -46,28 +32,35 @@ In the Real-Time Data Hub, we need to prepare a MongoDB database as a data repos
 3. Review the introduction of the Real-Time Data Hub and scroll down to the bottom of the page, Click on **Configure Storage**.
 
 4. Choose the provider for MongoDB Atlas services, deployment region, specification, and subscription period as follows:
-
    ![Purchase MongoDB Atlas and Storage](../../images/purchase_storage.png)
 
    * **Cloud Provider**: Currently supported: Google Cloud.
-
    * **Region**: Select the deployment region. Choose a region close to your data source for minimal network latency.
-
-   * **Specification**: Pick the specification and storage space for MongoDB Atlas.
-
+   * **Specification**: Pick the **specification** and **storage size** for MongoDB Atlas.
      :::tip
-
      Tapdata Cloud offers a free trial option with specifications that you can select. You can choose the **Free Trial** option to get started.
-
      :::
-
+     <details><summary>Specifications Description</summary>
+     <ul>
+     <li>M10: 2 vCPUs, 2 GB RAM</li>
+     <li>M20: 2 vCPUs, 4 GB RAM</li>
+     <li>M30: 2 vCPUs, 8 GB RAM</li>
+     <li>M40: 4 vCPUs, 16 GB RAM</li>
+     <li>M50: 8 vCPUs, 32 GB RAM</li>
+     <li>M60: 16 vCPUs, 64 GB RAM</li>
+     </ul>
+     </details>
    * **Subscription Period**: Select the desired subscription period.
+   <details><summary>Want to use an existing MongoDB Atlas?</summary>
+     At the top of the page, click on <b>click here to privede the connection information</b>, and fill in the MongoDB Atlas connection URL.
+   </details>
 
 5. Click **Subscription**, on the following page, carefully review and confirm the specifications you wish to purchase. Ensure that the selected billing method aligns with your preferences. Additionally, verify that the email address provided is accurate and where you would like to receive the bill. 
 
 6. Once you have double-checked all the information, click on the **Pay Now** button to proceed with the purchase.
 
-7. You will redirected to payment page. Please follow the instructions on the payment page to complete the payment process. After completing the payment, you will be redirected to **Real Time Data Hub** page, and the page categorize according to the [hierarchy](daas-mode-dashboard.md) we previously defined.
+7. You will redirected to payment page. Please follow the instructions on the payment page to complete the payment process. 
 
+   After the payment is completed, the page will return to the **Real-Time Data Hub** page. Once the instance is automatically deployed, the page will be organized and displayed according to the [hierarchy we introduced before](#intro). For information on how to use it, see [Real-Time Data Hub Dashboard Introduction](daas-mode-dashboard.md).
 
-
+   

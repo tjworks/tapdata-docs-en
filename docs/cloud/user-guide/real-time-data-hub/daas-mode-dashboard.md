@@ -1,4 +1,4 @@
-# Data Service Platform Dashboard
+# Real-Time Data Hub Dashboard
 
 Once the data service platform mode is activated, the page will be organized according to the previously mentioned [hierarchy](enable-real-time-data-hub.md). You can effortlessly drag the table to the next level, which will automatically create data replication tasks and streamline the data flow.
 
@@ -8,11 +8,11 @@ This article provides a comprehensive guide on utilizing the Data Service Platfo
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
-2. In the left navigation panel, click **Data Console**.
+2. In the left navigation panel, click **Real-Time Data Hub**.
 
 3. On this page, you can conveniently view the information you have entered for your data source. In the following sections, we will explain the functions of each button available.
 
-   ![Data Integration Mode Interface](../../images/daas_dashboard.png)
+   ![Data Integration Mode Interface](../../images/real_time_data_hub_dashboard.png)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -20,8 +20,16 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
     <TabItem value="5" label="① Switch View Model" default>
 
-   <p>Clicking the <img src='/img/switch_icon.png'></img> icon allows you to view the data source information in the form of a directory structure. You can navigate through the directory structure to select a specific table. By selecting a table, you can access the tasks associated with that table and view basic information such as table size, number of rows, column details, sample data, and schema information (such as primary key and foreign key constraints). This view provides a comprehensive overview of the selected table's properties and associated tasks. To switch back to the Console view, simply click the icon again. </p>
-   <img src='/img/data_category_view_en.png'></img>
+   <p>Clicking the <img src='/img/switch_icon.png'></img> icon allows you to view the data source information in the form of a directory structure. You can navigate through the directory structure to select a specific table. </p>
+   <p></p>
+   <p>In the catelog view, if you select a specific table, you can also see table details on the right-hand side of the page. The introduction to each tab is as follows: </p>
+
+   <img src='/img/data_category_view.png'></img>
+   <ul>
+   <li><b>Overview</b>: Provides essential information about tables, including table size, row count, column types,  column descriptions (sourced from comments by default), sample data, and more..</li>
+   <li><b>Schema</b>: Offers in-depth insights into table columns, encompassing details like column types, primary keys, foreign keys, default values, and more.</li>
+   <li><b>Tasks</b>: Displays associated tasks for the table, along with their respective statuses. This tab also enables the creation of new tasks.</li>
+   <li><b>Lineage</b>: Presents data lineage relationships visually through a graph format, aiding in effective data quality management. Clicking on a task node allows direct navigation to the monitoring page of the relevant task.</li></ul>
    <p></p>
    </TabItem>
    <TabItem value="1" label="② Add Data Sources">
@@ -42,8 +50,4 @@ import TabItem from '@theme/TabItem';
    <p>On the right side of the table name, click the <img src='/img/detail_icon.png'></img> icon. On the right side of the page, the basic information of the tasks and tables associated with the table will be displayed, including table size, number of rows, column information, sample data, Scheme (such as primary key/foreign key), etc. This operation can also be used in modules of other layers. </p>
    <img src='/img/cache_table_detail_en.png'></img>
    </TabItem>
-   <TabItem value="6" label="⑥ Switch Model">
-
-   <p>Click on the <img src='/img/setting_icon.png'></img> icon, to open a pop-up dialog where you can opt to switch back to <a href="../etl-mode/">Data Integration Mode</a>. </p>
-</TabItem>
 </Tabs>
