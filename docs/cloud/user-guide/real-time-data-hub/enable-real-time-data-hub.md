@@ -61,6 +61,6 @@ In the Real-Time Data Hub, we need to prepare a MongoDB database as a data repos
 
 7. You will redirected to payment page. Please follow the instructions on the payment page to complete the payment process. 
 
-   After the payment is completed, the page will return to the **Real-Time Data Hub** page. Once the instance is automatically deployed, the page will be organized and displayed according to the [hierarchy we introduced before](#intro). For information on how to use it, see [Real-Time Data Hub Dashboard Introduction](daas-mode-dashboard.md).
+   After the payment is completed, the page will return to the **Real-Time Data Hub** page. Once the instance is automatically deployed, the page will be organized and displayed according to the [hierarchy we introduced before](#intro). For information on how to use it, see [Real-Time Data Hub Dashboard Introduction](dashboard.md).
 
    

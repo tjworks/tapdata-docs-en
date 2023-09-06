@@ -237,8 +237,8 @@ const sidebars = {
               link: {type: 'doc', id: 'cloud/user-guide/real-time-data-hub/README'},
               items:[
                     'cloud/user-guide/real-time-data-hub/enable-real-time-data-hub',
-                    'cloud/user-guide/real-time-data-hub/daas-mode-dashboard',
-                    'cloud/user-guide/real-time-data-hub/create-daas-task',
+                    'cloud/user-guide/real-time-data-hub/dashboard',
+                    'cloud/user-guide/real-time-data-hub/create-task',
                     ]
              },
              'cloud/user-guide/manage-agent',
