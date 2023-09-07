@@ -53,7 +53,7 @@ In big data processing and analysis, merging and transforming data is a pivotal 
 
 :::tip
 
-When using the Primary-Secondary Merge node, the target database should be a self-deployed MongoDB or MongoDB Atlas.
+When using the Master Slave Merge, it's essential to [upgrade the Agent instance](../manage-agent.md) to version 3.5.1. Additionally, the target database should be either a self-deployed MongoDB or MongoDB Atlas.
 
 :::
 
