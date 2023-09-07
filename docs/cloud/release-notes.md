@@ -1,0 +1,20 @@
+# Release Notes
+
+To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
+
+## 2023-08-28
+
+### New Features
+
+- Introduced the [Primary-Secondary Merge Node](user-guide/data-development/process-node#pri-sec-merged), enabling quick construction and real-time updates of wide tables, assisting you in achieving better data analysis.
+- [Real-Time Data Hub](user-guide/real-time-data-hub/enable-real-time-data-hub.md) now offer a storage instances for free trial, with more new specifications available, including M10, M20, and M30.
+- Added support for connecting [existing MongoDB Atlas instances](user-guide/real-time-data-hub/enable-real-time-data-hub#atlas) as data storage for the Real-Time Data Hub.
+
+### Feature Improvements
+
+- Changed the display of help documentation on the right side during data source connection to embedded online documentation, assisting users in accessing the most recent help information.
+- For core data sources (such as Oracle, PostgreSQL, etc.), improved the page parameter descriptions and guidance when creating connections.
+
+### Bug Fixes
+
+- Fixed the issue where users couldn't view the monitoring page for previously run tasks.

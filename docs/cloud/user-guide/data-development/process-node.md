@@ -47,7 +47,43 @@ The Type modification node can be used to adjust the data type of the field.
 
 
 
+## <span id="pri-sec-merged">Master Slave Merge</span>
 
+In big data processing and analysis, merging and transforming data is a pivotal task. In this case study, using the `lineorder` and `date` tables from the [SSB Dataset](https://www.cs.umb.edu/~poneil/StarSchemaB.PDF) as examples, we'll demonstrate how to use Tapdata Cloud to fulfill the need to merge multiple tables into one MongoDB collection.
+
+:::tip
+
+When using the Primary-Secondary Merge node, the target database should be a self-deployed MongoDB or MongoDB Atlas.
+
+:::
+
+**Procedure**:
+
+1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+
+2. On the left navigation bar, click **Data Transformation**.
+
+3. Click **Create** on the right side of the page.
+
+4. Drag and drop the data sources you want to merge from the left side of the page to the right canvas. Then, drag the **Master Slave Merge** node from the bottom-left corner and connect them in the sequence shown below.
+
+   ![Adding Primary-Secondary Merge Node](../../images/primary_secondary_merge_node_conn1.png)
+
+5. Click on each of the data sources you want to merge sequentially and select the tables to be merged (**lineorder** / **date**) from the panel on the right.
+
+6. Click the **Master Slave Merge** node, drag and drop the `date` table into the `lineorder` table to signify their relationship. Subsequently, you can view the merged table structure.
+
+   ![Setting up Primary-Secondary Merge Node](../../images/primary_secondary_merge_node_setting.gif)
+
+7. Drag a MongoDB or MongoDB Atlas data source from the left side of the page to store the merged table and then connect the **Master Slave Merge** node to this data source.
+
+8. Click the data source you intend to store the merged table in, then select a target table or input a table name for Tapdata Cloud to automatically create in the right panel. After setting up, choose to update conditions.
+
+   ![Append Merge Example](../../images/primary_secondary_merge_node_conn2.png)
+
+9. After confirming the configurations are correct, click **Start**.
+
+   Once the process is completed, you can monitor the task's performance on the current page, such as QPS, latency, task time statistics, etc.
 
 ## <span id="union-node">Union</span>
 

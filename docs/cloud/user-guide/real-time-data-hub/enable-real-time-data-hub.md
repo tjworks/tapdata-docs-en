@@ -40,6 +40,7 @@ In the Real-Time Data Hub, we need to prepare a MongoDB database as a data repos
      :::tip
      Tapdata Cloud offers a free trial option with specifications that you can select. You can choose the **Free Trial** option to get started.
      :::
+     
      <details><summary>Specifications Description</summary>
      <ul>
      <li>M10: 2 vCPUs, 2 GB RAM</li>
@@ -50,11 +51,11 @@ In the Real-Time Data Hub, we need to prepare a MongoDB database as a data repos
      <li>M60: 16 vCPUs, 64 GB RAM</li>
      </ul>
      </details>
-   * **Subscription Period**: Select the desired subscription period.
+   * **Subscription Period**: Select the desired subscription <span id="atlas">period</span>.
    <details><summary>Want to use an existing MongoDB Atlas?</summary>
      At the top of the page, click on <b>click here to privede the connection information</b>, and fill in the MongoDB Atlas connection URL.
    </details>
-
+   
 5. Click **Subscription**, on the following page, carefully review and confirm the specifications you wish to purchase. Ensure that the selected billing method aligns with your preferences. Additionally, verify that the email address provided is accurate and where you would like to receive the bill. 
 
 6. Once you have double-checked all the information, click on the **Pay Now** button to proceed with the purchase.
