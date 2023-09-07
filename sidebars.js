@@ -280,6 +280,7 @@ const sidebars = {
               'cloud/appendix/enhanced-js'
               ]
      },
+     'cloud/release-notes',
   ],
 };
 
