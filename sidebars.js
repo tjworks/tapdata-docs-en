@@ -233,7 +233,7 @@ const sidebars = {
              },
              {
               type: 'category',
-              label: 'Real-time Data Hub',
+              label: 'Real-Time Data Hub',
               link: {type: 'doc', id: 'cloud/user-guide/real-time-data-hub/README'},
               items:[
                     'cloud/user-guide/real-time-data-hub/enable-real-time-data-hub',
