@@ -209,14 +209,13 @@ const sidebars = {
      link: {type: 'doc', id: 'cloud/user-guide/README'},
      items: [
              'cloud/user-guide/workshop',
-             'cloud/user-guide/manage-agent',
-             'cloud/user-guide/manage-connection',
              {
               type: 'category',
               label: 'Data Replication',
               link: {type: 'doc', id: 'cloud/user-guide/copy-data/README'},
               items:[
                     'cloud/user-guide/copy-data/create-task',
+                    'cloud/user-guide/copy-data/create-task-via-drag',
                     'cloud/user-guide/copy-data/manage-task',
                     'cloud/user-guide/copy-data/monitor-task',
                     ]
@@ -232,34 +231,20 @@ const sidebars = {
                    'cloud/user-guide/data-development/monitor-task',
                    ]
              },
-             'cloud/user-guide/custom-node',
-             'cloud/user-guide/operation-log',
              {
               type: 'category',
-              label: 'Real-time Data Hub',
-              link: {type: 'doc', id: 'cloud/user-guide/data-console/README'},
+              label: 'Real-Time Data Hub',
+              link: {type: 'doc', id: 'cloud/user-guide/real-time-data-hub/README'},
               items:[
-                    {
-                     type: 'category',
-                     label: 'Data Integration Mode',
-                     link: {type: 'doc', id: 'cloud/user-guide/data-console/etl-mode/README'},
-                     items:[
-                            'cloud/user-guide/data-console/etl-mode/etl-mode-dashboard',
-                            'cloud/user-guide/data-console/etl-mode/create-etl-task',
-                           ]
-                    },
-                    {
-                     type: 'category',
-                     label: 'Data Service Platform Model',
-                     link: {type: 'doc', id: 'cloud/user-guide/data-console/daas-mode/README'},
-                     items:[
-                            'cloud/user-guide/data-console/daas-mode/enable-daas-mode',
-                            'cloud/user-guide/data-console/daas-mode/daas-mode-dashboard',
-                            'cloud/user-guide/data-console/daas-mode/create-daas-task',
-                           ]
-                    },
+                    'cloud/user-guide/real-time-data-hub/enable-real-time-data-hub',
+                    'cloud/user-guide/real-time-data-hub/dashboard',
+                    'cloud/user-guide/real-time-data-hub/create-task',
                     ]
-             },               
+             },
+             'cloud/user-guide/manage-agent',
+             'cloud/user-guide/manage-connection',
+             'cloud/user-guide/custom-node',
+             'cloud/user-guide/operation-log',
              'cloud/user-guide/trouble-shooting-connection',
              'cloud/user-guide/no-supported-data-type',
             ]
@@ -295,6 +280,7 @@ const sidebars = {
               'cloud/appendix/enhanced-js'
               ]
      },
+     'cloud/release-notes',
   ],
 };
 

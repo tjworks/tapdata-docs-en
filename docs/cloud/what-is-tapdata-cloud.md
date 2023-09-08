@@ -7,7 +7,7 @@ slug: /
 
 Tapdata Cloud is a real-time data platform provided by Tapdata that integrates data replication and data transformation. It can provide millisecond-level real-time data synchronization and data fusion services in scenarios that span across clouds, regions, and multiple types of databases.
 
-![](images/tapdata_cloud.gif)
+<iframe width="100%" height="539" src="https://www.youtube.com/embed/hlJKo6u3UnA?si=6Df9Yzv8jXf5EFE9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Why choose Tapdata Cloud?
 
@@ -21,17 +21,17 @@ Compared with traditional data migration/synchronization tools, Tapdata Cloud ca
 
   Support for mainstream databases, including commercial databases, open source databases, cloud databases, SaaS platform data sources, file data sources, and custom data sources.
 
-* **Reliable Data Consistency**
+* **[Unified Real-Time Data Hub](user-guide/real-time-data-hub/enable-real-time-data-hub.md)**
 
-  Tapdata Cloud ensures high consistency between the target and source databases through a variety of self-developed technologies, supports multiple verification methods, and ensures the strict requirements of the production environment.
-
-* **[Unified Data Service Platform](user-guide/data-console/daas-mode/enable-daas-mode.md)**
-
-  Based on the concept of data hierarchical governance, data scattered in different business systems can be synchronized to a unified platform cache layer, which minimizes the impact of data extraction on business and provides basic data for subsequent data processing and business, thus building a consistent, real-time data platform and connecting data silos.
+  Based on the concept of data hierarchical governance, data scattered in different business systems can be synchronized to a unified platform cache layer, which minimizes the impact of data extraction on business and provides basic data for subsequent data processing and business, thus building a consistent, **real-time data hub** and connecting data silos.
 
 * **[Visual Operation without Coding](user-guide/workshop.md)**
 
   Say goodbye to SQL, you can quickly complete the conversion rules such as renaming the table with a simple mouse drag and drop, and also support the UDF (User Defined Function) based on Javascript.
+  
+* **Reliable Data Consistency**
+
+  Tapdata Cloud ensures high consistency between the target and source databases through a variety of self-developed technologies, supports multiple verification methods, and ensures the strict requirements of the production environment.
 
 
 
