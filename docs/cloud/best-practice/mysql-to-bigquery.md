@@ -43,23 +43,21 @@ Also note the reference [data type support](../user-guide/no-supported-data-type
 
       :::
 
-   2. Scroll down to the **Advanced Settings** area to complete the advanced setup.
+   2. Click the **Advanced Settings** tab, and complete the advanced setup.
 
       ![Advanced Settings](../images/mysql_to_bigquery_settings_en.png)
 
-      - **Duplicate Processing Strategy**, **Data write mode**: Select the preferred method for handling duplicated data.
+      - **Data Write**: Choose the data writing mode:
+      - **Process by Event Type**: When this option is selected, you'll also need to specify the write strategy for insert, update, and delete events.
+         - **Append Write**: This mode only processes insert events, disregarding update and delete events.
 
-      - **Full Multi-threaded Write**: The default setting for the number of concurrent threads with full data written is **8**. However, it can be adjusted as needed, taking into consideration the write performance of the target database.
-
-      - **Incremental Multi-threaded Write**: The number of concurrent threads with incremental data written is disabled by default. However, it can be adjusted as needed, considering the write performance of the target database.
-
+      - **Data Source**: 
       - **Cursor Schema Name Prefix**: When an INSERT operation is performed on the source table, it will be directly synchronized to the target table. On the other hand, when an UPDATE or DELETE operation is performed on the source table, it will be synchronized to a temporary table within the target dataset. The temporary table will have a specified name prefix to distinguish it from the target table.
+           :::tip
+        For more information about temporary tables, see [FAQ](#faq).
+         - **Data Merge Delay Time**: Tapdata Cloud will merge the data from the temporary table into the target table at regular time intervals. The specified time interval determines how frequently these merges occur. With shorter merge times, the target table will have more up-to-date data. It's important to note that the first merge occurs **1 hour** after the full data synchronization is completed.
 
-         :::tip
-
-         For more information about temporary tables, see [FAQ](#faq).
-
-      - **Data Merge Delay Time**: Tapdata Cloud will merge the data from the temporary table into the target table at regular time intervals. The specified time interval determines how frequently these merges occur. With shorter merge times, the target table will have more up-to-date data. It's important to note that the first merge occurs **1 hour** after the full data synchronization is completed.
+   3. (Optional) Click on **Data Schema** tab to view the table structure, or click on **Alert Settings** tab to set the alert policies for the node.
 
 7. After confirming the configuration is correct, click **Start**.
 
