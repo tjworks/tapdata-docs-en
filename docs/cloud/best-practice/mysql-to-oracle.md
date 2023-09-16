@@ -58,7 +58,7 @@ Before building the data sync pipeline, we first need to establish a connection 
 
    Upon successful start, you'll be automatically redirected to the **Task Monitoring** page. Here, you can view details like the task's QPS (Queries Per Second), latency, and various task-related events.
 
-   ![Monitor Task](../images/monitor_mysql_to_Oracle.png)
+   ![Monitor Task](../images/monitor_mysql_to_oracle.png)
 
 ## See also
 
