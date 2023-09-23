@@ -245,6 +245,7 @@ const sidebars = {
              'cloud/user-guide/manage-connection',
              'cloud/user-guide/custom-node',
              'cloud/user-guide/operation-log',
+             'cloud/user-guide/error-code-solution',
              'cloud/user-guide/trouble-shooting-connection',
              'cloud/user-guide/no-supported-data-type',
             ]
