@@ -2,6 +2,25 @@
 
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
+## 2023-09-20
+
+### New Features
+
+- Added [Python processing node](user-guide/data-development/process-node#python), which supports customizing data processing logic through Python scripts. This offers improved performance compared to the JS processing node.
+- Added a "**Contact Us**" entry point, making it easier for users to quickly reach out to technical support when faced with issues.
+
+### Feature Improvements
+
+- Enhanced [error codes for data sources](user-guide/error-code-solution.md), covering more scenarios and providing solutions.
+- While setting up email alert notifications, added guidance for binding email addresses.
+- Improved reminders and easy upgrade guide for when the task count reaches its limit.
+
+
+
+---
+
+
+
 ## 2023-08-28
 
 ### New Features

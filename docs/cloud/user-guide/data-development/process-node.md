@@ -160,6 +160,84 @@ mysql> select * from student_merge;
 6 rows in set (0.00 sec)
 ```
 
+
+
+
+
+## <span id="python">Python</span>
+
+If the built-in processing nodes don't fully meet your specific needs, or if you want to process data in a more detailed and personalized manner, you can add a Python processing node. By writing custom python scripts, you can manage the processing/logic of data. The processed data will then be synchronized to the target database, allowing you to customize the data link freely and better control the flow and processing of data.
+
+![Python Node](../../images/python_node.png)
+
+The Python processing node supports version Python 2.7.3. The supported third-party packages include: **requests-2.2.1**, **PyYAML-3.13**, and **setuptools-44.0.0**. The content description for `context` in the above image is as follows:
+
+```python
+context = {
+        "event": {},  # Event type, table name, and other information from the data source
+        "before": {}, # Content before data changes
+        "info": {},   # Event information from the data source
+        "global": {}  # Container for state storage at the node level within the task cycle
+      }
+```
+
+System packages supported by the Python processing node include: `struct, jarray, _marshal, _bytecodetools, binascii, ucnhash, _sre, sys, cmath, itertools, jffi, operator, _py_compile, array, zipimport, _codecs, _hashlib, bz2, gc, posix, cPickle, synchronize, _random, _imp, errno, __builtin__, _csv, _json, _weakref, thread, exceptions, _ast, cStringIO, _jyio, _collections, _functools, _threading, _jythonlib, math, time, _locale`.
+
+Below are references on how to use common libraries:
+
+```python
+# For using the yaml package, refer to: https://pyyaml.org/wiki/PyYAMLDocumentation
+data = {'key1': 'value1', 'key2': 'value2'}
+yaml_str = yaml.dump(data, default_flow_style=False)
+log.info('(1)Use YAML may convert data to YAML string: \n{}', yaml_str)
+
+# Modify a specific field in the data
+record['prefix'] = 'ust-modified'
+
+# Properly log messages
+log.info("(3)log an info") # Print info-level logs
+log.warn("(4)log a warning") # Print warning-level logs
+
+# For using requests, refer to: https://requests.readthedocs.io/projects/cn/zh_CN/latest/
+try: 
+  response = requests.get("http://localhost:3000")
+  log.info('Request result: {}', response.text)
+except Exception as e:
+  log.info('Request result: {}', str(e))
+
+# For using the json module, refer to: https://docs.python.org/zh-cn/2.7/library/json.html
+log.info("Json value: {}", json.dumps(['Gavin', {'key': ('value', None, 1.0, 2)}]))
+
+# For using random, time, datetime, uuid
+log.info("(7)Time value: {}",time.time()) 
+log.info("(7-1)Datetime value: {}", datetime.datetime(2023, 9, 19, 11, 8, 0)) 
+
+# For using the math module, refer to: https://docs.python.org/zh-cn/2.7/library/math.html
+log.info("(9)Math value: {}", math.sqrt(100)) 
+
+# For using the hashlib module, refer to: https://docs.python.org/zh-cn/2.7/library/hashlib.html
+m = hashlib.md5()  # Create an MD5 object
+m.update("xjh999".encode(encoding='utf-8')) # Specify encoding format and add the string to the MD5 object
+password_md5 = m.hexdigest()  # hexdigest() produces a hexadecimal string representation
+log.info("(10)hashlib value: {}", password_md5) 
+
+# For using the base64 package, refer to: https://docs.python.org/zh-cn/2.7/library/base64.html
+try:
+  tmpBytes = "xjh999999999".encode()
+  tmpBase64 = base64.b64encode(tmpBytes)
+  log.info("(11)base64 value: {}", tmpBase64)
+except Exception as e:
+  log.info('(11)base64 failed：{}',e)
+
+# For using the types package, refer to: https://docs.python.org/zh-cn/2.7/library/types.html
+log.info("(12)Types value: {}", type(100))
+return record
+```
+
+
+
+
+
 ## <span id="js-process">JS Processing</span>
 
 Support is provided for data processing through JavaScript or Java code. When writing the code, it is important to ensure  source node and the target node is connected. This ensures seamless data processing between the two nodes.
