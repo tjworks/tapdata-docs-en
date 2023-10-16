@@ -258,6 +258,7 @@ const sidebars = {
             'cloud/best-practice/mysql-to-clickhouse',
             'cloud/best-practice/mysql-to-bigquery',
             'cloud/best-practice/oracle-to-tablestore',
+            'cloud/best-practice/mysql-to-oracle',
             'cloud/best-practice/excel-to-mysql',
             
         ]
