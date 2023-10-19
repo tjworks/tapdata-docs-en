@@ -226,6 +226,7 @@ const sidebars = {
              link: {type: 'doc', id: 'cloud/user-guide/data-development/README'},
              items:[
                    'cloud/user-guide/data-development/create-task',
+                   'cloud/user-guide/data-development/create-materialized-view',
                    'cloud/user-guide/data-development/manage-task',
                    'cloud/user-guide/data-development/process-node',
                    'cloud/user-guide/data-development/monitor-task',
