@@ -2,6 +2,28 @@
 
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
+
+
+## 2023-10-08
+
+### New Features
+
+- Introduced the [Create Materialized View](user-guide/data-development/create-materialized-view.md) feature for swift construction of real-time data models.
+- Added capability to fetch read-only access information of [subscribed MongoDB Atlas](user-guide/real-time-data-hub/enable-real-time-data-hub#Procedure).
+- Kafka data source now supports settings for replication factor and partition count.
+- For synchronization between MongoDB instances, added support for `$unset` operations.
+
+### Feature Enhancements
+
+- During the task guidance process, when creating a connection for a fully managed Agent, instructions about the public IP address of the fully managed Agent have been added.
+- Enabled rapid target node location through node search at the top of the data replication/data transformation configuration page.
+
+### Bug Fixes
+
+* Fixed an issue where the wrong category of operation logs was recorded when restarting the Agent via the webpage.
+
+---
+
 ## 2023-09-20
 
 ### New Features
@@ -16,8 +38,6 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 - Improved reminders and easy upgrade guide for when the task count reaches its limit.
 
 
-
----
 
 
 
