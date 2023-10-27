@@ -41,34 +41,56 @@ As an example of creating a data replication task, the article demonstrates the 
 
    ![Source Settings](../../images/data_source_settings.png)
 
-   * **Node name**: Defaults to connection name, you can also set a name that has business significance.
-   * **DDL event collection**: After enabling the switch, Tapdata Cloud will automatically capture the selected source DDL events, such as the addition of new fields. If the target database supports DDL writing, Tapdata Cloud can synchronize the DDL statements to ensure consistency between the source and target databases.
-   * **Select table**: Choose which tables you want to sync.
-      * **Select by table name**: Select the table on the left, and then click the right arrow to complete the setup.
-      * **Match regular expressions**: Enter the regular expression for the table name. Additionally, when a table is added to the source database and it matches the specified expression, Tapdata Cloud will automatically synchronize the table to the target database.
-   * **Batch read number**: The number of records read in each batch during full data synchronization, the default is **100**.
+   * **Basic Settings**      
+
+      * **Node Name**: By default, it's the connection name, but you can also set a meaningful business name.
+      * **Select Table**: Select the source table to operate. The table structure, including column names and types, will be displayed below.      
+        * **Select by table name**: Select the table on the left, and then click the right arrow to complete the setup.
+        * **Match regular expressions**: Enter the regular expression for the table name. Additionally, when a table is added to the source database and it matches the specified expression, Tapdata Cloud will automatically synchronize the table to the target database.
+        * **Selectable table range**: By default, all tables are displayed, but you can choose to filter only tables with primary keys or only tables without primary keys. Since tables without primary keys use the full primary key method to implement data updates, they might encounter errors due to exceeding the index length limit, and their performance might be limited. Therefore, it is recommended that you create separate data replication tasks for tables without primary keys to avoid task errors and enhance the performance of data updates.
+
+   * **Advanced Settings**      
+
+      * **DDL Synchronization**      
+        Choose whether to enable **DDL Event Collection**. When this switch is on, Tapdata will automatically collect the DDL events (like adding fields) from the selected source. If the target side supports DDL writing, the DDL statements can be synchronized.      
+
+      * **Incremental Method**      
+        Choose **Log CDC** or **Polling**. If you select **Polling**, you'll also need to specify the polling field, interval, and number of rows read each time.
+
+        **Log CDC** will use the data source's transaction log to parse and sync incremental events. **Polling** will sync incremental events by polling a field, but it often can't sync delete events.      
+
+      * **Data Filter**      
+
+        * **Fully Customizable Query**: Turn this on to input a custom SQL query for full data sync (doesn't affect the incremental stage). For example, `SELECT id,name,address FROM customer;`.
+          :::tip
+          To use this feature, the target node must be a weak Scheme type of data source (like MongoDB/Kafka) etc.
+          ::: 
+        * **Filter Settings**: Off by default. Turn it on to specify data filtering conditions.      
+
+      * **Batch Read Number**: For full data sync, the number of records read per batch. Default is **100**.     
 
 6. Click on the target node, which in this example is MongoDB, to configure the parameters in the right panel based on the following instructions.
 
-   1. Set up the node's basic settings.
+   ![Basic settings](../../images/data_copy_normal_setting.png)
 
-      ![Basic settings](../../images/data_copy_normal_setting.png)
-
-      * **Node name**: Defaults to connection name, you can also set a name that has business significance.
-      * **Number of batch writes**: The number of entries written in each batch during full data synchronization.
-      * **Write the maximum waiting time for each batch**: Set the maximum wait time in milliseconds, based on the performance of the target database and the network delay evaluation.
-      * **Deduction result**: According to the settings of the source node, Tapdata will write table structure information to the target.
-
-   2. Scroll down to the **Advanced Settings** area to complete the advanced setup.
-
-      ![Advanced settings](../../images/data_copy_advance_setting.png)
-
-      - **Duplicate processing strategy**: Choose how duplicate data should be handled.
-      - **Data write mode**: Keep the default, or select according to business needs.
-         - **Process by event type**: Select the data write policy for inserts, updates, and deletes events.
-         - **Statistics additional write**: Handles only insert events, discards updates, and deletes events.
-      - **Full multi-threaded write**: The number of concurrent threads for writing full data is set to the default value of **8**. You can adjust this value based on the write performance of the target database.
-      - **Incremental multi-threaded write**: The number of concurrent threads for writing incremental data is disabled by default. You can adjust this value based on the write performance of the target database.
+   * **Basic Settings**
+     * **Node Name**: Defaults to the connection name; you can also set a name that has business significance.
+     * **Deduction Results**: Displays table structure information that Tapdata Cloud will write into the target, deduced from the source node setting. The update condition will be automatically set as the table's primary key, or if there isn’t one, a unique index field will be used.
+     * **Duplication Handling Strategy**: Choose according to business needs; defaults to **To maintain the origina table structure on the target side, please clear the data**.
+     * **Full Multi-thread Writing**: The number of concurrent threads for writing full data; default is **8**.
+     * **Incremental Multi-thread Writing**: The number of concurrent threads for writing incremental data.
+     * **Batch Write Item Quantity**: The number of items written per batch during full synchronization.
+     * **Max Wait Time per Batch Write**: Set the maximum waiting time per batch write, evaluated based on the target database’s performance and network latency, in milliseconds.
+   * <span id="advanced-settings">**Advanced Settings**</span>
+     * **Data Writing Mode**: Select according to business needs.
+       * **Process by Event Type**: If you choose this, you also need to select data writing strategies for insert, update, and delete events.
+       * **Statistical Append Write**: Only processes insert events, discarding update and delete events.
+     * **Data Source Exclusive Configuration**: Choose whether to save deleted data.
+     * **Synchronize Partition Properties**: When this feature is enabled, Tapdata Cloud will automatically create a sharded collection in the target database. This function is only effective when both the source and target databases are MongoDB clusters.
+   * **Data Model**
+     Displays table structure information of the target table, including field names and field types.
+   * **Alert Settings**
+     Defaults as per source node alert settings.
 
 7. (Optional) Click the ![setting](../../images/setting.png) icon above to configure the <span id="task-attr">task properties</span>.
 

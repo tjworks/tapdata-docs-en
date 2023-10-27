@@ -4,6 +4,24 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 
 
 
+### 2023-10-20
+
+### New Features
+
+- Added support for [automatically creating sharded collections](user-guide/copy-data/create-task#advanced-settings) when MongoDB Cluster is set as the target.
+- Added support for disabling node capabilities when configuring tasks. You can access this feature by hovering over a node, which can help reduce the cost of data flow during processing.
+
+### Feature Enhancements
+
+- When [configuring data replication tasks](user-guide/copy-data/create-task.md), you can now quickly filter tables with or without primary keys through the "**Selectable table range**" dropdown. Tables with primary keys include those without primary keys but with unique indexes.
+- Added a Demo data source to the onboarding guide flow for new users, helping you quickly complete the tutorial and set up your first data flow task.
+- Optimized the front-end display effects of operation buttons on the engine interface.
+
+### Bug Fixes
+
+- Fixed an issue where an error occurred in MongoDB as a target during an INSERT operation when there was no shard key.
+- Fixed an issue where MongoDB did not support REPLACE properly, and the fields deleted by REPLACE could not be properly removed.
+
 ## 2023-10-08
 
 ### New Features
