@@ -9,6 +9,7 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 ### New Features
 
 - Added support for [automatically creating sharded collections](user-guide/copy-data/create-task#advanced-settings) when MongoDB Cluster is set as the target.
+- Add support for [Unwind Processing Node](user-guide/data-development/process-node#Unwind), which can help you efficiently "unwind" each element in an array, converting each element into independent data rows.
 - Added support for disabling node capabilities when configuring tasks. You can access this feature by hovering over a node, which can help reduce the cost of data flow during processing.
 
 ### Feature Enhancements
