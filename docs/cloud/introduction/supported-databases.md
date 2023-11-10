@@ -2,6 +2,12 @@
 
 Tapdata Cloud supports rich data sources as follows:
 
+:::tip
+
+If you need to synchronize DDL operations, you need to enable DDL collection and DDL apply. For more information, see [Handle DDL Changes During Data Sync](../user-guide/handle-schema-changes.md).
+
+:::
+
 ### GA Data Sources
 
 <table>
