@@ -269,8 +269,7 @@ import Content from '../../../reuse-content/_preparations.md';
 
    ![PostgreSQL Connection Example](../../images/postgresql_connection.png)
 
-   * Connection Information Settings
-
+   * **Connection Information Settings**
       * **Connection name**: Fill in a unique name that has business significance.
       * **Connection type**: Supports PostgreSQL as a source or target database.
       * **Host**: The database connection address.
@@ -281,14 +280,14 @@ import Content from '../../../reuse-content/_preparations.md';
       * **User**: The database username.
       * **Password**: The database password.
       * **Log plugin name**: To read the data changes of PostgreSQL and achieve incremental data synchronization, you need to complete the installation of the plugin according to the guidance of the preparations.
-   * Advanced settings
-
+   * **Advanced settings**
       * **Timezone**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
       * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
       * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
       * **Model load time**: If there are less than 10,000 models in the data source, their information will be updated every hour. But if the number of models exceeds 10,000, the refresh will take place daily at the time you have specified.
-
+   * **SSL Settings**: Choose whether to enable SSL connections to the data source to further enhance data security. After turn on this button, you will also need to upload a CA file, client certificate, and key, as well as fill in the client password.
+   
 6. Click **Connection Test**, and when passed, click **Save**.
 
    :::tip

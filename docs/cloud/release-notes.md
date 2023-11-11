@@ -2,9 +2,22 @@
 
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
+### 2023-11-03
+
+### Functional Enhancements
+
+- Enhanced [Data Source Connection](prerequisites/README.md) methods, supporting SSL connections for data sources like MySQL, PostgreSQL, Kafka, TiDB, MariaDB, etc., to further enhance data security.
+- Improved user interface interaction logic.
+- To better manage data duplication for updates on non-primary keys, Tapdata Cloud now supports creating unique indexes.
+
+### Bug Fixes
+
+- Fixed an issue where data synchronization could fail when table names contain `.`.
+- Fixed an issue where task exception messages did not include table names.
+- Fixed an issue with incorrect judgment of task quotas and task count limits when specifying an Agent for a task.
 
 
-### 2023-10-20
+## 2023-10-20
 
 ### New Features
 

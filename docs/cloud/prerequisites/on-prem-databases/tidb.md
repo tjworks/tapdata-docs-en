@@ -98,6 +98,7 @@ GRANT SELECT, SHOW VIEW, CREATE ROUTINE, LOCK TABLES ON database_name.table_name
       * **Exclude Tables**: When enabled, you can specify tables to exclude, separated by commas (,).
       * **Agent Setting**: Default to **Platform Auto Allocation**, but you can also specify it manually.
       * **Model Load Time**: When the number of models in the data source is greater than 10,000, Tapdata will periodically refresh the model according to this parameter setting.
+   * **SSL Settings**: Choose whether to enable SSL connections to the data source to further enhance data security. After turn on this button, you will also need to upload a CA file, client certificate, and key, as well as fill in the client password.
    
 6. Click on **Test Connection**, and after successful testing, click **Save**.
 
