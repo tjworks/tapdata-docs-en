@@ -158,7 +158,7 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 
    ![Connection configuration example](../../images/mysql_connection_demo.png)
 
-    * Connection Information Settings
+    * **Connection Information Settings**
 
         * **Connection name**: Fill in a unique name that has business significance.
         * **Connection type**: Supports MySQL as a source or target database.
@@ -169,7 +169,7 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
         * **Password**: The database password.
         * **Connection parameter string**: Additional connection parameters, default empty.
 
-    * Advanced settings
+    * **Advanced settings**
 
         * **Timezone**: By default, Tapdata Cloud utilizes the time zone used by the database. However, you also have the flexibility to manually specify the time zone based on your business requirements.
 
@@ -182,6 +182,8 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
         * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
 
         * **Model load time**: If there are less than 10,000 models in the data source, their information will be updated every hour. But if the number of models exceeds 10,000, the refresh will take place daily at the time you have specified.
+        
+    * **SSL Settings**: Choose whether to enable SSL connections to the data source to further enhance data security. After turn on this button, you will also need to upload a CA file, client certificate, and key, as well as fill in the client password.
 
 6. Click **Connection Test**, and when passed, click **Save**.
 
