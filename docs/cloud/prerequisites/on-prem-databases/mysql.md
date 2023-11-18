@@ -14,6 +14,8 @@ import Content from '../../../reuse-content/_preparations.md';
 
 <Content />
 
+* [Enabling SSL Connection (Optional)](#ssl)
+
 ### As a Source Database
 
 To ensure the smooth execution of the task, you need to turn on Binlog for MySQL database (incremental data synchronization can be achieved), and then create a database account for data replication/development tasks.
@@ -144,15 +146,68 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 * **username**: Enter user name.
 
 
+
+### <span id="ssl">Enabling SSL Connection (Optional)</span>
+
+To further enhance the security of the data connection, you can choose to enable SSL (Secure Sockets Layer) encryption for MySQL databases. This provides encryption at the transport layer for network connections, enhancing the security of communication data while ensuring data integrity. The specific steps are as follows:
+
+1. Log in to the device hosting the MySQL database and run the **mysql_ssl_rsa_setup** program to create SSL/RSA files. You can locate this program using the find command.
+
+   Before performing this step, you can log into the MySQL database and execute `SHOW GLOBAL VARIABLES LIKE '%ssl%';` to check if SSL/RSA files have been generated and the status of SSL.
+
+   ```bash
+   /usr/bin/mysql_ssl_rsa_setup
+   ```
+
+   :::tip
+
+   * Ensure that **openssl** is installed on your device to run this program. For example, on a CentOS system, you can install it with the command `yum install openssl -y`.
+   * Once the command is executed, files such as `ca-key.pem`, `server-key.pem`, and `client-key.pem` will be automatically generated, usually located in the `/var/lib/mysql/` directory. You can download them to your local machine for later use in configuring connections in Tapdata Cloud.
+
+   :::
+
+2. Use the `vim` command to modify the configuration in `$MYSQL_HOME/mysql.cnf`, enabling forced SSL authentication and specifying the locations of related SSL/RSA files. Save and exit the editor after making changes.
+
+   ```bash
+   [mysqld]
+   require_secure_transport=ON
+   # Self-signed CA certificate
+   ssl-ca=/var/lib/mysql/ca.pem
+   # Server certificate file
+   ssl-cert=/var/lib/mysql/server-cert.pem
+   # Server private key file
+   ssl-key=/var/lib/mysql/server-key.pem
+   [client]
+   ssl-mode=REQUIRED
+   # Certificate file required for the client to connect to the server
+   ssl-cert=/var/lib/mysql/client-cert.pem
+   # Private key file required for the client to connect to the server
+   ssl-key=/var/lib/mysql/client-key.pem
+   ```
+
+3. Log into the MySQL database and **choose** to execute the following format of commands to adjust the account for data synchronization/development tasks.
+
+   ```sql
+   ALTER USER 'username'@'host' REQUIRE x509; -- Force the client to provide a valid certificate
+   ALTER USER 'username'@'host' REQUIRE ssl; -- Do not force the client to provide a valid certificate
+   FLUSH PRIVILEGES;
+   ```
+
+   * **username**: The username.
+   * **host**: The host allowed for account login, e.g., use the percentage sign (%) to allow any host.
+
+4. Restart the MySQL database.
+
+
 ## Connect to MySQL
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
 
 2. In the left navigation panel, click **Connections**.
 
-3. On the right side of the page, click **Create connection**.
+3. On the right side of the page, click **Create**.
 
-4. In the pop-up dialog, select **MySQL**.
+4. In the pop-up dialog, search and select **MySQL**.
 
 5. On the page that you are redirected to, follow the instructions below to fill in the connection information for MySQL.
 
@@ -183,7 +238,7 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'Tap@123456';
 
         * **Model load time**: If there are less than 10,000 models in the data source, their information will be updated every hour. But if the number of models exceeds 10,000, the refresh will take place daily at the time you have specified.
         
-    * **SSL Settings**: Choose whether to enable SSL connections to the data source to further enhance data security. After turn on this button, you will also need to upload a CA file, client certificate, and key, as well as fill in the client password.
+    * **SSL Settings**: Choose whether to enable SSL connections for the data source, which can further enhance data security. After turn on the switch, you will need to upload CA files, client certificates, client key files, etc. The related files can be obtained as outlined in the [Enabling SSL Connection](#ssl) section.
 
 6. Click **Connection Test**, and when passed, click **Save**.
 

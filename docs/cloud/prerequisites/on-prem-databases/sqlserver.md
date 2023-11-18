@@ -6,7 +6,7 @@ This article serves as a detailed guide, outlining the steps to seamlessly incor
 
 ## Supported Versions
 
-SQL Server 2005, 2008, 2008 R2, 2012, 2014, 2016, and 2017.
+SQL Server 2005, 2008, 2008 R2, 2012, 2014, 2016, 2017, 2019 and 2022.
 
 :::tip
 
