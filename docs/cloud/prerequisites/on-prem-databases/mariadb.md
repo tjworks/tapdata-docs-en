@@ -72,6 +72,7 @@ GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';
       In the scenario demonstrated in this article, MariaDB is deployed on the Ubuntu operating system, and the configuration file is located at `/etc/mysql/mariadb.cnf`. For more information, see [MariaDB Configuration File Introduction](https://mariadb.com/kb/en/configuring-mariadb-with-option-files/).
    
       ```bash
+      [mysqld]
       server-id              = 1
       log_bin                = /var/log/mysql/myriadb-bin
       expire_logs_days       = 10
@@ -88,13 +89,13 @@ GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';
       - **binlog_row_image**: Set to full, recording data for all columns, whether they changed or not.
    
    2. After modification, execute the following command to restart the MariaDB database. Perform this during off-peak hours to avoid impacting services.
-
+   
       ```bash
       systemctl restart mariadb
       ```
    
    3. (Optional) Log into the MariaDB database and execute the following command to confirm that the configuration has taken effect, i.e., the output shows **format** as **ROW**.
-
+   
       ```sql
       SHOW VARIABLES LIKE 'binlog_format';
       ```
