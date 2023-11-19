@@ -30,55 +30,43 @@ import Content from '../../../reuse-content/_preparations.md';
 
 1. Log in to SQL Server Management Studio or SQLcmd as a sysadmin (for example, **sa**).
 
-2. Execute the following command to enable Change Data Capture (CDC) for the specified database (recommended) or table.
+1. [Enable SQL Server Agent Service](https://learn.microsoft.com/en-us/sql/ssms/agent/start-stop-or-pause-the-sql-server-agent-service?view=sql-server-ver16).
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+2. Execute the following commands to enable Change Data Capture (CDC) capabilities.
 
-<Tabs className="unique-tabs">
-    <TabItem value="dbcdc" label="Enable Change Data Capture for a Database" default>
-    <p>Before execute the following command, replace the <b>database_name</b>  with your database name.</p>
-    <pre>-- Enable change data capture<br />
-   USE database_name<br />
-   GO<br />
-   EXEC sys.sp_cdc_enable_db<br />
-   GO
-   <br />
-   <br />
--- Check the value of is_cdc_enabled, if it's 1, change data capture is on<br />
-   SELECT [name], database_id, is_cdc_enabled<br />
-   FROM sys.databases<br />
-   WHERE [name] = N'database_name'<br />
-   GO</pre>
-   </TabItem>
-   <TabItem value="tablecdc" label="Enable Change Data Capture for a Table">
+   1. Enable CDC at the database level. When executing the command, replace **database_name** with the actual database name.
 
-   <p>Before the following command, replace the database name, schema name, and other information respectively, as described below the code block.</p>
-    <pre>-- Enable change data capture<br />
-    USE database_namebr />
-GO
-EXEC sys.sp_cdc_enable_table<br />
-@source_schema = N'schema_name',<br />
-@source_name = N'table_name',<br />
-@role_name = N'role_name'<br />
-GO<br />
-<br />-- Check the value of is_tracked_by_cdc, if it's 1, change data capture is on<br />
-use database_name<br />
-go<br />
-SELECT [name],is_tracked_by_cdc<br />
-FROM sys.tables<br />
-WHERE [name] = N'table_name'<br />
-go</pre>
+      ```sql
+      -- Enable Change Data Capture
+      USE database_name
+      GO
+      EXEC sys.sp_cdc_enable_db
+      GO
+      
+      -- Check if Change Data Capture is enabled, a value of 1 in is_cdc_enabled indicates that the feature is enabled
+      SELECT [name], database_id, is_cdc_enabled
+      FROM sys.databases
+      WHERE [name] = N'database_name'
+      GO
+      ```
 
-<ul>
-<li>database_name: Enter the database name.</li>
-<li>table_name: Enter the table name。</li>
-<li>role_name: Enter the role name that can access change data, or set the settings role to NULL if you don't want to use it.</li>
-</ul>
-<p>If you specified a role when you enabled incremental replication, make sure that the database user has the appropriate role, so Tapdata Cloud can access incremental replication tables.</p>
-   </TabItem>
-  </Tabs>
+   2. Enable CDC at the table level.
 
+      ```sql
+      USE database_name
+      GO
+      EXEC sys.sp_cdc_enable_table 
+      @source_schema = N'schema_name', 
+      @source_name   = N'table_name',
+      @role_name     = N'role_name',
+      @supports_net_changes = 1
+      GO
+      ```
+
+      - **database_name**: The name of the database.
+      - **schema_name**: The schema name, e.g., **dbo**.
+      - **table_name**: The name of the table.
+      - **role_name**: The role that can access the change data. Set this to **NULL** if you do not wish to use a role. If a role was specified when enabling incremental replication, ensure the database user has the appropriate role so that Tapdata Cloud can access the incremental replication tables.
 
 4. Execute the following format of the command to create a user for the data copy or development task.
 
