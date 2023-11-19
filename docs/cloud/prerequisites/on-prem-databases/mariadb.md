@@ -159,7 +159,7 @@ To further enhance the security of the data link, you can choose to enable SSL (
 
    Next, we will demonstrate how to create a self-signed certificate using OpenSSL. Before proceeding, you can log into the MariaDB database and execute `SHOW GLOBAL VARIABLES LIKE '%ssl%';` to check if SSL/RSA files have been generated and the SSL status.
 
-   1. Log into the device hosting the MariaDB database and execute the following commands to generate a CA certificate.
+   1. Log into the device hosting the MariaDB database and execute the following commands to generate a CA certificate. For more information, see [OpenSSL](https://www.openssl.org/docs/man1.1.1/man1/openssl.html).
 
       ```bash
       # Create and enter the directory where the certificate files will be stored, adjust as needed
