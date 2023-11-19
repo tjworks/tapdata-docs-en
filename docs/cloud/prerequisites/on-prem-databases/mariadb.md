@@ -2,7 +2,7 @@
 
 MariaDB is a versatile open-source relational database management system used for high-availability transaction data, analytics, as an embedded server, and is widely supported by various tools and applications. Tapdata Cloud provides comprehensive support for building data pipelines utilizing MariaDB as both the source and target database.
 
-This article serves as a detailed guide, outlining the steps to seamlessly incorporate a SQL Server database into Tapdata Cloud, enabling efficient data integration and management within your pipelines.
+This article serves as a detailed guide, outlining the steps to seamlessly incorporate a MariaDB database into Tapdata Cloud, enabling efficient data integration and management within your pipelines.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
