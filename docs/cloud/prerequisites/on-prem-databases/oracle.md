@@ -249,7 +249,144 @@ TO  username CONTAINER=all;
 </TabItem>
 </Tabs>
 
+### <span id="ssl">Enabling SSL Connection (Optional)</span>
 
+To further enhance the security of your data link, you can opt to enable SSL (Secure Sockets Layer) encryption for Oracle databases. This process encrypts network connections at the transport layer, thereby improving the security of communication data and ensuring data integrity.
+
+Next, we will demonstrate the specific steps for enabling SSL on Oracle 12c deployed on a Linux platform:
+
+1. Log into the device hosting the Oracle database and execute the following commands to adjust directory permissions and switch to the Oracle user:
+
+   ```bash
+   chown oracle:dba /opt/oracle/ -R
+   su oracle
+   mkdir -p /opt/oracle/wallet
+   ```
+
+2. Execute the following commands in sequence to create a directory for storing certificate files and generate a Key file. Replace `{password}` with the password you wish to set:
+
+   ```bash
+   $ORACLE_HOME/bin/orapki wallet create -wallet /opt/oracle/wallet -pwd {password} -auto_login
+   $ORACLE_HOME/bin/orapki wallet add -wallet /opt/oracle/wallet -pwd {password} -dn "CN=localhost" -keysize 1024 -self_signed -validity 365
+   ```
+
+3. Run the following command to generate a jks file. Replace `{password}` with the corresponding password:
+
+   ```bash
+   $ORACLE_HOME/bin/orapki wallet pkcs12_to_jks -wallet /opt/oracle/wallet -pwd {password} -jksKeyStoreLoc /opt/oracle/wallet/oracle12c_ks.jks -jksKeyStorepwd {password} -jksTrustStoreLoc /opt/oracle/wallet/oracle12c_ts.jks -jksTrustStorepwd {password}
+   ```
+
+   To convert pem files, you can execute the following command:
+
+   ```bash
+   cd /opt/oracle/wallet && openssl pkcs12 -clcerts -nokeys -out oracle_cert.pem -in ewallet.p12
+   ```
+
+4. Create the relevant configuration files to complete the SSL setup:
+
+   ```bash
+   # Adjust the directory based on your environment
+   cd /u01/app/oracle/product/12.1.0/xe/network/admin
+   touch listener.ora
+   touch sqlnet.ora
+   touch tnsnames.ora
+   ```
+
+   Add the following content to the configuration files:
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="listener.ora">
+```
+
+```bash
+# listener.ora
+
+SSL_CLIENT_AUTHENTICATION = FALSE
+
+WALLET_LOCATION =
+  (SOURCE =
+    (METHOD = FILE)
+    (METHOD_DATA =
+      (DIRECTORY = /opt/oracle/wallet)
+    )
+  )
+
+LISTENER =
+(DESCRIPTION_LIST =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 0.0.0.0)(PORT = 1521))
+  )
+  (DESCRIPTION =
+     (ADDRESS = (PROTOCOL = TCPS)(HOST = 0.0.0.0)(PORT = 2484))
+   )
+)
+
+DEDICATED_THROUGH_BROKER_LISTENER=ON
+DIAG_ADR_ENABLED = off
+```
+
+</TabItem>
+
+<TabItem value="sqlnet.ora">
+
+```bash
+# sqlnet.ora
+
+WALLET_LOCATION =
+   (SOURCE =
+     (METHOD = FILE)
+     (METHOD_DATA =
+       (DIRECTORY = /opt/oracle/wallet)
+     )
+   )
+
+SQLNET.AUTHENTICATION_SERVICES = (TCPS,NTS,BEQ)
+SSL_CLIENT_AUTHENTICATION = FALSE
+SSL_CIPHER_SUITES = (SSL_RSA_WITH_AES_256_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA)
+```
+
+</TabItem>
+
+<TabItem value="tnsnames.ora">
+
+```bash
+# tnsnames.ora
+
+SSL=
+(DESCRIPTION =
+  (ADDRESS = (PROTOCOL = TCPS)(HOST = 0.0.0.0)(PORT = 2484))
+  (CONNECT_DATA =
+    (SERVER = DEDICATED)
+    (SERVICE_NAME = XE)
+  )
+)
+
+XE=
+(DESCRIPTION =
+  (ADDRESS = (PROTOCOL = TCP)(HOST = 0.0.0.0)(PORT = 1521))
+  (CONNECT_DATA =
+    (SERVER = DEDICATED)
+    (SERVICE_NAME = XE)
+  )
+)
+```
+
+</TabItem>
+</Tabs>
+
+5. During off-peak hours, execute the following commands in sequence to restart Oracle services:
+
+   ```bash
+   $ORACLE_HOME/bin/lsnrctl stop
+   $ORACLE_HOME/bin/lsnrctl start
+   $ORACLE_HOME/bin/sqlplus / as sysdba
+   shutdown
+   startup
+   ```
+   
+6. Verify that Oracle can be logged in via SSL, for example, `$ORACLE_HOME/bin/sqlplus username/password@SSL`. 
 
 
 ## Connect to Oracle
@@ -277,11 +414,13 @@ TO  username CONTAINER=all;
       * **Connection Parameter String**: additional connection parameters, default empty.
       * **User**: The database account.
       * **Password**: The database password.
-      * **Multi-tenant**: If Oracle is a multi-tenant mode, you need to turn on the switch and fill in the PDB information.
-
-   * Advanced settings
       * **Log plugin name**: Keep default (**logMiner**).
+   * Advanced settings
+      * **Load Table Comment**: Choose whether to load table comment information.
+      * **Multi-tenant**: If Oracle is a multi-tenant mode, you need to turn on the switch and fill in the PDB information.
+      * **Use SSL**: Select whether to enable SSL connection for the data source to enhance data security. After enabling this feature, you will need to upload SSL certificate files and enter the certificate password. The relevant files can be obtained from [Enabling SSL Connection](#ssl).
       * **Timezone for datetime**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
+      * **Socket Read Timeout**: Setting this parameter can prevent indefinitely waiting for the database to return results in special cases, thus avoiding zombie connections. The unit is minutes, and it is generally not necessary to set this; the default value of 0 means no setting is applied.
       * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
       * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
