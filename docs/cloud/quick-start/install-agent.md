@@ -85,11 +85,11 @@ Next, let's create a free Agent instance.
 
 <TabItem value="Windows (64 bit)">
 
-1. For easier management of the Tapdata Agent, we recommend moving the downloaded Agent installer to the installation directory of your choice. For example, you can move it to **C:\tapdata** on a Windows system. By doing so, you can conveniently access and manage the Tapdata Agent from the designated installation directory.
+1. According to the prompts on the page, download the Agent installer and configuration file (**application.yml**).
 
-2. Double-click the **tapdata.exe** file.
+2. For easier management of the Tapdata Agent, we recommend moving the downloaded Agent installer to the installation directory of your choice. For example, you can move it to **C:\tapdata** on a Windows system. By doing so, you can conveniently access and manage the Tapdata Agent from the designated installation directory.
 
-3. Follow the prompts provided in the command window that appears. Right-click inside the window and select **Paste** to input the token information copied during step 3. Press the Enter key to proceed. If the launch is successful, the command window will automatically close.
+3. Double-click on **tapdata.exe** in the Agent installation directory to complete the installation. After a successful launch, the command window will automatically close.
 
 4. (Optional) Double-click the **status.bat** in the Agent installation directory to check the status of the Agent. The following is an example of a normal startup.
 
