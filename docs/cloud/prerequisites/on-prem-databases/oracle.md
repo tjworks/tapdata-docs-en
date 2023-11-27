@@ -415,8 +415,8 @@ XE=
       * **User**: The database account.
       * **Password**: The database password.
       * **Log plugin name**: Keep default (**logMiner**).
-   * Advanced settings
-      * **Load Table Comment**: Choose whether to load table comment information.
+   * Advanced <span id="advanced">settings</span>
+      * **Load Table Comment**:  Choose whether to load table comment information to help quickly identify the business significance of the tables.
       * **Multi-tenant**: If Oracle is a multi-tenant mode, you need to turn on the switch and fill in the PDB information.
       * **Use SSL**: Select whether to enable SSL connection for the data source to enhance data security. After enabling this feature, you will need to upload SSL certificate files and enter the certificate password. The relevant files can be obtained from [Enabling SSL Connection](#ssl).
       * **Timezone for datetime**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.

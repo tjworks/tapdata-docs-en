@@ -2,9 +2,30 @@
 
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
-### 2023-11-03
+## 2023-11-24
 
-### Functional Enhancements
+### New Features
+
+* Support for loading table comments on [Oracle data sources](prerequisites/on-prem-databases/oracle#advanced), which can be enabled in the **Advanced Settings** when configuring the data source. This makes it easier to quickly identify the business meaning of tables through their comments.
+* In the task [monitoring page](user-guide/copy-data/monitor-task.md), support viewing QPS (Queries Per Second) information based on the size of events.
+
+#### Functional Enhancements
+
+* Enhanced the display effects of resource management and the subscription center pages.
+* When performing data source connection tests, support for displaying connector download progress is now available, helping to quickly grasp connection progress and pinpoint timeout issues.
+
+#### Bug Fixes
+
+* Fixed an issue where incremental information was not successfully cleared after resetting and rerunning a task.
+* Fixed an issue where some SaaS data sources displayed incremental timestamps during full data synchronization.
+
+### Feature Enhancements
+
+### Bug Fixes
+
+## 2023-11-03
+
+### Feature Enhancements
 
 - Enhanced [Data Source Connection](prerequisites/README.md) methods, supporting SSL connections for data sources like MySQL, PostgreSQL, Kafka, TiDB, MariaDB, etc., to further enhance data security.
 - Improved user interface interaction logic.
