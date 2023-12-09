@@ -103,7 +103,7 @@ Before establishing the connection, it is essential to complete the necessary pr
         After referencing and starting the data replication/development task, the heartbeat task will be activated. At this point, you can click **View heartbeat task** to monitor the task.
         :::
 
-6. Click **Test Connection**, and when passed, click **Save**.
+6. Click **Test**, and when passed, click **Save**.
 
    :::tip
 

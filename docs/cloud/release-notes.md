@@ -2,6 +2,25 @@
 
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
+## 2023-12-08
+
+### New Features
+
+- Added [Azure Cosmos DB](prerequisites/cloud-databases/azure-cosmos-db.md) as a new data source, enabling full data synchronization to facilitate quick cloud data transfers.
+
+### Functional Enhancements
+
+- Upgraded data source connections, with [SQL Server](prerequisites/on-prem-databases/sqlserver.md) now supporting SSL connections, enhancing data security.
+- Optimized field type adjustments in [data replication tasks](user-guide/copy-data/create-task.md), allowing for direct selection of common types from the target database.
+- Improved task source node settings, enabling customization of the number of rows read per batch in the incremental phase, catering to performance needs of incremental synchronization.
+
+### Bug Fixes
+
+- Addressed issues with enhanced JS nodes failing or causing exceptions under certain scenarios.
+- Corrected several UI interaction experience issues for better usability.
+
+
+
 ## 2023-11-24
 
 ### New Features
@@ -9,12 +28,12 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 * Support for loading table comments on [Oracle data sources](prerequisites/on-prem-databases/oracle#advanced), which can be enabled in the **Advanced Settings** when configuring the data source. This makes it easier to quickly identify the business meaning of tables through their comments.
 * In the task [monitoring page](user-guide/copy-data/monitor-task.md), support viewing QPS (Queries Per Second) information based on the size of events.
 
-#### Functional Enhancements
+### Functional Enhancements
 
 * Enhanced the display effects of resource management and the subscription center pages.
 * When performing data source connection tests, support for displaying connector download progress is now available, helping to quickly grasp connection progress and pinpoint timeout issues.
 
-#### Bug Fixes
+### Bug Fixes
 
 * Fixed an issue where incremental information was not successfully cleared after resetting and rerunning a task.
 * Fixed an issue where some SaaS data sources displayed incremental timestamps during full data synchronization.
