@@ -170,6 +170,21 @@ import Content from '../../../reuse-content/_preparations.md';
    GRANT DELETE, INSERT, SELECT, UPDATE ON SCHEMA::dbo TO tapdata;
    ```
 
+
+
+## <span id="ssl">Enabling SSL Connection (Optional)</span>
+
+To further enhance the security of the data connection, you can choose to enable SSL (Secure Sockets Layer) encryption for SQL Server databases. This provides encryption at the transport layer for network connections, enhancing the security of communication data while ensuring data integrity. The specific steps are as follows:
+
+* [Windows Platform](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-sql-server-encryption?view=sql-server-ver15)
+* [Linux Platform](https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-encrypted-connections?view=sql-server-ver15&tabs=server)
+
+:::tip
+
+After completing the configuration, be sure to securely store the certificate-related files, as they will be used later when configuring connections.
+
+:::
+
 ## Connect to SQL Server
 
 1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
@@ -194,10 +209,11 @@ import Content from '../../../reuse-content/_preparations.md';
       * **User**: The database username.
       * **Password**: The database password.
       * **Schema**: Schema name.
-      * **Connection parameter string**: additional connection parameters, default empty.
    * Advanced settings
 
+      * **Connection Parameter String**: Additional connection parameters, default empty.
       * **Timezone**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
+      * **Use SSL/TLS**: Select whether to enable SSL connections for the data source to further enhance data security. After enabling this feature, you will also need to upload the CA certificate, certificate password, and server hostname. The relevant files can be obtained from [Enabling SSL Connection](#ssl).
       * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
       * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
