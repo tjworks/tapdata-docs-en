@@ -2,6 +2,23 @@
 
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
+## 20231226
+
+### New Features
+
+* Added support for [Time Series collections](https://www.mongodb.com/docs/manual/core/timeseries-collections/) in MongoDB 5.x and above versions.
+* Added support for [preImage](https://www.mongodb.com/docs/manual/changeStreams/#change-streams-with-document-pre--and-post-images) in MongoDB 6.x and above versions.
+
+### Functional Enhancements
+
+* Improved system prompts when enabling scheduled tasks while reaching the task limit.
+
+### Bug Fixes
+
+* Fixed inaccuracies in checkpoints in multi-table data replication scenarios.
+* Resolved issues with unsubscribed and deleted Agent instances continuing to report heartbeat information.
+* Addressed known UI interaction experience issues.
+
 ## 2023-12-08
 
 ### New Features
