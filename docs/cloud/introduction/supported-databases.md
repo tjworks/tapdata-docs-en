@@ -8,7 +8,14 @@ If you need to synchronize DDL operations, you need to enable DDL collection and
 
 :::
 
-### GA Data Sources
+
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+## GA Data Sources
 
 <table>
 <thead>
@@ -98,12 +105,16 @@ If you need to synchronize DDL operations, you need to enable DDL collection and
 
 :::tip
 
-The beta version of the data sources is in public preview and has passed the basic test cases and integration test cases, but has not yet passed the Tapdata certification test process. If you have any questions during use, please[contact us](mailto:team@tapdata.io).
+The beta version of the data sources is in public preview and has passed the basic test cases and integration test cases, but has not yet passed the Tapdata certification test process. If you have any questions during use, please [contact us](mailto:team@tapdata.io).
 
 :::
 
+
+
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="normal-beta" label="Common Databases" default>
+<TabItem value="On-Premises Databases">
+```
 
 <table>
 <thead>
@@ -123,15 +134,6 @@ The beta version of the data sources is in public preview and has passed the bas
 </thead>
 <tbody>
   <tr>
-    <td>BigQuery</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>N/A</td>
-  </tr>
-  <tr>
     <td>Custom Connection</td>
     <td>✅</td>
     <td>✅</td>
@@ -150,31 +152,13 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>7.x, 8.x</td>
   </tr>
   <tr>
-    <td>Databend</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>0.9 and above</td>
-  </tr>
-  <tr>
-    <td>IBM Db2</td>
+    <td>IBM DB2</td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
     <td>9.7 LUW</td>
-  </tr>
-  <tr>
-    <td>Doris</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>0.15.0</td>
   </tr>
   <tr>
     <td>DummyDB</td>
@@ -184,6 +168,15 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>✅</td>
     <td>➖</td>
     <td>-</td>
+  </tr>
+  <tr>
+    <td>Informix</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>10 and above</td>
   </tr>
   <tr>
     <td>KingBaseES-R6</td>
@@ -213,13 +206,13 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>2.8 ~ 6.0</td>
   </tr>
   <tr>
-    <td>SelectDB</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
+    <td>Sybase</td>
+    <td>✅</td>
     <td>✅</td>
     <td>➖</td>
-    <td>MySQL 5.7/8.0</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>ASE 16.0</td>
   </tr>
   <tr>
     <td>TDengine</td>
@@ -241,8 +234,10 @@ The beta version of the data sources is in public preview and has passed the bas
   </tr>
 </tbody>
 </table>
+
 </TabItem>
-    <TabItem value="file-and-saas" label="File and SaaS" default>
+
+<TabItem value="Data Warehouse and Data Lake">
 
 <table>
 <thead>
@@ -262,6 +257,93 @@ The beta version of the data sources is in public preview and has passed the bas
 </thead>
 <tbody>
   <tr>
+    <td>BigQuery</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Databend</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>0.9 and above</td>
+  </tr>
+  <tr>
+    <td>Doris</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>0.15.0</td>
+  </tr>
+  <tr>
+    <td>GaussDB（DWS）</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>8.1.3</td>
+  </tr>
+  <tr>
+    <td>SelectDB</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>2.0.13 and above</td>
+  </tr>
+  <tr>
+    <td>YashanDB</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>1.0</td>
+  </tr>
+</tbody>
+</table>
+
+</TabItem>
+
+<TabItem value="Cloud Databases/Files/SaaS" >
+
+<table>
+<thead>
+  <tr>
+    <th rowspan="2">Type</th>
+    <th colspan="3">As a source</th>
+    <th colspan="2">As a target</th>
+    <th rowspan="2">Versions</th>
+  </tr>
+  <tr>
+    <th>Full data synchronization</th>
+    <th>Incremental data synchronization</th>
+    <th>DDL event collection</th>
+    <th>Data write</th>
+    <th>DDL event apply</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Azure CosmosDB</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
     <td>Coding</td>
     <td>✅</td>
     <td>✅</td>
@@ -277,16 +359,25 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
+    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS</td>
   </tr>
   <tr>
-    <td>Microsoft Excel</td>
+    <td>Excel</td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>XLS/XLSX Format, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
+    <td>XLS/XLSX, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS</td>
+  </tr>
+  <tr>
+    <td>HubSpot</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Lark-IM</td>
@@ -307,9 +398,36 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>N/A</td>
   </tr>
   <tr>
+    <td>Metabase</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Salesforce</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
     <td>Zoho-CRM</td>
     <td>✅</td>
     <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Zoho-Desk</td>
+    <td>✅</td>
+    <td>✅</td>
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
@@ -333,12 +451,12 @@ The Alpha version of the data sources is in public preview and has passed the ba
 
 :::
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
+
+```mdx-code-block
 <Tabs className="unique-tabs">
-    <TabItem value="normal" label="Common Databases" default>
-
+<TabItem value="On-Premises Databases">
+```
 <table>
 <thead>
   <tr>
@@ -357,7 +475,7 @@ import TabItem from '@theme/TabItem';
 </thead>
 <tbody>
   <tr>
-    <td>ElasticSearch</td>
+    <td>Elasticsearch</td>
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
@@ -384,15 +502,6 @@ import TabItem from '@theme/TabItem';
     <td>8x</td>
   </tr>
   <tr>
-    <td>Hive 1</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>3.1.2+</td>
-  </tr>
-  <tr>
     <td>KingBaseES-R3</td>
     <td>✅</td>
     <td>➖</td>
@@ -402,7 +511,7 @@ import TabItem from '@theme/TabItem';
     <td>V8R3</td>
   </tr>
   <tr>
-    <td>OceanBase (MySQL mode) </td>
+    <td>OceanBase（MySQL模式）</td>
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
@@ -440,9 +549,61 @@ import TabItem from '@theme/TabItem';
 </tbody>
 </table>
 
+
 </TabItem>
 
-<TabItem value="cloud" label="Cloud Databases">
+<TabItem value="Data Warehouse and Data Lake">
+
+<table>
+<thead>
+  <tr>
+    <th rowspan="2">Type</th>
+    <th colspan="3">As a source</th>
+    <th colspan="2">As a target</th>
+    <th rowspan="2">Versions</th>
+  </tr>
+  <tr>
+    <th>Full data synchronization</th>
+    <th>Incremental data synchronization</th>
+    <th>DDL event collection</th>
+    <th>Data write</th>
+    <th>DDL event apply</th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+    <td>GreenPlum</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
+<tr>
+    <td>Hive1</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>Hive 3</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.1.2 and above</td>
+  </tr>
+</tbody>
+</table>
+
+</TabItem>
+
+<TabItem value="Cloud Databases">
 
 <table>
 <thead>
@@ -468,7 +629,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>5.0, 5.1, 5.5, 5.6, 5.7, 8.x</td>
+    <td>MySQL 5.0, 5.1, 5.5, 5.6, 5.7, 8.x</td>
   </tr>
   <tr>
     <td>Aliyun Tablestore</td>
@@ -522,7 +683,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>MongoDB 3.2, 3.4, 3.6, 4.0, 4.2</td>
+    <td>3.2, 3.4, 3.6, 4.0, 4.2</td>
   </tr>
   <tr>
     <td>Aliyun RDS PostgreSQL</td>
@@ -576,7 +737,7 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
-    <td>MongoDB 3.2, 3.4, 3.6, 4.0, 4.2</td>
+    <td>3.2, 3.4, 3.6, 4.0, 4.2</td>
   </tr>
   <tr>
     <td>TencentDB MySQL</td>
@@ -607,8 +768,11 @@ import TabItem from '@theme/TabItem';
   </tr>
 </tbody>
 </table>
+
+
 </TabItem>
-   <TabItem value="stream" label="Message Queue">
+
+<TabItem value="Message Queue and Middleware">
 
 <table>
 <thead>
@@ -637,6 +801,24 @@ import TabItem from '@theme/TabItem';
     <td>5.14.x</td>
   </tr>
   <tr>
+    <td>AI Chat</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
+<tr>
+    <td>Hazelcast</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td> 5.20, 5.21</td>
+  </tr>
+  <tr>
     <td>RabbitMQ</td>
     <td>✅</td>
     <td>✅</td>
@@ -656,8 +838,10 @@ import TabItem from '@theme/TabItem';
   </tr>
 </tbody>
 </table>
-   </TabItem>
-   <TabItem value="file-and-saas-alpha" label="File and SaaS">
+
+</TabItem>
+
+<TabItem value="File/SaaS">
 
 <table>
 <thead>
@@ -676,6 +860,33 @@ import TabItem from '@theme/TabItem';
   </tr>
 </thead>
 <tbody>
+<tr>
+    <td>Alibaba 1688</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
+<tr>
+    <td>BesChannels</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
+<tr>
+    <td>Feishu-Bitable</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
   <tr>
     <td>JSON</td>
     <td>✅</td>
@@ -683,7 +894,34 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
+    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS</td>
+  </tr>
+  <tr>
+    <td>Lark Approval</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Lark Doc</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Shein</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Vika</td>
@@ -701,10 +939,10 @@ import TabItem from '@theme/TabItem';
     <td>➖</td>
     <td>➖</td>
     <td>➖</td>
-    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS.</td>
+    <td>N/A, file locations supported include local, FTP, SFTP, SMB, S3FS, OSS</td>
   </tr>
 </tbody>
 </table>
 
-   </TabItem>
-  </Tabs>
+</TabItem>
+</Tabs>
