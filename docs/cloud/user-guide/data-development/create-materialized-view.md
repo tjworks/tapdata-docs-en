@@ -1,4 +1,4 @@
-# Builde Real-Time Materialized Views (Beta)
+# Build Real-Time Materialized Views (Beta)
 
 Materialized views are specialized database object that cache the results of intricate queries, thereby accelerating data retrieval. With Tapdata Cloud, you can craft real-time materialized views across diverse data sources. This not only ensures accuracy and immediacy of data but also streamlines data management and application development.
 
