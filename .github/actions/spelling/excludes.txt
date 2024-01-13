@@ -1,0 +1,7 @@
+# Ignore files
+(?:^|/)package-lock$
+
+# Ignore directories
+(?:^|/).github/
+(?:^|/)src/
+(?:^|/)static/
