@@ -84,7 +84,7 @@ GRANT SELECT ON *.* TO 'username' IDENTIFIED BY 'password';</pre>
    2. After the modification is completed, execute the following command to restart the MySQL server.
 
       ```bash
-      /etc/inint.d/mysqld restart
+      /etc/init.d/mysqld restart
       ```
 
    3. (Optional) Log in to the MySQL database and execute the following command to confirm that the configuration has taken effect, that is, in the output result, the value of the **binlog_format** is **ROW**.

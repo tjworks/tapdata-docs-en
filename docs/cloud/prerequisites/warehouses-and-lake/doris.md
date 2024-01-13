@@ -1,6 +1,6 @@
 # Doris
 
-Apache Doris is a new-generation open-source real-time data warehouse based on MPP architecture, with easier use and higher performance for big data analytics. Tapdata Cloud supports Doras as a source or target database to build data pipelines to help you quickly complete data flow in big data analytics scenarios.
+Apache Doris is a new-generation open-source real-time data warehouse based on MPP architecture, with easier use and higher performance for big data analytics. Tapdata Cloud supports Doris as a source or target database to build data pipelines to help you quickly complete data flow in big data analytics scenarios.
 
 Next, follow this article to connect a Doris data source on the Tapdata Cloud platform.
 
@@ -95,7 +95,7 @@ Please replace the username, password, and host in the command above.
    - **Doris Catalog**: The catalog of Doris, whose hierarchy is above the database. If you use the default catalog, you can leave it empty. For more information, see [Multi-Catalog](https://doris.apache.org/docs/1.2/lakehouse/multi-catalog/).
    - **DB Name**: database name, a connection corresponding to a database, if there are multiple databases, you need to create multiple connections.
    - **User**, **Password**: The database username and password.
-   - **Other Connection String Parameters**: Additionall connection parameters, empty by default.
+   - **Other Connection String Parameters**: Additionally connection parameters, empty by default.
    - **Timezone**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
    - **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an Agent.
 

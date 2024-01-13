@@ -138,7 +138,7 @@ When the Oracle version is 12c or above, you also need to execute the `GRANT LOG
    3. Select the following command to turn on the identification key log for a single table or all tables.
 
       ```sql
-      -- Turn on for single table, you need to replace the Schem_Name and Table_Name with yours
+      -- Turn on for single table, you need to replace the Schema_Name and Table_Name with yours
       ALTER TABLE Schema_Name.Table_Name ADD SUPPLEMENTAL LOG DATA (PRIMARY KEY) COLUMNS;
 
       -- Turn on for all tables
@@ -154,7 +154,7 @@ When the Oracle version is 12c or above, you also need to execute the `GRANT LOG
    4. Select the following command to turn on full supplemental logging for a single table or all tables.
 
       ```sql
-      -- Turn on for single table, you need to replace the Schem_Name and Table_Name with yours
+      -- Turn on for single table, you need to replace the Schema_Name and Table_Name with yours
       ALTER TABLE Schema_Name.Table_Name ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
 
       -- Turn on for all tables

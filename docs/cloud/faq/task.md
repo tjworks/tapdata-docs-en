@@ -155,7 +155,7 @@ You can converted characters via jdbc when creating a connection.
 When you configure a PostgreSQL connection, you need to add the following parameters to the connection string:
 
 ```
-autosave=always&cleanupSavePoints=ture
+autosave=always&cleanupSavePoints=true
 ```
 
 ![](../images/postgresql_autosave.png)

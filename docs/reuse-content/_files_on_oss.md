@@ -8,7 +8,7 @@ Object Storage Service (OSS) is a secure, cost-effective, and high-durability cl
 
     2. Click **Create User**.
 
-    3. On the redirected page, fill in the logon name, display name, select the OpenAPI Access, and click **OK**.
+    3. On the redirected page, fill in the name, display name, select the OpenAPI Access, and click **OK**.
 
        ![Create User](../cloud/images/create_aliyun_user.png)
 

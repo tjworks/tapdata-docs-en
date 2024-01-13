@@ -215,7 +215,7 @@ import Content from '../../../reuse-content/_preparations.md';
 
       ```sql
       // Add last_update column into table
-      ALTER TABLE schema_name.mytable ADD COLUMN last_udpate timestamp DEFAULT now();
+      ALTER TABLE schema_name.mytable ADD COLUMN last_update timestamp DEFAULT now();
       
       // Create trigger
       CREATE TRIGGER trg_uptime BEFORE UPDATE ON schema_name.mytable FOR EACH ROW EXECUTE PROCEDURE

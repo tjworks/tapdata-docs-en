@@ -8,7 +8,7 @@ The main usage of processing nodes in Tapdata Cloud is to filter table data, whe
 
 * **Execute action**: Users have the option to either retain or discard the matching data when using processing nodes in Tapdata Cloud.
 
-* **Conditional expression**: An expressionthat sets a filter condition
+* **Conditional expression**: An expression that sets a filter condition
 * **Example expression**: Filter out individuals who are either men over 50 years old or people under 30 years old with incomes of 10,000 or less. The filtering condition can be expressed as `( record.gender == 0&& record.age > 50) || ( record.age >= 30&& record.salary <= 10000)`.
 
 ![](../../images/data_dev_row_filter_setting_en.png)

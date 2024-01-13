@@ -2,7 +2,7 @@
 
 ClickHouse® is an open-source column-oriented database management system that allows generating analytical data reports in real-time. Its official ClickHouse Cloud offers scalable, real-time analytical processing without the need to manage infrastructure. With storage and computation decoupled, ClickHouse Cloud can auto-scale to accommodate modern workloads, ensuring high-speed query processing.
 
-This artical demonstrates real-time syncing from MySQL to ClickHouse using Tapdata Cloud.
+This article demonstrates real-time syncing from MySQL to ClickHouse using Tapdata Cloud.
 
 ## Background
 
