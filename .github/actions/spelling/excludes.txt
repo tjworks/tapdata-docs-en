@@ -1,6 +1,9 @@
 # Ignore files
 (?:^|/)package-lock$
+(?:^|/)README$
 # Ignore directories
 (?:^|/).github/
+(?:^|/).docusaurus/
+(?:^|/)node_modules/
 (?:^|/)src/
 (?:^|/)static/
