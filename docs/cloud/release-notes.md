@@ -2,6 +2,24 @@
 
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
+
+
+## 20240112
+
+### New Features
+
+* Added support for [Capped Collections](https://www.mongodb.com/docs/manual/core/capped-collections/) in data synchronization between MongoDB database.
+
+### Functional Enhancements
+
+* Enhanced the new user onboarding process, including the ability to collapse prompts and return to previous steps.
+
+### Bug Fixes
+
+* Fixed an issue where JS node model declaration settings showed incorrect prompts on the task editing page.
+* Resolved a problem in Oracle to MySQL DDL operation synchronization, where DROP COLUMN operations were not syncing correctly.
+* Addressed several UI interaction experience issues.
+
 ## 20231226
 
 ### New Features
