@@ -4,7 +4,7 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 
 
 
-## 20240112
+## 2024-01-12
 
 ### New Features
 
@@ -20,7 +20,7 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 * Resolved a problem in Oracle to MySQL DDL operation synchronization, where DROP COLUMN operations were not syncing correctly.
 * Addressed several UI interaction experience issues.
 
-## 20231226
+## 2023-12-26
 
 ### New Features
 
