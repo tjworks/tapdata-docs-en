@@ -81,7 +81,7 @@ As an example of creating a data replication task, the article demonstrates the 
    * **Basic Settings**
      * **Node Name**: Defaults to the connection name; you can also set a name that has business significance.
      * **Deduction Results**: Displays table structure information that Tapdata Cloud will write into the target, deduced from the source node setting. The update condition will be automatically set as the table's primary key, or if there isn’t one, a unique index field will be used.
-     * **Duplication Handling Strategy**: Choose according to business needs; defaults to **To maintain the origina table structure on the target side, please clear the data**.
+     * **Duplication Handling Strategy**: Choose according to business needs; defaults to **To maintain the original table structure on the target side, please clear the data**.
      * **Full Multi-thread Writing**: The number of concurrent threads for writing full data; default is **8**.
      * **Incremental Multi-thread Writing**: The number of concurrent threads for writing incremental data.
      * **Batch Write Item Quantity**: The number of items written per batch during full synchronization.

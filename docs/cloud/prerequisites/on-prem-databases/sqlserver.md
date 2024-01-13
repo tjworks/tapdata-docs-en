@@ -28,7 +28,7 @@ import Content from '../../../reuse-content/_preparations.md';
 
 ### As a Source Database
 
-1. Log in to SQL Server Management Studio or SQLcmd as a sysadmin (for example, **sa**).
+1. Log in to SQL Server Management Studio or SQL cmd as a sysadmin (for example, **sa**).
 
 1. [Enable SQL Server Agent Service](https://learn.microsoft.com/en-us/sql/ssms/agent/start-stop-or-pause-the-sql-server-agent-service?view=sql-server-ver16).
 
@@ -120,7 +120,7 @@ import Content from '../../../reuse-content/_preparations.md';
 
 ### As a Target Database
 
-1. Log in to SQL Server Management Studio or SQLcmd as a sysadmin (for example, **sa**).
+1. Log in to SQL Server Management Studio or SQL cmd as a sysadmin (for example, **sa**).
 
 2. Execute the following format of the command to create a user for the data copy or development task.
 

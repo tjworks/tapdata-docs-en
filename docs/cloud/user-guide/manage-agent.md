@@ -71,7 +71,7 @@ According to the platform selection of the Agent installation, view the relevant
    <TabItem value="windows" label="Windows">
     <p>Enter the installation directory of the Agent and proceed with the chosen operation:</p>
     <ul>
-    <li>Check the status of the Agent: Double-click the <b>sstatus.bat</b> </li>
+    <li>Check the status of the Agent: Double-click the <b>status.bat</b> </li>
     <li>Start Agent: Double-click the <b>start.bat</b> or <b>tapdata.exe</b> </li>
     <li>Stop Agent: Double-click the <b>stop.bat</b> </li>
     </ul>
