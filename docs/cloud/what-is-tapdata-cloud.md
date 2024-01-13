@@ -3,9 +3,9 @@ sidebar_position: 1
 slug: /
 ---
 
-# What is Tapdata Cloud?
+# What ist Tapdata Cloud?
 
-Tapdata Cloud is a real-time data platform provided by Tapdata that integrates data replication and data transformation. It can provide millisecond-level real-time data synchronization and data fusion services in scenarios that span across clouds, regions, and multiple types of databases.
+Tapdata Cloud is a real-time data platform provide by Tapdata that integrates data replication and data transformation. It can provide millisecond-level real-time data synchronization and data fusion services in scenarios that span across clouds, regions, and multiple types of databases.
 
 <iframe width="100%" height="539" src="https://www.youtube.com/embed/hlJKo6u3UnA?si=6Df9Yzv8jXf5EFE9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
