@@ -47,7 +47,7 @@ GaussDB (DWS) 8.1.3
    - **ExtParams**: Additional connection parameters, default empty.
    - **User**, **Password**: The database username and password.
    - **Timezone**: Defaults to the time zone used by the database, which you can also manually specify according to your business needs.
-   - **Contain table**: defaults to **all**, you can also choose to custom and fill in the included tables, separated by commas (,) between multiple tables.
+   - **Contain table**: Defaults to **all**, you can also choose to custom and fill in the included tables, separated by commas (,) between multiple tables.
    - **Exclude tables**: After turning on the switch, you can set the tables to be excluded, separated by commas (,) between multiple tables.
    - **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an Agent.
 
