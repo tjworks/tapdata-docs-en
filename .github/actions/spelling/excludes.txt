@@ -4,7 +4,7 @@
 # Ignore directories
 (?:^|/).github/
 (?:^|/).docusaurus/
-(?:^|/)src/docs/cloud/images
+(?:^|/)docs/cloud/images
 (?:^|/)node_modules/
 (?:^|/)src/
 (?:^|/)static/
