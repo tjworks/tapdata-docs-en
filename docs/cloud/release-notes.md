@@ -9,6 +9,7 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 ### New Features
 
 * Added support for [Capped Collections](https://www.mongodb.com/docs/manual/core/capped-collections/) in data synchronization between MongoDB database.
+* Data replication/transformation tasks now have import capabilities. Design your data flow process on [MongoDB Relational Migrator](https://www.mongodb.com/docs/relational-migrator/), export it, and then directly import it into Tapdata data pipelines from the top right corner, enhancing the convenience of data pipeline design.
 
 ### Functional Enhancements
 
@@ -17,8 +18,10 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 ### Bug Fixes
 
 * Fixed an issue where JS node model declaration settings showed incorrect prompts on the task editing page.
-* Resolved a problem in Oracle to MySQL DDL operation synchronization, where DROP COLUMN operations were not syncing correctly.
-* Addressed several UI interaction experience issues.
+* Fixed an issue where the DROP COLUMN operation in Oracle to MySQL synchronization was not syncing correctly.
+* Addressed an issue causing DDL errors when syncing from MySQL to ClickHouse.
+* Fixed instability in tasks due to frequent WebSocket reconnections.
+* Corrected several UI interaction experience issues.
 
 ## 2023-12-26
 
