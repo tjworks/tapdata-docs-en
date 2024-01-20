@@ -1,5 +1,5 @@
 # Ignore files
-(?:^|/)package-lock$
+\.json$
 (?:^|/)README$
 # Ignore directories
 (?:^|/).github/
