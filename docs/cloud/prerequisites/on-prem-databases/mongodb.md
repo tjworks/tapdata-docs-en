@@ -155,12 +155,12 @@ Only when using MongoDB version 3.2, it is necessary to grant the read role to t
 
             * **Standard mode**: After selecting this mode, you need to fill in the database address, name, account number, password and other connection string parameters.
 
-        * **Connect using TLS/SSL**: Choose how you want to connect:
-            * **TSL/SSL connection:** In cases where your database is located in an inaccessible subnet, Tapdata Cloud offers the option to establish a connection through a separate server within the network. This server acts as a TSL/SSL channel to facilitate the connection to the database. This method enables connectivity to the database even when it is in a subnet that would otherwise be inaccessible.
-            * **Direct connection**: Tapdata Cloud will connect directly to the database and you need to set up security rules to allow access.
-
     * Advanced settings
 
+        * **Connect using TLS/SSL**: Choose how you want to connect:
+          * **TSL/SSL connection:** In cases where your database is located in an inaccessible subnet, Tapdata Cloud offers the option to establish a connection through a separate server within the network. This server acts as a TSL/SSL channel to facilitate the connection to the database. This method enables connectivity to the database even when it is in a subnet that would otherwise be inaccessible.
+          * **Direct connection**: Tapdata Cloud will connect directly to the database and you need to set up security rules to allow access.
+        * **CDC Log Caching**: [Mining the source database's](../../user-guide/advanced-settings/share-mining.md) incremental logs, this feature allows multiple tasks to share incremental logs from the source database, avoiding redundant reads and thus significantly reducing the load on the source database during incremental synchronization. Upon enabling this feature, an external storage should be selected to store the incremental log.
         * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
         * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
         * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
