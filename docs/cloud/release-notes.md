@@ -4,6 +4,24 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 
 
 
+## 2024-01-26
+
+### New Features
+
+- Added support for [Shared Mining](user-guide/advanced-settings/share-mining.md), allowing multiple tasks to share incremental logs from the source database, thus avoiding redundant reads and significantly reducing the load on the source database during incremental synchronization.
+- The Shared Mining feature now supports using RocksDB as [local external storage](user-guide/advanced-settings/manage-external-storage.md) to extend storage for incremental logs.
+
+### Functional Enhancements
+
+- Improved the onboarding process for users from the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/tapdata-public/detail).
+- Added a time filter option for the incremental phase in the [Task Monitoring Page](user-guide/copy-data/monitor-task.md) to quickly observe QPS during the incremental phase.
+- Added warning messages for critical operations that might impact the database (e.g., filtering source table data).
+- Refined the logic for unsubscribing after instance subscription expiration.
+
+### Bug Fixes
+
+- Fixed an issue with the [Primary-Secondary Merge Node](user-guide/data-development/process-node#pri-sec-merged) where changes in the key conditions between the primary and secondary tables resulted in data not matching expectations.
+
 ## 2024-01-12
 
 ### New Features

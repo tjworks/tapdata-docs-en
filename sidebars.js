@@ -242,6 +242,15 @@ const sidebars = {
                     'cloud/user-guide/real-time-data-hub/create-task',
                     ]
              },
+             {
+             type: 'category',
+             label: 'Advanced Settings',
+             link: {type: 'doc', id: 'cloud/user-guide/advanced-settings/README'},
+             items:[
+                   'cloud/user-guide/advanced-settings/share-mining',
+                   'cloud/user-guide/advanced-settings/manage-external-storage',
+                   ]
+             },             
              'cloud/user-guide/manage-agent',
              'cloud/user-guide/manage-connection',
              'cloud/user-guide/custom-node',
