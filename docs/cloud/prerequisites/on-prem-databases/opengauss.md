@@ -82,7 +82,7 @@ openGauss 3.0.0 and above
       * **schemaname**: The schema name that the target table belongs to.
       * **username**: The username.
 ## Add Data Source
-1. Log in to the [Tapdata Cloud platform](https://cloud.tapdata.net/console/v3/).
+1. Log in to the [Tapdata Cloud](https://cloud.tapdata.net/console/v3/).
 
 2. In the left navigation pane, click on **Connection Management**.
 
