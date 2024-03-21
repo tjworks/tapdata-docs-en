@@ -12,6 +12,6 @@ You can view the information related to Agents, Connections, Number of Pipelines
 
 
 
-## System Notification
+## <span id="notifications">System Notification</span>
 
-To conveniently access the most recent system notifications and alerts, including Agent status updates, simply hover your mouse over the **Notification** icon located in the upper right corner. Moreover, by clicking on **View all notifications**, you can navigate to the **System notification** page and configure the settings for Agent notifications, such as Mail/SMS notifications, and more.
+To conveniently access the most recent system notifications and alerts, including Agent status updates, simply hover your mouse over the **Notification** icon located in the upper right corner. Moreover, you can click on **Notifications** to enter the **Notification List** page, where you can set the method (e.g., email/SMS, etc.) for Agent notifications, rules, and **Default Alarm Recipients** (supports multiple email addresses).

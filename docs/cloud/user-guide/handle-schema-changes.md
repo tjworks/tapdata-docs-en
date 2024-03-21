@@ -8,7 +8,7 @@ To ensure the high availability and fault tolerance of data replication/transfor
 
 1. When creating or editing a [data replication](copy-data/create-task.md) or [data transformation](data-development/create-task.md) task, go to the configuration page of the source database node.
 
-2. Find the **Advanced Settings** tab and check if the **DDL Event Collection** option is available.
+2. Find the **Advanced Settings** tab and check if the **Sync DDL Events** option is available.
 
 3. Depending on your specific data source type, enable this feature and select the DDL events to be collected.
 

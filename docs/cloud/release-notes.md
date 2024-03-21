@@ -2,7 +2,19 @@
 
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
+##  2024-03-08
 
+### New Features
+
+* Support for setting [default alarm recipients](user-guide/workshop#notifications), allowing customization of alarm receipt email addresses (supports multiple addresses).
+* New options in [DDL synchronization settings](user-guide/handle-schema-changes.md): **Stop Task on DDL Error** and **Automatically Ignore All DDLs**, catering to different business scenario needs.
+* Added a [time field injection](user-guide/data-development/process-node#time_injection) node, allowing the addition of a custom timestamp field to data during synchronization. This provides a more flexible way to capture incremental changes from the source database.
+
+### Enhancements
+
+* Optimized task retry logic and interface prompt information.
+* Enhanced the setting for incremental collection timing, supporting quick selection of the incremental time point from the last incremental run.
+* Improved the interaction logic for using external storage with the master-slave merge node.
 
 ## 2024-01-26
 

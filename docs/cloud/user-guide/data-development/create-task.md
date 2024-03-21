@@ -36,7 +36,7 @@ As an example, we will show how to change the **birthdate** field's data type fr
 
       * **Node name**: Defaults to connection name, you can also set a name that has business significance.
       * **Table**: n Select the desired source table that you wish to work with.
-      * **DDL event collection**: Once the switch is turned on, Tapdata Cloud will automatically collect the selected source DDL events, such as the addition of new fields. If the target database supports DDL writing, it enables DDL statement synchronization, ensuring that any changes in the source table's structure are reflected in the target database.
+      * **Sync DDL Events**: Once the switch is turned on, Tapdata Cloud will automatically collect the selected source DDL events, such as the addition of new fields. If the target database supports DDL writing, it enables DDL statement synchronization, ensuring that any changes in the source table's structure are reflected in the target database.
       * **Filter settings**: Default off, after turning on you need to specify data filtering conditions.
 
    2. Click **Type modification** node, and in the right panel, modify the **birthdate** field to the type **Date**.

@@ -57,7 +57,7 @@ As an example of creating a data replication task, the article demonstrates the 
    * **Advanced Settings**      
 
       * **DDL Synchronization**      
-        Choose whether to enable **DDL Event Collection**. When this switch is on, Tapdata will automatically collect the DDL events (like adding fields) from the selected source. If the target side supports DDL writing, the DDL statements can be synchronized.      
+        Choose whether to enable **Sync DDL Events**. When this switch is on, Tapdata will automatically collect the DDL events (like adding fields) from the selected source. If the target side supports DDL writing, the DDL statements can be synchronized.      
 
       * **Incremental Method**      
         Choose **Log CDC** or **Polling**. If you select **Polling**, you'll also need to specify the polling field, interval, and number of rows read each time.
