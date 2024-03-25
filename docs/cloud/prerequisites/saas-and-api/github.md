@@ -22,7 +22,7 @@ This article describes how to add GitHub data source to Tapdata Cloud.
 
    * **Connection name**: Fill in a unique name that has business significance.
    * **Connection type**: Currently only supported as a **Source**.
-   * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.
+   * **Agent settings**: Defaults to **Platform Automatic Allocation**, you can also manually specify an agent.
    * **Model load time**: If there are less than 10,000 models in the data source, their information will be updated every hour. But if the number of models exceeds 10,000, the refresh will take place daily at the time you have specified.
 
 6. Click **Authorize**, and on the GitHub authorization page that you are redirected to, complete the login and authorization (it is recommended to authorize as an organization administrator).
