@@ -62,6 +62,12 @@ import Content from '../../../reuse-content/_preparations.md';
       * **database_name**: Database name.
       * **Schema**: Schema name.
       * **username**: User name.
+      
+      :::tip
+      
+      If you only need to read the full data from PostgreSQL(not including incremental changes), you do not need to proceed with the following steps.
+      
+      :::
 
 3. To ensure that the entire row is used as the identifier for logging during UPDATE/DELETE operations, modify the replication identity to **FULL**. This setting determines the field used for logging when changes occur.
 
