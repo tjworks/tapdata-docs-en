@@ -91,7 +91,7 @@ Please replace the username, password, and host in the command above.
    - **Type**: Doris is supported as a source or target database.
    - **DB Address**: The connection address of Doris.
    - **Port**: The query service port for Doris, the default port is **9030**.
-   - **HTTP Address**: The HTTP protocol address of the BE service, including address and port(e.g. http://192.168.1.18:8040), the default port is **8040**.
+   - **HTTP Address**: The HTTP protocol address of the FE service, including address and port(e.g. http://192.168.1.18:8040), the default port is **8030**.
    - **Doris Catalog**: The catalog of Doris, whose hierarchy is above the database. If you use the default catalog, you can leave it empty. For more information, see [Multi-Catalog](https://doris.apache.org/docs/1.2/lakehouse/multi-catalog/).
    - **DB Name**: database name, a connection corresponding to a database, if there are multiple databases, you need to create multiple connections.
    - **User**, **Password**: The database username and password.
