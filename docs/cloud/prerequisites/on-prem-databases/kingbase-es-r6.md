@@ -2,6 +2,11 @@
 
 The Kingbase Database Management System (KingbaseES) is a commercial relational database management system developed independently by Beijing Kingbase Technology Inc, with proprietary intellectual property rights. KingbaseES-R6 is compatible with most features of Postgres 9.6 version. This article will introduce how to add KingbaseES-R6 data source in Tapdata Cloud, which can then be used as a source or target database to build data pipelines.
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## Supported Versions
 
 KingBaseES-V8R6
@@ -16,190 +21,7 @@ import Content from '../../../reuse-content/_beta.md';
 
 <Content />
 
-## Incremental Data Sync Principle
-
-By logical decoding function, Tapdata Cloud can extract the changes made to the transaction log and handle the changes in a user-friendly manner. Supported Change Data Capture (CDC) is as follows:
-
-- Logical Decoding: Used to parse logical change events from Wal logs.
-- Replication Protocol: Provides a mechanism for consumers to subscribe the database changes in real time.
-- Export Snapshot: Allow export of consistent snapshots of the database (pg_export_snapshot)
-- Replication Slot: Used to save consumer offsets and track subscriber progress.
-
-## Preparations
-
-### As a Source Database
-
-1. Log in to KingbaseES-R6 database as an administrator.
-
-2. Create a user and grant permissions.
-
-   1. Execute the command in the following format to create an account for data synchronization/development tasks.
-
-      ```sql
-      CREATE USER username WITH PASSWORD 'password';
-      ```
-
-      * **username**: Username.
-      * **password**: Password.
-
-   2. Execute the command in the following format to grant permissions to the account.
-
-      ```sql
-      -- Enter the database to be authorized
-      \c database_name
-      
-      -- Grant read permission on tables of the target schema
-      GRANT SELECT ON ALL TABLES IN SCHEMA schema_name TO username;
-      
-      -- Grant USAGE permission on target schema
-      GRANT USAGE ON SCHEMA schema_name TO username;
-      
-      -- Grant replication permission, not needed if only full data of the database is required
-      ALTER USER username REPLICATION;
-      ```
-
-      * **database_name**: Database name.
-      * **schema_name**: Schema name.
-      * **username**: Username.
-      
-      :::tip
-      
-      If you only need to read the full data from KingbaseES-R6 (not including incremental changes), you do not need to proceed with the following steps.
-      
-      :::
-
-3. Execute the command in the following format to change the replication identifier to **FULL** (using the entire row as the identifier). This attribute determines the fields logged when data is updated or deleted.
-
-   ```sql
-   ALTER TABLE schema_name.table_name REPLICA IDENTITY FULL;   
-   ```
-
-   * **schema_name**: Schema name.
-   * **table_name**: Table name.
-
-4. Log in to the server where KingbaseES-R6 is hosted, and choose the decoding plugin to install based on your business needs and version:
-
-   - [Wal2json](https://github.com/eulerto/wal2json/blob/master/README.md) (Source table must have a primary key; otherwise, delete operations cannot be synchronized)
-
-   - [Decoderbufs](https://github.com/debezium/postgres-decoderbufs)
-
-   - [Pgoutput](https://www.postgresql.org/docs/15/sql-createsubscription.html)
-
-   Next, we will demonstrate the installation process using **Wal2json** as an example.
-
-   :::tip
-
-   In this case, KingbaseES-R6 is deployed on the Docker platform (based on CentOS 7.9). If your environment differs from this case, you will need to adjust the versions of development packages, file paths, etc., mentioned in the following steps.
-
-   :::
-
-   1. As `root`, enter Docker and execute the following command to install environment dependencies, including llvm, clang, gcc, etc. Then, complete file copying to ensure that related files can be found during compilation.
-
-      ```bash
-      # Install dependencies
-      yum install -y devtoolset-7-llvm centos-release-scl devtoolset-7-gcc* llvm5.0 make gcc git
-      
-      # Copy files
-      mkdir -p /home/kingbase/Server/include/server
-      cp -a /home/kingbase/Server/lib/plc/.server/* /home/kingbase/Server/include/server/
-      ```
-
-   5. As `kingbase` user, enter Docker and execute the following commands to install the plugin.
-
-      ```bash
-      # Clone and enter directory
-      git clone https://github.com/eulerto/wal2json.git && cd wal2json
-      
-      # Compile and install
-      make 
-      
-      # Copy the generated wal2json.so to the Kingbase package directory
-      cp wal2json.so /home/kingbase/Server/lib/
-      ```
-
-   6. Execute the command `vim /home/kingbase/data/kingbase.conf` to modify the configuration file, changing the value of `wal_level` to `logical`.
-
-   7. Restart KingbaseES-R6 during a low-traffic period.
-
-5. (Optional) Test the log plugin.
-
-   1. Connect to the KingbaseES-R6 database, switch to the database that needs to be synchronized, and create a test table.
-
-      ```sql
-      -- Suppose the database to be synchronized is demodata and the schema is public
-      \c demodata
-      
-      CREATE TABLE public.test_decode
-      (
-        uid    integer not null
-            constraint users_pk
-                primary key,
-        name   varchar(50),
-        age    integer,
-        score  decimal
-      );
-      ```
-
-   2. Create a slot connection, using the wal2json plugin as an example.
-
-      ```sql
-      SELECT * FROM pg_create_logical_replication_slot('slot_test', 'wal2json');
-      ```
-
-   3. Insert a record into the test table.
-
-      ```sql
-      INSERT INTO public.test_decode (uid, name, age, score)
-      VALUES (1, 'Jack', 18, 89);
-      ```
-
-   4. Check the logs to see the results of the operation that was just inserted.
-
-      ```sql
-      SELECT * FROM pg_logical_slot_peek_changes('slot_test', null, null);
-      ```
-
-      Returns the following example (vertical display):
-
-      ```sql
-      lsn  | 0/3E38E60
-      xid  | 610
-      data | {"change":[{"kind":"insert","schema":"public","table":"test_decode","columnnames":["uid","name","age","score"],"columntypes":["integer","character varying(50)","integer","numeric"],"columnvalues":[1,"Jack",18,89]}]}
-      ```
-
-   5. Once the slot connection and test table have been confirmed to be working, you can delete them.
-
-      ```sql
-      SELECT * FROM pg_drop_replication_slot('slot_test');
-      DROP TABLE public.test_decode;
-      ```
-
-6. (Optional) To perform incremental synchronization using the last updated timestamp, you need to perform the following steps.
-
-   1. In the source database, execute the following command to create a public function, which needs to replace the schema name.
-
-      ```sql
-      CREATE OR REPLACE FUNCTION schema_name.update_lastmodified_column()
-        RETURNS TRIGGER LANGUAGE plpgsql AS $$
-        BEGIN
-            NEW.last_update = now();
-            RETURN NEW;
-        END;
-      $$;
-      ```
-
-   2. Create fields and triggers, each table needs to be executed once, such as the table name **mytable**.
-
-      ```sql
-      // Add last_update column into table
-      ALTER TABLE schema_name.mytable ADD COLUMN last_update timestamp DEFAULT now();
-      
-      // Create trigger
-      CREATE TRIGGER trg_uptime BEFORE UPDATE ON schema_name.mytable FOR EACH ROW EXECUTE PROCEDURE
-        update_lastmodified_column();
-      ```
-
-### As a Target Database
+## Prerequisites
 
 1. Log in to the KingbaseES-R6 database as an administrator.
 
@@ -209,25 +31,58 @@ By logical decoding function, Tapdata Cloud can extract the changes made to the 
    CREATE USER username WITH PASSWORD 'password';
    ```
 
-   * **username**: The user name.
-   * **password**: The password.
+   * **username**: Username.
+   * **password**: Password.
 
-3. Execute the following command to grant permissions to the database user.
+3. Grant permissions to the newly created account as required or customize permission control based on business needs.
 
-   ```sql
-   -- Enter the database you want to authorize
-   \c database_name;
-   
-   -- Grant USAGE and CREATE permissions to schema
-   GRANT CREATE,USAGE ON SCHEMA schemaname TO username;
-   
-   -- Grant table read and write permissions to schema
-   GRANT SELECT,INSERT,UPDATE,DELETE,TRUNCATE ON ALL TABLES IN SCHEMA schemaname TO username;
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="As Source">
+```
+
+```sql
+-- Enter the database for which you want to grant permissions
+\c database_name
+
+-- Grant SELECT permission on all tables in the source schema
+GRANT SELECT ON ALL TABLES IN SCHEMA schema_name TO username;
+
+-- Grant USAGE permission on the source schema
+GRANT USAGE ON SCHEMA schema_name TO username;
+```
+
+</TabItem>
+
+<TabItem value="As Target">
+
+```sql
+-- Enter the database for which you want to grant permissions
+\c database_name;
+
+-- Grant CREATE and USAGE permissions on the target schema
+GRANT CREATE, USAGE ON SCHEMA schema_name TO username;
+
+-- Grant READ and WRITE permissions on all tables in the target schema
+GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE ON ALL TABLES IN SCHEMA schema_name TO username;
+```
+</TabItem>
+</Tabs>
+
+* **database_name**: Database name.
+* **schema_name**: Schema name.
+* **username**: Username.
+
+4. To capture incremental changes from the source database, we need to execute the following command to set the replication identity to **FULL** (using the entire row as the identifier). This property determines the fields recorded in the log when `UPDATE/DELETE` operations occur.
+
+   ```
+   ALTER TABLE schema_name.table_name REPLICA IDENTITY FULL;
    ```
 
-   * **database_name**: The database name.
-   * **Schema**: Schema name.
-   * **username**: The user name.
+   - **schema_name**: The name of the schema.
+   - **table_name**: The name of the table.
+
+   After completing this operation, you will also need to contact [technical support](./../../faq/support.md) to provide the relevant plugin for installation on the server hosting KingbaseES-R6.
 
 
 ## Connect to KingbaseES-R6
@@ -236,7 +91,7 @@ By logical decoding function, Tapdata Cloud can extract the changes made to the 
 
 2. In the left navigation panel, click **Connections**.
 
-3. On the right side of the page, click **Create connection**.
+3. On the right side of the page, click **Create**.
 
 4. In the pop-up dialog, select **KingbaseES-R6**.
 
