@@ -91,9 +91,9 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'cloud/what-is-tapdata-cloud',
+            docId: 'what-is-tapdata-cloud',
             position: 'left',
-            label: 'Tapdata Cloud',
+            label: 'Tapdata Documentation',
           },
           {
             href: 'https://github.com/tapdata/docs',
