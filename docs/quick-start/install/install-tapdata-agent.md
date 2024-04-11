@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ## Procedure
 
-Tapdata Cloud offers pricing based on the specifications and quantity of subscribed Agent instances. You have the option to create one free instance of the **SMALL** specification Agent, and if required, you can [purchase additional Agent instances](../billing/billing-overview.md) to align with your specific business requirements.
+Tapdata Cloud offers pricing based on the specifications and quantity of subscribed Agent instances. You have the option to create one free instance of the **SMALL** specification Agent, and if required, you can [purchase additional Agent instances](../../billing/billing-overview.md) to align with your specific business requirements.
 
 Next, let's create a free Agent instance.
 
@@ -27,7 +27,7 @@ Next, let's create a free Agent instance.
 
 4. In the pop-up dialog, select deploy mode, spec and subscription period.
 
-   ![Select Agent Specification](../images/create_free_agent.png)
+   ![Select Agent Specification](../../images/create_free_agent.png)
 
    * **Deploy Mode**
      * **Self-Hosted Mode**: You need provide the equipment for [deploying](md) and maintaining the Agent. This allows for the optimal utilization of existing hardware resources, resulting in lower costs and enhanced security.
@@ -35,7 +35,7 @@ Next, let's create a free Agent instance.
        :::tip
        When selecting the **Fully Managed Mode**, you also need to choose the cloud provider and region where the Agent will be deployed.
        :::
-   * **Agent Spec**: Select product specifications based on the number of tasks and performance requirements required for evaluation. You can create an example of **SMALL** specifications for free. For detailed descriptions of product pricing and specifications, see [Billing Overview](../billing/billing-overview.md).
+   * **Agent Spec**: Select product specifications based on the number of tasks and performance requirements required for evaluation. You can create an example of **SMALL** specifications for free. For detailed descriptions of product pricing and specifications, see [Billing Overview](../../billing/billing-overview.md).
    * **Subscription Period**: Select the required subscription period, in order to avoid the expiration of the instance affecting the execution of the task, it is recommended to choose the Annually (**10% off**) or Monthly (**5% off**).
 
 5. Click **Subscription**.
@@ -44,7 +44,7 @@ Next, let's create a free Agent instance.
 
    1. Select the deployment platform on the redirected page.
 
-      ![Select Deploy Platform](../images/select_deploy_platform.png)
+      ![Select Deploy Platform](../../images/select_deploy_platform.png)
 
    2. Click **Copy** to obtain the deployment command.
 
@@ -67,7 +67,7 @@ Next, let's create a free Agent instance.
 1. Log in to the device where the Agent will be deployed (without root privileges), create a folder first (e.g., **tapdata**) and enter it for easier management of the Agent.
 2. Paste and execute the installation command you copied before, which contains the process of downloading, deploying, and launching the Agent, and the launch success is shown in the figure below.
 
-   ![Agent Started Successfully](../images/agent_started_on_linux.png)
+   ![Agent Started Successfully](../../images/agent_started_on_linux.png)
 
 </TabItem>
 
@@ -77,7 +77,7 @@ Next, let's create a free Agent instance.
 
 2. Paste and execute the installation command that you copied before, which includes the steps of downloading, deploying, and launching the Agent. After a successful launch, you can retrieve the container ID, as you can see in below picture.
 
-   ![Agent Started Successfully](../images/agent_started_on_docker.png)
+   ![Agent Started Successfully](../../images/agent_started_on_docker.png)
 
    
 
@@ -93,7 +93,7 @@ Next, let's create a free Agent instance.
 
 4. (Optional) Double-click the **status.bat** in the Agent installation directory to check the status of the Agent. The following is an example of a normal startup.
 
-   ![Agent Started Successfully](../images/agent_started_on_windows.png)
+   ![Agent Started Successfully](../../images/agent_started_on_windows.png)
 
 </TabItem>
 </Tabs>
@@ -140,19 +140,19 @@ Next, let's create a free Agent instance.
 
 5. Back to the Deployment page on Tapdata Cloud, select **Linux(64 bit)** as the target operating system and click **copy**.
 
-      ![Copy the installation command](../images/select_deploy_platform.png)
+      ![Copy the installation command](../../images/select_deploy_platform.png)
 
 6. In the Docker container's command line, paste the copied command, remove the content before `./tapdata`, and then execute it.  The startup is successful, you can refer to the below figure.
 
-   ![](../images/agent_started_on_macm1.png)
+   ![](../../images/agent_started_on_macm1.png)
 
 </details>
 
 ## Next step
 
-[Connect Data Sources](connect-database.md)
+[Connect Data Sources](../connect-database.md)
 
 ## See also
 
-* [Manage Agent](../user-guide/manage-agent.md)
-* [FAQ about Agent](../faq/agent-installation.md)
+* [Manage Agent](../../user-guide/manage-agent.md)
+* [FAQ about Agent](../../faq/agent-installation.md)

@@ -1,6 +1,15 @@
 # Billing Overview
+import Content from '../reuse-content/_cloud-features.md';
+
+<Content />
 
 This article introduces billing information such as billing items, billing methods and price descriptions in Tapdata Cloud.
+
+:::tip
+
+If you choose the Tapdata Enterprise, it is paid annually and can be deployed to your local data center, suitable for scenarios with strict requirements on data sensitivity or network isolation. Before making a purchase, you can [apply for a trial](https://tapdata.net/tapdata-on-prem/demo.html).
+
+:::
 
 ## Billing method
 
@@ -100,7 +109,7 @@ Please note that the performance of the following tables is provided for referen
 
 :::tip
 
-① In order to ensure the maximum data flow performance, it is recommended that the machine deployed by the Agent (referred to as the **host** in the above table) has sufficient resources such as computing, storage and bandwidth. For more information, see [Install Agent](../quick-start/install-agent.md).
+① In order to ensure the maximum data flow performance, it is recommended that the machine deployed by the Agent (referred to as the **host** in the above table) has sufficient resources such as computing, storage and bandwidth. For more information, see [Install Agent](../quick-start/install/install-tapdata-agent.md).
 
 :::
 

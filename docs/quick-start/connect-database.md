@@ -1,6 +1,6 @@
 # Step 2: Connect Data Sources
 
-Once you have [installed the Agent](install-agent), you need to connect the Agent to the data sources through Tapdata Cloud, and you can create a data pipeline once the connection has been established.
+Once you have [installed the Agent](install-agent), you need to connect the Agent to the data sources through Tapdata, and you can create a data pipeline once the connection has been established.
 
 :::tip
 
@@ -10,7 +10,7 @@ Before connecting to the data sources, you also need to ensure that the network 
 
 ## Procedure
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. Log in to [Tapdata Platform](https://cloud.tapdata.io/).
 
 2. In the left navigation panel, click **Connections**.
 
