@@ -391,7 +391,7 @@ XE=
 
 ## Connect to Oracle
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../user-guide/log-in.md).
 
 2. In the left navigation panel, click **Connections**.
 
@@ -439,7 +439,7 @@ XE=
 
 ## Related Topics
 
-[Oracle to Tablestore Real-Time Sync](../../best-practice/oracle-to-tablestore.md)
+[Oracle to Tablestore Real-Time Sync](../../pipeline-tutorial/oracle-to-tablestore.md)
 
 
 

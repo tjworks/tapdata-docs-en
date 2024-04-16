@@ -1,4 +1,4 @@
-# Step 1: Install Agent
+# Deploy Tapdata Agent
 
 The Tapdata Agent is an essential component for data synchronization, data heterogeneity, and data pipeline scenarios. While it is recommended to install the Tapdata Agent within the local network where the database is located for real-time processing, an alternative option is available. You can also install the Tapdata Agent on the Tapdata Cloud server, eliminating the need for setting up a machine locally. This provides flexibility and convenience for managing your data flow.
 
@@ -19,7 +19,7 @@ Tapdata Cloud offers pricing based on the specifications and quantity of subscri
 
 Next, let's create a free Agent instance.
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../user-guide/log-in.md).
 
 2. In the left navigation panel, click **Resource Management**.
 
@@ -30,7 +30,7 @@ Next, let's create a free Agent instance.
    ![Select Agent Specification](../../images/create_free_agent.png)
 
    * **Deploy Mode**
-     * **Self-Hosted Mode**: You need provide the equipment for [deploying](md) and maintaining the Agent. This allows for the optimal utilization of existing hardware resources, resulting in lower costs and enhanced security.
+     * **Self-Hosted Mode**: You need provide the equipment for [deploying](#deploy-agent) and maintaining the Agent. This allows for the optimal utilization of existing hardware resources, resulting in lower costs and enhanced security.
      * **Fully Managed Mode**: Tapdata Cloud provides the required computing/storage resources for running the Agent and deploys it automatically. Additionally, we offer unified operational maintenance and resource monitoring to enhance reliability. This enables one-click delivery and usage, eliminating the need for deployment and operational efforts, allowing you to focus on your core business activities.
        :::tip
        When selecting the **Fully Managed Mode**, you also need to choose the cloud provider and region where the Agent will be deployed.
@@ -40,7 +40,7 @@ Next, let's create a free Agent instance.
 
 5. Click **Subscription**.
 
-6. If you choose the **Fully Managed Mode**, the Agent will be automatically deployed. If you opt for the **Self-Hosted Mode**, please follow the steps below for manual deployment.
+6. <span id="deploy-agent">If you choose</span> the **Fully Managed Mode**, the Agent will be automatically deployed. If you opt for the **Self-Hosted Mode**, please follow the steps below for manual deployment.
 
    1. Select the deployment platform on the redirected page.
 

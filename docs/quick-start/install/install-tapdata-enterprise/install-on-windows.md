@@ -4,7 +4,7 @@ This guide explains how to quickly deploy Tapdata services on a local Windows pl
 
 :::tip
 
-Single node deployment is suitable for functional testing scenarios. For production environments, it is recommended to use [high-availability deployment](../../production-admin/install-tapdata-ha.md).
+Single node deployment is suitable for functional testing scenarios. For production environments, it is recommended to use [high-availability deployment](../../../production-admin/install-tapdata-ha.md).
 
 :::
 
@@ -27,18 +27,18 @@ Single node deployment is suitable for functional testing scenarios. For product
 
    3. Click **Advanced System Settings** on the left, then click **Environment Variables**.
 
-      ![Select Environment Variables](../../images/select_system_env.png)
+      ![Select Environment Variables](../../../images/select_system_env.png)
 
    4. In the dialog that appears, click **New** under **System Variables**, fill in the variable name and value, and click **OK**.
 
-      ![Add Variable](../../images/add_system_env.png)
+      ![Add Variable](../../../images/add_system_env.png)
 
       - **Variable Name**: `JAVA_HOME`
       - **Variable Value**: The installation path of JDK, for example, `C:\Program Files\Java\jdk1.8.0_202`
 
    5. In the **System Variables** area, find and double-click the **Path** variable, then in the dialog that appears, add the following environment variables, and click **OK**.
 
-      ![Edit Variable](../../images/edit_system_env.png)
+      ![Edit Variable](../../../images/edit_system_env.png)
 
       - `%JAVA_HOME%\bin`
       - `%JAVA_HOME%\jre\bin`
@@ -114,10 +114,8 @@ This example uses Windows Server 2019 to demonstrate the deployment process.
    Java version:1.8
    Java environment OK.
    Unpack the files...
-   Restart Tap
-
-dataAgent ...:
-TapdataAgent starting ...:
+   Restart TapdataAgent ...:
+   TapdataAgent starting ...:
    ```
 
    * **Please enter backend url**: Set the login address for the Tapdata platform, default is `http://127.0.0.1:3030/`.
@@ -163,4 +161,4 @@ fit={false}
 
 ## Next Steps
 
-[Connect to Databases](../connect-database.md)
+[Connect to Databases](../../connect-database.md)

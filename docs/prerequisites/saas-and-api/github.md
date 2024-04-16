@@ -8,7 +8,7 @@ This article describes how to add GitHub data source to Tapdata Cloud.
 
 ## Procedure
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../user-guide/log-in.md).
 
 2. In the left navigation panel, click **Connections**.
 

@@ -88,7 +88,7 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
 ## Connect to BigQuery
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../user-guide/log-in.md).
 
 2. In the left navigation panel, click **Connections**.
 
@@ -117,4 +117,4 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
 ## Related Topics
 
-[MySQL to BigQuery Real-Time Sync](../../best-practice/mysql-to-bigquery)
+[MySQL to BigQuery Real-Time Sync](../../pipeline-tutorial/mysql-to-bigquery.md)

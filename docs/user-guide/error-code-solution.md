@@ -1,6 +1,6 @@
 # Task Error Codes and Solutions
 
-If you encounter an exception with a task, you can view the relevant log information at the bottom of the task's [monitoring page](data-development/monitor-task.md). For common issues, Tapdata Cloud has codified them into specific error codes for easier lookup, and provides the cause of the error and its solution.
+If you encounter an exception with a task, you can view the relevant log information at the bottom of the task's [monitoring page](data-pipeline/data-development/monitor-task.md). For common issues, Tapdata Cloud has codified them into specific error codes for easier lookup, and provides the cause of the error and its solution.
 
 ## 10001
 
@@ -19,7 +19,7 @@ If you encounter an exception with a task, you can view the relevant log informa
 **Solutions**:
 
 * Try to re-enter the password and test the connection.
-* Try using a password without special characters and report to [technical support](../faq/support.md) for resolution.
+* Try using a password without special characters and report to [technical support](../support.md) for resolution.
 
 ## 10003
 
@@ -60,7 +60,7 @@ Before reading, the engine needs to locate the specific position in the logs to 
 **Solutions**:
 
 * Refer to the error message below, compare the erroneous fields' types in the source and destination databases. If inconsistent, use database DDL or similar commands to correct it, then run the task again.
-* Use the [JS processing node](data-development/process-node.md#js-process) to filter out erroneous fields. For instance, if the problematic field is `field1`, the corresponding JS would be `record.remove('field1')`.
+* Use the [JS processing node](data-pipeline/data-development/process-node.md#js-process) to filter out erroneous fields. For instance, if the problematic field is `field1`, the corresponding JS would be `record.remove('field1')`.
 * If the JS processing node changes the data type, the new type should be passed to Tapdata Cloud using the syntax provided below the JS editing box. Delete the target table and run the task again.
 
 ## 10007
@@ -95,7 +95,7 @@ Before reading, the engine needs to locate the specific position in the logs to 
 
 **Error Code Description**: Unknown error.
 
-**Solution**: Contact [technical support](../faq/support.md) for resolution.
+**Solution**: Contact [technical support](../support.md) for resolution.
 
 ## 13002
 

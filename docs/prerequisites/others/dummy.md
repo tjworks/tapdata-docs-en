@@ -4,7 +4,7 @@ Dummy is a data source that generates test data. This article describes how to a
 
 ## Connect to Dummy
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../user-guide/log-in.md).
 2. In the left navigation panel, click **Connections**.
 3. On the right side of the page, click **Create**.
 4. In the pop-up dialog, select **Dummy**.

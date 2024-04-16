@@ -82,12 +82,12 @@ GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE ON ALL TABLES IN SCHEMA schema_na
    - **schema_name**: The name of the schema.
    - **table_name**: The name of the table.
 
-   After completing this operation, you will also need to contact [technical support](../../faqupport.md) to provide the relevant plugin for installation on the server hosting KingbaseES-R6.
+   After completing this operation, you will also need to contact [technical support](../../support.md) to provide the relevant plugin for installation on the server hosting KingbaseES-R6.
 
 
 ## Connect to KingbaseES-R6
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../user-guide/log-in.md).
 
 2. In the left navigation panel, click **Connections**.
 

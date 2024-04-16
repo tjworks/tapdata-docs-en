@@ -11,7 +11,7 @@ SQL Server 2005, 2008, 2008 R2, 2012, 2014, 2016, and 2017.
 
 ## Connect to TencentDB for SQL Server
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../user-guide/log-in.md).
 
 2. In the left navigation panel, click **Connections**.
 

@@ -201,7 +201,7 @@ To further enhance the security of the data connection, you can choose to enable
 
 ## Connect to MySQL
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../user-guide/log-in.md).
 
 2. In the left navigation panel, click **Connections**.
 
@@ -280,5 +280,5 @@ To further enhance the security of the data connection, you can choose to enable
 
 ## Related Topics
 
-[MySQL to BigQuery Real-Time Sync](../../best-practice/mysql-to-bigquery.md)
+[MySQL to BigQuery Real-Time Sync](../../pipeline-tutorial/mysql-to-bigquery.md)
 

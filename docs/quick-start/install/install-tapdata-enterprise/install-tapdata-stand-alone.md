@@ -4,7 +4,7 @@ This document explains how to quickly deploy Tapdata service on a local Linux pl
 
 :::tip
 
-Stand-alone deployment is suitable for functional testing scenarios. For production environments, it is recommended to use [high availability deployment](../../production-admin/install-tapdata-ha.md).
+Stand-alone deployment is suitable for functional testing scenarios. For production environments, it is recommended to use [high availability deployment](../../../production-admin/install-tapdata-ha.md).
 
 :::
 
@@ -140,4 +140,4 @@ fit={false}
 
 ## Next Steps
 
-[Connect to Databases](../connect-database.md)
+[Connect to Databases](../../connect-database.md)

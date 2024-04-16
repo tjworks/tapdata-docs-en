@@ -1,6 +1,6 @@
 # Step 2: Connect Data Sources
 
-Once you have [installed the Agent](install-agent), you need to connect the Agent to the data sources through Tapdata, and you can create a data pipeline once the connection has been established.
+Once you have [installed the Agent](install), you need to connect the Agent to the data sources through Tapdata, and you can create a data pipeline once the connection has been established.
 
 :::tip
 

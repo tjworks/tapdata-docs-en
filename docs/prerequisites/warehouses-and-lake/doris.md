@@ -21,7 +21,7 @@ import Content from '../../reuse-content/_beta.md';
 
 ## Precautions
 
-If you want to use Doris as the source database to synchronize incremental data changes, you need to [create a data transformation task](../../user-guide/data-development/create-task.md) and select **Incremental Synchronization Method** as the **Polling**.
+If you want to use Doris as the source database to synchronize incremental data changes, you need to [create a data transformation task](../../user-guide/data-pipeline/data-development/create-task.md) and select **Incremental Synchronization Method** as the **Polling**.
 
 ## Preparations
 
@@ -75,7 +75,7 @@ Please replace the username, password, and host in the command above.
 
 ## Connect to Doris
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../user-guide/log-in.md).
 
 2. In the left navigation panel, click **Connections**.
 

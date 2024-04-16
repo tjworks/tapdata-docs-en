@@ -130,7 +130,7 @@ Only when using MongoDB version 3.2, it is necessary to grant the read role to t
 
 ## Connect to MongoDB
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../user-guide/log-in.md).
 
 2. In the left navigation panel, click **Connections**.
 

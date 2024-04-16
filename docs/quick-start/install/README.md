@@ -1,4 +1,4 @@
-# 部署 Tapdata
+# Step1: Deploy Tapdata Service
 
 Tapdata offers two deployment modes, **Cloud** and **Enterprise**, to meet your diversified needs:
 
