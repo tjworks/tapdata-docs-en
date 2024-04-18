@@ -1,10 +1,10 @@
 # Tapdata Enterprise
 
-Tapdata Enterprise 支持单机或高可用部署，如您部署在生产环境中，推荐采用[高可用部署](../../../production-admin/install-tapdata-ha.md)方式。
-
 import Content2 from '../../../reuse-content/_enterprise-features.md';
 
 <Content2 />
+
+Tapdata Enterprise supports single-node or high-availability deployment. If you are deploying in a production environment, it is recommended to use the [high-availability deployment](../../../production-admin/install-tapdata-ha.md) method.
 
 import DocCardList from '@theme/DocCardList';
 

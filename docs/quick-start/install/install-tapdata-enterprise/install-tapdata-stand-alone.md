@@ -1,6 +1,6 @@
-# Stand-alone Deployment (Linux Platform)
+# Stand-alone Deployment (Linux)
 
-This document explains how to quickly deploy Tapdata service on a local Linux platform.
+This document explains how to quickly deploy Tapdata service on a Linux platform.
 
 :::tip
 
@@ -8,14 +8,14 @@ Stand-alone deployment is suitable for functional testing scenarios. For product
 
 :::
 
-## Hardware and Software Requirements
+## Hardware & Software Requirements
 
 * CPU: 8 cores
 * Memory: 16 GB
 * Storage Space: 100 GB
 * Operating System: CentOS 7+ or Ubuntu 16.04+
 
-## Deployment Steps
+## Procedure
 
 This guide uses CentOS 7 as an example to demonstrate the deployment process.
 
@@ -33,13 +33,13 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
 
 2. Install environmental dependencies.
 
-    1. Install Java 1.8 version using the following command.
+    1. Install Java 1.8 version.
 
        ```bash
        yum -y install java-1.8.0-openjdk
        ```
 
-    2. Install MongoDB (version 4.0 and above), which will serve as an intermediary library to store task data and others. See [official documentation](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/) for the installation process.
+    2. Install MongoDB (version 4.0 and above), which will serve as the storage system for Tapdata to run related data, such as logs and metadata. For more information, see [Deploy MongoDB Replica Set](../../../production-admin/install-replica-mongodb.md).
 
 3. Download the Tapdata installation package (contact us at [team@tapdata.io](mailto:team@tapdata.io) to obtain it) and upload it to the target device.
 
@@ -98,8 +98,8 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
     * **Please enter backend url**: Set the login address for the Tapdata platform, by default `http://127.0.0.1:3030/`
     * **Please enter tapdata port**: Set the login port for the Tapdata platform, by default `3030`.
     * **Please enter api server port**: Set the service port for the API Server, by default `3080`.
-    * **Does MongoDB require username/password?**: If MongoDB database has security authentication enabled, enter **n** if not, or **y** if yes, then follow the prompts to enter the username, password, and the authentication database (default `admin`).
-    * **Does MongoDB require TLS/SSL?(y/n)**: If MongoDB database has TLS/SSL encryption enabled, enter **n** if not, or **y** if yes, then follow the prompts to enter the absolute path addresses of the CA certificate and Certificate Key files, as well as the file password for the Certificate Key.
+    * **Does MongoDB require username/password?**: If MongoDB database has security authentication enabled, enter **y** then follow the prompts to enter the username, password, and the authentication database (default `admin`).
+    * **Does MongoDB require TLS/SSL?(y/n)**: If MongoDB database has TLS/SSL encryption enabled, enter **y** then follow the prompts to enter the absolute path addresses of the CA certificate and Certificate Key files, as well as the file password for the Certificate Key.
     * **Please enter MongoDB host, port, database name**: Set the URI connection information for the MongoDB database, by default `127.0.0.1:27017/tapdata`.
     * **Does API Server response error code?**: Whether to enable the API Server to respond with error codes.
 
@@ -124,7 +124,10 @@ If you need to access the Tapdata service from other devices in the same network
 
 
 
-## Deployment Command Execution Example
+## Deployment Example
+
+import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlayer.tsx';
+
 
 <AsciinemaPlayer
 src="/asciinema_playbook/install_tapdata.cast"
@@ -135,6 +138,8 @@ preload={true}
 terminalFontSize="15px"
 fit={false}
 />
+
+
 
 
 

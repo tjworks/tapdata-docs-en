@@ -1,14 +1,14 @@
-# Stand-alone Deployment (Windows Platform)
+# Stand-alone Deployment (Windows)
 
-This guide explains how to quickly deploy Tapdata services on a local Windows platform.
+This guide explains how to quickly deploy Tapdata services on a Windows platform.
 
 :::tip
 
-Single node deployment is suitable for functional testing scenarios. For production environments, it is recommended to use [high-availability deployment](../../../production-admin/install-tapdata-ha.md).
+Stand-alone deployment is suitable for functional testing scenarios. For production environments, it is recommended to use [high-availability deployment](../../../production-admin/install-tapdata-ha.md).
 
 :::
 
-## Hardware and Software Requirements
+## Hardware & Software Requirements
 
 - CPU: 8 cores
 - Memory: 16 GB
@@ -17,9 +17,9 @@ Single node deployment is suitable for functional testing scenarios. For product
 
 ## Preparation
 
-1. Deploy MongoDB, which will serve as the storage system for Tapdata to run related data, such as logs and metadata. For deployment methods, refer to the [official documentation](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/).
+1. Install MongoDB (version 4.0 and above), which will serve as the storage system for Tapdata to run related data, such as logs and metadata. For more information, see [Deploy MongoDB Replica Set](../../../production-admin/install-replica-mongodb.md).
 
-2. Log in to the deployment device and install Java 1.8 and set environment variables.
+2. Log in to the target device, install Java 1.8 and set environment variables.
 
    1. [Download Java 1.8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html) and follow the prompts to complete the installation.
 
@@ -121,8 +121,8 @@ This example uses Windows Server 2019 to demonstrate the deployment process.
    * **Please enter backend url**: Set the login address for the Tapdata platform, default is `http://127.0.0.1:3030/`.
    * **Please enter tapdata port**: Set the login port for the Tapdata platform, default is `3030`.
    * **Please enter API server port**: Set the service port for the API Server, default is `3080`.
-   * **Does MongoDB require username/password?**: If MongoDB database has enabled security authentication, enter **n** if not enabled, or **y** if enabled, then follow prompts to enter username, password, and the authentication database (default is `admin`).
-   * **Does MongoDB require TLS/SSL?(y/n)**: If MongoDB database has enabled TSL/SSL encryption, enter **n** if not enabled, or **y** if enabled, then follow prompts to enter the absolute path of the CA certificate and Certificate Key file, and the file password of the Certificate Key.
+   * **Does MongoDB require username/password?**: If MongoDB database has enabled security authentication, enter **y** then follow prompts to enter username, password, and the authentication database (default is `admin`).
+   * **Does MongoDB require TLS/SSL?(y/n)**: If MongoDB database has enabled TSL/SSL encryption, enter **y** then follow prompts to enter the absolute path of the CA certificate and Certificate Key file, and the file password of the Certificate Key.
    * **Please enter MongoDB host, port, database name**: Set the URI connection information for the MongoDB database, default is `127.0.0.1:27017/tapdata`.
    * **Does API Server response error code?**: Whether to enable API Server response error code function.
 
@@ -143,7 +143,7 @@ This example uses Windows Server 2019 to demonstrate the deployment process.
 
    :::
 
-## Deployment Command Example
+## Deployment Example
 
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlayer.tsx';
 
