@@ -1,12 +1,15 @@
 # Manage Agent
+import Content from '../reuse-content/_cloud-features.md';
+
+<Content />
 
 Tapdata Cloud provides visual management and maintenance capabilities for Agents. You can manage installed Agents through the dedicated page or by executing commands.
 
 
 
-## Manage Agent by Page
+## Manage Agent by Web
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](log-in.md).
 
 2. Click **Resource Management** in the left navigation panel, and then choose which operation to perform.
 

@@ -1,5 +1,7 @@
 # Notification Center
 
+
+
 ## System Notifications
 
 The system notification feature mainly involves automatically triggered notifications based on user-defined notification rules. It includes two types of notifications: Task Run Notifications and Agent Notifications. Specific notification items include:

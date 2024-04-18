@@ -1,0 +1,9 @@
+<span class="tooltip">
+  <img src="https://img.shields.io/badge/Applicable%20to:%20-Tapdata%20Cloud-2E8B57" style={{transform:'scale(1.1)'}} alt="Tapdata Cloud"/>
+  <span class="tooltip-content">Tapdata Cloud offers you cloud services that are suitable for scenarios requiring rapid deployment and low initial investment, helping you focus more on business development rather than infrastructure management. <a href="https://cloud.tapdata.net/console/v3/">Free trial with Tapdata Cloud</a>.</span>
+</span>
+
+<span class="tooltip">
+  <img src="https://img.shields.io/badge/Tapdata%20Enterprise-4169E1" style={{transform:'scale(1.1)'}} alt="Tapdata Enterprise"/>
+  <span class="tooltip-content">Tapdata Enterprise can be deployed in your local data center, making it suitable for scenarios with strict requirements on data sensitivity or network isolation. It can serve to build real-time data warehouses, enable real-time data exchange, data migration, and more.</span>
+</span>

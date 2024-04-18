@@ -4,7 +4,7 @@ In the Data Integration Mode, you can simply drag the source table to the target
 
 ## Procedure
 
-1. Log in to Tapdata.
+1. [Log in to Tapdata Platform](../../log-in.md).
 
 2. In the left navigation panel, click **Real-Time Data Hub**.
 

@@ -12,9 +12,9 @@ To minimize the impact on source databases and align with the data hierarchical 
 
 ## Procedure
 
-1. Log in to Tapdata.
+1. [Log in to Tapdata Platform](../../log-in.md).
 
-2. In the left navigation panel, click **Data Console**.
+2. In the left navigation panel, click **Real-Time Data Hub**.
 
 3. On this page, you can conveniently view the information you have entered for your data source. In the following sections, we will explain the functions of each button available.
 
