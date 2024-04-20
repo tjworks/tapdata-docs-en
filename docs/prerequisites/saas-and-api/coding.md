@@ -1,5 +1,9 @@
 # Coding
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Coing provides a one-stop R&D management platform and cloud-native development tools to help enterprises improve R&D management efficiency.
 
 This article serves as a comprehensive guide, providing step-by-step instructions on adding Coding data sources to Tapdata Cloud, enabling efficient data synchronization and development for your projects.

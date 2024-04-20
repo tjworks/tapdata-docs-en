@@ -1,5 +1,9 @@
 # TencentDB for PG
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 ## Supported Versions
 
 PostgreSQL 9.4, 9.5, 9.6, 10.x, 11.x, 12

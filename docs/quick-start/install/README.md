@@ -1,5 +1,9 @@
 # Step1: Deploy Tapdata Service
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Tapdata offers two deployment modes, **Cloud** and **Enterprise**, to meet your diversified needs:
 
 | Product         | Applicable Scenarios                                                |

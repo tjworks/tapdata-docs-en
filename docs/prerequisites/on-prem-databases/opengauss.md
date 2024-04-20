@@ -1,5 +1,9 @@
 # openGauss
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Please follow the instructions below to successfully add and use openGauss databases in Tapdata Cloud.
 
 ## Supported Versions

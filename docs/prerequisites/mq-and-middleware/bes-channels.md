@@ -1,5 +1,9 @@
 # BesChannels
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 BesChannels B2B one-stop marketing cloud that focusing on the B2B track, helping the B2B marketing department obtain more leads, improve lead conversion rates, and deliver more business opportunities for sales.
 
 ### As Target

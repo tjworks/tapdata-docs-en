@@ -1,5 +1,9 @@
 # Elasticsearch
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases.
 
 Tapdata Cloud supports Elasticsearch as a target data source to help you quickly build data pipelines for scenarios such as log data write analytics, content management, and search analytics.  This article provides a comprehensive guide on how to add Elasticsearch to Tapdata Cloud.

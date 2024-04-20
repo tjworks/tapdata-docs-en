@@ -1,5 +1,9 @@
 # Hive3
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Please follow the instructions below to successfully add and use the Hive database in Tapdata Cloud.
 
 ## Limitations

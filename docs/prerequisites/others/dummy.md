@@ -1,5 +1,9 @@
 # Dummy
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Dummy is a data source that generates test data. This article describes how to add Dummy data sources to Tapdata Cloud.
 
 ## Connect to Dummy

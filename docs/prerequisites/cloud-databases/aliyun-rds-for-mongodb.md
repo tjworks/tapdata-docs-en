@@ -1,5 +1,9 @@
 # Aliyun MongoDB
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Please follow the instructions below to ensure that the MongoDB database is successfully added and used in Tapdata.
 
 ## Supported versions

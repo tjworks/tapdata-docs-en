@@ -1,5 +1,9 @@
 # Benefits
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 ## Innovative Real-time Data Synchronization
 
 Tapdata ingeniously integrates database Change Data Capture (CDC) with streaming computing technology. This innovative integration simplifies the data processing workflow, empowering users to explore new and inventive possibilities beyond traditional data synchronization.

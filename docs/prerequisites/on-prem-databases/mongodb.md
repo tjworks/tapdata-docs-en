@@ -1,5 +1,9 @@
 # MongoDB
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 After installing the Agent, the next step is to establish a connection between the Agent and MongoDB through Tapdata Cloud. This connection is crucial as it allows you to utilize the MongoDB data source for various data replication or development tasks.
 
 Tapdata Cloud supports the integration of MongoDB as both the source and target database for building data pipelines. This article provides a comprehensive guide on how to add MongoDB to Tapdata Cloud, enabling you to leverage its scalability, flexibility, querying, and indexing capabilities for your data processing needs.
@@ -16,9 +20,9 @@ You should use 4.0 or higher versions of the source and target databases since t
 
 ## Preparations
 
-import Content from '../../reuse-content/_preparations.md';
+import Content1 from '../../reuse-content/_preparations.md';
 
-<Content />
+<Content1 />
 
 
 ### As a Source Database

@@ -1,5 +1,9 @@
 # JSON
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications. 
 
 Tapdata supports reading JSON files stored on local, FTP, SFTP, SMB, or S3FS to meet a variety of data flow needs. This article describes how to connect to JSON data sources on Tapdata Cloud.

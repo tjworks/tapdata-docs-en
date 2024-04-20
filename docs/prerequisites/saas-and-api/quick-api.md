@@ -1,5 +1,9 @@
 # Quick API
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 ### 1. Fill in the connection name (required)
 
 The first step, but not necessarily the first step, can also be the last step. You need to fill in the connection name, because this is the first required item.

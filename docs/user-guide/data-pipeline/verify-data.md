@@ -32,11 +32,11 @@ import TabItem from '@theme/TabItem';
     - **Count Validation**: Verifies the row count of the source and target tables without displaying specific difference content, very fast.
     - **Full Fields Validation**: Verifies the values of all fields in the source and target tables row by row, displaying the difference content of all fields, slower.
     - **Associated Fields Validation**: Only verifies the values of the associated fields in the source and target tables, medium speed.
-    - **Hash Validation**: Currently does not support Verifiy data between heterogeneous databases.
+    - **Hash Validation**: Currently does not support Verify data between heterogeneous databases.
 - **Advanced Configuration**: Click on advanced configuration to unfold more configuration options:
     - **Result Output**: Choose **Output all inconsistent data** or **Only output inconsistent data from the source table**.
-    - **Validation Task Aler**: Choose the rule configuration and notification method for alarms when the task runs into errors or the validation results are inconsistent.
-    - **Validation Frequency**: Default is **Single**. If **Repeate** is chosen, you also need to set the start and end time of the validation and the interval between tasks.
+    - **Validation Task Alert**: Choose the rule configuration and notification method for alarms when the task runs into errors or the validation results are inconsistent.
+    - **Validation Frequency**: Default is **Single**. If **Repeated** is chosen, you also need to set the start and end time of the validation and the interval between tasks.
     - **Error**: The maximum number of inconsistent data records to save, default is 100, maximum is 10000. It's recommended to set a larger value to ensure completeness of records.
     - **Validation Conditions**: By default, Tapdata automatically loads the source/target data tables from the data replication/development tasks. Additionally, you can turn on the **Data Filter** switch to only verify specific condition data to reduce the validation scale (custom query and aggregate query filtering can be implemented via SQL). Moreover, you can add JS validation logic through advanced validation.
 
@@ -56,7 +56,7 @@ import TabItem from '@theme/TabItem';
 - **Advanced Configuration**: Click on advanced configuration to unfold more configuration options:
     - **Result Output**: Choose **Output all inconsistent data** or **Only output inconsistent data from the source table**.
     - **validation Task Alarm**: Choose the rule configuration and notification method for alarms when the task runs into errors or the validation results are inconsistent.
-- **validation Frequency**: Default is **Single**. If **Repeate** is chosen, you also need to set the start and end time of the validation and the interval between tasks.
+- **validation Frequency**: Default is **Single**. If **Repeated** is chosen, you also need to set the start and end time of the validation and the interval between tasks.
 - **Error**: The maximum number of inconsistent data records to save, default is 100, maximum is 10000. It's recommended to set a larger value to ensure completeness of records.
 - **Validation Conditions**: Click **Add Table** to manually specify the validation source/target data connections, tables to be verified, index fields, and validation model. Additionally, you can turn on the **Data Filter** switch to only verify specific condition data to reduce the validation scale (custom query and aggregate query filtering can be implemented via SQL). Moreover, you can add JS validation logic through advanced validation.
   If you need to verify multiple tables, click **Add Table** to continue adding validation conditions.

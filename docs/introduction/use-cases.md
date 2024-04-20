@@ -1,8 +1,12 @@
 # Application Scenarios
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 Tapdata is a next-generation real-time data platform that centralizes core enterprise data in real-time into a centralized data platform. It supports downstream interactive applications, microservices, or interactive analytics by providing real-time data through APIs or reverse synchronization.
 
-## Builde Real-time Data Pipelines
+## Build Real-time Data Pipelines
 
 Traditional master data management retrieves source data from business systems in a T+1 manner, processes it into standard enterprise data, and delivers it to business systems via export. This approach's limitation lies in the lag in data updates. Challenges such as CDC data collection errors and Kafka blockages make troubleshooting difficult in real-time data pipeline constructions using CDC + Kafka + Flink.
 
@@ -84,4 +88,4 @@ From big data analysis to data warehouse construction to data dashboards, data e
 
 ## Real-time Metrics Calculation
 
-Utilize Tapdata's real-time aggregation calculation capabilities for statistical calculations on logs, clickstreams, or database events in a streaming manner, producing various operational metrics such as login counts and conversion funnels.
+Utilize Tapdata's real-time aggregation calculation capabilities for statistical calculations on logs, click streams, or database events in a streaming manner, producing various operational metrics such as login counts and conversion funnels.

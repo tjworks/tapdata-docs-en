@@ -1,5 +1,9 @@
 # TDengine
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Please follow the instructions below to ensure that the TDengine database is successfully added and used in Tapdata Cloud.
 
 ## Supported version

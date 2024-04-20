@@ -1,4 +1,9 @@
 # TencentDB for MongoDB
+
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 ## Supported versions
 
 MongoDB 3.2、3.4、3.6、4.0、4.2

@@ -1,5 +1,9 @@
 # Stand-alone Deployment (Windows)
 
+import Content from '../../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 This guide explains how to quickly deploy Tapdata services on a Windows platform.
 
 :::tip
@@ -143,21 +147,7 @@ This example uses Windows Server 2019 to demonstrate the deployment process.
 
    :::
 
-## Deployment Example
 
-import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlayer.tsx';
-
-<AsciinemaWidget src="https://docs.tapdata.io/asciinema_playbook/install_tapdata.cast" rows={20} idleTimeLimit={3} preload={true} />
-
-<AsciinemaPlayer
-src="/asciinema_playbook/install_tapdata.cast"
-poster="npt:0:20"
-rows={25}
-speed={1.8}
-preload={true}
-terminalFontSize="15px"
-fit={false}
-/>
 
 ## Next Steps
 

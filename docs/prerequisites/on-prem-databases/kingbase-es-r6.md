@@ -1,5 +1,9 @@
 # KingbaseES-R6
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 The Kingbase Database Management System (KingbaseES) is a commercial relational database management system developed independently by Beijing Kingbase Technology Inc, with proprietary intellectual property rights. KingbaseES-R6 is compatible with most features of Postgres 9.6 version. This article will introduce how to add KingbaseES-R6 data source in Tapdata Cloud, which can then be used as a source or target database to build data pipelines.
 
 ```mdx-code-block
@@ -17,9 +21,9 @@ The database modes supported by KingbaseES-R6 are Oracle, PostgreSQL, and MySQL.
 
 :::
 
-import Content from '../../reuse-content/_beta.md';
+import Content1 from '../../reuse-content/_beta.md';
 
-<Content />
+<Content1 />
 
 ## Prerequisites
 

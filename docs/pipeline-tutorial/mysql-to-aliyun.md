@@ -74,7 +74,7 @@ Next, we will introduce the specific operational procedures.
 
    - **Repeat Processing Strategy**: Choose based on business needs or keep default.
    - **Data Write Mode**: Choose based on business needs.
-      - **Porcess by Event Type**: Choose the data writing strategy for insert, update, and delete events.
+      - **Process by Event Type**: Choose the data writing strategy for insert, update, and delete events.
       - **Statistics additional Write**: Only handle insert events, discarding updates and deletions.
    - **Full Multi-thread Writing**: Number of concurrent threads for full data writing, default is **8**, adjust based on the write performance of the destination.
    - **Incremental Multi-thread Writing**: Number of concurrent threads for incremental data writing, not enabled by default, activate based on the write performance of the destination.

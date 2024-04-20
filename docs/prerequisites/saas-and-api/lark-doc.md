@@ -1,5 +1,9 @@
 # Lark Doc
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 This article describes how to connect to Lark Doc data sources on Tapdata Cloud.
 
 ## Data Source Configuration

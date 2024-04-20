@@ -41,7 +41,7 @@ GRANT SELECT ON SYS.V_$TRANSPORTABLE_PLATFORM TO <DSTUSER>;
 
 :::tip
 
-You need to log in database as **SYS** user, and grant the above permissions to the database user. If the database has enabled multitenant capabilities, users must be created and granted permissions within the PDB.
+You need to log in database as **SYS** user, and grant the above permissions to the database user. If the database has enabled multi-tenant capabilities, users must be created and granted permissions within the PDB.
 
 :::
 

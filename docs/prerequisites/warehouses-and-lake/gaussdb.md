@@ -1,5 +1,9 @@
 # GaussDB (DWS)
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 GaussDB is a cloud-based, distributed relational database. Cross-AZ deployment ensures rock solid reliability and zero data loss. Hybrid transactional/analytical processing (HTAP) gives you stellar performance. After you complete the Agent deployment, you can follow this tutorial to add a GaussDB in Tapdata Cloud, which you can then use as a target database to build your data pipeline.
 
 ## Supported Versions

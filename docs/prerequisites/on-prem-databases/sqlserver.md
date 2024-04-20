@@ -1,5 +1,9 @@
 # SQL Server
 
+import Content1 from '../../reuse-content/_all-features.md';
+
+<Content1 />
+
 Tapdata Cloud provides comprehensive support for building data pipelines utilizing Microsoft SQL Server as both the source and target database. Microsoft SQL Server is a highly regarded relational database management system developed by Microsoft.
 
 This article serves as a detailed guide, outlining the steps to seamlessly incorporate a SQL Server database into Tapdata Cloud, enabling efficient data integration and management within your pipelines.

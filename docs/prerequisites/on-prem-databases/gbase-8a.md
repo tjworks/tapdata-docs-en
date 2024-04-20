@@ -1,5 +1,9 @@
 # GBase 8a
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 GBase 8a database is an analytical database developed based on MySQL, with basic compatibility in terms of syntax, features, and field types.
 
 ## Supported Versions

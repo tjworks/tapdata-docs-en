@@ -1,5 +1,9 @@
 # Db2
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 IBM Db2, a relational database, offers high performance, scalability, and reliability for structured data storage and management. Tapdata Cloud supports Db2 as both a source and target database, aiding in rapid data linkage construction. This guide introduces connecting a Db2 data source on Tapdata Cloud.
 
 ## Supported Versions

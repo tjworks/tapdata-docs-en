@@ -1,5 +1,9 @@
 # Supported Data Sources
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 Tapdata supports rich data sources as follows:
 
 :::tip

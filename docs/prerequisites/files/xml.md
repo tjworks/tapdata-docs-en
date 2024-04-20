@@ -1,5 +1,9 @@
 # XML
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Extensible Markup Language (XML) lets you define and store data in a shareable manner. XML supports information exchange between computer systems such as websites, databases, and third-party applications. 
 
 Tapdata supports reading XML files stored on local, FTP, SFTP, SMB, or S3FS to meet a variety of data flow needs. This article describes how to connect to XML data sources on Tapdata Cloud.

@@ -1,5 +1,9 @@
 # Doris
 
+import Content1 from '../../reuse-content/_all-features.md';
+
+<Content1 />
+
 Apache Doris is a new-generation open-source real-time data warehouse based on MPP architecture, with easier use and higher performance for big data analytics. Tapdata Cloud supports Doris as a source or target database to build data pipelines to help you quickly complete data flow in big data analytics scenarios.
 
 Next, follow this article to connect a Doris data source on the Tapdata Cloud platform.

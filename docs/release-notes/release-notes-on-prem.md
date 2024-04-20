@@ -119,7 +119,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 ### Enhancements
 
-- Optimized the setting of [published API scope](user-guide/data-service/create-api-service#settings), allowing adjustments without needing to unpublish.
+- Optimized the setting of [published API scope](user-guide/data-service/create-api-service#settings), allowing adjustments without needing to publish.
 - When [configuring data replication tasks](user-guide/data-pipeline/copy-data/create-task.md), the **selectable table range** dropdown box allows quick filtering of tables with or without primary keys, where tables with primary keys include those without primary keys but with unique indexes.
 
 ### Bug Fixes
@@ -235,7 +235,7 @@ source error codes](troubleshooting/error-code.md), covering more scenarios and 
 - For external storage configurations of MongoDB data sources, [connection testing capability](user-guide/manage-system/manage-external-storage#320-external-storage) has been added.
 - When creating a new external storage and choosing MongoDB, it supports [using SSL connections](user-guide/manage-system/manage-external-storage#320-external-storage).
 - Creating an HttpReceiver data source now [supports script trial runs](prerequisites/others/http-receiver) and [access authentication functionality](prerequisites/others/http-receiver).
-- Standard JS node capabilities adjusted, adding [LinkedHashMap data structure](appendix/standard-js#linkedhashmap) and [context.global object](appendix/standard-js#global).
+- Standard JS node capabilities adjusted, adding [Linked HashMap data structure](appendix/standard-js#linkedhashmap) and [context.global object](appendix/standard-js#global).
 - **Field editing** processing node's UI interaction has been improved.
 - Redundant prompts for task startup and schema reload have been optimized.
 - Data copy tasks support manually adding new tables. New tables can achieve full + incremental data synchronization.

@@ -1,5 +1,9 @@
 # PolarDB PostgreSQL
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Please follow the instructions below to successfully add and use PolarDB PostgreSQL databases in Tapdata Cloud.
 
 ## Supported Version

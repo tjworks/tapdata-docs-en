@@ -1,5 +1,9 @@
 # PostgreSQL
 
+import Content1 from '../../reuse-content/_all-features.md';
+
+<Content1 />
+
 Tapdata Cloud offers extensive support for building data pipelines using PostgreSQL as both the source and target database. PostgreSQL is a robust open-source object-relational database management system (ORDBMS) known for its powerful capabilities.
 
 This article provides detailed instructions on adding a PostgreSQL database to Tapdata Cloud, facilitating seamless integration and data flow in your pipelines.

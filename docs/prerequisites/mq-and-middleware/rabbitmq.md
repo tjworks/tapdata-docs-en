@@ -1,5 +1,9 @@
 # RabbitMQ
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Please follow the instructions below to ensure successful addition and useage of RabbitMQ in Tapdata Cloud.
 
 - If the queue name is empty, all queues will be loaded by default; If it needs to be specified, it can be separated by commas.

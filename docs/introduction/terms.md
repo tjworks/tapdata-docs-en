@@ -1,5 +1,9 @@
 # Terminology
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 This article introduces common terms used in Tapdata to help you quickly understand product and feature concepts.
 
 ## Full Data Synchronization
@@ -21,7 +25,7 @@ Also known as database replication/cloning, involves full or real-time increment
 In data flow tasks, real-time synchronization of data between multiple tables or other types of data through specific association or processing. Suitable for scenarios such as data analysis, processing, and disaster recovery without affecting user operations.
 
 ## Data Service
-In data flow tasks, generating a new model from one or more tables' different fields and publishing it externally via an API. Users can proactively obtain data content through the API.
+In data flow tasks, generating a new model from one or more tables' different fields and publishing it externally via an API. Users can obtain data content through the API.
 
 
 

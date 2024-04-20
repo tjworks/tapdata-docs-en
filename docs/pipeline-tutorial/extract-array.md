@@ -76,7 +76,7 @@ Before creating a data conversion task, you need to add the data source to which
 
    For more configuration introductions, see [Create Data Transform Task](../user-guide/data-pipeline/data-development/create-task.md).
 
-6. Click the middle Standard JS node and enter the following code in the script textbox on the right.
+6. Click the middle Standard JS node and enter the following code in the script text box on the right.
 
    ```js
    // Use the json2Map function to parse the settle_context field into an object and extract the pay_way_sums array value

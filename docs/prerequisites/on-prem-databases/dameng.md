@@ -1,5 +1,9 @@
 # Dameng
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Dameng Database Management System (DM) is a new generation of large-scale general-purpose relational databases, providing comprehensive support for SQL standards and mainstream programming language interfaces/development frameworks. It adopts row-column hybrid storage technology, achieving a balance between OLAP and OLTP, and satisfying the needs of HTAP hybrid application scenarios.
 
 After completing the Agent deployment, you can follow this tutorial to add a Dameng data source in Tapdata Cloud, and subsequently use it as either a source or a target database to build data pipelines.

@@ -1,5 +1,9 @@
 # TencentDB TD-SQL
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Please follow the instructions below to ensure successful addition and use of the distributed database TD-SQL  version database in Tapdata.
 
 ## Supported Versions

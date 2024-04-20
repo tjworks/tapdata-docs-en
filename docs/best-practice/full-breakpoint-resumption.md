@@ -63,7 +63,7 @@ In this case, we will demonstrate the specific configuration process for data mi
             * **Sharding Method**: Choose based on business needs:
                 * **Sharding Based on Count**: Based on the number of records, you need to specify the size of the partition.
                 * **Sharding Based on min/max**: Based on maximum/minimum values, you need to specify the number of partitions.
-            * **Shard Size**: Choose the record number in eache shard.
+            * **Shard Size**: Choose the record number in each shard.
             * **Sharding Concurrency Thread Count**: Choose the concurrency based on the source database and Tapdata server load, default is 8.
             * **Sharding Batch Read Limit**: Choose the upper limit of batch read data per partition based on source database load, default is 3000.
             * **Shard Batches and Incremental Data are Merged Locally Before Sending**: If this task needs to perform both full and incremental migration, keep it enabled. If only full migration is performed and the source database will not change data during migration, you can disable this feature.

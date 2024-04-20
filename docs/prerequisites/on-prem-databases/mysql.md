@@ -1,5 +1,9 @@
 # MySQL
 
+import Content1 from '../../reuse-content/_all-features.md';
+
+<Content1 />
+
 MySQL, the highly popular open-source relational database, is widely utilized as a relational data store by numerous websites, applications, and commercial products.
 
 Tapdata Cloud extends support for constructing data pipelines with MySQL as both the source and target database. This article provides comprehensive instructions on incorporating a MySQL database into Tapdata Cloud, enabling seamless integration for your data pipelines.

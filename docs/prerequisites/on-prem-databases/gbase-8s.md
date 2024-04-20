@@ -1,5 +1,9 @@
 # GBase 8s
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 GBase 8s database is a database developed based on Informix, retaining most of the native syntax, features, and field types, and introducing many advantageous features from Oracle.
 
 ## Supported Versions

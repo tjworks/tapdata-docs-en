@@ -58,7 +58,7 @@ Configure some settings related to connection management, including:
 
 - **MongoDB Load Model Sampling Records** (rows): Set the number of sampling records when loading MongoDB models.
 - **Data Source Schema Update Time**: Set the specific time for automatic data source schema updates.
-- **Data Source Schema Update Interva**l (days): Set the update period for data source schemas in days.
+- **Data Source Schema Update Interval** (days): Set the update period for data source schemas in days.
 - **Allow the Creation of Duplicate Data Sources**: Set whether to allow the creation of duplicate data sources.
 
 ## Operation Display Settings

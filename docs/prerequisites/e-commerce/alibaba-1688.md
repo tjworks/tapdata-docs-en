@@ -1,5 +1,9 @@
 # Alibaba 1688
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 This article describes how to connect to Alibaba 1688 data sources on Tapdata Cloud.
 
 ## Connect to Alibaba 1688

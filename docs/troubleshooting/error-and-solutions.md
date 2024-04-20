@@ -18,7 +18,7 @@ Task runtime logs can be viewed at the bottom of the [task monitoring page](../u
 
 **Solution**: Adjust the Oracle's undo size. If adjustment is not possible temporarily, reduce the number of concurrent synchronization tasks on this database and retry.
 
-### ORA-01325, archive log mode must be enabled to build into the logstream
+### ORA-01325, archive log mode must be enabled to build into the log stream
 
 **Scenario**: This error occurs when Oracle is used as the source and incremental data synchronization fails.
 

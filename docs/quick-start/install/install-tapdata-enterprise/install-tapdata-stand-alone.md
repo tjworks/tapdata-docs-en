@@ -1,5 +1,9 @@
 # Stand-alone Deployment (Linux)
 
+import Content from '../../../reuse-content/_enterprise-features.md';
+
+<Content />
+
 This document explains how to quickly deploy Tapdata service on a Linux platform.
 
 :::tip
@@ -121,25 +125,6 @@ Please change your password promptly upon first login to ensure security.
 If you need to access the Tapdata service from other devices in the same network, ensure network interoperability.
 
 :::
-
-
-
-## Deployment Example
-
-import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlayer.tsx';
-
-
-<AsciinemaPlayer
-src="/asciinema_playbook/install_tapdata.cast"
-poster="npt:0:20"
-rows={25}
-speed={1.8}
-preload={true}
-terminalFontSize="15px"
-fit={false}
-/>
-
-
 
 
 

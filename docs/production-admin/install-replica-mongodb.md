@@ -18,7 +18,7 @@ We recommend using MongoDB version 4.0 or higher. This example uses CentOS 7 to 
 
 ## Procedure
 
-1. Execute the following commands on all servers to adjust file access numbers, disable firewalls, and set other system parameters.
+1. Execute the following commands on all servers to adjust file access numbers, disable firewall, and set other system parameters.
 
    ```bash
    ulimit -n 1024000

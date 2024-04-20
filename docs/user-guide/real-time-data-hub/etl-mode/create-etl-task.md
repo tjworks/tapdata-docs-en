@@ -18,7 +18,7 @@ In the Data Integration Mode, you can simply drag the source table to the target
 
 4. (Optional) Click the 🔍 icon to find the source table you want to synchronize and drag it to the right target data source.
 
-5. In the pop-up dialogenter the task name and choose whether to run the task.
+5. In the pop-up dialog enter the task name and choose whether to run the task.
 
    ![Create Task](../../../images/create_etl_task.gif)
 

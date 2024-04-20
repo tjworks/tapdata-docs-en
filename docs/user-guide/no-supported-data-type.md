@@ -1,5 +1,9 @@
 # Data Type Support Description
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 :::tip
 
 In this article, only the field types not supported during synchronization are listed, and the content that is not covered will be gradually added.

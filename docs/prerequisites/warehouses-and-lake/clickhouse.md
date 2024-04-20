@@ -1,5 +1,9 @@
 # ClickHouse
 
+import Content1 from '../../reuse-content/_all-features.md';
+
+<Content1 />
+
 ClickHouse® is a high-performance, column-oriented SQL database management system (DBMS) for online analytical processing (OLAP). 
 
 Tapdata Cloud supports the creation of data pipelines with ClickHouse as the target database. The following article provides a comprehensive guide on how to add ClickHouse to Tapdata Cloud.

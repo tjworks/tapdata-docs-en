@@ -1,5 +1,9 @@
 # Aliyun RDS for SQL Server
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Aliyun RDS for SQL Server is an on-demand database hosting service for SQL Server with automated monitoring, backup and disaster recovery capabilities.
 
 This article serves as a detailed guide, outlining the steps to seamlessly incorporate a Aliyun RDS for SQL Server into Tapdata Cloud, enabling efficient data integration and management within your pipelines.

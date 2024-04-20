@@ -1,5 +1,9 @@
 # Troubleshooting Connections
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 To ensure the effectiveness of the data source connection, you can perform a connection test after completing the [data connection configuration](../prerequisites/README.md). By clicking on **Test Connection**, you can verify if the data source configuration meets the requirements and check for normal network connectivity. This article provides an overview of common inspection items within Tapdata and offers troubleshooting methods in case of connection failures.
 
 - **Check if connections are available**

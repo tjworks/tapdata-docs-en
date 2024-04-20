@@ -9,7 +9,7 @@ Tapdata supports a wide range of functions to facilitate the definition of proce
 
 1. [Log in to Tapdata Platform](../log-in.md).
 
-2. In the left navigation bar, select **Advaced** > **Function List**.
+2. In the left navigation bar, select **Advanced** > **Function List**.
 
 3. On this page, you can see the functions currently available. For example, click **View** next to a system function to learn more about it.
 

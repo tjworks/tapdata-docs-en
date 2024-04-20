@@ -1,5 +1,9 @@
 # Oracle
 
+import Content1 from '../../reuse-content/_all-features.md';
+
+<Content1 />
+
 Tapdata Cloud provides support for building data pipelines using Oracle Database as both the source and target database. Oracle Database, developed and marketed by Oracle Corporation, is a versatile and comprehensive multi-model database management system.
 
 This article serves as a guide, outlining the steps to add an Oracle database to Tapdata Cloud, enabling seamless integration for your data pipelines.

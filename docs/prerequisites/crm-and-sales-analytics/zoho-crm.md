@@ -1,5 +1,9 @@
 # Zoho-CRM
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Zoho CRM acts as a single repository to bring your sales, marketing, and customer support activities together, and streamline your process, policy, and people in one platform. Tapdata Cloud supports Zoho CRM as a data source to build a data pipeline to help you read data in CRM and synchronize it to the specified data source, helps you quickly open the data flow channel. This article explains how to add a Zoho CRM data source to Tapdata Cloud.
 
 

@@ -1,5 +1,9 @@
 # KingbaseES-R3
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 The Kingbase Database Management System (KingbaseES) is a commercial relational database management system developed independently by Beijing Kingbase Technology Inc, with proprietary intellectual property rights. This article will introduce how to add KingbaseES-R3 data source in Tapdata Cloud, which can then be used as a source or target database to build data pipelines.
 
 ```mdx-code-block
@@ -11,9 +15,9 @@ import TabItem from '@theme/TabItem';
 
 KingBaseES-V8R3
 
-import Content from '../../reuse-content/_alpha.md';
+import Content1 from '../../reuse-content/_alpha.md';
 
-<Content />
+<Content1 />
 
 ## Prerequisites
 

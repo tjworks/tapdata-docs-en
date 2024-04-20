@@ -1,5 +1,9 @@
 # Lark IM
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 This article serves as a comprehensive guide, providing step-by-step instructions on adding Lark IM data sources to Tapdata Cloud, enabling efficient data synchronization and development for your projects.
 
 ## Preparation

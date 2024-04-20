@@ -1,5 +1,9 @@
 # Greenplum
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Greenplum Database is a massively parallel processing (MPP) database server with an architecture specially designed to manage large-scale analytic data warehouses and business intelligence workloads.
 
 This article provides detailed instructions on adding a Greenplum database to Tapdata Cloud, facilitating seamless integration and data flow in your pipelines.

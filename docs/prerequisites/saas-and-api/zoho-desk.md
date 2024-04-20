@@ -1,5 +1,9 @@
 # Zoho Desk
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 If you're interested, consider exploring ZoHo Desk's OpenAPI documentation and WebHook documentation to understand the details:
 
 - [OpenAPI Documentation](https://desk.zoho.com.cn/support/APIDocument.do#Introduction)

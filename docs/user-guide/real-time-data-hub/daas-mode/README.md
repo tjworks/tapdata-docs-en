@@ -1,4 +1,4 @@
-# Data as Sevice Mode
+# Data as Service Mode
 import Content from '../../../reuse-content/_all-features.md';
 
 <Content />

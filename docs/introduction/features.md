@@ -1,5 +1,9 @@
 # Features
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 This article introduces the features of Tapdata to help you quickly understand its core capabilities.
 
 ## Data Replication

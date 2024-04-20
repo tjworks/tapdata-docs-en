@@ -1,5 +1,9 @@
 # Hazelcast
 
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
 Please follow the instructions below to successfully add and use the Hazelcast Cloud database in Tapdata Cloud.
 
 ## Supported Versions
