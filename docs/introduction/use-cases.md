@@ -82,7 +82,7 @@ With the rapid development of the business and the growth of the number of users
 
 To solve the above problems, you can use Tapdata to synchronize data in real time between multiple business units built in the same city/off-site to ensure global data consistency. When any unit fails, just switch the traffic to other available units automatically, effectively guaranteeing the high availability of the service.
 
-## Buildd Materialized Views (Wide Tables)
+## Build Materialized Views (Wide Tables)
 
 From big data analysis to data warehouse construction to data dashboards, data engineers often need to use batch processing tasks to display and analyze wide tables or views, consuming significant resources and causing data updates to lag. Tapdata supports incremental wide table construction capabilities to provide the latest data at minimal cost.
 
