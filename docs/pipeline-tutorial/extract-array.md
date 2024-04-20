@@ -1,4 +1,7 @@
 # Building an Array Extraction Link to Simplify Data Analysis
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 In modern payment systems, the analysis of payment data is crucial for understanding user behavior, optimizing business processes, and making decisions. For database tables storing payment data, payment data is sometimes written as a JSON string in a field, complicating its structure and making subsequent analysis complex.
 
@@ -47,14 +50,17 @@ Because data in the JSON string format has some limitations for statistical anal
 
 Next, we will introduce how to use the built-in **Standard JS** node in Tapdata to decompose the `settle_context` field in the settlement summary table, and then synchronize the extracted payment method information to a specified database, thereby helping companies to interface more conveniently with BI reports and gain deeper insights and analysis based on payment data.
 
-## Preparation
+## Prerequisites
 
 Before creating a data conversion task, you need to add the data source to which the settlement table belongs to Tapdata. Also, you need to add a data source (such as a MySQL database) as the target database. For specific operations, see [Configure MySQL Connection](../prerequisites/on-prem-databases/mysql.md).
 
 ## Procedure
 
-1. Log in to the Tapdata platform.
-2. In the left navigation bar, select **Data Pipelines** > **Transforms**.
+1. [Log in to Tapdata Platform](../user-guide/log-in.md).
+2. Based on the product type, select the operation entry:
+
+   * **Tapdata Cloud**: In the left navigation panel, click **Data Transformation**.
+   * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Transforms**.
 3. Click **Create** on the right side of the page.
 4. Select and connect nodes.
 

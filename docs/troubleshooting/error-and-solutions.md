@@ -1,5 +1,9 @@
 # Task Log Error and Troubleshooting Guide
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 This document aims to provide you with a detailed guide for identifying and resolving common errors found in the logs of data synchronization tasks. We delve into the causes of various common errors and offer clear, practical troubleshooting steps to help users quickly locate and solve issues.
 
 ## Viewing Task Logs

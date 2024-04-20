@@ -1,5 +1,9 @@
 # Deploy and Manage Agent
 
+import Content from '../reuse-content/_cloud-features.md';
+
+<Content />
+
 This article lists common problems encountered by Tapdata Agent in deployment and operation.
 
 ## Deploy Agent

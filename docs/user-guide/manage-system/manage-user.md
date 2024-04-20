@@ -1,10 +1,13 @@
-# Manage
+# Manage Users
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
 
 After Tapdata is deployed, a system administrator named `admin@admin.com` will be automatically created. To better manage platform operation permissions, you can log into the Tapdata platform with this account and perform management operations, such as creating users and granting permissions, for other members within the organization.
 
 ## Procedure
 
-1. Log in to Tapdata as a system administrator.
+1. [Log in to Tapdata Platform](../log-in.md) as a system administrator.
 
 2. In the left navigation bar, select **System** > **Users**.
 

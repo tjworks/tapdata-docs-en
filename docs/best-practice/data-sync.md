@@ -1,4 +1,7 @@
 # Data Sync Best Practices
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 This guide aims to provide best practices for data synchronization using Tapdata Cloud. We will discuss in detail aspects like data source analysis, task configuration, and monitoring, to help you build efficient and reliable data synchronization tasks.
 

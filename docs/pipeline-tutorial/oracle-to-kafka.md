@@ -1,4 +1,7 @@
 # Real-Time Oracle to Kafka Synchronization
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 In the era of big data, more and more enterprises need to synchronize data from traditional relational databases to big data processing platforms to support real-time data processing, data lake construction, and alternative data warehousing scenarios. Oracle, widely used in enterprise applications, increasingly requires synchronization to big data platforms.
 
@@ -27,19 +30,22 @@ In this case, we aim to read real-time data from the car insurance claims table 
 * Tapdata's Oracle log parsing speed is about 10,000 QPS. If the rate of incremental events exceeds this, it may lead to increased data processing delays.
 * The raw log feature is currently not supported on RAC-ASM deployment architectures and does not support obtaining raw logs from non-primary nodes in DG architectures.
 
-## Preparation
+## Prerequisites
 
 Before creating a data transformation task, ensure you have configured the necessary data sources:
 
 1. [Configure Oracle Connection](../prerequisites/on-prem-databases/oracle.md)
 2. [Configure Kafka Connection](../prerequisites/mq-and-middleware/kafka.md)
 
-## Steps
+## Configure Task
 
-1. [Log in to the Tapdata Platform](../user-guide/log-in.md).
+1. [Log in to Tapdata Platform](../user-guide/log-in.md).
 
-2. In the left navigation bar, select **Data Pipeline** > **Data Transformation**.
+2. Based on the product type, select the operation entry:
 
+   * **Tapdata Cloud**: In the left navigation panel, click **Data Transformation**.
+   * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Transforms**.
+   
 3. Click **Create** on the right side of the page.
 
 4. Drag and drop the Oracle and Kafka data sources to the right side of the canvas and connect them.
@@ -51,32 +57,39 @@ Before creating a data transformation task, ensure you have configured the neces
     * **Basic Settings**
         * **Node Name**: By default, it is the connection name, but you can set a name with business significance.
         * **Table**: Select the source table to operate on; below, the table's structure information will display, including column names and types. In this case, we are creating a data transformation task suitable for single-table processing. To handle multiple tables simultaneously, you could create a data replication task with a similar configuration process.
+        
     * **Advanced Settings**
-        * **DDL Synchronization Configuration**
-          Choose whether to enable **DDL Event Collection**. Turning on this switch allows Tapdata to automatically collect selected source DDL events (such as field additions) if the target supports DDL writing, enabling synchronization of DDL statements.
-        * **Incremental Synchronization Method**
-          Choose **Real-time Log Parsing** or **Field Polling**. When selecting **Polling**, you will need to specify the polling field, interval, and rows per read.
-
-**Real-time Log Parsing** uses transaction logs from the data source for parsing and synchronizing incremental events, whereas **Field Polling** uses polling on the field to synchronize incremental events, typically unable to synchronize delete events.
-* **Data Filtering Configuration**
-* **Full Custom Query**: Activate this switch to write a SQL query statement required during the full data sync phase (does not affect the incremental phase), allowing for custom data extraction (such as data filtering, joins, etc.), for example, `SELECT id,name,address FROM customer;`.
-
-         :::tip
-         
-         This feature requires the target node to be a weak Schema class data source (such as MongoDB/Kafka).
-         
-         :::
-       * **Filter Settings**: Off by default; when enabled, you need to specify data filtering conditions.
-     * **Batch Read Count**: Number of records read per batch during full synchronization, default is **100**.
-     * **Data Source Specific Configuration**
-       * **Continuous Log Mining**: To reduce the latency of acquiring incremental data, it is recommended to turn on this switch when the Oracle version is below 19c. When the version is 19c or above, this switch should be turned off.
-       * **Log Backlog Quantity**: Only effective for continuous mining. When the source's update frequency is low, you may choose a lower value to reduce latency; when the update frequency is high, selecting a higher value can enhance throughput. The general formula is `source database data change QPS divided by 10`, recommended values are 1 ~ 1000.
-       * **Large Transaction Time Boundary**: Transactions exceeding this value will enter the large transaction logic. Setting it too large could impact memory; large transactions will have local disk caching, and disk cleanup needs attention in case of task anomalies.
-       * **Key Update Association**: Turning off this switch can enhance performance, but updates to association keys will be ignored.
-       * **Enable Sync of LOB Types**: Turning off this switch can enhance performance, but LOB type parsing will be unreliable.
-       * **Uncommitted Transaction Lifetime (minutes)**: Long uncommitted transactions can cause each task start and stop to mine from this transaction. To avoid impacting the source database and the performance of incremental synchronization, Tapdata will clean up uncommitted transactions exceeding this duration. Please set this duration in line with business needs to avoid data inconsistency.
-* **Alert Settings**
-  By default, if the node's average processing time is continuously 1 minute or longer than 5 seconds, system notifications and email alerts are sent. You can adjust the rules or turn off alerts according to business needs.
+        * **DDL Synchronization**: Choose whether to enable **DDL Event Collection**. Turning on this switch allows Tapdata to automatically collect selected source DDL events (such as field additions) if the target supports DDL writing, enabling synchronization of DDL statements.
+        
+        * **Incremental Method**: Choose **Real-time Log Parsing** or **Field Polling**. When selecting **Polling**, you will need to specify the polling field, interval, and rows per read. 
+        
+        * **Real-time Log Parsing** uses transaction logs from the data source for parsing and synchronizing incremental events, whereas **Field Polling** uses polling on the field to synchronize incremental events, typically unable to synchronize delete events.
+        
+        * **Data Filter**: 
+        
+          * **Full Customizable Query**: Activate this switch to write a SQL query statement required during the full data sync phase (does not affect the incremental phase), allowing for custom data extraction (such as data filtering, joins, etc.), for example, `SELECT id,name,address FROM customer;`.
+        
+            :::tip
+        
+            This feature requires the target node to be a weak Schema class data source (such as MongoDB/Kafka).
+        
+            :::
+        
+          * **Filter Settings**: Off by default; when enabled, you need to specify data filtering conditions.
+        
+        * **Data Read:** Set the number of records read per batch during full synchronization, default is **100**.
+        
+        * **Data Source**
+        
+          * **Continuous Miner**: To reduce the latency of acquiring incremental data, it is recommended to turn on this switch when the Oracle version is below 19c. When the version is 19c or above, this switch should be turned off.
+          * **Fetch Size**: Only effective for continuous mining. When the source's update frequency is low, you may choose a lower value to reduce latency; when the update frequency is high, selecting a higher value can enhance throughput. The general formula is `source database data change QPS divided by 10`, recommended values are 1 ~ 1000.
+          * **Enable Sync of LOB Types(BLOB,CLOB,NCLOB)**: Turning off this switch can enhance performance, but LOB type parsing will be unreliable.
+          * **Association key update**: Turning off this switch can enhance performance, but updates to association keys will be ignored.
+          * **Large Transaction Time Boundary**: Transactions exceeding this value will enter the large transaction logic. Setting it too large could impact memory; large transactions will have local disk caching, and disk cleanup needs attention in case of task anomalies.
+          * **Uncommitted Transaction Lifetime (minutes)**: Long uncommitted transactions can cause each task start and stop to mine from this transaction. To avoid impacting the source database and the performance of incremental synchronization, Tapdata will clean up uncommitted transactions exceeding this duration. Please set this duration in line with business needs to avoid data inconsistency.
+        
+    * **Alert Settings**
+        By default, if the node's average processing time is continuously 1 minute or longer than 5 seconds, system notifications and email alerts are sent. You can adjust the rules or turn off alerts according to business needs.
 
 6. To display detailed information about data changes before and after, facilitating downstream business integration, we add a standard JS node between the Oracle and Kafka nodes.
 
@@ -114,25 +127,20 @@ Before creating a data transformation task, ensure you have configured the neces
         * **Table**: Select the target Topic in Kafka for this scenario, choose **kafka_demo_topic**. If the written Topic does not exist, it will be automatically created.
         * **Update Condition Field**: Select the data update condition field; in this case, choose **createTime**.
         * **Existing Data Handling**: Choose based on business needs. If there is no data in the target table and the structure is not consistent with the source table, you can select **Clear the existing table structure and data in the target table**.
-        * **Batch Size Per Write**: The number of entries written per batch during full synchronization.
-        * **Max Wait Time Per Batch
-
-**: Based on the performance and network latency of the target database, set the maximum wait time in milliseconds.
-* **Multi-threaded Writing for Full Sync**: The number of concurrent threads for full data writing, default is **8**, which can be adjusted based on the target end's writing performance.
-* **Multi-threaded Writing for Incremental Sync**: The number of concurrent threads for incremental data writing, not enabled by default, can be enabled and adjusted based on the target end's writing performance.
-* **Model**: Displays the source table's structure information, including field names and types.
-* **Advanced Settings**
-  Choose the data writing mode based on business needs:
-
-    * **Process by Event Type**: If selected, you will also need to choose the data writing strategies for insert, update, and delete events.
-    * **Statistical Append Write**: Only processes insert events, discarding update and delete events.
-
-  Set data source specific settings:
-
-    * **Number of Replicas**: The number of replicas for the Topic automatically created by Tapdata, cannot be greater than the number of Kafka clusters and cannot be changed after creation.
-    * **Number of Partitions**: If the Topic already exists, the number of partitions can only increase, not decrease.
-* **Alert Settings**
-  By default, if the node's average processing time is continuously 1 minute or longer than 5 seconds, system notifications and email alerts are sent. You can adjust the rules or turn off alerts according to business needs.
+        * **Number of Writes per batch**: The number of entries written per batch during full synchronization.
+        * **Write the Maximum Waiting Time for Each Batch**: Based on the performance and network latency of the target database, set the maximum wait time in milliseconds.
+        * **Full Multi-threaded Write**: The number of concurrent threads for full data writing, default is **8**, which can be adjusted based on the target end's writing performance.
+        * **Incremental Multi-threaded Write**: The number of concurrent threads for incremental data writing, not enabled by default, can be enabled and adjusted based on the target end's writing performance.
+        * **Model**: Displays the source table's structure information, including field names and types.
+    * **Advanced Settings**
+        Choose the data writing mode based on business needs:
+        * **Process by Event Type**: If selected, you will also need to choose the data writing strategies for insert, update, and delete events.
+        * **Append Write**: Only processes insert events, discarding update and delete events.
+        * Set data source specific settings:
+             * **Number of Replications**: The number of replicas for the Topic automatically created by Tapdata, cannot be greater than the number of Kafka clusters and cannot be changed after creation.
+             * **Number of Partitions**: If the Topic already exists, the number of partitions can only increase, not decrease.
+    * **Alert Settings**
+        By default, if the node's average processing time is continuously 1 minute or longer than 5 seconds, system notifications and email alerts are sent. You can adjust the rules or turn off alerts according to business needs.
 
 8. (Optional) Click **Settings** in the upper right corner to configure task properties.
 

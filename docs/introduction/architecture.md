@@ -10,7 +10,7 @@ Tapdata Cloud components include Tapdata Cloud Manager and Tapdata Agent:
 ![](../images/architecture.png)
 
 
-Tapdata Cloud employs a range of cyber-security measures to ensure the protection and security of user data and information.
+Tapdata employs a range of cyber-security measures to ensure the protection and security of user data and information.
 
 * **One-way Connection**: The Tapdata Agent instance does not actively expose network information, and only connects to the TCM management service to obtain task information and report status information.
 * **HTTPS Protocol**: Tapdata Agent instances establish communication with TCM using the HTTPS protocol, ensuring protection against information theft and tampering.

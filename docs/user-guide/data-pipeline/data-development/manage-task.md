@@ -1,4 +1,7 @@
 # Manage Data Transformation Task
+import Content from '../../../reuse-content/_all-features.md';
+
+<Content />
 
 After the replication task is created, you can monitor and manage the task in the task list.
 

@@ -1,12 +1,15 @@
 # Manage Functions
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
 
 Tapdata supports a wide range of functions to facilitate the definition of processing steps, allowing for their use in [JavaScript (JS) nodes](../data-pipeline/data-development/process-node#js-process). Additionally, you can freely define custom functions or import third-party JAR packages to introduce new functions as needed.
 
 ## Procedure
 
-1. Log in to Tapdata platform.
+1. [Log in to Tapdata Platform](../log-in.md).
 
-2. In the left navigation bar, select **Data Pipeline** > **Function Management**.
+2. In the left navigation bar, select **Advaced** > **Function List**.
 
 3. On this page, you can see the functions currently available. For example, click **View** next to a system function to learn more about it.
 
@@ -16,7 +19,7 @@ Tapdata supports a wide range of functions to facilitate the definition of proce
 
    :::tip
 
-   Alternatively, you can click **Import JAR Package** and then import functions from the package (which must comply with Tapdata standards). Subsequently, functions from that JAR package can be used in JS nodes using the general format: function name.method name (specific parameters).
+   Alternatively, you can click **Import** and then import functions from the package (which must comply with Tapdata standards). Subsequently, functions from that JAR package can be used in JS nodes using the general format: function name.method name (specific parameters).
 
    :::
 
@@ -24,8 +27,8 @@ Tapdata supports a wide range of functions to facilitate the definition of proce
 
    - **Code Details**: You can write your own function logic here.
    - **Description**: A description of what the custom function does.
-   - **Command Format**: The command format for the custom function, useful for prompting when calling the function.
-   - **Parameter Explanation**: Specific explanations for the supported input parameter types and the return parameter types.
+   - **Format**: The command format for the custom function, useful for prompting when calling the function.
+   - **Parameter Description**: Specific explanations for the supported input parameter types and the return parameter types.
    - **Return Value**: The return value of the custom function.
 
 5. For custom functions, you can select them to export for backup or share with other team members. You can also import custom functions.

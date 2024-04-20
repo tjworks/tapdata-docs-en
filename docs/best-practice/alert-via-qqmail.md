@@ -1,4 +1,7 @@
 # Sending Alert Emails via QQ Mail
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
 
 Tapdata supports sending alert emails through SMTP protocol, enabling users to receive timely notifications in their commonly used email accounts, thus helping you promptly perceive operational anomalies and ensure the stability and reliability of task operations.
 
@@ -57,7 +60,7 @@ The email authorization code is a special password used by QQ Mail to log into t
    ![SMTP Service Settings](../images/qqmail_smtp_settings.png)
 
    * **SMTP Service Account**: Enter your QQ email address.
-   * SMTP Service Password: Enter the authorization code you obtained in [Step One](#mail-code).
+   * **SMTP Service Password**: Enter the authorization code you obtained in [Step One](#mail-code).
    * **Encryption Method**: Select **SSL** to ensure security.
    * **SMTP Service Host**: Enter **smtp.qq.com**, the SMTP server for sending emails from QQ Mail.
    * **SMTP Service Port**: Enter **465** or **587**.

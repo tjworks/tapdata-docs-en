@@ -1,5 +1,9 @@
 # How to Build a Real-time Data Warehouse by Syncing MySQL to ClickHouse
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 ClickHouse® is an open-source column-oriented database management system that allows generating analytical data reports in real-time. Its official ClickHouse Cloud offers scalable, real-time analytical processing without the need to manage infrastructure. With storage and computation decoupled, ClickHouse Cloud can auto-scale to accommodate modern workloads, ensuring high-speed query processing.
 
 This article demonstrates real-time syncing from MySQL to ClickHouse using Tapdata Cloud.
@@ -15,7 +19,7 @@ Data drives business growth in our digital age, the challenge is to gain insight
 - **Data compression**: Reduces storage needs with inbuilt compression algorithms.
 - **User-friendly ecosystem**: Supports SQL queries, easing integration with other tools and systems.
 
-Recognizing the demand for data migration, Tapdata Cloud introduced ClickHouse as a syncing target, facilitating data transitions and real-time data warehousing.
+Recognizing the demand for data migration, Tapdata introduced ClickHouse as a syncing target, facilitating data transitions and real-time data warehousing.
 
 ## Prerequisites
 
@@ -26,9 +30,12 @@ Before setting up a data sync pipeline on Tapdata Cloud, connect your data sourc
 
 ## Configure Task
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../user-guide/log-in.md).
 
-2. In the left navigation panel, click **Data Replications**.
+2. Based on the product type, select the operation entry:
+
+   * **Tapdata Cloud**: In the left navigation panel, click **Data Replications**.
+   * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Replications**.
 
 3. On the right side of the page, click **Create** to configure the task.
 
@@ -52,7 +59,7 @@ Before setting up a data sync pipeline on Tapdata Cloud, connect your data sourc
    * **Number of Writes Per Batch**: This is the number of entries written per batch during full synchronization.
    * **Maximum Wait Time for Each Batch Write**: Evaluate based on the performance of the destination database and network latency. Set the maximum wait time, measured in milliseconds.
 
-7. Click on the **Save** or **Start** to finalize the creation. To ensure the task runs smoothly, Tapdata Cloud conducts a pre-check based on the node configuration and characteristics of the data source, simultaneously logging relevant information.
+7. Click on the **Save** or **Start** to finalize the creation. To ensure the task runs smoothly, Tapdata conducts a pre-check based on the node configuration and characteristics of the data source, simultaneously logging relevant information.
 
    Upon successful start, you'll be automatically redirected to the **Task Monitoring** page. Here, you can view details like the task's QPS (Queries Per Second), latency, and various task-related events.
 

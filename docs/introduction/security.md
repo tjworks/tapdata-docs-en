@@ -1,6 +1,6 @@
 # Data Security
 
-As we embrace cloud services, the safety of our data has become a top priority. This concern not only relates to the regulatory compliance of enterprise data services, but more crucially, to the protection of vital business data. Recognizing this, Tapdata Cloud was designed with security at its core. From architectural design, technical implementation, and operational procedures, strict safeguards have been put in place, ensuring a safe and secure user experience.
+As we embrace cloud services, the safety of our data has become a top priority. This concern not only relates to the regulatory compliance of enterprise data services, but more crucially, to the protection of vital business data. Recognizing this, Tapdata was designed with security at its core. From architectural design, technical implementation, and operational procedures, strict safeguards have been put in place, ensuring a safe and secure user experience.
 
 ## Reliable Infrastructure
 

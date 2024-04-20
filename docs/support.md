@@ -1,5 +1,9 @@
 # Technical Support
 
+import Content from './reuse-content/_all-features.md';
+
+<Content />
+
 In addition to consulting the Tapdata documentation, you can also access the original technical support of Tapdata products through the online customer service, user community and ticket system.
 
 ## Description of the account

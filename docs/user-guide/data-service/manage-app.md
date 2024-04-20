@@ -1,10 +1,13 @@
 # Manage Application
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
 
 To better manage and distinguish API services, we can categorize them based on business needs, assigning different APIs into different applications. This article introduces the specific operation process.
 
 ## Procedure
 
-1. Log in to Tapdata.
+1. [Log in to Tapdata Platform](../log-in.md).
 
 2. In the left navigation bar, select **Data Services** > **Application List**.
 

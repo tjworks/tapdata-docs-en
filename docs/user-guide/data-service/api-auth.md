@@ -1,4 +1,7 @@
 # API Authentication
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
 
 Tapdata's API authentication service is based on the OAuth 2.0 mechanism, with default support for `client credentials` and `implicit` authorization methods. You can select the authorization method when [creating a client](create-api-client.md). This article introduces the API authentication process, including how to obtain access tokens, to help you quickly utilize the API service.
 

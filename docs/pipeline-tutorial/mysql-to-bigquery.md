@@ -1,6 +1,10 @@
 # MySQL to BigQuery Real-Time Sync
 
-[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) is a fully serverless and cost-effective enterprise data warehouse that operates seamlessly across different cloud platforms and effortlessly scales with your data. It incorporates business intelligence, machine learning, and AI functionalities. Tapdata Cloud, on the other hand, enables real-time synchronization of multiple data sources with BigQuery, facilitating smooth data flow and effectively accommodating changes in data architecture or big data analysis requirements.
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
+[BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) is a fully serverless and cost-effective enterprise data warehouse that operates seamlessly across different cloud platforms and effortlessly scales with your data. It incorporates business intelligence, machine learning, and AI functionalities. Tapdata, on the other hand, enables real-time synchronization of multiple data sources with BigQuery, facilitating smooth data flow and effectively accommodating changes in data architecture or big data analysis requirements.
 
 To illustrate this synchronization process, let's consider MySQL as the source data. The following article demonstrates how to synchronize MySQL data with BigQuery, while similar configuration can be applied to other data sources.
 
@@ -15,9 +19,12 @@ Also note the reference [data type support](../user-guide/no-supported-data-type
 
 ## Configure Task
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../user-guide/log-in.md).
 
-2. In the left navigation panel, click **Data Replications**.
+2. Based on the product type, select the operation entry:
+
+   * **Tapdata Cloud**: In the left navigation panel, click **Data Replications**.
+   * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Replications**.
 
 3. On the right side of the page, click **Create** to configure the task.
 
@@ -27,10 +34,12 @@ Also note the reference [data type support](../user-guide/no-supported-data-type
 
    ![Select a table to synchronize](../images/mysql_to_bigquery_source_en.png)
 
-   - **Node name**: Defaults to connection name, you can also set a name that has business significance.
-   - **DDL event collection**: BigQuery does not support DDL writing, so you do not need to configure this parameter.
-   - **Dynamic new tables**: Once the switch is turned on, Tapdata Cloud will automatically synchronize any new or deleted tables from the source database to the target database. However, this synchronization process will only occur if all tables are selected for synchronization.
-   - **Select a table**: You have the option to select either **All** or **Custom** when configuring the synchronization settings. If you choose **Custom**, you will need to manually select the specific table(s) that you want to synchronize below.
+   - **Node Name**: Defaults to connection name, you can also set a name that has business significance.
+   - **DDL Event Collection**: BigQuery does not support DDL writing, so you do not need to configure this parameter.
+   - **Select Table**: Select the source table to operate. The table structure, including column names and types, will be displayed below.      
+     * **Select by table name**: Select the table on the left, and then click the right arrow to complete the setup.
+     * **Match regular expressions**: Enter the regular expression for the table name. Additionally, when a table is added to the source database and it matches the specified expression, Tapdata will automatically synchronize the table to the target database.
+     * **Selectable table range**: By default, all tables are displayed, but you can choose to filter only tables with primary keys or only tables without primary keys. Since tables without primary keys use the full primary key method to implement data updates, they might encounter errors due to exceeding the index length limit, and their performance might be limited. Therefore, it is recommended that you create separate data replication tasks for tables without primary keys to avoid task errors and enhance the performance of data updates.
    - **Batch read number**: The number of records read in each batch during full data synchronization, the default is **100**.
 
 6. Click the BigQuery data source to preview the data structure and set advanced options.
@@ -48,14 +57,19 @@ Also note the reference [data type support](../user-guide/no-supported-data-type
       ![Advanced Settings](../images/mysql_to_bigquery_settings_en.png)
 
       - **Data Write**: Choose the data writing mode:
-      - **Process by Event Type**: When this option is selected, you'll also need to specify the write strategy for insert, update, and delete events.
-         - **Append Write**: This mode only processes insert events, disregarding update and delete events.
+
+           - **Process by Event Type**: When this option is selected, you'll also need to specify the write strategy for insert, update, and delete events.
+           - **Append Write**: This mode only processes insert events, disregarding update and delete events.
 
       - **Data Source**: 
-      - **Cursor Schema Name Prefix**: When an INSERT operation is performed on the source table, it will be directly synchronized to the target table. On the other hand, when an UPDATE or DELETE operation is performed on the source table, it will be synchronized to a temporary table within the target dataset. The temporary table will have a specified name prefix to distinguish it from the target table.
-           :::tip
-        For more information about temporary tables, see [FAQ](#faq).
-         - **Data Merge Delay Time**: Tapdata Cloud will merge the data from the temporary table into the target table at regular time intervals. The specified time interval determines how frequently these merges occur. With shorter merge times, the target table will have more up-to-date data. It's important to note that the first merge occurs **1 hour** after the full data synchronization is completed.
+
+            - **Cursor Schema Name Prefix**: When an INSERT operation is performed on the source table, it will be directly synchronized to the target table. On the other hand, when an UPDATE or DELETE operation is performed on the source table, it will be synchronized to a temporary table within the target dataset. The temporary table will have a specified name prefix to distinguish it from the target table.
+                :::tip
+                For more information about temporary tables, see [FAQ](#faq).
+
+                :::
+
+            - **Data Merge Delay Time**: Tapdata will merge the data from the temporary table into the target table at regular time intervals. The specified time interval determines how frequently these merges occur. With shorter merge times, the target table will have more up-to-date data. It's important to note that the first merge occurs **1 hour** after the full data synchronization is completed.
 
    3. (Optional) Click on **Data Schema** tab to view the table structure, or click on **Alert Settings** tab to set the alert policies for the node.
 
@@ -81,7 +95,7 @@ For more information, See [Management Tasks](../user-guide/data-pipeline/copy-da
 
 * Q: How does the temporary table work?
 
-   A: In order to improve the performance of data write and reduce data latency, Tapdata Cloud uses the Stream API and Merge API in combination based on BigQuery data characteristics. The process is as follows:
+   A: In order to improve the performance of data write and reduce data latency, Tapdata uses the Stream API and Merge API in combination based on BigQuery data characteristics. The process is as follows:
 
    1. During the full data synchronization stage, use the Stream API for data import.
 

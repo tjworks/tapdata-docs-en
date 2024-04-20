@@ -1,8 +1,11 @@
 # SQL Server to BigQuery Real-Time Sync
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 In today's age of rapidly expanding data, companies are increasingly turning to [BigQuery](https://cloud.google.com/bigquery/docs)  in order to extract valuable insights and further modernize their data analysis strategies. Through BigQuery, they aim to run large-scale critical business applications, optimizing operations, enhancing customer experience, and reducing overall costs.
 
-Tapdata Cloud, an integrated real-time data platform with ETL capabilities, has observed a growing trend and demand for migration from traditional internal data warehouses to BigQuery. Responding to this need, Tapdata Cloud launched a solution for BigQuery data synchronization, which significantly improves data write performance into BigQuery using temporary tables, thus reducing data synchronization latency. In this article, we'll use SQL Server as a case study to delve into how to seamlessly sync data in real-time to BigQuery, making the transition to a cloud-based data warehouse effortless.
+Tapdata Cloud, an integrated real-time data platform with ETL capabilities, has observed a growing trend and demand for migration from traditional internal data warehouses to BigQuery. Responding to this need, Tapdata launched a solution for BigQuery data synchronization, which significantly improves data write performance into BigQuery using temporary tables, thus reducing data synchronization latency. In this article, we'll use SQL Server as a case study to delve into how to seamlessly sync data in real-time to BigQuery, making the transition to a cloud-based data warehouse effortless.
 
 # Background
 
@@ -24,7 +27,7 @@ To fully tap into these advantages, the initial step is to ensure effective sync
 
 
 
-## Preparations
+## Prerequisites
 
 Before you create a replication task, make sure you have configured the relevant data source:
 
@@ -37,15 +40,18 @@ Also note the reference [data type support](../user-guide/no-supported-data-type
 
 ## Configure Task
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../user-guide/log-in.md).
 
-2. In the left navigation panel, click **Data Replications**.
+2. Based on the product type, select the operation entry:
+
+   * **Tapdata Cloud**: In the left navigation panel, click **Data Replications**.
+   * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Replications**.
 
 3. On the right side of the page, click **Create** to configure the task.
 
-4. Drag the MySQL and BigQuery data sources into right canvas from the left side of the page and connect them on the right canvas.
+4. Drag the SQL Server and BigQuery data sources into right canvas from the left side of the page and connect them on the right canvas.
 
-5. Click on the MySQL source, and select the tables for syncing.
+5. Click on the SQL Server source, and select the tables for syncing.
 
    Adjust advanced settings, view table structures, set batch sizes, and configure email alerts if needed. 
 
@@ -73,7 +79,7 @@ Also note the reference [data type support](../user-guide/no-supported-data-type
          - **Cursor Schema Name Prefix**: When an INSERT operation is performed on the source table, it will be directly synchronized to the target table. On the other hand, when an UPDATE or DELETE operation is performed on the source table, it will be synchronized to a temporary table within the target dataset. The temporary table will have a specified name prefix to distinguish it from the target table.
             :::tip
             For more information about temporary tables, see [FAQ](#faq).
-         - **Data Merge Delay Time**: Tapdata Cloud will merge the data from the temporary table into the target table at regular time intervals. The specified time interval determines how frequently these merges occur. With shorter merge times, the target table will have more up-to-date data. It's important to note that the first merge occurs **1 hour** after the full data synchronization is completed.
+         - **Data Merge Delay Time**: Tapdata will merge the data from the temporary table into the target table at regular time intervals. The specified time interval determines how frequently these merges occur. With shorter merge times, the target table will have more up-to-date data. It's important to note that the first merge occurs **1 hour** after the full data synchronization is completed.
 
    3. (Optional) Click on **Data Schema** tab to view the table structure, or click on **Alert Settings** tab to set the alert policies for the node.
 
@@ -89,7 +95,7 @@ Also note the reference [data type support](../user-guide/no-supported-data-type
 
 * Q: How does the temporary table work?
 
-   A: In order to improve the performance of data write and reduce data latency, Tapdata Cloud uses the Stream API and Merge API in combination based on BigQuery data characteristics. The process is as follows:
+   A: In order to improve the performance of data write and reduce data latency, Tapdata uses the Stream API and Merge API in combination based on BigQuery data characteristics. The process is as follows:
 
    1. During the full data synchronization stage, use the Stream API for data import.
 

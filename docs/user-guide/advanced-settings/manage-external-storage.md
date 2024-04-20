@@ -1,6 +1,16 @@
 # Manage External Storage
 
-To facilitate the quick reading of task-related information subsequently, Tapdata Cloud stores necessary configurations, incremental logs of source tables, and other information related to the task in its internal MongoDB database. To store more data, you can create an external database to store relevant data.
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
+
+To facilitate the quick reading of task-related information subsequently, Tapdata stores necessary configurations, incremental logs of source tables, and other information related to the task in its internal MongoDB database. To store more data, you can create an external database to store relevant data.
+
+:::tip
+
+If you are using Tapdata Enterprise, you can access this feature by navigating to **System** > **External Storage** in the menu.
+
+:::
 
 ## Prerequisites
 
@@ -10,7 +20,7 @@ An external database intended for data storage has been created. Currently, Mong
 
 1. [Log in to Tapdata Platform](../log-in.md).
 
-2. In the left navigation bar, select **Advanced** > **External Storage Management**.
+2. In the left navigation bar, select **Advanced** > **External Storage**.
 
 3. On the right side of the page, click **Create External Storage**.
 

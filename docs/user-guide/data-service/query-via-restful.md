@@ -1,12 +1,15 @@
 # Query API through RESTful
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
 
 RESTful API is an application programming interface (API or Web API) that adheres to REST architectural specifications. Tapdata supports integrated RESTful API services, allowing you to execute requests through the API service address and obtain managed data information.
 
-In this article, we will introduce how to use the Postman tool to invoke API requests.
+In this article, we will introduce how to use the Postman to invoke API requests.
 
 ## Procedure
 
-1. Log in to the Tapdata platform.
+1. [Log in to Tapdata Platform](../log-in.md).
 
 2. In the left navigation bar, select **Data Services** > **API List**.
 

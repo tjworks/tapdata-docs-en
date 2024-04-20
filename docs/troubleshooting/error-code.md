@@ -1,5 +1,9 @@
 # Task Error Codes and Solutions
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 If you encounter an issue with a task, you can view related log information at the bottom of the task's [monitoring page](../user-guide/data-pipeline/data-development/monitor-task.md). For common issues, Tapdata has defined specific error codes for easier identification, along with their causes and solutions.
 
 ## 10001

@@ -1,48 +1,48 @@
 # Manage External Storage
+import Content from '../../reuse-content/_all-features.md';
 
-To facilitate quick access to task-related information in the future, Tapdata stores essential configuration and shared cache information in an internal MongoDB database. For storing additional data (e.g., cache data), you can create an external database for this purpose.
+<Content />
 
-## Prerequisite
+To facilitate the quick reading of task-related information subsequently, Tapdata stores necessary configurations, incremental logs of source tables, and other information related to the task in its internal MongoDB database. To store more data, you can create an external database to store relevant data.
 
-An external database has been created for data storage, currently supporting MongoDB and RocksDB.
+:::tip
+
+If you are using Tapdata Cloud, you can access this feature by navigating to **Advanced** > **External Storage** in the menu.
+
+:::
+
+## Prerequisites
+
+An external database intended for data storage has been created. Currently, MongoDB and RocksDB are supported.
 
 ## Create External Storage
 
-1. Log in to the Tapdata platform.
+1. [Log in to Tapdata Platform](../log-in.md).
 
-2. In the left navigation bar, select **System Management** > **External Storage Management**.
+2. In the left navigation bar, select **System** > **External Storage**.
 
 3. On the right side of the page, click **Create External Storage**.
 
-4. In the popup dialog, complete the <span id="320-external-storage">configuration</span> based on the instructions below.
+4. In the pop-up dialog, complete the configuration according to the instructions below.
 
    ![Create External Storage](../../images/create_external_storage_cn.png)
 
-    - **External Storage Name**: Enter a meaningful name for the storage to facilitate future identification.
-    - **External Storage Type**: Supports **MongoDB** and **RocksDB**.
-    - **Storage Path**: Fill in the database connection address, for example, MongoDB format reference:
+   * **Storage Name**: Enter a cache name with business significance for easy identification later.
+   * **External Memory Type**: Supports **MongoDB** and **RocksDB**.
+   * **Storage Path**: Enter the database connection address, for example, for MongoDB refer to: `mongodb:/admin:password@127.0.0.1:27017/mydb?replicaSet=xxx&authSource=admin`.
+   * **Connect Using TLS/SSL**: Choose whether to enable TSL/SSL encryption; if this function is enabled, you will also need to upload the client’s private key.
+   * **Set as Default**: Choose whether to use it as the default external storage.
 
-      `mongodb:/admin:password@127.0.0.1:27017/mydb?replicaSet=xxx&authSource=admin`.
-
-    - **Use TLS/SSL Connection**: Choose whether to enable TSL/SSL encryption. If this feature is enabled, you will also need to upload the client private key.
-    - **Set as Default**: Choose whether to set this as the default external storage.
-
-5. Click **Test Connection**. After passing the test, click **Save**.
+5. Click **Test**; after passing the test, click **Save**.
 
    :::tip
 
-   If the connection test fails, follow the on-screen instructions to make corrections.
+   If the connection test fails as indicated, please fix it according to the page prompt.
 
    :::
 
 ## Use External Storage
 
-You can use the newly configured external storage in shared caches, and some processing nodes (e.g., Join Node) as shown below:
+You can enable the Shared Mining feature and select the recently configured external storage when [creating a connection](../../prerequisites/README.md), as shown in the example below:
 
-- When [creating a shared cache](../advanced-settings/share-cache.md), you can select external storage.
-
-  ![Use External Storage in Shared Cache](../../images/apply_external_storage_shared_cache_cn.png)
-
-- When creating data replication/development tasks, adding [processing nodes](../data-pipeline/data-development/process-node.md) (such as Join Node), you can select external storage.
-
-  ![Use External Storage in Processing Node](../../images/apply_external_storage_join.png)
+![Select External Storage](../../images/select_external_storage.png)

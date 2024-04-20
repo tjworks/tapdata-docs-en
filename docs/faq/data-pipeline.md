@@ -1,4 +1,8 @@
-# Data Pipeline
+# Data Pipelines
+
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 This article lists potential issues and solutions encountered when constructing data pipelines, including data replication tasks, data transformation tasks, and data validation modules.
 
@@ -11,7 +15,7 @@ Data transformation is primarily used for data modeling, ETL processes, data cle
 
 ### Does it support cross-region, cross-network data synchronization?
 
-Yes. Tapdata Cloud connects sources and targets through Agents by opening limited network services to meet synchronization needs.
+Yes. Tapdata connects sources and targets through Agents by opening limited network services to meet synchronization needs.
 
 ### Does it support data synchronization where the source and target are the same entity?
 
@@ -23,7 +27,7 @@ Yes.
 
 ### Does it support data synchronization for sharded databases?
 
-Yes. Tapdata Cloud can synchronize data from multiple sources to the same target table.
+Yes. Tapdata can synchronize data from multiple sources to the same target table.
 
 ### Does it support changing the name of the data synchronization object in the target database?
 
@@ -43,7 +47,7 @@ Yes.
 
 Recommended classification principles are as follows:
 
-* Tables that only have primary keys or unique indexes: Tapdata Cloud supports these tables well, and they usually do not encounter issues.
+* Tables that only have primary keys or unique indexes: Tapdata supports these tables well, and they usually do not encounter issues.
 * Tables with both primary keys and unique indexes: These tables may encounter unique index violation errors under extreme conditions.
 * Tables without primary keys and unique indexes: Replication tasks will perform full-field matching for these tables, which can be slow in high-concurrency incremental synchronization scenarios.
 * Extremely large tables: For tables with millions of rows, it is recommended to configure tasks individually for each table to avoid affecting the synchronization performance of other tables.
@@ -62,7 +66,7 @@ You can also check the logs of the analysis Agent, located in the **logs/tapdata
 
 ### Will data be lost if a task is stopped and then restarted?
 
-No, Tapdata Cloud uses a checkpoint mechanism to ensure data integrity.
+No, Tapdata uses a checkpoint mechanism to ensure data integrity.
 
 ### What if the connection test and error logs show garbled characters?
 
@@ -148,7 +152,7 @@ You can re-edit the task. However, adding tables might affect the original synch
 
 ### If the main table data is real-time replicated, and the secondary table data is also increasing, will there be a conflict?
 
-Tapdata Cloud performs upsert operations. If there is already data in the target, it will be identified and updated according to the source. If the data from the secondary table is entirely new, it will not affect it.
+Tapdata performs upsert operations. If there is already data in the target, it will be identified and updated according to the source. If the data from the secondary table is entirely new, it will not affect it.
 
 ### Why does enabling concurrent increment conflict with synchronization without a primary key?
 
@@ -254,10 +258,6 @@ This feature requires that the target node be a weak scheme-type data source (su
 It is recommended to perform complex operations like joins at the processing layer (MDM). This layer can perform customized processing computations based on the data in the platform cache layer to generate the final business model data. Even if run and debugged repeatedly, it will not affect the read/write performance of the source database.
 
 ## Data Validation
-
-import Content from '../reuse-content/_enterprise-features.md';
-
-<Content />
 
 ### Is it possible to schedule data validation to run periodically?
 

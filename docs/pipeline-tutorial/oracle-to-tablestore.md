@@ -1,8 +1,11 @@
 # Oracle to Tablestore Real-Time Sync
+import Content from '../reuse-content/_all-features.md';
 
-[Alibaba Cloud Tablestore](https://www.alibabacloud.com/help/en/tablestore) is a serverless table storage service designed for handling large volumes of structured data. It also provides a comprehensive solution for IoT scenarios, offering optimized data storage capabilities. Tapdata Cloud enables real-time synchronization of Oracle data to Tablestore, providing seamless data flow and facilitating easy adaptation to data architecture changes and big data analysis scenarios.
+<Content />
 
-## Preparations
+[Alibaba Cloud Tablestore](https://www.alibabacloud.com/help/en/tablestore) is a serverless table storage service designed for handling large volumes of structured data. It also provides a comprehensive solution for IoT scenarios, offering optimized data storage capabilities. Tapdata enables real-time synchronization of Oracle data to Tablestore, providing seamless data flow and facilitating easy adaptation to data architecture changes and big data analysis scenarios.
+
+## Prerequisites
 
 Before you create a replication task, make sure you have configured the relevant data source:
 
@@ -13,9 +16,12 @@ Also note the reference [data type support](../user-guide/no-supported-data-type
 
 ## Configure Task
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../user-guide/log-in.md).
 
-2. In the left navigation panel, click **Data Replications**.
+2. Based on the product type, select the operation entry:
+
+   * **Tapdata Cloud**: In the left navigation panel, click **Data Replications**.
+   * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Replications**.
 
 3. On the right side of the page, click **Create** to configure the task.
 

@@ -1,8 +1,12 @@
 # Excel to MySQL Real-Time Sync
 
-Excel is a wide range of data statistics and data analysis software. Tapdata Cloud enables reading local, FTP, SFTP, SMB, OSS, or S3FS on Excel files to meet diverse data flow needs.
+import Content from '../reuse-content/_all-features.md';
 
-This article describes how to synchronize Excel file data to MySQL through Tapdata Cloud, so that Excel data can be quickly stored and used for deeper data analysis.
+<Content />
+
+Excel is a wide range of data statistics and data analysis software. Tapdata enables reading local, FTP, SFTP, SMB, OSS, or S3FS on Excel files to meet diverse data flow needs.
+
+This article describes how to synchronize Excel file data to MySQL through Tapdata, so that Excel data can be quickly stored and used for deeper data analysis.
 
 ## Scenario Introduction
 
@@ -12,7 +16,7 @@ The business provides real-time data updates and improved data analysis capabili
 
 
 
-## Preparations
+## Prerequisites
 
 Before you create a replication task, make sure you have configured the relevant data source:
 
@@ -21,9 +25,12 @@ Before you create a replication task, make sure you have configured the relevant
 
 ## Procedure
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../user-guide/log-in.md).
 
-2. In the left navigation panel, click**Data transformation**.
+2. Based on the product type, select the operation entry:
+
+    * **Tapdata Cloud**: In the left navigation panel, click **Data Transformation**.
+    * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Transforms**.
 
 3. On the right side of the page, click **Create**.
 
@@ -34,7 +41,7 @@ Before you create a replication task, make sure you have configured the relevant
    1. Set up the basic settings for the node.
 
       ![Microsoft Excel Data Source Settings](../images/data_develop_excel.png)
-      * **Node name**: Defaults to connection name, you can also set a name that has business significance.
+      * **Node Name**: Defaults to connection name, you can also set a name that has business significance.
       * **Model Name**: It is suggested that the model name be the same as the Excel file that will be imported.
       * **Include Reg**: The default is `* .xls, * .xlsx`, which means that all files in XLS/XLSX format will be searched. Currently, only `*` fuzzy matches are supported, and regular expressions are not supported.
       * **Exclude Regs**: Default is empty, i.e. no Excel files are filtered.
@@ -53,17 +60,14 @@ Before you create a replication task, make sure you have configured the relevant
 
       ![Advanced Settings](../images/data_develop_excel_advanced_settings.png)
 
-      * **DDL Event Collection**
-         After enabling the switch, Tapdata Cloud will automatically capture the selected source DDL events, such as the addition of new fields. If the target database supports DDL writing, Tapdata Cloud can synchronize the DDL statements to ensure consistency between the source and target databases.
-      * **Filter Settings**      
-         When you turn on the switch, you should set data filtering conditions.
-      * **Batch Read Number**
-         The number of records read in each batch during full data synchronization, the default is **100**.
-
+      * **DDL Event Collection**: After enabling the switch, Tapdata will automatically capture the selected source DDL events, such as the addition of new fields. If the target database supports DDL writing, Tapdata can synchronize the DDL statements to ensure consistency between the source and target databases.
+      * **Filter Settings**: When you turn on the switch, you should set data filtering conditions.
+      * **Batch Read Number**: The number of records read in each batch during full data synchronization, the default is **100**.
+      
    3. Set up the alarms for the node.
-
-      If the average processing time of nodes exceeds 5 seconds continuously for 1 minute, Tapdata Cloud will send out notifications and email alerts by default. You can further customize these rules or choose to turn off alerts based on your specific business needs.
-
+   
+      If the average processing time of nodes exceeds 5 seconds continuously for 1 minute, Tapdata will send out notifications and email alerts by default. You can further customize these rules or choose to turn off alerts based on your specific business needs.
+   
 6. Click the MySQL data source on the right to complete the settings for each tab according to the following instructions.
 
    ![MySQL Node Settings](../images/data_develop_mysql_target.png)
@@ -84,7 +88,7 @@ Before you create a replication task, make sure you have configured the relevant
          * **Statistics Additional Write**: Handles only insert events, discards updates, and deletes events.
       - **Data Source**: Select whether to synchronize the index.
    - **Alert Settings**
-      If the average processing time of nodes exceeds 5 seconds continuously for 1 minute, Tapdata Cloud will send out notifications and email alerts by default. You can further customize these rules or choose to turn off alerts based on your specific business needs.
+      If the average processing time of nodes exceeds 5 seconds continuously for 1 minute, Tapdata will send out notifications and email alerts by default. You can further customize these rules or choose to turn off alerts based on your specific business needs.
 
 7. (Optional) Click **Settings** in the top-right corner of the page to configure the task properties.
 
@@ -99,7 +103,7 @@ Before you create a replication task, make sure you have configured the relevant
 
    :::tip
 
-   During the incremental synchronization process, Tapdata Cloud checks for changes in Excel files every 1 minute. If any changes are detected, the corresponding files are added as full incremental data with update conditions to complete the modification. However, it currently does not support the synchronization of deleted files or data.
+   During the incremental synchronization process, Tapdata checks for changes in Excel files every 1 minute. If any changes are detected, the corresponding files are added as full incremental data with update conditions to complete the modification. However, it currently does not support the synchronization of deleted files or data.
 
    :::
 
@@ -107,7 +111,7 @@ Before you create a replication task, make sure you have configured the relevant
 
 ## Result Verification
 
-According to the task settings, Tapdata Cloud will automatically complete the migration of Excel data. Let's log into the target database to view the synchronized data.
+According to the task settings, Tapdata will automatically complete the migration of Excel data. Let's log into the target database to view the synchronized data.
 
 ```sql
 -- Check the number of data entries

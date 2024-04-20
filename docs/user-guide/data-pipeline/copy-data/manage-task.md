@@ -1,5 +1,9 @@
 # Manage Data Replication Task
 
+import Content from '../../../reuse-content/_all-features.md';
+
+<Content />
+
 Once the replication task is created, you can monitor and manage it in the task list.
 
 ![](../../../images/manage_copy_data_task.png)

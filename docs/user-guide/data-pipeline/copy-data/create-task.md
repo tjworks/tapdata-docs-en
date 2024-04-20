@@ -1,5 +1,9 @@
 # Create a Data Replication Task
 
+import Content from '../../../reuse-content/_all-features.md';
+
+<Content />
+
 The data replication function can help you to achieve real-time synchronization between the same/heterogeneous data sources, which is suitable for data migration/synchronization, data disaster recovery, reading performance expansion, and other [business scenarios](../../../introduction/use-cases.md). 
 
 This article explains the specific data replication process to help you quickly become familiar with creating, monitoring, and managing data replication tasks.
@@ -13,16 +17,19 @@ Before you create a data replication task, you need to perform the following pre
 
 ## Procedure
 
-As an example of creating a data replication task, the article demonstrates the real-time replication of data from MySQL to MongoDB. However, it's important to note that Tapdata Cloud supports replication tasks between various data sources, so you can configure replication between different combinations of databases based on your specific requirements.
+As an example of creating a data replication task, the article demonstrates the real-time replication of data from MySQL to MongoDB. However, it's important to note that Tapdata supports replication tasks between various data sources, so you can configure replication between different combinations of databases based on your specific requirements.
 
 <details>
   <summary>Best Practices</summary>
   To build efficient and reliable data replication tasks, it is recommended to read the <a href="../../../best-practice/data-sync">Data Synchronization Best Practices</a> before starting to configure tasks.
 </details>
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../log-in.md).
 
-2. In the left navigation panel, click **Data Replications**.
+2. Based on the product type, select the operation entry:
+
+   * **Tapdata Cloud**: In the left navigation panel, click **Data Replications**.
+   * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Replications**.
 
 3. On the right side of the page, click **Create** to configure the task.
 
@@ -51,7 +58,7 @@ As an example of creating a data replication task, the article demonstrates the 
       * **Node Name**: By default, it's the connection name, but you can also set a meaningful business name.
       * **Select Table**: Select the source table to operate. The table structure, including column names and types, will be displayed below.      
         * **Select by table name**: Select the table on the left, and then click the right arrow to complete the setup.
-        * **Match regular expressions**: Enter the regular expression for the table name. Additionally, when a table is added to the source database and it matches the specified expression, Tapdata Cloud will automatically synchronize the table to the target database.
+        * **Match regular expressions**: Enter the regular expression for the table name. Additionally, when a table is added to the source database and it matches the specified expression, Tapdata will automatically synchronize the table to the target database.
         * **Selectable table range**: By default, all tables are displayed, but you can choose to filter only tables with primary keys or only tables without primary keys. Since tables without primary keys use the full primary key method to implement data updates, they might encounter errors due to exceeding the index length limit, and their performance might be limited. Therefore, it is recommended that you create separate data replication tasks for tables without primary keys to avoid task errors and enhance the performance of data updates.
 
    * **Advanced Settings**      
@@ -80,7 +87,7 @@ As an example of creating a data replication task, the article demonstrates the 
 
    * **Basic Settings**
      * **Node Name**: Defaults to the connection name; you can also set a name that has business significance.
-     * **Deduction Results**: Displays table structure information that Tapdata Cloud will write into the target, deduced from the source node setting. The update condition will be automatically set as the table's primary key, or if there isn’t one, a unique index field will be used.
+     * **Deduction Results**: Displays table structure information that Tapdata will write into the target, deduced from the source node setting. The update condition will be automatically set as the table's primary key, or if there isn’t one, a unique index field will be used.
      * **Duplication Handling Strategy**: Choose according to business needs; defaults to **To maintain the original table structure on the target side, please clear the data**.
      * **Full Multi-thread Writing**: The number of concurrent threads for writing full data; default is **8**.
      * **Incremental Multi-thread Writing**: The number of concurrent threads for writing incremental data.
@@ -91,7 +98,7 @@ As an example of creating a data replication task, the article demonstrates the 
        * **Process by Event Type**: If you choose this, you also need to select data writing strategies for insert, update, and delete events.
        * **Statistical Append Write**: Only processes insert events, discarding update and delete events.
      * **Data Source Exclusive Configuration**: Choose whether to save deleted data.
-     * **Synchronize Partition Properties**: When this feature is enabled, Tapdata Cloud will automatically create a sharded collection in the target database. This function is only effective when both the source and target databases are MongoDB clusters.
+     * **Synchronize Partition Properties**: When this feature is enabled, Tapdata will automatically create a sharded collection in the target database. This function is only effective when both the source and target databases are MongoDB clusters.
    * **Data Model**
      Displays table structure information of the target table, including field names and field types.
    * **Alert Settings**

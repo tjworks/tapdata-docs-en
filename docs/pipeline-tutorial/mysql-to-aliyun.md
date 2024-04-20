@@ -1,4 +1,7 @@
 # MySQL to Alibaba Cloud Real-Time Sync
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 As cloud computing evolves and becomes more prevalent, an increasing number of enterprises are looking to migrate their business from on-premises data centers to the cloud to leverage benefits such as lower operational costs and flexible scalability. For businesses with an on-premises MySQL database, migrating to the cloud is a critical step.
 
@@ -8,7 +11,7 @@ In this article, we will discuss how to migrate a MySQL database to the cloud us
 
 In this scenario, a company maintains a MySQL database in an on-prem data center to store its business application data. However, with the continuous expansion and development of the business, the company faces increasing operational costs, scalability challenges, and the need for better disaster recovery and fault tolerance.
 
-To address these issues and leverage the benefits of cloud computing, the company has decided to use Alibaba Cloud RDS MySQL with [Serverless products](https://help.aliyun.com/document_detail/411291.htm), which offer real-time elasticity for CPU and memory usage, and pay-as-you-go pricing. This approach allows the company to quickly respond to business changes while optimizing costs. However, the company faces several challenges in implementing data migration to the cloud:
+To address these issues and leverage the benefits of cloud computing, the company has decided to use Alibaba Cloud RDS MySQL with [Serverless products](https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-mysql/rds-mysql-serverless), which offer real-time elasticity for CPU and memory usage, and pay-as-you-go pricing. This approach allows the company to quickly respond to business changes while optimizing costs. However, the company faces several challenges in implementing data migration to the cloud:
 
 * How to migrate data quickly and easily.
 * How to ensure the security and integrity of data transmission.
@@ -36,7 +39,10 @@ Next, we will introduce the specific operational procedures.
 
 1. [Log in to the Tapdata platform](../user-guide/log-in.md).
 
-2. In the left navigation bar, click **Data Replication**.
+2. Based on the product type, select the operation entry:
+
+   * **Tapdata Cloud**: In the left navigation panel, click **Data Replications**.
+   * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Replications**.
 
 3. Click **Create** on the right side of the page.
 
@@ -47,11 +53,11 @@ Next, we will introduce the specific operational procedures.
    ![Select tables to synchronize](../images/local_to_aliyun_rds_mysql_source.png)
 
    - **Node Name**: Defaults to the connection name, but you can set a name with business significance.
-   - **DDL Event Capture**: Turn on this switch, and Tapdata will automatically capture selected DDL events from the source, like adding fields.
    - **Select Tables**: Choose based on business needs.
       - **By Table Name**: Select tables in the area and click the right arrow to complete the setup.
       - **By Regular Expression**: Enter a regular expression for the table names. Additionally, when new tables in the source match the expression, they will also be synchronized to the destination.
    - **Batch Read Count**: Number of records read per batch during full synchronization, default is **100**.
+   - **Advanced Settings**: Turn on **DDL Event Collection** switch, Tapdata will automatically capture selected DDL events from the source, like adding fields.
 
 6. Click the Alibaba Cloud RDS MySQL data source and complete the configuration in the right panel as follows.
 
@@ -68,12 +74,10 @@ Next, we will introduce the specific operational procedures.
 
    - **Repeat Processing Strategy**: Choose based on business needs or keep default.
    - **Data Write Mode**: Choose based on business needs.
-      - **By Event Type**: Choose the data writing strategy for insert, update, and delete events.
-      - **Append Only Write**: Only handle insert events, discarding updates and deletions.
+      - **Porcess by Event Type**: Choose the data writing strategy for insert, update, and delete events.
+      - **Statistics additional Write**: Only handle insert events, discarding updates and deletions.
    - **Full Multi-thread Writing**: Number of concurrent threads for full data writing, default is **8**, adjust based on the write performance of the destination.
-
-
-- **Incremental Multi-thread Writing**: Number of concurrent threads for incremental data writing, not enabled by default, activate based on the write performance of the destination.
+   - **Incremental Multi-thread Writing**: Number of concurrent threads for incremental data writing, not enabled by default, activate based on the write performance of the destination.
 
 8. Once everything is confirmed correct, click **Start**.
 

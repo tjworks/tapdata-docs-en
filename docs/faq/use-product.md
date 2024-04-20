@@ -1,5 +1,9 @@
 # Product Features/Usage
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 This article lists common questions encountered while using Tapdata.
 
 ## What data sources does Tapdata support?
@@ -61,9 +65,7 @@ For complex multi-table query scenarios, common solutions include materialized v
 * **Materialized Views**: A materialized view is a pre-calculated and stored virtual table that provides high-performance data access when queried. By pre-executing multi-table join operations and storing the results as a materialized view, you can significantly improve query performance and response times. This approach is suitable for scenarios where data change frequency is low because the materialized view needs to be updated with each data change.
 * **Ad-hoc Queries**: Ad-hoc queries are executed on demand without any pre-calculation and storage process. This approach is suitable for scenarios with high data change frequency because it can retrieve the latest data in real-time, though it may lead to higher query costs and longer response times during multi-table join operations.
 
-In Tapdata, you
-
-can solidify complex multi-table queries into a materialized view and provide API services based on that view. You can choose the following strategies based on the complexity of the query and real-time data requirements:
+In Tapdata, you can solidify complex multi-table queries into a materialized view and provide API services based on that view. You can choose the following strategies based on the complexity of the query and real-time data requirements:
 
 **Real-Time View Strategy**
 

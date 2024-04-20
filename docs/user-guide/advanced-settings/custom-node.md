@@ -1,4 +1,8 @@
-# Custom Node (Beta)
+# User Defined Processors
+
+import Content from '../../reuse-content/_enterprise-features.md';
+
+<Content />
 
 By customizing the node function, you have the flexibility to organize your JavaScript script into reusable processing nodes. Once created, these custom nodes can be easily referenced in your data transformation tasks without the need for rewriting the script. This significantly reduces the development workload. 
 
@@ -6,11 +10,11 @@ In this article, we will guide you on how to use custom nodes effectively and pr
 
 
 
-## Create Custom Node
+## Create Custom Processors
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../../user-guide/log-in.md).
 
-2. In the left navigation bar, click **Custom Nodes**.
+2. In the left navigation bar, select **Advanced** >  **User Defined Processors**.
 
 3. On the right side of the page, click **New**.
 
@@ -20,7 +24,7 @@ In this article, we will guide you on how to use custom nodes effectively and pr
 
       ![](../../images/add_form_component_en.png)
 
-      * On the left side of the page, you will find the component area. You can drag components from this area to the operation area and configure them accordingly.
+      * On the left side of the page, you will find the **component** area. You can drag components from this area to the operation area and configure them accordingly.
       * The middle section of the page is the operation area. Once a component is selected and placed in this area, you can adjust its position and configure its settings as needed.
       * On the right side of the page is the property settings area. Here, you can configure various settings for the selected component, such as its title, description, default values, and other properties based on your requirements.
 
@@ -38,21 +42,21 @@ In this article, we will guide you on how to use custom nodes effectively and pr
 
 
 
-## Use Custom Node
+## Use Custom Processors
 
-In the development task, you can use the custom processing node that has been created. You can use it by dragging the node into the DAG canvas.
+In the development task, you can use the custom processor that has been created. You can use it by dragging the node into the DAG canvas.
 
 
 
 ## Example: Custom Decryption Rule
 
-To ensure information security, if you need to desensitize certain mobile phone numbers in a MySQL table, you can create a custom node in Tapdata Cloud. Once the custom node is created, you can create a development task and apply the node to perform the desired data desensitization.
+To ensure information security, if you need to desensitize certain mobile phone numbers in a MySQL table, you can create a custom processor in Tapdata. Once the custom node is created, you can create a development task and apply the node to perform the desired data desensitization.
 
 **Procedure:**
 
-1. Log in to [Tapdata Cloud](https://cloud.tapdata.io/).
+1. [Log in to Tapdata Platform](../log-in.md).
 
-2. In the left navigation bar, click **Custom Nodes**.
+2. In the left navigation bar, select **Advanced** >  **User Defined Processors**.
 
 3. On the right side of the page, click **New**.
 

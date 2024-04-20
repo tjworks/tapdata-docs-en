@@ -1,4 +1,7 @@
 # MySQL to Redis Real-Time Sync
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 Redis is an in-memory key-value database, suitable for scenarios such as data caching, event publishing/subscribing, and high-speed queues. Tapdata allows you to sync data from relational databases (Oracle, MySQL, MongoDB, PostgreSQL, SQL Server) to Redis in real-time, helping you complete data flows quickly.
 
@@ -19,10 +22,13 @@ Before creating a data transformation task, make sure you have set up the releva
 
 ## Procedure
 
-1. Log in to the Tapdata platform.
+1. [Log in to Tapdata Platform](../user-guide/log-in.md).
 
-2. In the left navigation bar, select **Data Pipelines** > **Transforms**.
+2. Based on the product type, select the operation entry:
 
+   * **Tapdata Cloud**: In the left navigation panel, click **Data Transformation**.
+   * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Transforms**.
+   
 3. Click **Create** on the right side of the page.
 
 4. On the left side of the page, drag both the MySQL and Redis data sources to the right side canvas, then connect them.

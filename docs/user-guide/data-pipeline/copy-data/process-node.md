@@ -1,4 +1,7 @@
 # Adding Processing Nodes to Replication Tasks
+import Content from '../../../reuse-content/_all-features.md';
+
+<Content />
 
 Tapdata supports integrating processing nodes into data replication tasks for requirements like data filtering or field adjustments.
 

@@ -2,13 +2,13 @@
 
 Extensible Markup Language (XML) lets you define and store data in a shareable manner. XML supports information exchange between computer systems such as websites, databases, and third-party applications. 
 
-Tapdata Cloud supports reading XML files stored on local, FTP, SFTP, SMB, or S3FS to meet a variety of data flow needs. This article describes how to connect to XML data sources on Tapdata Cloud.
+Tapdata supports reading XML files stored on local, FTP, SFTP, SMB, or S3FS to meet a variety of data flow needs. This article describes how to connect to XML data sources on Tapdata Cloud.
 
 ## Precautions
 
 - A connection only refers to a model (table). If there are multiple models, you need to create connections for each one separately.
 - XML data sources are only available for data transformation tasks.
-- By default, Tapdata Cloud checks for changes (such as adding or modifying) to the XML file every minute. Tapdata Cloud synchronizes all files to accurately update the condition field when changes are detected. However, synchronous deletion of files or data is not supported.
+- By default, Tapdata checks for changes (such as adding or modifying) to the XML file every minute. Tapdata synchronizes all files to accurately update the condition field when changes are detected. However, synchronous deletion of files or data is not supported.
 - Data types that can be used in XML files include ARRAY, BOOLEAN, DATETIME, INTEGER, NUMBER, OBJECT, STRING, and TEXT.
 
 ## Preparations

@@ -2,15 +2,15 @@
 
 A comma-separated values (CSV) file is a delimited text file that uses a comma to separate values. Each line of the file is a data record. Each record consists of one or more fields, separated by separator (such as commas, semicolons, or tabs).
 
-Tapdata Cloud supports reading CSV files stored on local, FTP, SFTP, SMB, or S3FS to meet a variety of data flow needs. This article describes how to connect to CSV data sources on Tapdata Cloud.
+Tapdata supports reading CSV files stored on local, FTP, SFTP, SMB, or S3FS to meet a variety of data flow needs. This article describes how to connect to CSV data sources on Tapdata Cloud.
 
 
 ## Precautions
 
 - A connection only refers to a model (table). If there are multiple models, you need to create connection for each one separately.
-- If the headers of multiple files are inconsistent, Tapdata Cloud uses the union as a model.
+- If the headers of multiple files are inconsistent, Tapdata uses the union as a model.
 - CSV data sources are only available for data transformation tasks.
-- By default, Tapdata Cloud checks for changes (such as adding or modifying) to the XML file every minute. Tapdata Cloud synchronizes all files to accurately update the condition field when changes are detected. However, synchronous deletion of files or data is not supported.
+- By default, Tapdata checks for changes (such as adding or modifying) to the XML file every minute. Tapdata synchronizes all files to accurately update the condition field when changes are detected. However, synchronous deletion of files or data is not supported.
 - Data types that can be used in CSV files include BOOLEAN, DATETIME, INTEGER, NUMBER, STRING, and TEXT.
 
 

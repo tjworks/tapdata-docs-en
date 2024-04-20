@@ -1,5 +1,9 @@
 # Deploy MongoDB Replica Set
 
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
+
 To ensure high availability in production environments, deploying a MongoDB replica set is required before deploying Tapdata, as it stores essential configurations, shared cache, and other information in MongoDB databases. This document outlines the deployment process.
 
 ## Deployment Architecture
@@ -12,7 +16,7 @@ We recommend using MongoDB version 4.0 or higher. This example uses CentOS 7 to 
 | Secondary Node    | 172.16.1.11 | mongod      | 27017         |
 | Secondary Node    | 172.16.1.12 | mongod      | 27017         |
 
-## Steps
+## Procedure
 
 1. Execute the following commands on all servers to adjust file access numbers, disable firewalls, and set other system parameters.
 

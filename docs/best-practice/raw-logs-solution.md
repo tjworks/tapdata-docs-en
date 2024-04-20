@@ -1,4 +1,7 @@
 # Deploy Oracle Raw Log Parsing Service
+import Content from '../reuse-content/_all-features.md';
+
+<Content />
 
 To enhance the efficiency of capturing data changes, Tapdata supports not only using the native log parsing tools of databases (LogMiner) but also has developed the capability to directly parse the incremental log files of the database. This allows for more efficient event capture, achieving higher data collection performance (QPS over 20,000), reducing the impact on the source database during incremental data collection, but it requires the deployment of an additional component, which increases operational costs, making it suitable for scenarios with frequent data changes.
 
@@ -6,11 +9,11 @@ To enhance the efficiency of capturing data changes, Tapdata supports not only u
 
 ## Environment Requirements
 
-* **Database Requirements**: Supports versions 11g, 12c, 18c, 19c, 21c.
-* **Operating System Requirements**: Linux 64 or Windows 64 platforms.
-* **Storage Requirements**: Supported file systems include ext4, btrfs, zfs, xfs, sshfs; supported database block sizes are 2k, 4k, 8k, 16k, 32k.
+* **Database**: Supports versions 11g, 12c, 18c, 19c, 21c.
+* **Operating System**: Linux 64 or Windows 64 platforms.
+* **Storage**: Supported file systems include ext4, btrfs, zfs, xfs, sshfs; supported database block sizes are 2k, 4k, 8k, 16k, 32k.
 * **Port Requirements**: Some server ports must be open for service communication, including: default data transfer port: **8203**, web management default port: **8303**, raw log service port: **8190**.
-* **Permission Requirements**: The operating system user running the raw log plugin must have read access to redo log files; in addition to the permissions required for the source database as per the [Oracle Preparation Work](../../prerequisites/on-prem-databases/oracle#source) and enabling archive logs, additional permissions must be granted to simulate Oracle's data information structure and processes to cache part of Oracle Schema information to support the parsing of redo logs.
+* **Permission**: The operating system user running the raw log plugin must have read access to redo log files; in addition to the permissions required for the source database as per the [Oracle Preparation Work](../../prerequisites/on-prem-databases/oracle#source) and enabling archive logs, additional permissions must be granted to simulate Oracle's data information structure and processes to cache part of Oracle Schema information to support the parsing of redo logs.
 
 ```sql
 -- Replace <DSTUSER> with the actual username
@@ -38,11 +41,11 @@ GRANT SELECT ON SYS.V_$TRANSPORTABLE_PLATFORM TO <DSTUSER>;
 
 :::tip
 
-You must grant the above permissions as **SYS** to the database user. If the database has enabled multitenant capabilities, users must be created and granted permissions within the PDB.
+You need to log in database as **SYS** user, and grant the above permissions to the database user. If the database has enabled multitenant capabilities, users must be created and granted permissions within the PDB.
 
 :::
 
-## Deployment Steps
+## Procedure
 
 Next, we'll demonstrate the deployment process for raw log querying using Oracle 12c running on a Linux platform as an example.
 
@@ -69,9 +72,7 @@ Next, we'll demonstrate the deployment process for raw log querying using Oracle
 
     3. Place the License file in the `conf` directory of the plugin installation directory.
 
-       In this example, based on the command prompt, we installed the plugin
-
-in `/home/fzs_tapdata`, so the License file should be placed in `/home/fzs_tapdata/conf`.
+       In this example, based on the command prompt, we installed the plugin in `/home/fzs_tapdata`, so the License file should be placed in `/home/fzs_tapdata/conf`.
 
 3. Access the deployment page via a web browser, confirm the environment variables and License are correct, then click **Next**.
 

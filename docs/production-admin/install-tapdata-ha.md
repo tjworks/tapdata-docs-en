@@ -1,8 +1,12 @@
 # Deploy High-Availability Tapdata
 
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
+
 To ensure reliability in production environments, we recommend deploying Tapdata in a high-availability setup. This guide will show you how to quickly deploy a high-availability Tapdata service on a local Linux platform.
 
-## Software and Hardware Requirements
+## Software & Hardware Requirements
 
 * CPU: 8 cores
 * Memory: 16 GB
@@ -28,7 +32,7 @@ In this environment, we have already deployed a [MongoDB replica set](install-re
 
 This guide uses CentOS 7 as an example to demonstrate the deployment process for Servers A and B.
 
-## Preparation
+## Prerequisites
 
 Before deployment, we need to perform the following operations on both servers.
 
@@ -52,7 +56,7 @@ Before deployment, we need to perform the following operations on both servers.
       yum -y install java-1.8.0-openjdk
       ```
 
-   2. Install MongoDB (version 4.0 or above) as an intermediary library to store task data and more. For detailed steps, see the [official documentation](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/).
+   2. Install MongoDB (version 4.0 or above) as an intermediary database to store task data and more. For detailed steps, see the [official documentation](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/).
 
 3. Download the Tapdata installation package (you can [contact us](mailto:team@tapdata.io) to obtain it), and upload it to the device to be deployed.
 
@@ -226,25 +230,31 @@ Before deployment, we need to perform the following operations on both servers.
    ```
 
    * **Please enter backend url**: Set the Tapdata platform login addresses for both Servers A and B, separated by a comma, e.g., `http://192.168.1.200:3030,http://192.168.1.201:3030`.
+   
    * **Please enter tapdata port**: Set the Tapdata platform login port, default is `3030`.
+   
    * **Please enter api server port**: Set the API Server service port, default is `3080`.
-   * **Does MongoDB require username/password?**: If MongoDB database has
+   
+   * **Does MongoDB require username/password?**: If MongoDB database has not enabled security authentication, enter **n**; if enabled, enter **y** and follow prompts to enter username, password, and authentication database (default is `admin`).
 
-not enabled security authentication, enter **n**; if enabled, enter **y** and follow prompts to enter username, password, and authentication database (default is `admin`).
-* **Does MongoDB require TLS/SSL?(y/n)**: If MongoDB database has not enabled TSL/SSL encryption, enter **n**; if enabled, enter **y** and follow prompts to enter the absolute path of CA certificate and Certificate Key files, as well as the file password for the Certificate Key.
-* **Please enter MongoDB host, port, database name**: Set the MongoDB database URI connection information, in this case, `mongodb://192.168.1.200:27017/tapdata`.
-* **Does API Server response error code?**: Whether to enable the API Server response error code feature.
-
-After successful deployment, the command line returns an example as follows:
-
-   ```bash
-   deployed connector.
-   Waiting for the flow engine to start \
-   FlowEngine is startup at : 2023-04-01 23:10
-   API service started
-   ```
+   * **Does MongoDB require TLS/SSL?(y/n)**: If MongoDB database has not enabled TSL/SSL encryption, enter **n**; if enabled, enter **y** and follow prompts to enter the absolute path of CA certificate and Certificate Key files, as well as the file password for the Certificate Key.
+   
+   * **Please enter MongoDB host, port, database name**: Set the MongoDB database URI connection information, in this case, `mongodb://192.168.1.200:27017/tapdata`.
+   
+   * **Does API Server response error code?**: Whether to enable the API Server response error code feature.
+   
+     After successful deployment, the command line returns an example as follows:
+   
+     ```bash
+     deployed connector.
+     Waiting for the flow engine to start \
+     FlowEngine is startup at : 2023-04-01 23:10
+     API service started
+     ```
+   
 
 An example of the Server B deployment process:
+
 <AsciinemaPlayer
 src="/asciinema_playbook/install-tapdata-ha.cast"
 poster="npt:0:10"

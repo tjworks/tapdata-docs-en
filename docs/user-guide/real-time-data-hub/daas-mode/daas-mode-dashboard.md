@@ -1,4 +1,7 @@
 # DaaS Dashboard
+import Content from '../../../reuse-content/_all-features.md';
+
+<Content />
 
 Once the data service platform mode is activated, the page will be organized according to the previously mentioned [hierarchy](enable-daas-mode.md). You can effortlessly drag the table to the next level, which will automatically create data replication tasks and streamline the data flow.
 
@@ -12,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 ## Procedure
 
-1. Log in to Tapdata.
+1. [Log in to Tapdata Platform](../../log-in.md).
 
 2. In the left navigation panel, click **Real-Time Data Hub**.
 
@@ -24,7 +27,7 @@ import TabItem from '@theme/TabItem';
 <Tabs className="unique-tabs">
 <TabItem value="① Switch View Model">
 ```
-Clicking the <img src='/img/switch_icon.png'></img> icon allows you to view the data source information in the form of a directory structure. You can navigate through the directory structure to select a specific table.
+Click the <img src='/img/switch_icon.png'></img> icon allows you to view the data source information in the form of a directory structure. You can navigate through the directory structure to select a specific table.
 
 In the catelog view, if you select a specific table, you can also see table details on the right-hand side of the page. The introduction to each tab is as follows:
 <img src='/img/data_category_view.png'></img>
@@ -33,15 +36,16 @@ In the catelog view, if you select a specific table, you can also see table deta
 * **Schema**: Offers in-depth insights into table columns, encompassing details like column types, primary keys, foreign keys, default values, and more.
 * **Tasks**: Displays associated tasks for the table, along with their respective statuses. This tab also enables the creation of new tasks.
 * **Lineage**: Presents data lineage relationships visually through a graph format, aiding in effective data quality management. Clicking on a task node allows direct navigation to the monitoring page of the relevant task.
+	<img src='/img/data_lineage.png'></img>
 
 </TabItem>
 
 <TabItem value="② Add Data Sources">
-Clicking the <img src='/img/add_icon.png'></img> icon, in the pop-up dialog, we can add a data source, select a data source will jump to the connection configuration page. For more information, see <a href="../../../prerequisites">Connect Data Sources</a>.
+Click the <img src='/img/add_icon.png'></img> icon, in the pop-up dialog, we can add a data source, select a data source will jump to the connection configuration page. For more information, see <a href="../../../prerequisites">Connect Data Sources</a>.
 </TabItem>
 
 <TabItem value="③ Search Tables">
-Clicking the <img src='/img/search_icon.png'></img> icon allows you to enter a keyword for the table name, enabling you to quickly navigate to the specific table. This feature is also supported in other Layers.
+Click the <img src='/img/search_icon.png'></img> icon allows you to enter a keyword for the table name, enabling you to quickly navigate to the specific table. This feature is also supported in other Layers.
 </TabItem>
 
 <TabItem value="④ Data Source Detail">

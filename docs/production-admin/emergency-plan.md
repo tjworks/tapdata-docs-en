@@ -1,4 +1,8 @@
-# System Maintenance & Emergency Plans
+# Emergency Plans
+
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
 
 This document provides a comprehensive emergency handling process and contingency strategies for Tapdata products, aiming to help you respond quickly and effectively in the event of an emergency or product issue, thereby mitigating the impact of failures and enhancing the overall stability and security of the product.
 
@@ -90,9 +94,7 @@ In a high-availability environment, database exceptions in a minority of nodes u
 For single database deployments, short-term database exceptions generally do not immediately affect services. However, if exceptions last for more than 10 minutes, the management end may exit operation. In this case, the following measures should be taken:
 
 - **Timely Monitoring**: Continuously monitor the database status and immediately start troubleshooting and repairing upon detection of anomalies.
-- **Emergency Measures**: If the database has been exceptional for more than 10 minutes, take emergency measures, such as restarting the management end, as detailed in the **Management End Exception
-
-** section.
+- **Emergency Measures**: If the database has been exceptional for more than 10 minutes, take emergency measures, such as restarting the management end, as detailed in the **Management End Exception** section.
 
 ### Process Exception Handling Strategy
 
@@ -165,11 +167,11 @@ If a task cannot be operated (e.g., remains in "Starting", "Stopping", etc., sta
 2. If components are normal, copy the task to operate in a new task, prioritizing business continuity.
 3. After task recovery, contact the support team for further investigation.
 
-### Shared Mining Task Exception
+### CDC Log Cache Task Exception
 
 If a shared mining task encounters an exception, it may cause all related tasks to enter an incremental synchronization delay state. You can see a yellow exclamation mark on the related task list, indicating that the shared mining task related to this task has stopped running. The troubleshooting process includes:
 
-1. If the shared mining task is exceptional, promptly start the stopped shared mining task.
-2. If starting shared mining reports an error, avoid resetting to prevent data loss.
-3. If it's acceptable to rerun full synchronization, first stop all related tasks, reset shared mining, then restart normal tasks.
+1. If the CDC Log Cache task is exceptional, promptly start the stopped shared mining task.
+2. If starting CDC Log Cache reports an error, avoid resetting to prevent data loss.
+3. If it's acceptable to rerun full synchronization, first stop all related tasks, reset CDC Log Cache, then restart normal tasks.
 4. If the issue persists, contact our support team for assistance.

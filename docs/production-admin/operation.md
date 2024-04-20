@@ -1,5 +1,9 @@
 # Maintenance
 
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
+
 This article lists common issues related to Tapdata maintenance.
 
 ## How to Start or Stop Services?
@@ -154,7 +158,7 @@ When facing performance bottlenecks, nearing resource limits, or needing to impr
 
 ## How to Ensure High Availability for MongoDB Dependent by Tapdata?
 
-Avoid using a single-node architecture. Use a replica set deployment architecture to ensure high availability. For instance, in a three-node replica set architecture, one node acts as the Primary node, and the other nodes act as Secondary nodes.
+Avoid using a single-node architecture. Use a [replica set deployment architecture](install-replica-mongodb.md) to ensure high availability. For instance, in a three-node replica set architecture, one node acts as the Primary node, and the other nodes act as Secondary nodes.
 
 :::tip
 
@@ -162,24 +166,19 @@ If you are currently using a single-node architecture, you can [convert it to a 
 
 :::
 
-In a replica set, data written to the Primary node is automatically synchronized to the Secondary nodes. If the Primary node fails or becomes unavailable, the replica set automatically elects a new Primary node to ensure database availability and data integrity, minimizing the downtime and impact of database failures.
+In a replica set, data written to the Primary node are automatically synchronized to the Secondary nodes. If the Primary node fails or becomes unavailable, the replica set automatically elects a new Primary node to ensure database availability and data integrity, minimizing the downtime and impact of database failures.
 
 You can log into the MongoDB database and use the `rs.status()` command to check the status of the replica set and the state of each node. For more information, see [Replication](https://www.mongodb.com/docs/v4.4/replication/).
 
 
-
-##
-
-How to View Running Logs?
+## How to View Running Logs?
 
 In versions prior to 2.15, logs were scattered across various folders in the Tapdata installation directory. Starting from version 2.15, log information is centralized in the logs directory within the installation directory.
-
 
 
 ## Where Are Tapdata Configuration Files Stored?
 
 The Tapdata configuration file: **application.yml** is located in the Tapdata installation directory. It contains key configuration information, such as available memory settings, service ports, MongoDB database connection information, etc.
-
 
 
 ## How to Adjust the Available Memory Size for Java?
@@ -228,11 +227,9 @@ If the memory allocation is small but the task load is heavy, the Java program m
 - Takeover timeout: After being scheduled to an alive engine, if the task is not taken over by the engine within the timeout period, the task is rescheduled to the alive engine with the smallest number of running tasks.
 
 
-
 ## How Does Tapdata Achieve High Availability?
 
 You can [deploy Tapdata on multiple machines](install-tapdata-ha.md) to achieve high availability. If one node experiences an anomaly, other nodes can continue to provide services. Tasks that have entered the incremental phase will resume from the breakpoint, and tasks can be automatically balanced and distributed.
-
 
 
 ## A Task Encounters an Exception, How to Troubleshoot?
@@ -265,16 +262,13 @@ Although the reasons for task exceptions may vary, you can refer to the followin
    As shown in the example above, if the services are stopped, you can execute `./tapdata start` to start the relevant services.
 
 
+## Synchronization Performance is Poor, How to Troubleshoot?
 
-## Synchronization Performance Is Poor, How to Troubleshoot?
+For synchronization performance issues, we need to decompose the execution process of the task into source, destination, and engine, and then identify the potential bottleneck node.
 
-For synchronization performance
-
-issues, we need to decompose the execution process of the task into source, destination, and engine, and then identify the potential bottleneck node.
-
-- Destination: Replace logic. For example, replace the destination with DummyDB to observe the task execution. If there is a significant performance improvement, it can be preliminarily determined that the problem lies with the destination side. Start the detailed investigation from there.
-- Engine: Trace logic. Sort each processing node of the engine by processing time delay to find the information of the top N longest delay nodes for detailed investigation. Then, create a clone of the problem task and trace each entity data from source to destination, recording the delay of the data passing through the engine processing nodes. Output the most detailed log information to identify the specific problem cause of the problem node.
-- Source: Exclusion logic. Since Tapdata's implementation for different sources varies, the method to determine whether a problem is related to the source is to first ensure the problem is not related to the destination and engine. Then, based on the specific situation of the source, determine the investigation strategy.
+- **Destination**: Replace logic. For example, replace the destination with DummyDB to observe the task execution. If there is a significant performance improvement, it can be preliminarily determined that the problem lies with the destination side. Start the detailed investigation from there.
+- **Engine**: Trace logic. Sort each processing node of the engine by processing time delay to find the information of the top N longest delay nodes for detailed investigation. Then, create a clone of the problem task and trace each entity data from source to destination, recording the delay of the data passing through the engine processing nodes. Output the most detailed log information to identify the specific problem cause of the problem node.
+- **Source**: Exclusion logic. Since Tapdata's implementation for different sources varies, the method to determine whether a problem is related to the source is to first ensure the problem is not related to the destination and engine. Then, based on the specific situation of the source, determine the investigation strategy.
 
 Additionally, we also need to consider the processing delays and network transmission delays in different stages.
 
@@ -293,7 +287,6 @@ MongoDB database exceptions can have various causes. The general troubleshooting
 3. Log into the MongoDB database and execute the `db.serverStatus()` command to view the current database status and statistics, analyzing if there are performance issues. For more information, see [serverStatus](https://www.mongodb.com/docs/manual/reference/command/serverStatus/).
 
 4. Try using MongoDB's built-in tools for troubleshooting, such as `mongotop` to view the read and write operations of each collection, and `mongostat` to view the server's activity status.
-
 
 
 ## What Is the Database Name in the MongoDB Database Dependent by Tapdata, and What Are the Collections?

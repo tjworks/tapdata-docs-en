@@ -1,5 +1,9 @@
 # Enable Real-Time Data Hub
 
+import Content from '../../../reuse-content/_all-features.md';
+
+<Content />
+
 Due to digital transformation, the presence of isolated data, data fragmentation, or data silos has emerged as a significant challenge. Moreover, there is a growing demand for data in business operations. However, traditional data delivery methods pose limitations, such as lengthy processes and substantial resource requirements. This situation calls for a solution that enables organizations to swiftly establish data flow pipelines and unlock the value of their data.
 
 Tapdata Cloud's Real-Time Data Hub offers a powerful solution. By synchronizing data from diverse business systems to a unified platform cache layer, it enables the consolidation of data sources and facilitates seamless data processing and analysis. This unified and real-time data platform helps enterprises overcome data silos and promotes data-driven decision-making, ultimately enhancing their competitiveness in the market.
@@ -23,16 +27,16 @@ These cases collectively demonstrate how the Real-Time Data Center can help busi
 
 ## <span id="intro">Real-Time Data Hub Introduction</span>
 
-With the increase in the tasks carried by the source database, in order to minimize the impact of data extraction on the source database and adhere to the organization's concept of data hierarchical governance, Tapdata Cloud organizes the data service platform in a layered manner based on the data flow order. This hierarchical arrangement ensures efficient and structured data processing, allowing for better data management and seamless integration across different systems.
+With the increase in the tasks carried by the source database, in order to minimize the impact of data extraction on the source database and adhere to the organization's concept of data hierarchical governance, Tapdata organizes the data service platform in a layered manner based on the data flow order. This hierarchical arrangement ensures efficient and structured data processing, allowing for better data management and seamless integration across different systems.
 
 ![Data Service Platform Architecture](../../../images/ldp_architecture.png)
 
 | Hierarchy | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | -------------------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Sources** | Tapdata Cloud consolidates data sources from various business systems into a centralized data source layer, which serves as the initial step in bridging data silos. This abstraction of data sources enables a unified and streamlined approach to accessing and utilizing data. For more detailed instructions, please refer to the [Connect Data Sources](../../../prerequisites/README.md) section for comprehensive information on establishing connections with your data sources. |
+| **Sources** | Tapdata consolidates data sources from various business systems into a centralized data source layer, which serves as the initial step in bridging data silos. This abstraction of data sources enables a unified and streamlined approach to accessing and utilizing data. For more detailed instructions, please refer to the [Connect Data Sources](../../../prerequisites/README.md) section for comprehensive information on establishing connections with your data sources. |
 | **FDM (Foundation Data Model)** | By synchronizing the table from the source database to the **FDM** beforehand, the data can be readily accessed by the business through the FDM, thus eliminating the need to directly read or manipulate the data in the source database, such as performing union operations, during data processing. This approach significantly minimizes the impact on the business operations of the source database.                                         |
 | **MDM (Master Data Model)** | If there is a need for extensive customization of data processing or operations, such as generating a wide table, it is possible to extract the data table from the FDM and perform the required operations within the **MDM**. This allows for the generation of model data that can be used in the final business processes.                                                                                                                      |
-| **Targets & Service** | Tapdata Cloud provides a centralized platform that aggregates and presents various data sources, allowing them to be utilized as targets for data processing. This enables the provision of processed data to the business, facilitating the creation of a unified data service platform for enterprises.                                                                                                                                                                                |
+| **Targets & Service** | Tapdata provides a centralized platform that aggregates and presents various data sources, allowing them to be utilized as targets for data processing. This enables the provision of processed data to the business, facilitating the creation of a unified data service platform for enterprises.                                                                                                                                                                                |
 
 
 
@@ -58,7 +62,7 @@ In the Real-Time Data Hub, we need to prepare a MongoDB database as a data repos
    * **Region**: Select the deployment region. Choose a region close to your data source for minimal network latency.
    * **Specification**: Pick the **specification** and **storage size** for MongoDB Atlas.
      :::tip
-     Tapdata Cloud offers a free trial option with specifications that you can select. You can choose the **Free Trial** option to get started.
+     Tapdata offers a free trial option with specifications that you can select. You can choose the **Free Trial** option to get started.
      :::
 
      <details><summary>Specifications Description</summary>

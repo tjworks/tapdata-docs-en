@@ -1,8 +1,12 @@
-# Task Pre-check Explanation
+# Task Pre-check
+
+import Content from '../../reuse-content/_all-features.md';
+
+<Content />
 
 To ensure the normal operation of data replication/development tasks, when you save or start a task, Tapdata will conduct a pre-check based on node configuration and data source characteristics. Simultaneously, it prints the check results through logs, helping you avoid the risk of task execution failure and manage tasks more efficiently.
 
-## Example of Pre-check Logs
+## Pre-check Logs Example
 
 After the data replication/development task configuration is completed, execute save or start the task, and the pre-check information will be displayed at the bottom of the page. Relevant examples are as follows:
 
@@ -33,7 +37,7 @@ After the data replication/development task configuration is completed, execute 
 | Target Type Mapping Failure    | 【WARN】【2023-01-01 00:00:00】【Target Type Mapping Check】【Node-Target】【Personinfo】【id】The data type of this field is temporarily unsupported, and will be ignored during data writing. |
 | Target Type Mapping Warning    | 【WARN】【2023-01-01 00:00:00】【Source Type Mapping Check】【Node-Target】【Personinfo】【pic】The target data type mapped by this field is a system-guessed result, which may be biased. Please check and confirm whether it meets the expectations, and adjust accordingly. |
 
-### Scenario-based Check
+## Scenario-based Check
 
 | Category    | Check Item                       | Explanation                                                  |
 | ----------- | -------------------------------- | ------------------------------------------------------------ |

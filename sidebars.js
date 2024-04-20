@@ -335,13 +335,14 @@ const sidebars = {
                      'user-guide/other-settings/check-version',
                     ]
              },
+             'user-guide/operation-log',
              'user-guide/notification',
              'user-guide/no-supported-data-type',
         ]
     },
     {
      type: 'category',
-     label: 'Production Deployment & Maintenance',
+     label: 'Deployment & Maintenance',
      link: {type: 'doc', id: 'production-admin/README'},
      items: [
             'production-admin/install-tapdata-ha',

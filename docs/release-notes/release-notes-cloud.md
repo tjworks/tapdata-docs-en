@@ -1,5 +1,9 @@
 # Tapdata Cloud Release Notes
 
+import Content from '../reuse-content/_cloud-features.md';
+
+<Content />
+
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
 ##  2024-03-08

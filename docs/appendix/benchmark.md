@@ -1,5 +1,9 @@
 # Performance Testing
 
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
+
 This document aims to detail the methods and steps for conducting performance tests on Tapdata. We will explore how to accurately assess Tapdata's data processing capabilities, response times, and system stability under various conditions. This helps you understand Tapdata's performance under different loads, allowing for better resource planning and configuration optimization.
 
 ## Testing Environment
@@ -92,26 +96,24 @@ Results of real-time synchronization from a MongoDB source to different target d
   DELIMITER //
   CREATE PROCEDURE CUSTOMER_INSERT_DATA(IN DATA_COUNT INT,IN BATCH_SIZE INT)
   BEGIN
-      DECLARE i INT
-
-default 1;
-DECLARE MAX_ID INT;
-SELECT MAX(test.customer.CUSTOMER_ID) FROM test.customer INTO MAX_ID;
-IF MAX_ID IS NULL THEN
-SET MAX_ID = 0;
-END IF;
-SET autocommit =0;
-WHILE i <= DATA_COUNT do
-INSERT INTO customer(CUSTOMER_ID, CITY, AGE, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH, JOB, EMAIL, ZIP, PHONE)
-VALUES (MAX_ID+i,'Oppenheim',18,'Lambert','Sauer',now(),'Vertreter / Vertreterin','rushland2003@live.com','13480','+49-4611-41132053');
-IF(mod(i,BATCH_SIZE)=0)
-THEN commit;
-END IF;
-SET i = i+1;
-END WHILE ;
-Commit ;
-END //
-DELIMITER ;
+      DECLARE i INT default 1;
+      DECLARE MAX_ID INT;
+      select max(test.customer.CUSTOMER_ID) from test.customer into MAX_ID;
+      IF MAX_ID IS NULL THEN
+          SET MAX_ID = 0;
+      END IF;
+      SET autocommit =0;
+      WHILE i <= DATA_COUNT do
+          INSERT INTO customer(CUSTOMER_ID, CITY, AGE, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH, JOB, EMAIL, ZIP, PHONE)
+              VALUES (MAX_ID+i,'Oppenheim',18,'Lambert','Sauer',now(),'Vertreter / Vertreterin','rushland2003@live.com','13480','+49-4611-41132053');
+          IF(mod(i,BATCH_SIZE)=0)
+              THEN commit;
+          END IF;
+          SET i = i+1;
+      END WHILE ;
+      Commit ;
+  END //
+  DELIMITER ;
   ```
 
 - **Kafka Instance**: Running in Docker, allocated memory is 48GB.

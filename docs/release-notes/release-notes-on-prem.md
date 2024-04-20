@@ -1,5 +1,9 @@
 # Tapdata Enterprise Release Notes
 
+import Content from '../reuse-content/_enterprise-features.md';
+
+<Content />
+
 ## 3.5.12
 
 ### New Features

@@ -18,7 +18,7 @@ Dummy is a data source that generates test data. This article describes how to a
         * **Write interval**: When serving as the target data source, control the frequency of consumption events in milliseconds.
         * **Write interval upper limit**: The total number of write interval data consumed during the write interval, ranging from 0 to 2147483647.
       * **Advanced settings**
-        * **Print write log**: After turning on the switch, Tapdata Cloud will output the received event data.
+        * **Print write log**: After turning on the switch, Tapdata will output the received event data.
         * **Table name**, **Field definitions**: define the structure of the table as the source, support batch new fields.
         * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
         * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.

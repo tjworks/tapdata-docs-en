@@ -2,7 +2,7 @@
 
 ApsaraDB RDS MySQL is a relational database service with high availability, scalability, security and reliability provided by Alibaba Cloud. 
 
-Tapdata Cloud extends support for constructing data pipelines with Aliyun RDS MySQL as both the source and target database. This article introduces how to connect to Aliyun RDS MySQL, helping you quickly achieve data migration to the cloud or data flow across different cloud platforms.
+Tapdata extends support for constructing data pipelines with Aliyun RDS MySQL as both the source and target database. This article introduces how to connect to Aliyun RDS MySQL, helping you quickly achieve data migration to the cloud or data flow across different cloud platforms.
 
 ## Supported Versions
 
