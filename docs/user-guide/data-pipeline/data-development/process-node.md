@@ -241,6 +241,10 @@ return record
 
 ## <span id="Unwind">Unwind</span>
 
+import Content2 from '../../../reuse-content/_enterprise-features.md';
+
+<Content2 />
+
 **Unwind** is specifically designed to handle array contents in JSON data structures, efficiently "unwinding" each element in an array and converting them into independent data rows. This approach is particularly suitable for scenarios that require deep analysis of array data, such as data normalization, personalized report generation, data transformation, and data quality cleaning. Additionally, when the target system or application does not support array formats, or for compatibility with other data structures, the Unwind node provides a ready-to-use solution, ensuring the efficiency and accuracy of the data processing and synchronization process.
 
 Suppose there is a collection named `customer_json` that records the list of products purchased by each customer. To analyze the sales of each product in more detail, we want to convert the product list from an array format to separate data rows. In this way, each product will have a corresponding customer purchase record. To achieve this requirement, we can add an **Unwind** node when configuring the data transformation task. The node configuration example is as follows.
@@ -262,6 +266,10 @@ When the data source lacks complete CDC support or is restricted by permission c
 ![Time Field Injection](../../../images/time_field_injection.png)
 
 ## <span id="js-process">JS Processing</span>
+
+import Content3 from '../../../reuse-content/_enterprise-features.md';
+
+<Content3 />
 
 Support is provided for data processing through JavaScript or Java code. When writing the code, it is important to ensure  source node and the target node is connected. This ensures seamless data processing between the two nodes.
 
