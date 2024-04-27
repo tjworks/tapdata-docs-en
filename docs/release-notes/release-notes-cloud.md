@@ -6,6 +6,57 @@ import Content from '../reuse-content/_cloud-features.md';
 
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
+### 2024-04-26
+
+#### New Features
+
+* [Data replication tasks](../user-guide/data-pipeline/copy-data/create-task.md) now support table-level checkpoint resumption, allowing tasks to continue syncing from the last incomplete table upon restart.
+* Added the ability to quickly [set task labels](../user-guide/data-pipeline/copy-data/manage-task.md) by dragging and dropping.
+* Added support for MySQL replica architecture, ensuring tasks continue to sync data normally after a failover event.
+
+#### Enhancements
+
+* The Windows version of the Cloud Agent now includes digital certificate signing to avoid installation delays caused by system security prompts.
+* Improved the User Center page layout.
+
+#### Bug Fixes
+
+* Fixed an issue where tasks were failing with Aliyun PolarDB MySQL data sources due to unsupported event types.
+* Corrected a statistical progress display error in the completion metrics of full data synchronization tasks.
+
+### 2024-04-12
+
+#### New Features
+
+* Added support for real-time log parsing of [TiDB data sources](../prerequisites/on-prem-databases/tidb.md), fulfilling incremental data synchronization needs.
+* During the full sync phase from Oracle to MySQL, support has been added for syncing unique and normal indexes that do not utilize functions.
+* Enhanced the task start process to include an option to skip errors encountered during the last run.
+
+#### Enhancements
+
+* Improved DDL synchronization settings in data sync tasks by allowing users to configure DDL statements to ignore (based on regular expressions) when DDL errors occur.
+* Enhanced data verification capabilities to support tasks that include processing nodes.
+* Optimized the data verification results page to quickly filter between consistent and inconsistent tables.
+
+#### Bug Fixes
+
+* Fixed an issue where MongoDB used as external storage failed when storing values in a Map format with keys containing the `.` character.
+* Addressed a looping error that occurred during connection tests for Kafka data sources containing non-JSON topics.
+* Resolved a bug where JS nodes reported errors during trial runs under specific conditions.
+* Fixed an issue with incorrect data results when changing join keys in master-slave merge nodes.
+* Fixed a problem where using RocksDB as cache storage could cause task errors.
+
+### 2024-03-29
+
+#### Enhancements
+
+* To further enhance user experience, Beta and Alpha [data sources](../prerequisites/README.md) now require an application for use, allowing Tapdata to provide better technical support based on your business scenarios.
+
+#### Bug Fixes
+
+* Resolved an issue where Agents crashed under specific circumstances.
+* Fixed a bug related to importing RM files in MongoDB.
+
 ##  2024-03-08
 
 ### New Features
@@ -27,7 +78,7 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 - Added support for [Shared Mining](../user-guide/advanced-settings/share-mining.md), allowing multiple tasks to share incremental logs from the source database, thus avoiding redundant reads and significantly reducing the load on the source database during incremental synchronization.
 - The Shared Mining feature now supports using RocksDB as [local external storage](../user-guide/advanced-settings/manage-external-storage.md) to extend storage for incremental logs.
 
-### Functional Enhancements
+### Enhancements
 
 - Improved the onboarding process for users from the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/tapdata-public/detail).
 - Added a time filter option for the incremental phase in the [Task Monitoring Page](../user-guide/data-pipeline/copy-data/monitor-task.md) to quickly observe QPS during the incremental phase.
@@ -45,7 +96,7 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 * Added support for [Capped Collections](https://www.mongodb.com/docs/manual/core/capped-collections/) in data synchronization between MongoDB database.
 * Data replication/transformation tasks now have import capabilities. Design your data flow process on [MongoDB Relational Migrator](https://www.mongodb.com/docs/relational-migrator/), export it, and then directly import it into Tapdata data pipelines from the top right corner, enhancing the convenience of data pipeline design.
 
-### Functional Enhancements
+### Enhancements
 
 * Enhanced the new user onboarding process, including the ability to collapse prompts and return to previous steps.
 
@@ -64,7 +115,7 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 * Added support for [Time Series collections](https://www.mongodb.com/docs/manual/core/timeseries-collections/) in MongoDB 5.x and above versions.
 * Added support for [preImage](https://www.mongodb.com/docs/manual/changeStreams/#change-streams-with-document-pre--and-post-images) in MongoDB 6.x and above versions.
 
-### Functional Enhancements
+### Enhancements
 
 * Improved system prompts when enabling scheduled tasks while reaching the task limit.
 
@@ -80,7 +131,7 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 
 - Added [Azure Cosmos DB](../prerequisites/cloud-databases/azure-cosmos-db.md) as a new data source, enabling full data synchronization to facilitate quick cloud data transfers.
 
-### Functional Enhancements
+### Enhancements
 
 - Upgraded data source connections, with [SQL Server](../prerequisites/on-prem-databases/sqlserver.md) now supporting SSL connections, enhancing data security.
 - Optimized field type adjustments in [data replication tasks](../user-guide/data-pipeline/copy-data/create-task.md), allowing for direct selection of common types from the target database.
@@ -100,7 +151,7 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 * Support for loading table comments on [Oracle data sources](prerequisites/on-prem-databases/oracle#advanced), which can be enabled in the **Advanced Settings** when configuring the data source. This makes it easier to quickly identify the business meaning of tables through their comments.
 * In the task [monitoring page](../user-guide/data-pipeline/copy-data/monitor-task.md), support viewing QPS (Queries Per Second) information based on the size of events.
 
-### Functional Enhancements
+### Enhancements
 
 * Enhanced the display effects of resource management and the subscription center pages.
 * When performing data source connection tests, support for displaying connector download progress is now available, helping to quickly grasp connection progress and pinpoint timeout issues.
@@ -110,13 +161,13 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 * Fixed an issue where incremental information was not successfully cleared after resetting and rerunning a task.
 * Fixed an issue where some SaaS data sources displayed incremental timestamps during full data synchronization.
 
-### Feature Enhancements
+### Enhancements
 
 ### Bug Fixes
 
 ## 2023-11-03
 
-### Feature Enhancements
+### Enhancements
 
 - Enhanced [Data Source Connection](../prerequisites/README.md) methods, supporting SSL connections for data sources like MySQL, PostgreSQL, Kafka, TiDB, MariaDB, etc., to further enhance data security.
 - Improved user interface interaction logic.
@@ -137,7 +188,7 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 - Add support for [Unwind Processing Node](user-guide/data-pipeline/data-development/process-node#Unwind), which can help you efficiently "unwind" each element in an array, converting each element into independent data rows.
 - Added support for disabling node capabilities when configuring tasks. You can access this feature by hovering over a node, which can help reduce the cost of data flow during processing.
 
-### Feature Enhancements
+### Enhancements
 
 - When [configuring data replication tasks](../user-guide/data-pipeline/copy-data/create-task.md), you can now quickly filter tables with or without primary keys through the "**Selectable table range**" dropdown. Tables with primary keys include those without primary keys but with unique indexes.
 - Added a Demo data source to the onboarding guide flow for new users, helping you quickly complete the tutorial and set up your first data flow task.
@@ -157,7 +208,7 @@ To enhance the user experience, Tapdata Cloud continuously enriches and optimize
 - Kafka data source now supports settings for replication factor and partition count.
 - For synchronization between MongoDB instances, added support for `$unset` operations.
 
-### Feature Enhancements
+### Enhancements
 
 - During the task guidance process, when creating a connection for a fully managed Agent, instructions about the public IP address of the fully managed Agent have been added.
 - Enabled rapid target node location through node search at the top of the data replication/data transformation configuration page.
