@@ -14,7 +14,7 @@ Amazon Simple Storage Service (Amazon S3) is an object storage service that offe
 
     4. In the **Permissions options** area, select **Attach policies directly**, then search for and select the **AmazonS3ReadOnlyAccess** policy.
 
-       ![Grant AmazonS3ReadOnlyAccess](../cloud/images/grant_s3_read.png)
+       ![Grant AmazonS3ReadOnlyAccess](../images/grant_s3_read.png)
 
     5. Click **Next**, and then click **Create user**.
 
@@ -24,7 +24,7 @@ Amazon Simple Storage Service (Amazon S3) is an object storage service that offe
 
     2. Click the **Security credentials** tab, and then click **Create access key** in the **Access keys** area.
 
-       ![Create Access Key](../cloud/images/create_s3_ak.png)
+       ![Create Access Key](../images/create_s3_ak.png)
 
     3. Select **Third-party services**and click **Next**.
 
@@ -32,7 +32,7 @@ Amazon Simple Storage Service (Amazon S3) is an object storage service that offe
 
     5. **Access key** and **secret key** can be viewed or downloaded on the page.
 
-       ![Obtain Access Key](../cloud/images/obtain_s3_ak.png)
+       ![Obtain Access Key](../images/obtain_s3_ak.png)
 
        :::tip
 
@@ -46,5 +46,5 @@ Amazon Simple Storage Service (Amazon S3) is an object storage service that offe
 
     2. On the bucket list page, find the target bucket and view its region code.
 
-       ![Get Region Code](../cloud/images/obtain_s3_region.png)
+       ![Get Region Code](../images/obtain_s3_region.png)
 

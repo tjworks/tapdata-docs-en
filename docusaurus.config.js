@@ -91,12 +91,17 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'cloud/what-is-tapdata-cloud',
+            docId: 'what-is-tapdata',
             position: 'left',
-            label: 'Tapdata Cloud',
+            label: 'Tapdata Documentation',
           },
           {
-            href: 'https://github.com/tapdata/docs',
+            href: 'https://cloud.tapdata.net/console/v3/',
+            position: 'right',
+            label: 'Log in Tapdata Cloud',
+          },
+          {
+            href: 'https://github.com/tapdata/docs-en',
             label: 'GitHub',
             position: 'right',
           },
@@ -110,7 +115,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/cloud/quick-start',
+                to: '/quick-start',
               },
             ],
           },
