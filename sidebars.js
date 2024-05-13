@@ -64,7 +64,8 @@ const sidebars = {
                      'quick-start/install/install-tapdata-enterprise/install-tapdata-stand-alone',
                      'quick-start/install/install-tapdata-enterprise/install-on-windows',
                      ]
-                     }
+                     },
+                     'quick-start/install/install-tapdata-community',
              ]
             },
             'quick-start/connect-database',

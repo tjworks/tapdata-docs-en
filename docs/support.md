@@ -18,9 +18,9 @@ After logging in to Tapdata Cloud, click **Connect** in the bottom left corner o
 
 
 
-## User Community
+## Open Source Community
 
-In the Tapdata user community, you can ask questions about Tapdata products and get technical support, discuss issues encountered, and provide valuable feedback.
+In the [Tapdata Open Source Community](https://github.com/tapdata/tapdata), you can ask questions about Tapdata products and get technical support, discuss issues encountered, and provide valuable feedback.
 
 :::tip
 

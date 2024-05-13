@@ -42,6 +42,21 @@ The console page mainly includes the following key indicators:
 - **Transmission Overview**: Displays event transmission statistics for all data replication and data transformation tasks created by the current user.
 - **Cluster Overview**: Displays the current status of each node service under the system cluster.
 
+## Tapdata Community
+
+Displays statistics on the total number of all tasks, their status, and operational data in the current system.
+
+![Tapdata Community Dashboard](../images/dashboard_community.png)
+
+The console page mainly includes the following key indicators:
+
+- **All Tasks**: Displays the total number of all tasks for the current user, including data replication tasks, data transformation tasks, and data verification tasks.
+- **Replication Tasks**: Displays the total number of data replication tasks created by the current user.
+- **Transformation Tasks**: Displays the total number of data transformation subtasks created by the current user.
+- **Replication Task Overview**: Displays the task status distribution of all data replication tasks created by the current user.
+- **Transformation Task Overview**: Displays the task status distribution of data transformation tasks created by the current user.
+- **Transmission Overview**: Displays event transmission statistics for all data replication and data transformation tasks created by the current user.
+
 
 
 ## Related Documentation

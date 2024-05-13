@@ -1,6 +1,6 @@
 # Deploy MongoDB Replica Set
 
-import Content from '../reuse-content/_all-features.md';
+import Content from '../reuse-content/_enterprise-and-community-features.md';
 
 <Content />
 
