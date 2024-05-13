@@ -53,6 +53,7 @@ import TabItem from '@theme/TabItem';
     - **Count Validation**: Verifies the row count of the source and target tables without displaying specific difference content, very fast.
     - **All Fields Validation**: Verifies the values of all fields in the source and target tables row by row, displaying the difference content of all fields, slower.
     - **Associated Fields Validation**: Only verifies the values of the associated fields in the source and target tables, medium speed.
+    - **Hash Validation**: Currently does not support Verify data between heterogeneous databases.
 - **Advanced Configuration**: Click on advanced configuration to unfold more configuration options:
     - **Result Output**: Choose **Output all inconsistent data** or **Only output inconsistent data from the source table**.
     - **validation Task Alarm**: Choose the rule configuration and notification method for alarms when the task runs into errors or the validation results are inconsistent.

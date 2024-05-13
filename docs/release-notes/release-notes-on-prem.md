@@ -4,6 +4,55 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
+## 3.5.15
+
+### New Features
+
+* [Data replication tasks](../user-guide/data-pipeline/copy-data/create-task.md) now support table-level checkpoint resumption, allowing tasks to continue syncing from the last incomplete table upon restart.
+* Added the ability to quickly [set task labels](../user-guide/data-pipeline/copy-data/manage-task.md) by dragging and dropping.
+* Added support for MySQL replica architecture, ensuring tasks continue to sync data normally after a failover event.
+
+### Bug Fixes
+
+* Fixed an issue with Alibaba Cloud PolarDB MySQL data source, where tasks failed due to unsupported events.
+* Fixed incorrect progress indicators in statistics for completed full replication tasks.
+
+## 3.5.14
+
+### New Features
+
+* Support for [assigning labels](../user-guide/manage-system/manage-cluster.md) to **sync governance services** (Agents), allowing for subsequent assignment of tasks to agents with specific labels.
+* Supported real-time log parsing for [TiDB data sources](../prerequisites/on-prem-databases/tidb.md), meeting the needs for incremental data synchronization.
+* During the full synchronization phase from Oracle to MySQL, support for syncing unique indexes and regular indexes that do not utilize functions.
+* Added the ability to skip errors encountered during the last run when starting tasks.
+
+### Enhancements
+
+* Optimized the data synchronization task scenario, allowing source nodes to [configure DDL synchronization settings](../best-practice/handle-schema-changes.md) and specify DDL statements to ignore (based on regular expressions) in case of DDL errors.
+* Enhanced data verification capabilities to support tasks that include processing nodes.
+* Improved the data verification results page display, enabling quick filtering of consistent and inconsistent tables.
+
+### Bug Fixes
+
+* Fixed an issue where MongoDB used as external storage and storing keys with dots (.) in strings, and values as maps, caused exceptions.
+* Fixed a loop error when performing connection tests on Kafka data sources containing non-JSON topics.
+* Fixed an error that occurred during trial runs of JS nodes in specific scenarios.
+* Fixed incorrect data issues caused by changing key values in master-slave merge nodes.
+* Fixed an issue where using RocksDB as cache storage could cause task errors.
+
+## 3.5.13
+
+### New Features
+
+* When [configuring data verification tasks](../user-guide/data-pipeline/verify-data.md), custom filtering based on time fields is now available for MongoDB aggregation queries.
+* Supported [hash verification](../user-guide/data-pipeline/verify-data.md) for MySQL/Oracle homogeneous data source synchronization.
+
+### Bug Fixes
+
+* Fixed an issue where DDL operations could not be synchronized normally in multi-threaded synchronization scenarios.
+* Fixed an occasional issue where file handles were not released in time when JS nodes printed logs.
+* Fixed an issue with the import of MongoDB RM files.
+
 ## 3.5.12
 
 ### New Features

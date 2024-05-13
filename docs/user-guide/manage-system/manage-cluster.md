@@ -9,7 +9,7 @@ Through the Cluster Management page, you can view the running status of all comp
 
 1. [Log in to Tapdata Platform](../log-in.md) as a system administrator.
 
-2. In the left navigation bar, select **System** > **Cluster** to view the running status and connection information of each component.
+2. In the left navigation bar, select **System** > **Cluster**. The default view is **Cluster View**, where you can see the operational status and connection information of each component.
 
    You can also start/stop, and restart services. Note that stopping and restarting operations will affect the normal operation of related services, so please operate during maintenance windows or during business off-peak periods.
 
@@ -30,3 +30,7 @@ Through the Cluster Management page, you can view the running status of all comp
       :::
 
     * Click ![](../../images/cluster_add_icon.png) to add custom service monitoring.
+
+4. Click **Component View** in the upper right corner, and the page will display the status information of components by category. Additionally, you can assign different tags to multiple synchronization governance services (Agents). These tags can then be specified when configuring data synchronization or transformation tasks.
+
+    ![Components View](../../images/components.png)
