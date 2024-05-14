@@ -18,21 +18,20 @@ Before you begin, ensure your environment meets the following requirements:
 - Hardware specifications: 8-core CPU (x86 architecture), 16 GB of memory
 - Storage specifications: 100 GB
 - Operating System: CentOS 7+ or Ubuntu 16.04+
-- Network environment: Capable of communicating with target databases
 
 ## Component Overview
 
 Tapdata Community includes the following main components:
 
-- **Connectors**: Allow Tapdata Community to connect to various data sources, such as databases, data warehouses, and message queues.
+- **Data Connectors**: Allow Tapdata Community to connect to various data sources, such as databases, data warehouses, and message queues.
 - **Data Processing Engine**: Responsible for performing tasks such as data transformation, cleaning, and processing.
 - **Monitoring and Management Interface**: Provides an easy-to-use graphical platform for configuring, managing, and monitoring data flows.
 
-## Installing Tapdata Community
+## Install Tapdata Community
 
 ```mdx-code-block
 <Tabs className="unique-tabs">
-<TabItem value="Deployment on Docker Platform">
+<TabItem value="Deploy on Docker Platform">
 ```
 1. Ensure [Docker](https://docs.docker.com/get-docker/) is installed and running.
 
@@ -78,7 +77,7 @@ Tapdata Community includes the following main components:
 
 </TabItem>
 
-<TabItem value="Deployment on Linux Platform">
+<TabItem value="Deploy on Linux Platform">
 
 1. Visit the [Tapdata Community Release page](https://github.com/tapdata/tapdata/releases), download the latest installation package, and upload it to the device where you intend to deploy it.
 
@@ -98,9 +97,7 @@ Tapdata Community includes the following main components:
 
    Example: `export MONGO_URI='mongodb://root:Tap123456@192.168.1.18:29917/tapdata_community?replicaSet=rs1&authSource=admin'`
 
-4. Run `./start.sh`
-
-to start the Tapdata service. Key logs after successful startup should indicate:
+4. Run `./start.sh` to start the Tapdata service. Key logs after successful startup should indicate:
 
    ```bash
    <<< Start Server [SUCCESS]

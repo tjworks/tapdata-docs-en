@@ -16,10 +16,7 @@ Before connecting to the data sources, you also need to ensure that the network 
 
 1. [Log in to Tapdata Platform](../user-guide/log-in.md).
 
-2. Based on the product type, select the operation entry:
-
-    * **Tapdata Cloud**: In the left navigation panel, click **Data Transformation**.
-    * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Transforms**.
+2. In the left navigation panel, click **Connections**.
 
 3. On the right side of the page, click on **Create**. A dialog box will appear, where you can select the desired data source to establish a connection with.
 

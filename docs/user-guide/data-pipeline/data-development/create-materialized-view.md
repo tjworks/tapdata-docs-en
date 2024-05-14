@@ -19,7 +19,10 @@ Next, we'll detail how to employ Tapdata's real-time materialized view feature i
 ## Procedure
 
 1. [Log in to Tapdata Platform](../../../user-guide/log-in.md).
-2. On the left sidebar, click **Data Transformation**.
+2. Based on the product type, select the operation entry:
+
+   * **Tapdata Cloud**: In the left navigation panel, click **Data Transformation**.
+   * **Tapdata Enterprise or Tapdata Community**: In the left navigation panel, choose **Data Pipelines** > **Transforms**.
 3. Click **Build Materialized View** on the right, leading you to the task configuration page.
 
    1. Select the database and table for your materialized view. In this case, choose the **order** table.

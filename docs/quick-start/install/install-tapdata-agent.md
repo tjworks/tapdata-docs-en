@@ -1,4 +1,4 @@
-# Deploy Tapdata Agent
+# Tapdata Cloud
 
 import Content from '../../reuse-content/_cloud-features.md';
 
