@@ -48,6 +48,12 @@ Tapdata offers two deployment modes, **Cloud**, **Enterprise** and **Community**
 
 No worries, with Tapdata's graphical operation platform, follow our [Quick Start](quick-start/README.md) tutorial, and you can easily get started in just a few minutes. Moreover, we have prepared a wealth of tutorials to help you quickly meet your data flow requirements.
 
+:::tip
+
+While browsing the documentation, please pay attention to the "**Applicable to**" badge at the top of each document to ensure the information you read corresponds to the version you require.
+
+:::
+
 
 ## See also
 
