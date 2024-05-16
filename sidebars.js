@@ -40,7 +40,7 @@ const sidebars = {
      items: [
             {
              type: 'category',
-             label: 'Step1: Deploy Tapdata Service',
+             label: 'Step1: Provision TapData',
              link: {type: 'doc', id: 'quick-start/install/README'},
              items: [
                     'quick-start/install/install-tapdata-agent',

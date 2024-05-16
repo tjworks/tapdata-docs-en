@@ -1,4 +1,4 @@
-# Step1: Deploy Tapdata Service
+# Step1: Provision TapData 
 
 import Content from '../../reuse-content/_all-features.md';
 
