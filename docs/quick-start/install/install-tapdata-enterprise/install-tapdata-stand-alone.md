@@ -1,4 +1,4 @@
-# Stand-alone Deployment (Linux)
+# Install on Linux
 
 import Content from '../../../reuse-content/_enterprise-features.md';
 

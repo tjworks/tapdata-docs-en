@@ -35,18 +35,6 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: 'Billing',
-     link: {type: 'doc', id: 'billing/README'},
-     items: [
-             'billing/billing-overview',
-             'billing/purchase',
-             'billing/renew-subscribe',
-             'billing/expiration',
-             'billing/refund',
-       ]
-    },
-    {
-     type: 'category',
      label: 'Quick Start',
      link: {type: 'doc', id: 'quick-start/README'},
      items: [
@@ -71,6 +59,18 @@ const sidebars = {
             'quick-start/connect-database',
             'quick-start/create-task',
      ]
+    },
+    {
+     type: 'category',
+     label: 'Billing',
+     link: {type: 'doc', id: 'billing/README'},
+     items: [
+             'billing/billing-overview',
+             'billing/purchase',
+             'billing/renew-subscribe',
+             'billing/expiration',
+             'billing/refund',
+       ]
     },
 {
          type: 'category',
@@ -402,7 +402,7 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: 'Appendix',
+     label: 'Reference',
      link: {type: 'doc', id: 'appendix/README'},
      items: [
             'appendix/standard-js',
