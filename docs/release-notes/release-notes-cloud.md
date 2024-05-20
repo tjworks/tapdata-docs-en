@@ -6,6 +6,26 @@ import Content from '../reuse-content/_cloud-features.md';
 
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
+### 2024-05-06
+
+#### New Features
+
+* Support for bidirectional data synchronization between MySQL instances and between PostgreSQL instances, better meeting the needs of active-active and disaster recovery scenarios.
+* Support for importing files from [MongoDB Relmig](https://www.mongodb.com/docs/relational-migrator/) version 1.3.0 and above, further enhancing ecosystem integration capabilities.
+* Support for synchronizing MongoDB [Oplog](https://www.mongodb.com/docs/manual/core/replica-set-oplog/) (operation log) data.
+* Support for filtering the time field of tables in the source node’s **[Advanced Settings](../user-guide/data-pipeline/data-development/create-task#full-sql-query)** when configuring data transformation tasks (e.g., relative dates).
+* Display milestone information for tasks on the [Task List](../user-guide/data-pipeline/copy-data/manage-task.md) page, helping users quickly understand key progress statuses.
+
+#### Enhancements
+
+* Improved [Unwind Node](../user-guide/data-pipeline/data-development/process-node#unwind) functionality, allowing users to set expansion modes, such as **Embedded Objects** or **Flatten Fields**.
+* Enhanced full synchronization detail page display, supporting quick table name filtering.
+
+#### Bug Fixes
+
+* Fixed an issue where adjusting alarm settings could affect normal task operations in certain scenarios.
+* Fixed an issue where adding a new digging table caused the task to display digging task errors.
+
 ### 2024-04-26
 
 #### New Features
