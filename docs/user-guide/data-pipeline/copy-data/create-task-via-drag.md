@@ -10,8 +10,10 @@ In the **Board** view mode, you can simply drag the source table to the target d
 
 1. [Log in to Tapdata Platform](../../log-in.md).
 
-2. In the left navigation panel, click **Data Replication**.
+2. Based on the product type, select the operation entry:
 
+    * **Tapdata Cloud**: In the left navigation panel, click **Data Replications**.
+    * **Tapdata Enterprise or Tapdata Community**: In the left navigation panel, choose **Data Pipelines** > **Replications**.
 3. In the upper right corner of the page, click on **Board** to switch to the Data Board view.
 
 4. On this page, you can conveniently view the data source information you have entered. The page is divided into two columns labeled **Sources** and **Targets & Services** by Tapdata. This helps you distinguish between the source and target data sources and provides a clear overview of your data connections.

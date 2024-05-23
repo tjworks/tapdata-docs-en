@@ -35,24 +35,12 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: 'Billing',
-     link: {type: 'doc', id: 'billing/README'},
-     items: [
-             'billing/billing-overview',
-             'billing/purchase',
-             'billing/renew-subscribe',
-             'billing/expiration',
-             'billing/refund',
-       ]
-    },
-    {
-     type: 'category',
      label: 'Quick Start',
      link: {type: 'doc', id: 'quick-start/README'},
      items: [
             {
              type: 'category',
-             label: 'Step1: Deploy Tapdata Service',
+             label: 'Step1: Provision TapData',
              link: {type: 'doc', id: 'quick-start/install/README'},
              items: [
                     'quick-start/install/install-tapdata-agent',
@@ -64,12 +52,25 @@ const sidebars = {
                      'quick-start/install/install-tapdata-enterprise/install-tapdata-stand-alone',
                      'quick-start/install/install-tapdata-enterprise/install-on-windows',
                      ]
-                     }
+                     },
+                     'quick-start/install/install-tapdata-community',
              ]
             },
             'quick-start/connect-database',
             'quick-start/create-task',
      ]
+    },
+    {
+     type: 'category',
+     label: 'Billing',
+     link: {type: 'doc', id: 'billing/README'},
+     items: [
+             'billing/billing-overview',
+             'billing/purchase',
+             'billing/renew-subscribe',
+             'billing/expiration',
+             'billing/refund',
+       ]
     },
 {
          type: 'category',
@@ -401,7 +402,7 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: 'Appendix',
+     label: 'Reference',
      link: {type: 'doc', id: 'appendix/README'},
      items: [
             'appendix/standard-js',

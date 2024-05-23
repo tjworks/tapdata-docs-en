@@ -1,6 +1,6 @@
 # Manage External Storage
 
-import Content from '../../reuse-content/_all-features.md';
+import Content from '../../reuse-content/_enterprise-and-community-features.md';
 
 <Content />
 
@@ -8,7 +8,7 @@ To facilitate the quick reading of task-related information subsequently, Tapdat
 
 :::tip
 
-If you are using Tapdata Enterprise, you can access this feature by navigating to **System** > **External Storage** in the menu.
+If you are using Tapdata Enterprise or Tapdata Community, you can access this feature by navigating to **System** > **External Storage** in the menu.
 
 :::
 

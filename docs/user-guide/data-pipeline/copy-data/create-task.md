@@ -29,7 +29,7 @@ As an example of creating a data replication task, the article demonstrates the 
 2. Based on the product type, select the operation entry:
 
    * **Tapdata Cloud**: In the left navigation panel, click **Data Replications**.
-   * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Replications**.
+   * **Tapdata Enterprise or Tapdata Community**: In the left navigation panel, choose **Data Pipelines** > **Replications**.
 
 3. On the right side of the page, click **Create** to configure the task.
 

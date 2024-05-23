@@ -1,4 +1,4 @@
-# Stand-alone Deployment (Windows)
+# Install on Windows
 
 import Content from '../../../reuse-content/_enterprise-features.md';
 

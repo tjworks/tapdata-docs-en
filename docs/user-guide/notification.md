@@ -1,6 +1,6 @@
 # Notification Center
 
-import Content from '../reuse-content/_enterprise-features.md';
+import Content from '../reuse-content/_enterprise-and-community-features.md';
 
 <Content />
 

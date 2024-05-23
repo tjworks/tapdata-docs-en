@@ -17,7 +17,7 @@ As an example, we will show how to change the **birthdate** field's data type fr
 2. Based on the product type, select the operation entry:
 
    * **Tapdata Cloud**: In the left navigation panel, click **Data Transformation**.
-   * **Tapdata Enterprise**: In the left navigation panel, choose **Data Pipelines** > **Transforms**.
+   * **Tapdata Enterprise or Tapdata Community**: In the left navigation panel, choose **Data Pipelines** > **Transforms**.
 
 3. Click **Create** on the right side of the page to go to the task configuration page.
 

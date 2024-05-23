@@ -1,6 +1,6 @@
 # Enable Real-Time Data Hub
 
-import Content from '../../../reuse-content/_all-features.md';
+import Content from '../../../reuse-content/_enterprise-and-cloud-features.md';
 
 <Content />
 
@@ -116,5 +116,4 @@ In the Real-Time Data Hub, we need to prepare a MongoDB database as a data repos
 
 </TabItem>
 </Tabs>
-
 
