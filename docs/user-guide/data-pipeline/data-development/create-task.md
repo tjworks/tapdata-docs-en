@@ -31,58 +31,77 @@ As an example, we will show how to change the **birthdate** field's data type fr
 
    :::
 
-6. The above four nodes are connected in the order of data flow, as shown in the figure below.
+6. Connect the aforementioned four nodes in the order of data flow as shown below.
 
-   ![Connect node](../../../images/connect_data_dev_nodes.png)
+   ![Connect Nodes](../../../images/connect_data_dev_nodes.png)
 
-7. To configure each node, follow the instructions below.
+7. Follow the instructions below to configure each node in sequence.
 
-   1. On the canvas, click on the source node located on the left side, and proceed to configure the parameters on the right panel.
+   1. On the canvas, click the source node on the far left and complete the parameter configuration in the right panel according to the following instructions.
+      ![Source Node Setting](../../../images/data_dev_source_node_setting.png)
 
-      ![Source node settings](../../../images/data_dev_source_node_setting.png)
+      * **Basic Settings**
 
-      * **Node name**: Defaults to connection name, you can also set a name that has business significance.
-      * **Table**: n Select the desired source table that you wish to work with.
-      * **Sync DDL Events**: Once the switch is turned on, Tapdata will automatically collect the selected source DDL events, such as the addition of new fields. If the target database supports DDL writing, it enables DDL statement synchronization, ensuring that any changes in the source table's structure are reflected in the target database.
-      * **Filter settings**: Default off, after turning on you need to specify data filtering conditions.
+        * **Node Name**: Defaults to the connection name, but you can set a name with business meaning.
+        * **Table**: Select the source table to operate on. The table structure, including column names and column types, will be displayed below.
 
-   2. Click **Type modification** node, and in the right panel, modify the **birthdate** field to the type **Date**.
+      * **Advanced Settings**
 
+        * **DDL Sync Configuration**
+          Choose whether to enable **DDL Event Collection**. Once this option is enabled, Tapdata will automatically collect the selected source DDL events (such as adding fields). If the target end supports DDL input, DDL statement synchronization can be achieved.
+
+        * **Incremental Synchronization Method**
+          Choose between **Log CDC** and **Polling**. If you select **Polling**, you need to specify the polling field, interval, and number of rows to be read each time. 
+
+          **Log CDC** will use the data source transaction logs for parsing and incrementally syncing events, while **Polling** incrementally syncs events by polling fields, typically unable to sync delete events.
+
+        * **Data Filter**
+
+          * **Fully Customizable Query**: Once this option is enabled, you can enter the SQL query statement to be executed during the full data synchronization stage (does not affect the incremental stage). This allows for custom data extraction (such as data filtering, Joins, etc.), for example, entering `SELECT id, name, address FROM customer;`.
+            :::tip
+            Enabling this feature requires the target node to be a weak Scheme type data source (such as MongoDB/Kafka), etc.
+            :::
+          * **Filter Settings**: By default, it is off. When enabled, you need to specify the data filtering conditions.
+
+        * **Batch Read Count**: During full synchronization, the number of records read in each batch. The default is **100**.
+
+      * **Alert Settings**
+        By default, if the node's average processing time is equal to or greater than 5 seconds for a consecutive minute, system and email notifications are sent. You can also adjust the rules or turn off alerts according to business needs.
+
+   2. Click on the **Type Modification** node, and then in the right panel, modify the type of the **birthdate** field to **Date**.
       ![Modify Field Type](../../../images/data_dev_column_type_setting.png)
 
-   3. Click on the **Row Filter** node to complete the parameter configuration on the right panel based on the following instructions.
+   3. Click on the Row Filter node and complete the parameter configuration in the right panel according to the following instructions.
 
-      ![Row Filter node settings](../../../images/data_dev_row_filter_setting_en.png)
+      ![Row Filter Node Setting](../../../images/data_dev_row_filter_setting.png)
 
-      * **Execute action**: Select **Keep matching data**.
+      * **Action**: Choose **Retain Matching Data**.
+      * **Conditional Expression**: Enter the data matching expression, in this case `record.birthdate >= '1990-01-01'`, supported symbols are:
+        * Comparison: greater than (`>`), less than (`<`), greater than or equal to (`>=`), less than or equal to (`<=`), equal to (`==`)
+        * Logical Judgments: and (`&&`), or (`||`), not (`!`)
+        * Regular Expression: e.g., `/^.*$/.test( )`
+        * Conditional Grouping: If you need to add multiple condition groups, first enclose each group in parentheses, and then add logical judgment symbols between each group. For example, to filter males over 50 or people over 30 with an income under 10,000: `(record.gender == 0 && record.age > 50) || (record.age >= 30 && record.salary <= 10000)`
 
-      * **Conditional expression**: Fill in the data matching expression as `record.birthdate >= '1990-01-01'`. The supported symbols for comparison in the expression include:
+   4. Click the final <span id="target-node-set">target data node</span> and complete the parameter configuration in the right panel according to the following instructions.
 
-         * **Comparison**: greater than (`>`), less than (`<`), greater than or equal to (`>=`), less than or equal to (`<=`), equal to (`==`)
+      ![Node Basic Setting](../../../images/data_dev_target_node_basic_setting.png)
 
-         * **Logical Judgment**: with (`&&`), or (`||`), non- (`!`)
-
-         * **Regular Expression**: e.g.`/^.*$/.test( )`
-
-         * **Conditional Grouping**: To add multiple groups of conditions, enclose each group of conditions in parentheses and use logical operators between them. 
-
-           For example, to filter out men over 50 years old or people under 30 years old with incomes of 10,000, the expression would be: `( record.gender == 0&& record.age > 50) || ( record.age >= 30&& record.salary <= 10000)`. This expression ensures that the conditions within each group are evaluated first and then combines them using logical operators such as `&&` (AND) and `||"`(OR).
-
-   4. Click on the last target data node to complete the parameter configuration on the right panel based on the following instructions.
-
-      ![Target data node settings](../../../images/data_dev_target_node_setting_en.png)
-
-      - **Node name**: Defaults to connection name, you can also set a name that has business significance.
-
-      - **Table**: Select the desired table where you want to write the processed data.
-
-      - **Existing data processing**,**Data write mode**: Choose the appropriate data handling option based on your requirements.
-
-        For example, if the target table does not have any existing data and the structure of the target table is inconsistent with the source table, you can select **Clear the original table structure and data on the target side**.This will ensure that the target table is cleared and its structure is updated to match the source table before writing the processed data.
-
-      - **Full multi-threaded write**: The default number of concurrent threads for writing full data is **8**, but it can be adjusted based on the write performance of the target database.
-
-      - **Incremental multi-threaded write**: The concurrent threads for writing incremental data are disabled by default, but you can adjust them based on the write performance of the target database.
+      * **Basic Settings**
+        * **Node Name**: Defaults to the connection name, but you can set a name with business meaning.
+        * **Table**: Select the table to write the processed data to. The table will be created automatically if it does not exist.
+        * **Update Condition Field**: Select the field to be the basis for the update condition.
+        * **Existing Data Handling**: Choose according to business needs. If the target table has no data and its structure is inconsistent with the source table, you can choose **Clear the Existing Structure and Data of the Target Table**.
+        * **Batch Write Count**: The number of entries written per batch during full synchronization.
+        * **Maximum Wait Time per Batch Write**: Set the maximum waiting time based on the target database’s performance and network latency, measured in milliseconds.
+        * **Full Multi-Threaded Write**: The number of concurrent threads for writing full data. The default is **8**; adjust based on the target end's write performance.
+        * **Incremental Multi-Threaded  Write**: The number of concurrent threads for writing incremental data. By default, it is not enabled. Enable and adjust based on the target end's write performance.
+        * **Schema**: Displays the source table structure information, including field names and field types.
+      * **Advanced Settings**
+        Choose the data writing mode according to business needs:
+        * **Handle by Event Type**: After selecting this option, you need to also choose the data writing strategy for insert, update, and delete events.
+        * **Statistic Append Write**: Only handles insert events, discarding update and delete events.
+      * **Alert Settings**
+        By default, if the node's average processing time is equal to or greater than 5 seconds for a consecutive minute, system and email notifications are sent. You can also adjust the rules or turn off alerts according to business needs.
 
 8. (Optional) Click the ![setting](../../../images/setting.png) icon above to configure the task properties.
 

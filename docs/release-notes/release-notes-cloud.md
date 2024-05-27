@@ -6,6 +6,25 @@ import Content from '../reuse-content/_cloud-features.md';
 
 To enhance the user experience, Tapdata Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for Tapdata Cloud, helping you grasp the new feature specifications more effectively.
 
+### 2024-05-21
+
+#### New Features
+
+* Added support for dynamically generating date suffixes for target table names when [configuring data transformation tasks](../user-guide/data-pipeline/data-development/create-task#target-node-set), suitable for daily batch processing scenarios.
+* Added support for setting partitions when configuring Doris data sources.
+* Added support for the Oracle mode of OceanBase data sources, with the data source name OceanBase(Oracle).
+
+#### Enhancements
+
+* Optimized data handling logic when syncing MongoDB to relational databases (e.g., MySQL).
+* Enhanced the Dummy data source to support quickly adding large fields for performance testing scenarios.
+
+#### Bug Fixes
+
+* Fixed an issue where MariaDB could not write data in the `0000-00-00 00:00:00` format to the target.
+* Fixed an issue where heartbeat tasks could not automatically recover after the heartbeat table was mistakenly deleted.
+* Fixed an issue where shared extraction tasks could not be serialized after an error occurred.
+
 ### 2024-05-06
 
 #### New Features

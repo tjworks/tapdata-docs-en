@@ -1,43 +1,52 @@
-# Notification Center
+# Notification and Alert Settings
 
-import Content from '../reuse-content/_enterprise-and-community-features.md';
+import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-
-## System Notifications
-
 :::tip
 
-If you are using Tapdata Cloud, you can hover over the Notifications in the upper right corner to quickly receive recent system notifications and alert information (such as Agent status notifications). Additionally, you can click on Notification to enter the Notification Settings page to set the rules for Agent notification methods (such as email/SMS) and Default Alert Recipient (supports multiple emails).
+If you are using Tapdata Cloud, notification messages and configuration entry points are located at the top right of the page. You can set notification rules and alert recipients.
 
 :::
 
-The system notification feature mainly involves automatically triggered notifications based on user-defined notification rules. It includes two types of notifications: Task Run Notifications and Agent Notifications. Specific notification items include:
+Tapdata supports custom system and alert settings and integrates with third-party platforms via Webhook, helping you quickly grasp the status of task operations.
 
-- Task Deleted
-- Task Stopped
-- Task Status Error
-- Task Encountered an Error
-- CDC Lag Timeout
-- Database DDL Change
-- Server Disconnected
-- Agent Service Started
-- Agent Service Stopped
-- Agent Created
-- Agent Deleted
+## Notification Settings
 
-Users can see all notifications in the system notification list for which they have enabled system notifications in the notification settings.
+After [logging into the Tapdata platform](log-in.md), click the ![setting_icon](../images/setting_icon.png) > **Notification Settings** at the top right corner. You can set up custom notification rules to automatically trigger notification processes. The main types are task operation notifications and Agent notifications. The specific notification items include:
 
-![](../images/system_notification_1.png)
+![Notification Settings](../images/system_notification_1.png)
 
-In the system notification list, users can view all system notifications. Message notifications are divided into different levels as defined by the system, including ERROR, WARN, and INFO.
+**System Notice Settings**
 
-The system notification list supports filtering by different message levels and message types.
+- The job was startedSystem
+- Job pausedSystem
+- Job deletedSystem
+- Job state errorSystem
+- Job encounter error
+- CDC lag time
+- Verify job count differenceSystem
+- Verify job field value differenceSystem
+- Verify job was deletedSystem
+- Verify job errorSystem
 
-## Notification Setting
+**Agent Notice Settings**
 
-Notification settings allow you to configure which types of system notifications to receive. To access notification settings, click on the settings icon in the upper right corner and select **Notification Settings**.
+- Server disconnectedSystem
+- Agent startedSystem
+- Agent stoppedSystem
+- Agent createdSystem
+- Agent deleted
+
+## Alert Settings
+
+Through alert settings, you can configure the notification method and sending interval for alert events:
 
 ![](../images/system_notification_2.png)
 
+## Webhook Alerts
+
+With the Webhook alert feature, you can quickly integrate with your alert platform or third-party platform by simply providing the service URL. This allows for more notification methods, such as instant messaging platforms.
+
+![Webhook Settings](../images/webhook_settings.png)
