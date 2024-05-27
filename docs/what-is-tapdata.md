@@ -3,11 +3,25 @@ sidebar_position: 1
 slug: /
 ---
 
-# What is Tapdata?
+# What is TapData?
 
-Tapdata is a real-time data platform provide by Tapdata that integrates data replication and data transformation. It can provide millisecond-level real-time data synchronization and data fusion services in scenarios that span across clouds, regions, and multiple types of databases.
+TapData Live Data Platform (or TapData for short) is a modern and innovative data platform designed to solve many of the real time data use cases. 
 
-<iframe width="100%" height="539" src="https://www.youtube.com/embed/hlJKo6u3UnA?si=6Df9Yzv8jXf5EFE9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+You can use it as a **real time data pipeline** tool, as an alternative to Kafka based ETL pipelines, except without having to write any java code or maintaining Kafka. 
+
+You can use it as a **real time data warehouse**, when combined with a data warehouse storage, such as Clickhouse. 
+
+You can use it as a **real time data hub**, with a MongoDB as data store, you may sync all your silo-ed data into a centralized data platform and serve multiple applications from one single location, in an unified way. 
+
+## How It Works
+
+<img src="images/how-it-works-en.PNG" style="zoom: 50%;" />
+
+- First, connect to your existing application databases using built-in connectors. You need to prepare your network access and credentials to the databases, and some configuration of your databases may be required. 
+- TapData will monitor your database's log files(redo log, binlog etc) and capture the changes (inserts/updates/deletes) 
+- TapData will turn the change events into an event stream with the full record as the payload
+- You can then send the record to Kafka, another database or a data warehouse
+- You can also store the data in the TapData platform to serve data queries from your applications using APIs
 
 
 ## Why Choose Tapdata
