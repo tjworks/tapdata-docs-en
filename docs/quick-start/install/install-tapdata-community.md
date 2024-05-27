@@ -44,19 +44,19 @@ Tapdata Community includes the following main components:
 3. Run the following command to start the Tapdata container:
 
    ```bash
-   docker run -d -p 3000:3000 --restart always --name tapdata ghcr.io/tapdata/tapdata:latest
+   docker run -d -p 3030:3030 --restart always --name tapdata ghcr.io/tapdata/tapdata:latest
    ```
 
    Explanation of parameters:
 
    - `-d`: Run the container in the background.
-   - `-p 3000:3000`: Map port 3000 of the container to port 3000 on the host machine, allowing access to Tapdata through a browser.
+   - `-p 3030:3030`: Map port 3030 of the container to port 3030 on the host machine, allowing access to Tapdata through a browser.
    - `--name tapdata`: Assign a name to your container, in this case, **tapdata**.
    - `--restart always`: Automatically start this container when Docker services restart.
 
    :::tip
 
-   By default, Tapdata Community uses an internal MongoDB to store metadata, task configurations, etc. If you want to use your own MongoDB, specify the MongoDB [URI connection string](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format) during container startup with the `-e` parameter, for example: `docker run -d -p 3000:3000 --name tapdata -e MONGO_URI='mongodb://root:Tap123456@192.168.1.18:29917/tapdata_community?authSource=admin' --restart always ghcr.io/tapdata/tapdata:latest`.
+   By default, Tapdata Community uses an internal MongoDB to store metadata, task configurations, etc. If you want to use your own MongoDB, specify the MongoDB [URI connection string](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format) during container startup with the `-e` parameter, for example: `docker run -d -p 3030:3030 --name tapdata -e MONGO_URI='mongodb://root:Tap123456@192.168.1.18:29917/tapdata_community?authSource=admin' --restart always ghcr.io/tapdata/tapdata:latest`.
 
    :::
 
@@ -64,10 +64,10 @@ Tapdata Community includes the following main components:
 
    ```bash
    <<< Start Server [SUCCESS]
-   All Done, Please Visit http://localhost:3000
+   All Done, Please Visit http://localhost:3030
    ```
 
-5. Access the Tapdata platform via a browser at http://localhost:3000. The default login is admin@admin.com with the password admin. Promptly change your password after the first login to ensure security.
+5. Access the Tapdata platform via a browser at http://localhost:3030. The default login is admin@admin.com with the password admin. Promptly change your password after the first login to ensure security.
 
    :::tip
 
@@ -101,10 +101,10 @@ Tapdata Community includes the following main components:
 
    ```bash
    <<< Start Server [SUCCESS]
-   All Done, Please Visit http://localhost:3000
+   All Done, Please Visit http://localhost:3030
    ```
 
-5. Access the Tapdata platform via a browser at http://localhost:3000. The default login is admin@admin.com with the password admin. Promptly change your password after the first login to ensure security.
+5. Access the Tapdata platform via a browser at http://localhost:3030. The default login is admin@admin.com with the password admin. Promptly change your password after the first login to ensure security.
 
    :::tip
 
