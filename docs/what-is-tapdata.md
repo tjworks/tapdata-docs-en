@@ -5,7 +5,7 @@ slug: /
 
 # What is TapData?
 
-TapData is a modern data platform designed to provide solution for all your data needs that require low latency, fresh data. 
+TapData is a modern data platform designed for all your data applications that require low latency, fresh data. 
 
 ## Where would you use TapData 
 
@@ -14,7 +14,7 @@ Some of the most common applications enabled by TapData
 - **Setup real time data pipelines** between different databases, as an alternative to Kafka based ETL pipelines. 
 
 
-- **Build real time data warehouse** to support real time analytics
+- **Build real time data warehouse** to support real time analytics, dashboards to assist in time decision making. 
 
 - **Build a centralized data service** by connecting and consolidating data from various operational systems, then serve multiple applications from a single location with a unified access method and control.  
 
