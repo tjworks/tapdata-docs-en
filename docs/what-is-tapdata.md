@@ -22,7 +22,7 @@ Some of the most common applications enabled by TapData
 
 ## How It Works?
 
-<img src="images/how-it-works-en.PNG" style="zoom: 30%;" />
+<img src="images/how-it-works.gif" style="zoom: 30%;" />
 
 
 ## Why Choose TapData?
@@ -87,7 +87,7 @@ Some of the most common applications enabled by TapData
 
 **FlinkCDC**
 
-  FlinkCDC is great fit if you are already using Flink. Otherwise, it may be too much a baggage of the big data suite if your purpose is primarily on data integration.  
+  FlinkCDC is great fit if you are already using Flink. Otherwise, it may be too much a baggage to setup & maintain Flink if your purpose is primarily for data integration.  
 
 
 
