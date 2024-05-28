@@ -5,13 +5,18 @@ slug: /
 
 # What is TapData?
 
-TapData Live Data Platform (or TapData for short) is a modern and innovative data platform designed to solve many of the real time data use cases. 
+TapData is a modern data platform designed to provide solution for all your data needs that require low latency, fresh data. 
 
-You can use it as a **real time data pipeline** tool, as an alternative to Kafka based ETL pipelines, except without having to write any java code or maintaining Kafka. 
+## Where would you use TapData 
 
-You can use it as a **real time data warehouse**, when combined with a data warehouse storage, such as Clickhouse. 
+Some of the most common applications enabled by TapData
 
-You can use it as a **real time data hub**, with a MongoDB as data store, you may sync all your silo-ed data into a centralized data platform and serve multiple applications from one single location, in an unified way. 
+- **Setup real time data pipelines** between different databases, as an alternative to Kafka based ETL pipelines. 
+
+
+- **Build real time data warehouse** to support real time analytics
+
+- **Build a centralized data service** by connecting and consolidating data from various operational systems, then serve multiple applications from a single location with a unified access method and control.  
 
 ## How It Works
 
@@ -46,25 +51,16 @@ Compared to traditional data migration/synchronization tools, Tapdata offers a f
 
 * **[No-code Operation Page](user-guide/workshop.md)**
 
-  Say goodbye to SQL and coding. Simple mouse drag-and-drop actions can quickly complete table renaming and other transformation rules. Additionally, UDF (User-Defined Functions) based on Javascript are supported.
-
-## Product Pricing
-
-Tapdata offers two deployment modes, **Cloud**, **Enterprise** and **Community** , to meet your diversified needs:
-
-| Product         | Applicable Scenarios                                                                                                                                                                                                                                                                                                                                  | Pricing Details                                               |
-|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
-| Tapdata Cloud   | Using the SaaS (Software as a Service) model, sign up for a [Tapdata Cloud](https://cloud.tapdata.net/console/v3/) account for use. Suitable for scenarios requiring rapid deployment and low initial investment, helping you focus more on business development rather than infrastructure management.                                               | Provides 1 SMALL specification Agent instance for free (semi-managed mode). You can also subscribe to higher specifications or more Agent instances according to business needs. For more information, see [Product Billing](billing/billing-overview.md). |
-| Tapdata Enterprise | Supports deployment to local data centers. Suitable for scenarios with strict requirements on data sensitivity or network isolation, such as financial institutions, government departments, or large enterprises that want full control over their data.                                                                                             | Pay the subscription fee annually based on the number of deployed server nodes. Before purchasing, you can click “[Apply for a Trial](https://tapdata.net/tapdata-on-prem/demo.html)” and a Tapdata engineer will contact you and assist with the trial. For more information, see [Product Pricing](https://tapdata.net/pricing.html). |
-| Tapdata Community | An open-source data integration platform that provides basic data synchronization and transformation capabilities. This helps you quickly explore and implement data integration projects. As your project or business grows, you can seamlessly upgrade to Tapdata Cloud or Tapdata Enterprise to access more advanced features and service support. | [Open Source](https://github.com/tapdata/tapdata) |
-
+  If you are the ones who don't like SQL and writing code to get your data. Simple mouse drag-and-drop actions can quickly complete table renaming and other transformation rules. Additionally, UDF (User-Defined Functions) based on Javascript are supported.
+ 
 ## New to Tapdata?
 
-No worries, with Tapdata's graphical operation platform, follow our [Quick Start](quick-start/README.md) tutorial, and you can easily get started in just a few minutes. Moreover, we have prepared a wealth of tutorials to help you quickly meet your data flow requirements.
+No worries, with TapData's GUI , follow our [Quick Start](quick-start/README.md) tutorial, and you can easily get started in just a few minutes. Moreover, we have prepared a wealth of tutorials to help you quickly meet your data flow requirements.
+
 
 :::tip
 
-While browsing the documentation, please pay attention to the "**Applicable to**" badge at the top of each document to ensure the information you read corresponds to the version you require.
+While browsing the documentation, please pay attention to the "**Applicable to**" badge at the top of each document to ensure the information you read corresponds to the version you have deployed.
 
 :::
 
