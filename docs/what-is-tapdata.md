@@ -7,7 +7,7 @@ slug: /
 
 TapData is a low latency data platform designed for real time data integration, real time data warehouse and real time data services.
 
-At its core, TapData is a CDC-based real time data integration platform. However, what makes it different, is its design for bundling common data storages to provide a seemless experence for building a more complete data platform solution, such as real time data warehouse, real time data hub etc. 
+At its core, TapData is a CDC-based real time data integration platform. However, what makes it different, is its design for bundling suitable data storage layer to provide a seemless experence for building a data platform solution, such as real time data warehouse, real time data services etc. 
  
 ## Where Would You Use TapData?
 
